@@ -1,0 +1,1484 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>sh.apartment | Self check in apartments in Jeddah, booked direct</title>
+<meta name="description" content="Seven furnished apartments in Jeddah rated 4.83 from 517 Airbnb reviews. Book direct with the hosts, sign on your phone, no service fee.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="sh.apartment | Self check in apartments in Jeddah, booked direct">
+<meta property="og:description" content="Neon lofts, cinema sofas and a jacuzzi studio across seven homes in Jeddah. Sign on your phone and book direct with the hosts.">
+<meta property="og:image" content="../photos/midcentury-1-living.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FBFAF8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B0B0B'/%3E%3Cpath d='M14 33 32 17l18 16' fill='none' stroke='%23F59A1E' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='26' y='35' width='5' height='5' rx='1' fill='%23F59A1E'/%3E%3Crect x='33' y='35' width='5' height='5' rx='1' fill='%23F59A1E'/%3E%3Crect x='26' y='42' width='5' height='5' rx='1' fill='%23F59A1E'/%3E%3Crect x='33' y='42' width='5' height='5' rx='1' fill='%23F59A1E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap">
+<style>
+/* Page 6 · minimal editorial · layout A (classic hero + sections)
+   Every value resolves through the landing-page-design skill:
+   one typeface (Geist, Geist Mono only for numbers), Tailwind type scale with paired line heights,
+   spacing 0 2 4 8 12 16 24 32 40 48 64 80 96, Tailwind radii, flat backgrounds, base curve. */
+:root {
+  color-scheme: light;
+  --paper: #FBFAF8;
+  --surface: #FFFFFF;
+  --ink: #0B0B0B;
+  --ink-2: #3B3A38;
+  --muted: #6B6864;
+  --line: #E7E4DF;
+  --soft: #F2F0EC;
+  --brand: #F59A1E;
+  --accent: #C2410C;
+  --ok: #166534;
+  --ok-soft: #ECF6EF;
+  --err: #B42318;
+  --err-soft: #FDF0EE;
+  --glass: rgba(255, 255, 255, 0.72);
+  --scrim: rgba(11, 11, 11, 0.4);
+
+  --font: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* B2 spacing */
+  --s-25: 2px; --s-50: 4px; --s-75: 8px; --s-100: 12px; --s-200: 16px; --s-300: 24px;
+  --s-400: 32px; --s-500: 40px; --s-600: 48px; --s-700: 64px; --s-800: 80px; --s-900: 96px;
+  /* B3 radius (Tailwind) */
+  --r-sm: 2px; --r: 4px; --r-md: 6px; --r-lg: 8px; --r-xl: 12px; --r-2xl: 16px; --r-3xl: 24px; --r-full: 9999px;
+}
+
+/* Reset: no UA margins, paddings, sizes or line heights survive */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 1rem; line-height: 1.5rem; font-weight: 400; font-style: normal; }
+h1, h2, h3, h4, p, ul, ol, li, figure, figcaption, dl, dt, dd, blockquote, fieldset, legend, hr, table { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+h1, h2, h3, h4 { font-weight: 600; text-wrap: balance; }
+p, li, dd, figcaption, td, summary, label { text-wrap: pretty; }
+b, strong { font-weight: 600; }
+em, i, cite, address, dfn, var { font-style: normal; }
+button, input, select, textarea { font-family: inherit; font-size: inherit; line-height: inherit; color: inherit; margin: 0; }
+button { padding: 0; background: none; border: 0; cursor: pointer; }
+fieldset { border: 0; min-width: 0; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+hr { border: 0; height: 1px; background: var(--line); }
+[hidden] { display: none !important; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* B1 type scale, paired line heights */
+.t-xs { font-size: 0.75rem; line-height: 1rem; }
+.t-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.t-base { font-size: 1rem; line-height: 1.5rem; }
+.t-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.t-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.t-2xl { font-size: 1.5rem; line-height: 2rem; }
+.t-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.t-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.t-5xl { font-size: 3rem; line-height: 1; }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.tel { white-space: nowrap; }
+.muted { color: var(--muted); }
+.ink2 { color: var(--ink-2); }
+.semi { font-weight: 600; }
+.med { font-weight: 500; }
+
+.i { width: 16px; height: 16px; flex: none; }
+.i-24 { width: 24px; height: 24px; flex: none; }
+
+.wrap { width: 100%; max-width: 1264px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 768px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+
+.skip { position: fixed; left: 16px; top: 16px; z-index: 100; padding: 8px 12px; border-radius: var(--r-lg); background: var(--ink); color: #FFFFFF; font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; text-decoration: none; transform: translateY(-64px); transition: transform 500ms var(--ease); }
+.skip:focus-visible { transform: translateY(0); }
+
+/* Buttons: main = text-base semibold, 8px 12px; header = text-sm semibold */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 12px; border-radius: var(--r-full); border: 1px solid transparent; font-size: 1rem; line-height: 1.5rem; font-weight: 600; text-decoration: none; white-space: nowrap; transition: transform 500ms var(--ease), background-color 300ms var(--ease), border-color 300ms var(--ease), color 300ms var(--ease), opacity 300ms var(--ease); }
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: var(--ink); color: #FFFFFF; }
+.btn-primary:hover { background: #2A2927; }
+.btn-ghost { background: var(--surface); border-color: var(--line); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--ink); }
+.btn-wa { background: var(--ok); color: #FFFFFF; }
+.btn-wa:hover { background: #14532D; }
+.btn-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.btn[disabled], .btn[aria-disabled="true"] { opacity: 0.4; pointer-events: none; }
+.link { display: inline-flex; align-items: center; gap: 4px; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; transition: color 300ms var(--ease), text-decoration-color 300ms var(--ease); }
+.link:hover { text-decoration-color: var(--ink); }
+.icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--r-full); border: 1px solid var(--line); background: var(--surface); transition: transform 500ms var(--ease), border-color 300ms var(--ease), background-color 300ms var(--ease); }
+.icon-btn:hover { border-color: var(--ink); }
+.icon-btn:active { transform: scale(0.98); }
+.icon-btn[disabled] { opacity: 0.4; pointer-events: none; }
+
+/* Floating nav: compact, centered, sized to content, translucent over a blur */
+.nav { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 16px); left: 50%; transform: translateX(-50%); z-index: 50; display: flex; align-items: center; gap: 4px; padding: 4px; max-width: calc(100% - 32px); border: 1px solid rgba(11, 11, 11, 0.08); border-radius: var(--r-full); background: var(--glass); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); box-shadow: 0 8px 24px rgba(11, 11, 11, 0.06); }
+.brand { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: var(--r-full); text-decoration: none; font-size: 1rem; line-height: 1.5rem; font-weight: 700; color: var(--ink); white-space: nowrap; }
+.brand b { color: var(--brand); font-weight: 700; }
+.brand svg { width: 24px; height: 24px; flex: none; }
+.nav-links { display: none; align-items: center; gap: 4px; }
+.nav-links a { padding: 8px 12px; border-radius: var(--r-full); font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; color: var(--ink-2); text-decoration: none; transition: background-color 300ms var(--ease), color 300ms var(--ease); }
+.nav-links a:hover { background: rgba(11, 11, 11, 0.04); color: var(--ink); }
+.nav-links a[aria-current="true"] { background: var(--ink); color: #FFFFFF; }
+.toggle { display: grid; place-items: center; width: 40px; height: 40px; border-radius: var(--r-full); background: var(--soft); }
+.toggle span { grid-area: 1 / 1; width: 16px; height: 2px; border-radius: var(--r-full); background: var(--ink); transition: transform 500ms var(--ease); }
+.toggle span:first-child { transform: translateY(-4px); }
+.toggle span:last-child { transform: translateY(4px); }
+.toggle[aria-expanded="true"] span:first-child { transform: rotate(45deg); }
+.toggle[aria-expanded="true"] span:last-child { transform: rotate(-45deg); }
+@media (min-width: 960px) { .nav-links { display: flex; } .nav .toggle { display: none; } }
+
+/* Mobile menu: full height panel, base surface at high opacity, strong blur */
+.menu { position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; padding: calc(env(safe-area-inset-top, 0px) + 96px) max(24px, env(safe-area-inset-right, 0px)) calc(env(safe-area-inset-bottom, 0px) + 32px) max(24px, env(safe-area-inset-left, 0px)); background: rgba(251, 250, 248, 0.94); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); opacity: 0; pointer-events: none; transition: opacity 300ms var(--ease); }
+.menu.open { opacity: 1; pointer-events: auto; }
+.menu ul { display: grid; gap: 8px; }
+.menu li { opacity: 0; transform: translateY(24px); }
+.menu.open li { opacity: 1; transform: none; transition: opacity 500ms var(--ease) var(--d, 0ms), transform 500ms var(--ease) var(--d, 0ms); }
+.menu a.m-link { display: block; padding: 8px 0; font-size: 1.875rem; line-height: 2.25rem; font-weight: 600; text-decoration: none; color: var(--ink); }
+.menu a.m-link[aria-current="true"] { color: var(--accent); }
+.menu .btn { width: 100%; }
+@media (min-width: 960px) { .menu { display: none; } }
+
+/* Hero */
+.hero { padding-top: calc(env(safe-area-inset-top, 0px) + 96px); padding-bottom: 64px; }
+.hero-grid { display: grid; gap: 40px; align-items: center; }
+.hero-copy { display: grid; gap: 24px; justify-items: start; min-width: 0; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.875rem; line-height: 1.25rem; font-weight: 500; color: var(--muted); }
+.hero h1 { max-width: 680px; font-size: 2.25rem; line-height: 2.5rem; font-weight: 600; padding-bottom: 4px; background: linear-gradient(to right, #000000, #666666); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero .sub { max-width: 680px; font-size: 1.125rem; line-height: 1.75rem; color: var(--ink-2); }
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+.reassure { display: inline-flex; align-items: center; gap: 8px; font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+.proof { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; font-size: 0.875rem; line-height: 1.25rem; color: var(--ink-2); }
+.proof span { display: inline-flex; align-items: center; gap: 4px; }
+.proof .star { color: var(--brand); }
+.spread { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; min-width: 0; }
+.spread figure { position: relative; overflow: hidden; border-radius: var(--r-2xl); background: var(--soft); max-width: 100%; }
+.spread .a { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
+.spread .b, .spread .c { aspect-ratio: 4 / 5; }
+.spread img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--ease); }
+.spread figure:hover img { transform: scale(1.02); }
+.spread figcaption { position: absolute; left: 8px; bottom: 8px; padding: 4px 8px; border-radius: var(--r-lg); background: rgba(255, 255, 255, 0.9); font-size: 0.75rem; line-height: 1rem; font-weight: 500; color: var(--ink); }
+@media (min-width: 768px) { .hero h1 { font-size: 3rem; line-height: 1; padding-bottom: 8px; } }
+@media (min-width: 1024px) { .hero-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; } }
+
+/* Shared section rhythm */
+.sec { padding-block: 64px; }
+@media (min-width: 768px) { .sec { padding-block: 96px; } }
+.sec-head { display: grid; gap: 12px; max-width: 680px; }
+.sec-head h2 { font-size: 1.875rem; line-height: 2.25rem; }
+.sec-head p { font-size: 1.125rem; line-height: 1.75rem; color: var(--ink-2); }
+@media (min-width: 768px) { .sec-head h2 { font-size: 2.25rem; line-height: 2.5rem; } }
+.kicker { font-size: 0.875rem; line-height: 1.25rem; font-weight: 500; color: var(--accent); }
+
+/* Benefits */
+.benefits { display: grid; gap: 40px; margin-top: 48px; }
+.benefits li { display: grid; gap: 16px; align-content: start; }
+.benefits .i-24 { color: var(--accent); }
+.benefits h3 { font-size: 1.125rem; line-height: 1.75rem; }
+.benefits p { color: var(--ink-2); }
+.benefits .link { font-size: 0.875rem; line-height: 1.25rem; justify-self: start; }
+@media (min-width: 640px) { .benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 32px; } }
+@media (min-width: 1024px) { .benefits { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* How it works */
+.sec-white { background: var(--surface); }
+.how { display: grid; gap: 48px; align-items: center; }
+.how-copy { display: grid; gap: 40px; min-width: 0; }
+.how-steps { display: grid; gap: 32px; }
+.how-steps li { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 16px; align-items: start; }
+.how-steps .n { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: var(--r-full); border: 1px solid var(--line); font-size: 1.125rem; line-height: 1.75rem; font-weight: 500; }
+.how-steps div { display: grid; gap: 4px; padding-top: 8px; }
+.how-steps h3 { font-size: 1.25rem; line-height: 1.75rem; }
+.how-steps p { color: var(--ink-2); }
+.how-photo { position: relative; overflow: hidden; border-radius: var(--r-2xl); aspect-ratio: 4 / 5; max-width: 100%; background: var(--soft); }
+.how-photo img { width: 100%; height: 100%; object-fit: cover; }
+.how-photo figcaption { position: absolute; left: 8px; right: 8px; bottom: 8px; padding: 8px 12px; border-radius: var(--r-lg); background: rgba(255, 255, 255, 0.9); font-size: 0.875rem; line-height: 1.25rem; color: var(--ink); }
+@media (min-width: 1024px) { .how { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; } }
+
+/* Proof */
+.proof-top { display: grid; gap: 40px; align-items: end; }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; }
+.stats div { display: grid; gap: 4px; }
+.stats dt { order: 2; font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+.stats dd { order: 1; font-size: 2.25rem; line-height: 2.5rem; font-weight: 500; }
+.stats dd.word { font-family: var(--font); font-weight: 600; }
+.table-wrap { margin-top: 48px; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-2xl); background: var(--surface); }
+.rtable { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 0.875rem; line-height: 1.25rem; }
+.rtable caption { padding: 16px 24px; text-align: left; font-weight: 600; }
+.rtable th, .rtable td { padding: 12px 24px; text-align: left; vertical-align: middle; }
+.rtable thead th { font-weight: 500; color: var(--muted); background: var(--soft); }
+.rtable tbody tr:nth-child(even) { background: var(--paper); }
+.rtable td.r { text-align: right; }
+.rtable .nm { font-weight: 600; color: var(--ink); }
+.rtable .star { color: var(--brand); vertical-align: middle; }
+.proof-note { margin-top: 16px; font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+@media (min-width: 1024px) { .proof-top { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; } }
+
+/* FAQ */
+.faq { display: grid; gap: 48px; }
+.faq-side { display: grid; gap: 16px; justify-items: start; align-content: start; }
+.faq-side h2 { font-size: 1.875rem; line-height: 2.25rem; }
+.faq-side p { color: var(--ink-2); }
+.wa-line { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+.faq-list { display: grid; gap: 8px; min-width: 0; }
+.qa { border: 1px solid var(--line); border-radius: var(--r-xl); background: var(--paper); transition: border-color 300ms var(--ease); }
+.qa:hover { border-color: #C9C5BE; }
+.qa summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 24px; cursor: pointer; list-style: none; font-size: 1.125rem; line-height: 1.75rem; font-weight: 500; border-radius: var(--r-xl); }
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary .i { transition: transform 500ms var(--ease); }
+.qa[open] summary .i { transform: rotate(45deg); }
+.qa p { padding: 0 24px 24px; color: var(--ink-2); }
+.qa[open] p { animation: rise 500ms var(--ease); }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (min-width: 768px) { .faq-side h2 { font-size: 2.25rem; line-height: 2.5rem; } }
+@media (min-width: 1024px) { .faq { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: start; } .faq-side { position: sticky; top: 96px; } }
+
+/* Final CTA */
+.final { display: grid; gap: 40px; align-items: center; padding: 16px; border: 1px solid var(--line); border-radius: var(--r-3xl); background: var(--surface); }
+.final-copy { display: grid; gap: 24px; justify-items: start; min-width: 0; }
+.final-copy h2 { font-size: 1.875rem; line-height: 2.25rem; }
+.final-copy p.lead { font-size: 1.125rem; line-height: 1.75rem; color: var(--ink-2); }
+.final-photo { position: relative; overflow: hidden; border-radius: var(--r-lg); aspect-ratio: 4 / 3; max-width: 100%; background: var(--soft); }
+.final-photo img { width: 100%; height: 100%; object-fit: cover; }
+.final-photo figcaption { position: absolute; left: 8px; bottom: 8px; padding: 4px 8px; border-radius: var(--r-lg); background: rgba(255, 255, 255, 0.9); font-size: 0.75rem; line-height: 1rem; font-weight: 500; }
+@media (min-width: 768px) { .final { padding: 48px; } .final-photo { border-radius: var(--r-2xl); } .final-copy h2 { font-size: 2.25rem; line-height: 2.5rem; } }
+@media (min-width: 1024px) { .final { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; } }
+
+/* Problem to solution */
+.why { display: grid; gap: 40px; align-items: start; }
+.why-solution { display: grid; gap: 24px; padding: 24px; border: 1px solid var(--line); border-radius: var(--r-2xl); background: var(--surface); }
+.why-solution h3 { font-size: 1.25rem; line-height: 1.75rem; }
+.ticks { display: grid; gap: 12px; }
+.ticks li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; align-items: start; }
+.ticks .i-24 { color: var(--ok); }
+.aside { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 12px 16px; border-radius: var(--r-lg); background: var(--soft); font-size: 0.875rem; line-height: 1.25rem; color: var(--ink-2); }
+.aside .star { color: var(--brand); }
+@media (min-width: 768px) { .why-solution { padding: 32px; } }
+@media (min-width: 1024px) { .why { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; } }
+
+/* Apartments */
+.filters { display: grid; gap: 12px; margin-top: 40px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { padding: 8px 12px; border: 1px solid var(--line); border-radius: var(--r-full); background: var(--surface); font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; color: var(--ink-2); transition: background-color 300ms var(--ease), border-color 300ms var(--ease), color 300ms var(--ease), transform 500ms var(--ease); }
+.chip:hover { border-color: var(--ink); color: var(--ink); }
+.chip:active { transform: scale(0.98); }
+.chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #FFFFFF; }
+.count { font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+.cards { display: grid; gap: 48px 32px; margin-top: 32px; }
+.card { display: grid; gap: 16px; align-content: start; min-width: 0; }
+.card-img { position: relative; overflow: hidden; border-radius: var(--r-2xl); aspect-ratio: 4 / 3; max-width: 100%; background: var(--soft); }
+.card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--ease); }
+.card:hover .card-img img { transform: scale(1.03); }
+.badge { position: absolute; left: 8px; top: 8px; display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px; border-radius: var(--r-lg); background: rgba(255, 255, 255, 0.9); font-size: 0.75rem; line-height: 1rem; font-weight: 500; }
+.card-body { display: grid; gap: 8px; min-width: 0; }
+.card-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.card h3 { font-size: 1.25rem; line-height: 1.75rem; }
+.rate { display: inline-flex; align-items: center; gap: 4px; font-size: 0.875rem; line-height: 1.25rem; white-space: nowrap; }
+.rate .star { color: var(--brand); }
+.card-meta { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+.card-facts { font-size: 0.875rem; line-height: 1.25rem; color: var(--ink-2); }
+.card-hl { color: var(--ink-2); }
+.card hr { margin-block: 8px; }
+.card-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 16px; }
+.price { display: grid; }
+.card-actions { display: flex; align-items: center; gap: 16px; }
+.empty { display: grid; gap: 16px; justify-items: start; margin-top: 32px; padding: 32px; border: 1px dashed #C9C5BE; border-radius: var(--r-2xl); background: var(--paper); }
+.empty h3 { font-size: 1.25rem; line-height: 1.75rem; }
+.empty p { max-width: 680px; color: var(--ink-2); }
+@media (min-width: 640px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) {
+  .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .card-img { aspect-ratio: auto; height: 288px; }
+  .cards.featured .card.wide { grid-column: span 2; }
+}
+
+/* Tagline reveal (B11): words go from a muted tone to full ink, one at a time, in reading order */
+.tagline { padding-block: 96px; }
+.tag-text { max-width: 680px; font-size: 2.25rem; line-height: 2.5rem; font-weight: 600; color: var(--ink); text-wrap: balance; }
+.tag-text .w { opacity: 0.3; transition: opacity 500ms var(--ease); }
+.tag-text .w.on { opacity: 1; }
+.tag-text .w.eol::after { content: "\A"; white-space: pre; }
+.tag-by { margin-top: 24px; display: flex; align-items: center; gap: 8px; font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+@media (min-width: 768px) { .tagline { padding-block: 96px; } .tag-text { font-size: 3rem; line-height: 1; } }
+
+/* Risk reversal */
+.promise { display: grid; gap: 24px; padding: 32px 24px; border-radius: var(--r-3xl); background: var(--soft); }
+.promise-head { display: grid; gap: 12px; max-width: 680px; }
+.promise-head .i-24 { color: var(--ok); }
+.promise-head h2 { font-size: 1.875rem; line-height: 2.25rem; }
+.promise-head p { font-size: 1.125rem; line-height: 1.75rem; color: var(--ink-2); }
+.promise .ticks { align-content: start; }
+@media (min-width: 768px) { .promise { padding: 48px; } .promise-head h2 { font-size: 2.25rem; line-height: 2.5rem; } }
+@media (min-width: 1024px) { .promise { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; align-items: center; } }
+
+/* Footer */
+.footer { padding-block: 48px 96px; }
+.foot-grid { display: grid; gap: 32px; padding-top: 48px; }
+.foot-brand { display: grid; gap: 12px; justify-items: start; max-width: 400px; }
+.foot-brand .brand { padding: 0; }
+.foot-brand p { color: var(--ink-2); }
+.foot-col { display: grid; gap: 12px; align-content: start; }
+.foot-col h3 { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; color: var(--muted); }
+.foot-col ul { display: grid; gap: 8px; }
+.foot-col a { text-decoration: none; transition: color 300ms var(--ease); }
+.foot-col a:hover { color: var(--accent); }
+.foot-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 48px; font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+@media (min-width: 768px) { .foot-grid { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 48px; } }
+
+
+/* Scroll reveal: rise 32px and fade, once; armed only below the fold after the first scroll */
+.pre { opacity: 0; transform: translateY(32px); }
+.pre.in { opacity: 1; transform: none; transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
+
+/* Booking sheet */
+.sheet { width: min(760px, calc(100% - 32px)); max-width: none; max-height: calc(100dvh - 64px); padding: 0; border: 1px solid var(--line); border-radius: var(--r-3xl); background: var(--surface); color: var(--ink); box-shadow: 0 24px 64px rgba(11, 11, 11, 0.18); overflow: hidden; }
+.sheet::backdrop { background: var(--scrim); }
+.sheet[open] .sheet-in { animation: sheet-in 500ms var(--ease); }
+@keyframes sheet-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.sheet-in { display: flex; flex-direction: column; max-height: calc(100dvh - 64px); }
+.sheet-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 24px 24px 16px; }
+.sheet-head h2 { font-size: 1.5rem; line-height: 2rem; }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 0 24px 16px; counter-reset: st; }
+.steps li { display: grid; gap: 8px; font-size: 0.75rem; line-height: 1rem; font-weight: 500; color: var(--muted); counter-increment: st; }
+.steps li::before { content: ""; height: 4px; border-radius: var(--r-full); background: var(--line); transition: background-color 300ms var(--ease); }
+.steps li.done::before, .steps li[aria-current="step"]::before { background: var(--ink); }
+.steps li[aria-current="step"] { color: var(--ink); }
+.sheet-body { flex: 1 1 auto; overflow-y: auto; padding: 8px 24px 24px; overscroll-behavior: contain; }
+.sheet-foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 24px calc(16px + env(safe-area-inset-bottom, 0px)); background: var(--paper); }
+.sheet-foot .sum { display: grid; min-width: 0; }
+.sheet-foot .actions { display: flex; gap: 8px; }
+.step { display: grid; gap: 24px; }
+.step h3 { font-size: 1.125rem; line-height: 1.75rem; }
+.field { display: grid; gap: 8px; min-width: 0; }
+.field label, .field .lab { font-size: 0.875rem; line-height: 1.25rem; font-weight: 500; }
+.field .hint { font-size: 0.75rem; line-height: 1rem; color: var(--muted); }
+.input, .select, .textarea { width: 100%; padding: 8px 12px; border: 1px solid var(--line); border-radius: var(--r-xl); background: var(--surface); font-size: 1rem; line-height: 1.5rem; transition: border-color 300ms var(--ease); }
+.input:hover, .select:hover, .textarea:hover { border-color: #C9C5BE; }
+.input:focus-visible, .select:focus-visible, .textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
+.textarea { min-height: 80px; resize: vertical; }
+.select { appearance: none; -webkit-appearance: none; padding-right: 40px; background-image: none; }
+.select-wrap { position: relative; }
+.select-wrap .i { position: absolute; right: 12px; top: 12px; pointer-events: none; }
+[aria-invalid="true"] { border-color: var(--err) !important; }
+.err { display: flex; align-items: flex-start; gap: 8px; font-size: 0.875rem; line-height: 1.25rem; color: var(--err); }
+.err .i { margin-top: 2px; }
+.alert-box { display: flex; align-items: flex-start; gap: 8px; padding: 12px 16px; border-radius: var(--r-xl); background: var(--err-soft); color: var(--err); font-size: 0.875rem; line-height: 1.25rem; }
+.note-box { display: flex; align-items: flex-start; gap: 8px; padding: 12px 16px; border-radius: var(--r-xl); background: var(--soft); color: var(--ink-2); font-size: 0.875rem; line-height: 1.25rem; }
+.sync { display: inline-flex; align-items: center; gap: 8px; font-size: 0.75rem; line-height: 1rem; color: var(--muted); }
+.dot { width: 8px; height: 8px; border-radius: var(--r-full); background: var(--ok); flex: none; }
+.grid2 { display: grid; gap: 16px; }
+@media (min-width: 640px) { .grid2 { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+
+/* Calendar */
+.cal { display: grid; gap: 16px; }
+.cal-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.cal-months { display: grid; gap: 24px; }
+@media (min-width: 640px) { .cal-months { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.month h4 { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; margin-bottom: 8px; }
+.wk, .days { display: grid; grid-template-columns: repeat(7, 40px); gap: 4px; justify-content: start; }
+.wk span { font-size: 0.75rem; line-height: 1rem; color: var(--muted); text-align: center; }
+.d { width: 40px; height: 40px; border-radius: var(--r-full); font-family: var(--mono); font-size: 0.875rem; line-height: 1.25rem; font-variant-numeric: tabular-nums; color: var(--ink); transition: background-color 300ms var(--ease), color 300ms var(--ease), transform 500ms var(--ease); }
+.d:hover { background: var(--soft); }
+.d:active { transform: scale(0.98); }
+.d.today { box-shadow: inset 0 0 0 1px var(--ink); }
+.d.range { background: var(--soft); border-radius: var(--r-lg); }
+.d.sel { background: var(--ink); color: #FFFFFF; }
+.d.booked { color: #A8A49E; text-decoration: line-through; }
+.d.past { color: #C9C5BE; }
+.d[disabled] { cursor: not-allowed; }
+.d[disabled]:hover { background: none; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 0.75rem; line-height: 1rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.sw { width: 12px; height: 12px; border-radius: var(--r-full); background: var(--ink); }
+.sw.r { background: var(--soft); border: 1px solid var(--line); }
+.strike { text-decoration: line-through; }
+.skeleton { border-radius: var(--r-lg); background: var(--soft); animation: pulse 1200ms var(--ease) infinite alternate; }
+@keyframes pulse { from { opacity: 1; } to { opacity: 0.45; } }
+.stay { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; }
+.stay div { display: grid; gap: 4px; padding: 12px 16px; border: 1px solid var(--line); border-radius: var(--r-xl); }
+.stepper { display: inline-flex; align-items: center; gap: 12px; }
+.stepper output { min-width: 24px; text-align: center; font-family: var(--mono); font-size: 1rem; line-height: 1.5rem; }
+.lines { display: grid; gap: 8px; font-size: 0.875rem; line-height: 1.25rem; }
+.lines div { display: flex; justify-content: space-between; gap: 16px; }
+.lines .total { font-size: 1rem; line-height: 1.5rem; font-weight: 600; padding-top: 8px; }
+.sig-wrap { position: relative; border: 1px solid var(--line); border-radius: var(--r-xl); background: var(--paper); }
+.sig-wrap canvas { display: block; width: 100%; height: 160px; touch-action: none; border-radius: var(--r-xl); }
+.sig-wrap .base { position: absolute; left: 24px; right: 24px; bottom: 32px; height: 1px; background: var(--line); pointer-events: none; }
+.sig-wrap .ph { position: absolute; left: 24px; bottom: 8px; font-size: 0.75rem; line-height: 1rem; color: var(--muted); pointer-events: none; }
+.check { display: flex; align-items: flex-start; gap: 12px; font-size: 0.875rem; line-height: 1.25rem; }
+.check input { width: 16px; height: 16px; margin-top: 2px; accent-color: var(--ink); flex: none; }
+.summary { display: grid; gap: 8px; padding: 16px; border: 1px solid var(--line); border-radius: var(--r-2xl); }
+.summary div { display: flex; justify-content: space-between; gap: 16px; font-size: 0.875rem; line-height: 1.25rem; }
+.summary dt { color: var(--muted); }
+.summary dd { text-align: right; font-weight: 500; }
+.terms { border: 1px solid var(--line); border-radius: var(--r-xl); }
+.terms summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; cursor: pointer; list-style: none; }
+.terms summary::-webkit-details-marker { display: none; }
+.terms summary .i { transition: transform 500ms var(--ease); }
+.terms[open] summary .i { transform: rotate(45deg); }
+.terms ol { display: grid; gap: 8px; padding: 0 16px 16px 40px; list-style: decimal; font-size: 0.875rem; line-height: 1.25rem; color: var(--ink-2); }
+.rules { display: grid; gap: 8px; font-size: 0.875rem; line-height: 1.25rem; color: var(--ink-2); }
+.rules li { display: flex; gap: 8px; align-items: flex-start; }
+.rules .i { margin-top: 2px; color: var(--muted); }
+.done-card { display: grid; gap: 16px; justify-items: start; padding: 24px; border-radius: var(--r-2xl); background: var(--ok-soft); }
+.done-card .tick { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--r-full); background: var(--ok); color: #FFFFFF; }
+.next { display: grid; gap: 12px; counter-reset: nx; }
+.next li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; font-size: 0.875rem; line-height: 1.25rem; counter-increment: nx; }
+.next li::before { content: counter(nx); display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: var(--r-full); background: var(--soft); font-family: var(--mono); font-size: 0.75rem; line-height: 1rem; }
+@media (max-width: 639px) {
+  .sheet { width: 100%; max-width: 100%; height: 100dvh; max-height: 100dvh; margin: 0; border: 0; border-radius: 0; }
+  .sheet-in { height: 100dvh; max-height: 100dvh; }
+  .sheet-head { padding-top: calc(env(safe-area-inset-top, 0px) + 16px); }
+  .sheet-foot { flex-wrap: wrap; gap: 12px; }
+  .sheet-foot .sum { flex: 1 1 100%; }
+  .sheet-foot .actions { flex: 1 1 100%; }
+  .sheet-foot .actions .btn { flex: 1 1 0; }
+}
+
+/* Small dialogs (privacy, terms) */
+.doc { width: min(640px, calc(100% - 32px)); max-height: calc(100dvh - 64px); padding: 0; border: 1px solid var(--line); border-radius: var(--r-3xl); background: var(--surface); color: var(--ink); overflow: auto; }
+.doc::backdrop { background: var(--scrim); }
+.doc[open] .doc-in { animation: sheet-in 500ms var(--ease); }
+.doc-in { display: grid; gap: 16px; padding: 24px; }
+.doc-in h2 { font-size: 1.5rem; line-height: 2rem; }
+.doc-in p, .doc-in li { font-size: 1rem; line-height: 1.5rem; color: var(--ink-2); }
+.doc-in ol { display: grid; gap: 8px; padding-left: 24px; list-style: decimal; }
+
+/* Branded 404 */
+.nf { min-height: 100dvh; display: grid; align-content: center; padding-block: 96px; }
+.nf-in { display: grid; gap: 24px; justify-items: start; max-width: 680px; }
+.nf .code { font-family: var(--mono); font-size: 3.75rem; line-height: 1; font-weight: 500; color: var(--brand); }
+.nf h2 { font-size: 2.25rem; line-height: 2.5rem; }
+
+/* Back to the concept gallery: small, secondary, bottom left */
+.concepts-pill { position: fixed; z-index: 30; left: max(16px, env(safe-area-inset-left, 0px)); bottom: calc(env(safe-area-inset-bottom, 0px) + 16px); display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--line); border-radius: var(--r-full); background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; color: var(--ink-2); text-decoration: none; transition: transform 500ms var(--ease), border-color 300ms var(--ease); }
+.concepts-pill:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; }
+  .btn:hover, .btn:active, .icon-btn:active, .concepts-pill:hover, .d:active { transform: none; }
+  .spread figure:hover img { transform: none; }
+  .menu li { transform: none; }
+  .pre { transform: none; }
+  .pre.in { transition: opacity 600ms var(--ease); }
+  .toggle span { transition: none; }
+}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How do I get in?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Every apartment has a smart lock. Once the hosts confirm and you pay, your own door code arrives on WhatsApp. Check in is from 4:00 pm, at any hour after that, with no key handover."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is it the same apartment as on Airbnb?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. All seven apartments are listed on Airbnb by the same hosts, Sultan and Hussam. Each one links to its listing, so you can check the photos and reviews there first."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why is booking direct cheaper?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Airbnb keeps a fee of around 15.5% of every booking. Here there is no platform in the middle, so the hosts can price lower and there is no service fee."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "When do I pay?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Only after the hosts confirm your dates. Signing the contract holds the dates. The hosts then message you on WhatsApp with the total and how to pay."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What ID do you need?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A national ID, Iqama or passport number for the main guest, written into the stay contract. It is used only to create the contract and is not stored on this site."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What are the check in and check out times?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Check in from 4:00 pm and check out by 12:00 pm. A late check out depends on the next booking, so ask the hosts on WhatsApp."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I smoke inside?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Smoking of any kind is not allowed inside, including vapes and shisha, and charcoal is not allowed either."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Are pets allowed?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Only with the hosts' approval before you book. Ask on WhatsApp and say what pet it is."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Which apartment suits a family?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Prince Fawaz Home sleeps 6, with a kids room, a high chair and a baby cot. Al Ajawid House has three bedrooms for up to 6 guests."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How far is the airport?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "About 15 minutes by car from Al Nahda and Madinah Road, and about 35 minutes from Al Ajawid and Prince Fawaz, depending on traffic."
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<!--ICONS--><svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="i-arrow-left" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-arrow-up-right" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></symbol><symbol id="i-calendar-check" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-38.34-85.66a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L116,164.69l42.34-42.35A8,8,0,0,1,169.66,122.34Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256" fill="currentColor"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-chat-circle-text" viewBox="0 0 256 256" fill="currentColor"><path d="M168,112a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,112Zm-8,24H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Zm72-8A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-check-circle" viewBox="0 0 256 256" fill="currentColor"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></symbol><symbol id="i-copy" viewBox="0 0 256 256" fill="currentColor"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></symbol><symbol id="i-hand-coins" viewBox="0 0 256 256" fill="currentColor"><path d="M230.33,141.06a24.43,24.43,0,0,0-21.24-4.23l-41.84,9.62A28,28,0,0,0,140,112H89.94a31.82,31.82,0,0,0-22.63,9.37L44.69,144H16A16,16,0,0,0,0,160v40a16,16,0,0,0,16,16H120a7.93,7.93,0,0,0,1.94-.24l64-16a6.94,6.94,0,0,0,1.19-.4L226,182.82l.44-.2a24.6,24.6,0,0,0,3.93-41.56ZM16,160H40v40H16Zm203.43,8.21-38,16.18L119,200H56V155.31l22.63-22.62A15.86,15.86,0,0,1,89.94,128H140a12,12,0,0,1,0,24H112a8,8,0,0,0,0,16h32a8.32,8.32,0,0,0,1.79-.2l67-15.41.31-.08a8.6,8.6,0,0,1,6.3,15.9ZM164,96a36,36,0,0,0,5.9-.48,36,36,0,1,0,28.22-47A36,36,0,1,0,164,96Zm60-12a20,20,0,1,1-20-20A20,20,0,0,1,224,84ZM164,40a20,20,0,0,1,19.25,14.61,36,36,0,0,0-15,24.93A20.42,20.42,0,0,1,164,80a20,20,0,0,1,0-40Z"/></symbol><symbol id="i-house-line" viewBox="0 0 256 256" fill="currentColor"><path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-lock-key" viewBox="0 0 256 256" fill="currentColor"><path d="M128,112a28,28,0,0,0-8,54.83V184a8,8,0,0,0,16,0V166.83A28,28,0,0,0,128,112Zm0,40a12,12,0,1,1,12-12A12,12,0,0,1,128,152Zm80-72H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-map-pin" viewBox="0 0 256 256" fill="currentColor"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></symbol><symbol id="i-minus" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-receipt" viewBox="0 0 256 256" fill="currentColor"><path d="M72,104a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,104Zm8,40h96a8,8,0,0,0,0-16H80a8,8,0,0,0,0,16ZM232,56V208a8,8,0,0,1-11.58,7.15L192,200.94l-28.42,14.21a8,8,0,0,1-7.16,0L128,200.94,99.58,215.15a8,8,0,0,1-7.16,0L64,200.94,35.58,215.15A8,8,0,0,1,24,208V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-16,0H40V195.06l20.42-10.22a8,8,0,0,1,7.16,0L96,199.06l28.42-14.22a8,8,0,0,1,7.16,0L160,199.06l28.42-14.22a8,8,0,0,1,7.16,0L216,195.06Z"/></symbol><symbol id="i-seal-check" viewBox="0 0 256 256" fill="currentColor"><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"/></symbol><symbol id="i-shield-check" viewBox="0 0 256 256" fill="currentColor"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></symbol><symbol id="i-star-fill" viewBox="0 0 256 256" fill="currentColor"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></symbol><symbol id="i-warning-circle" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z"/></symbol><symbol id="i-whatsapp-logo" viewBox="0 0 256 256" fill="currentColor"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol></svg><!--/ICONS-->
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Main">
+  <a class="brand" href="#top" aria-label="sh.apartment home">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 12 5.5l8 7" fill="none" stroke="#F59A1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="9.5" y="13" width="2" height="2" rx="0.5" fill="#F59A1E"/><rect x="12.5" y="13" width="2" height="2" rx="0.5" fill="#F59A1E"/><rect x="9.5" y="16" width="2" height="2" rx="0.5" fill="#F59A1E"/><rect x="12.5" y="16" width="2" height="2" rx="0.5" fill="#F59A1E"/></svg>
+    <span><b>sh.</b>apartment</span>
+  </a>
+  <div class="nav-links">
+    <a href="#top" data-spy="top" aria-current="true">Home</a>
+    <a href="#apartments" data-spy="apartments">Apartments</a>
+    <a href="#how" data-spy="how">How it works</a>
+    <a href="#reviews" data-spy="reviews">Reviews</a>
+    <a href="#faq" data-spy="faq">FAQ</a>
+  </div>
+  <a class="btn btn-primary btn-sm" href="#book" data-book>Book direct</a>
+  <button class="toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
+</nav>
+
+<div class="menu" id="menu" aria-label="Menu" inert aria-hidden="true">
+  <ul>
+    <li style="--d:0ms"><a class="m-link" href="#top" data-spy="top" aria-current="true">Home</a></li>
+    <li style="--d:60ms"><a class="m-link" href="#apartments" data-spy="apartments">Apartments</a></li>
+    <li style="--d:120ms"><a class="m-link" href="#how" data-spy="how">How it works</a></li>
+    <li style="--d:180ms"><a class="m-link" href="#reviews" data-spy="reviews">Reviews</a></li>
+    <li style="--d:240ms"><a class="m-link" href="#faq" data-spy="faq">FAQ</a></li>
+  </ul>
+  <ul>
+    <li style="--d:300ms"><a class="btn btn-primary" href="#book" data-book>Check dates and book direct</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <header class="hero" id="top" data-section="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg>Seven self check in apartments in Jeddah</p>
+        <h1>The Jeddah apartments from your feed,<br> booked direct with the host</h1>
+        <p class="sub">Neon lofts, cinema sofas and a jacuzzi studio across seven homes in Al Nahda, Madinah Road, Al Ajawid and Prince Fawaz.<br> Sign on your phone and skip the app fee.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#book" data-book>Check dates and book direct<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          <span class="reassure"><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg>Nothing to pay until the hosts confirm</span>
+        </div>
+        <p class="proof">
+          <span><svg class="i star" aria-hidden="true"><use href="#i-star-fill"/></svg><b class="num">4.83</b> from <b class="num">517</b> Airbnb reviews</span>
+          <span><svg class="i" aria-hidden="true"><use href="#i-seal-check"/></svg>Sultan is an Airbnb Superhost</span>
+        </p>
+      </div>
+      <div class="spread" aria-label="Inside three of the apartments">
+        <figure class="a"><img src="../photos/midcentury-1-living.jpg" width="1400" height="931" alt="Living room of the Mid century Studio, with a loft bed above a checkerboard rug" fetchpriority="high"><figcaption>Mid century Studio, Al Nahda</figcaption></figure>
+        <figure class="b"><img src="../photos/cozy-1-neon-cinema.jpg" width="1050" height="1400" alt="Cozy Home lit in blue neon, with the loft bed above the cinema screen"><figcaption>Cozy Home, cinema loft</figcaption></figure>
+        <figure class="c"><img src="../photos/orange-1-living.jpg" width="1050" height="1400" alt="Living room of the Orange Suite with a white cinema sofa and orange touches"><figcaption>Orange Suite, Al Ajawid</figcaption></figure>
+      </div>
+    </div>
+  </header>
+
+  <section class="sec" id="why" aria-labelledby="why-h">
+    <div class="wrap why">
+      <div class="sec-head reveal">
+        <p class="kicker">Why this page exists</p>
+        <h2 id="why-h">You saw it in a post.<br> Booking it should take a minute.</h2>
+        <p>Most guests find an sh.apartment home in a reel, a TikTok or a friend's WhatsApp message. Then they are sent into an app, past other listings, to a checkout where the platform takes its cut.</p>
+      </div>
+      <div class="why-solution reveal">
+        <h3>This page goes straight to the apartment you saw</h3>
+        <ul class="ticks">
+          <li><svg class="i-24" aria-hidden="true"><use href="#i-check-circle"/></svg><span>Real photos, real ratings and the total for your dates before you commit</span></li>
+          <li><svg class="i-24" aria-hidden="true"><use href="#i-check-circle"/></svg><span>One calendar shared with Airbnb, so a free night here is really free</span></li>
+          <li><svg class="i-24" aria-hidden="true"><use href="#i-check-circle"/></svg><span>A short stay contract you sign on your phone</span></li>
+          <li><svg class="i-24" aria-hidden="true"><use href="#i-check-circle"/></svg><span>Your door code on WhatsApp once the hosts confirm</span></li>
+        </ul>
+        <p class="aside"><svg class="i star" aria-hidden="true"><use href="#i-star-fill"/></svg><span><b class="num">4.83</b> from <b class="num">517</b> reviews on the same Airbnb listings.</span><a class="link" href="#reviews">See the ratings</a></p>
+      </div>
+    </div>
+  </section>
+  <section class="sec sec-white" id="apartments" data-section="apartments" aria-labelledby="apts-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">The apartments</p>
+        <h2 id="apts-h">Seven apartments in<br> four parts of Jeddah</h2>
+        <p>Three share a building on King Road near the Corniche, one is on Madinah Road, and three are in the quieter south east near Park Square.</p>
+      </div>
+      <div class="filters reveal">
+        <div class="chips" role="group" aria-label="Filter by area">
+          <button class="chip" type="button" data-area="all" aria-pressed="true">All areas</button>
+          <button class="chip" type="button" data-area="King Road" aria-pressed="false">King Road</button>
+          <button class="chip" type="button" data-area="Madinah Road" aria-pressed="false">Madinah Road</button>
+          <button class="chip" type="button" data-area="Al Ajawid" aria-pressed="false">Al Ajawid</button>
+          <button class="chip" type="button" data-area="Prince Fawaz" aria-pressed="false">Prince Fawaz</button>
+        </div>
+        <div class="chips" role="group" aria-label="Filter by size">
+          <button class="chip" type="button" data-bed="0" aria-pressed="true">Any size</button>
+          <button class="chip" type="button" data-bed="1" aria-pressed="false">Studio or 1 bedroom</button>
+          <button class="chip" type="button" data-bed="2" aria-pressed="false">2 bedrooms</button>
+          <button class="chip" type="button" data-bed="3" aria-pressed="false">3 bedrooms</button>
+        </div>
+        <p class="count" id="apt-count" aria-live="polite">Showing <span class="num">7</span> of <span class="num">7</span></p>
+      </div>
+      <div class="cards featured" id="cards"></div>
+      <div class="empty" id="empty" hidden>
+        <svg class="i-24" aria-hidden="true"><use href="#i-house-line"/></svg>
+        <h3>No apartment matches both filters</h3>
+        <p>The larger homes are in Al Ajawid and Prince Fawaz, and the studio and suites are on King Road. Show all seven, or tell the hosts how many of you are coming.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" type="button" id="clear-filters">Show all seven apartments</button>
+          <a class="link t-sm" href="https://wa.me/966504895569?text=Hello%20sh.apartment%2C%20which%20apartment%20fits%20our%20group%3F" target="_blank" rel="noopener">Ask the hosts on WhatsApp<svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sec" id="benefits" aria-labelledby="benefits-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">Why book direct</p>
+        <h2 id="benefits-h">Same apartment, fewer steps,<br> nothing added at checkout</h2>
+      </div>
+      <ul class="benefits reveal">
+        <li>
+          <hr>
+          <svg class="i-24" aria-hidden="true"><use href="#i-hand-coins"/></svg>
+          <h3>Pay the nightly rate and nothing on top</h3>
+          <p>No platform takes a cut, so direct prices are lower. The total you see before you sign is the total you pay.</p>
+        </li>
+        <li>
+          <hr>
+          <svg class="i-24" aria-hidden="true"><use href="#i-lock-key"/></svg>
+          <h3>Let yourself in any time after 4 pm</h3>
+          <p>Every apartment has a smart lock. Your code arrives on WhatsApp before you land, so a late flight is never a problem.</p>
+        </li>
+        <li>
+          <hr>
+          <svg class="i-24" aria-hidden="true"><use href="#i-calendar-check"/></svg>
+          <h3>The same seven listings, the same calendar</h3>
+          <p>Each apartment is on Airbnb with its reviews. The calendars are synced, so a night booked there is already crossed out here.</p>
+          <a class="link" href="#reviews">See the 517 reviews<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </li>
+        <li>
+          <hr>
+          <svg class="i-24" aria-hidden="true"><use href="#i-chat-circle-text"/></svg>
+          <h3>Talk to the hosts, not a call centre</h3>
+          <p>Sultan and Hussam answer on WhatsApp themselves, before you book and during your stay. Sultan is an Airbnb Superhost.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="tagline" aria-label="The sh.apartment promise in one line">
+    <div class="wrap">
+      <p class="tag-text" id="tagline" data-lines="Seven homes in Jeddah,|booked with one signature,|with nothing added on top.">Seven homes in Jeddah, booked with one signature, with nothing added on top.</p>
+      <p class="tag-by"><svg class="i" aria-hidden="true"><use href="#i-house-line"/></svg>sh.apartment, your stay, our priority</p>
+    </div>
+  </section>
+  <section class="sec sec-white" id="how" data-section="how" aria-labelledby="how-h">
+    <div class="wrap how">
+      <div class="how-copy">
+        <div class="sec-head reveal">
+          <p class="kicker">How it works</p>
+          <h2 id="how-h">Booked in three steps,<br> all from your phone</h2>
+        </div>
+        <ol class="how-steps reveal">
+          <li><span class="n num" aria-hidden="true">1</span><div><h3>Pick an apartment and your dates</h3><p>The calendar is synced with Airbnb, so booked nights are already crossed out. You see the total straight away.</p></div></li>
+          <li><span class="n num" aria-hidden="true">2</span><div><h3>Sign the stay contract on your phone</h3><p>Add your name, your ID number and a signature with your finger. Your dates are held right away.</p></div></li>
+          <li><span class="n num" aria-hidden="true">3</span><div><h3>Confirm on WhatsApp</h3><p>The hosts confirm and send the payment details. Once you pay, your door code arrives before you do.</p></div></li>
+        </ol>
+      </div>
+      <figure class="how-photo reveal">
+        <img src="../photos/orange-7-smart-lock.jpg" width="798" height="1400" alt="The lit keypad of the smart lock on the Orange Suite door at night">
+        <figcaption>The smart lock at Orange Suite. Your own code opens it from <span class="num">4:00 pm</span>.</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="sec" id="reviews" data-section="reviews" aria-labelledby="reviews-h">
+    <div class="wrap">
+      <div class="proof-top">
+        <div class="sec-head reveal">
+          <p class="kicker">Reviews</p>
+          <h2 id="reviews-h">Rated 4.83 from<br> 517 Airbnb reviews</h2>
+          <p>These are the ratings guests left on each apartment's Airbnb listing. Read the reviews there, then book here.</p>
+        </div>
+        <dl class="stats reveal">
+          <div><dt>Average across the seven</dt><dd class="num">4.83</dd></div>
+          <div><dt>Reviews on Airbnb</dt><dd class="num">517</dd></div>
+          <div><dt>Highest rated, Luxury Suite</dt><dd class="num">4.93</dd></div>
+          <div><dt>Sultan, host of four homes</dt><dd class="word">Superhost</dd></div>
+        </dl>
+      </div>
+      <div class="table-wrap reveal">
+        <table class="rtable">
+          <caption>Ratings by apartment</caption>
+          <thead><tr><th scope="col">Apartment</th><th scope="col">Area</th><th scope="col">Host</th><th scope="col" class="r">Rating</th><th scope="col" class="r">Reviews</th><th scope="col"><span class="muted">Source</span></th></tr></thead>
+          <tbody id="rt-body"></tbody>
+        </table>
+      </div>
+      <p class="proof-note">Ratings as listed on Airbnb in October 2026. We do not write or edit reviews on this page.</p>
+    </div>
+  </section>
+  <section class="sec sec-white" id="faq" data-section="faq" aria-labelledby="faq-h">
+    <div class="wrap faq">
+      <div class="faq-side reveal">
+        <p class="kicker">FAQ</p>
+        <h2 id="faq-h">Questions before<br> you book</h2>
+        <p>Anything else, ask the hosts on WhatsApp before you book.</p>
+        <a class="btn btn-ghost" href="https://wa.me/966504895569?text=Hello%20sh.apartment%2C%20I%20have%20a%20question%20before%20I%20book." target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg>Ask on WhatsApp</a>
+        <p class="wa-line"><span class="num tel" id="wa-num">+966 50 489 5569</span><button class="link" type="button" data-copy="+966504895569" data-target="wa-num"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg><span data-label>Copy number</span></button></p>
+      </div>
+      <div class="faq-list reveal">
+          <details class="qa"><summary>How do I get in?<svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Every apartment has a smart lock. Once the hosts confirm and you pay, your own door code arrives on WhatsApp. Check in is from 4:00 pm, at any hour after that, with no key handover.</p></details>
+          <details class="qa"><summary>Is it the same apartment as on Airbnb?<svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Yes. All seven apartments are listed on Airbnb by the same hosts, Sultan and Hussam. Each one links to its listing, so you can check the photos and reviews there first.</p></details>
+          <details class="qa"><summary>Why is booking direct cheaper?<svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Airbnb keeps a fee of around 15.5% of every booking. Here there is no platform in the middle, so the hosts can price lower and there is no service fee.</p></details>
+          <details class="qa"><summary>When do I pay?<svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Only after the hosts confirm your dates. Signing the contract holds the dates. The hosts then message you on WhatsApp with the total and how to pay.</p></details>
+          <details class="qa"><summary>What ID do you need?<svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>A national ID, Iqama or passport number for the main guest, written into the stay contract. It is used only to create the contract and is not stored on this site.</p></details>
+          <details class="qa"><summary>What are the check in and check out times?<svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Check in from 4:00 pm and check out by 12:00 pm. A late check out depends on the next booking, so ask the hosts on WhatsApp.</p></details>
+          <details class="qa"><summary>Can I smoke inside?<svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>No. Smoking of any kind is not allowed inside, including vapes and shisha, and charcoal is not allowed either.</p></details>
+          <details class="qa"><summary>Are pets allowed?<svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Only with the hosts&#x27; approval before you book. Ask on WhatsApp and say what pet it is.</p></details>
+          <details class="qa"><summary>Which apartment suits a family?<svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Prince Fawaz Home sleeps 6, with a kids room, a high chair and a baby cot. Al Ajawid House has three bedrooms for up to 6 guests.</p></details>
+          <details class="qa"><summary>How far is the airport?<svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>About 15 minutes by car from Al Nahda and Madinah Road, and about 35 minutes from Al Ajawid and Prince Fawaz, depending on traffic.</p></details>
+      </div>
+    </div>
+  </section>
+  <section class="sec" id="promise" aria-labelledby="promise-h">
+    <div class="wrap">
+      <div class="promise reveal">
+        <div class="promise-head">
+          <svg class="i-24" aria-hidden="true"><use href="#i-shield-check"/></svg>
+          <h2 id="promise-h">Nothing to pay until<br> the hosts confirm</h2>
+          <p>Signing holds your dates. The hosts then confirm on WhatsApp and send the payment details. If they cannot confirm, the hold is released and you have paid nothing.</p>
+        </div>
+        <ul class="ticks">
+          <li><svg class="i-24" aria-hidden="true"><use href="#i-check-circle"/></svg><span>The same apartments and calendar as on Airbnb</span></li>
+          <li><svg class="i-24" aria-hidden="true"><use href="#i-check-circle"/></svg><span>A written contract with the house rules, signed by both sides</span></li>
+          <li><svg class="i-24" aria-hidden="true"><use href="#i-check-circle"/></svg><span>Your ID details are used for the contract and not stored on this site</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="sec" id="cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <div class="final reveal">
+        <div class="final-copy">
+          <p class="kicker">Book direct</p>
+          <h2 id="cta-h">Pick your apartment<br> and your dates</h2>
+          <p class="lead">Seven homes, one calendar synced with Airbnb, and the hosts a WhatsApp message away.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#book" data-book>Check dates and book direct<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <span class="reassure"><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg>Nothing to pay until the hosts confirm</span>
+          </div>
+          <p class="proof">
+            <span><svg class="i star" aria-hidden="true"><use href="#i-star-fill"/></svg><b class="num">4.83</b> from <b class="num">517</b> Airbnb reviews</span>
+            <span><svg class="i" aria-hidden="true"><use href="#i-seal-check"/></svg>Sultan is an Airbnb Superhost</span>
+          </p>
+        </div>
+        <figure class="final-photo">
+          <img src="../photos/suite-3-bedroom-massage.jpg" width="1400" height="931" alt="Bedroom of the Luxury Suite with a padded bed and a massage chair">
+          <figcaption>Luxury Suite, Al Nahda</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="site-footer">
+  <div class="wrap">
+    <hr>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top" aria-label="sh.apartment, back to the top">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 12 5.5l8 7" fill="none" stroke="#F59A1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="9.5" y="13" width="2" height="2" rx="0.5" fill="#F59A1E"/><rect x="12.5" y="13" width="2" height="2" rx="0.5" fill="#F59A1E"/><rect x="9.5" y="16" width="2" height="2" rx="0.5" fill="#F59A1E"/><rect x="12.5" y="16" width="2" height="2" rx="0.5" fill="#F59A1E"/></svg>
+          <span><b>sh.</b>apartment</span>
+        </a>
+        <p>Furnished, self check in apartments in Jeddah, hosted by Sultan and Hussam.</p>
+        <p class="wa-line"><svg class="i" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg><span class="num tel" id="wa-num-2">+966 50 489 5569</span><button class="link" type="button" data-copy="+966504895569" data-target="wa-num-2"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg><span data-label>Copy number</span></button></p>
+      </div>
+      <nav class="foot-col" aria-label="Footer">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#apartments">Apartments</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="foot-col">
+        <h3>Legal and contact</h3>
+        <ul>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#terms">Terms of stay</a></li>
+          <li><a href="https://wa.me/966504895569" target="_blank" rel="noopener">WhatsApp the hosts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span class="num">2026</span> sh.apartment, Jeddah, Saudi Arabia</p>
+      <p>Nightly prices on this page are examples.</p>
+    </div>
+  </div>
+</footer>
+
+<section class="nf wrap" id="notfound" hidden aria-labelledby="nf-h">
+  <div class="nf-in">
+    <span class="code" aria-hidden="true">404</span>
+    <h2 id="nf-h">This page is not here</h2>
+    <p class="t-lg ink2">The link may be old or mistyped. All seven apartments are one tap away.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#top">Back to the homepage</a>
+      <a class="link t-sm" href="#apartments">See the apartments</a>
+    </div>
+  </div>
+</section>
+
+<dialog class="sheet" id="book" aria-labelledby="book-title">
+  <div class="sheet-in">
+    <div class="sheet-head">
+      <div>
+        <p class="t-sm muted">Book direct</p>
+        <h2 id="book-title" tabindex="-1">Mid century Studio</h2>
+      </div>
+      <button class="icon-btn" type="button" data-close aria-label="Close booking"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <ol class="steps" aria-label="Booking steps">
+      <li data-st="1" aria-current="step">Dates</li>
+      <li data-st="2">Your details</li>
+      <li data-st="3">Contract</li>
+    </ol>
+    <div class="sheet-body">
+
+      <form class="step" data-step="1" novalidate>
+        <div class="field">
+          <label for="b-apt">Apartment</label>
+          <div class="select-wrap">
+            <select class="select" id="b-apt"></select>
+            <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg>
+          </div>
+          <span class="sync"><span class="dot" aria-hidden="true"></span>Calendar synced with Airbnb, updated 6 min ago</span>
+        </div>
+        <div class="cal" aria-label="Choose your dates">
+          <div class="cal-top">
+            <button class="icon-btn" type="button" id="cal-prev" aria-label="Previous month"><svg class="i" aria-hidden="true"><use href="#i-caret-left"/></svg></button>
+            <p class="t-sm muted" id="cal-hint" aria-live="polite">Pick a check in date</p>
+            <button class="icon-btn" type="button" id="cal-next" aria-label="Next month"><svg class="i" aria-hidden="true"><use href="#i-caret-right"/></svg></button>
+          </div>
+          <div class="cal-months" id="cal-months"></div>
+          <div class="legend"><span><i class="sw" aria-hidden="true"></i>Your stay</span><span><i class="sw r" aria-hidden="true"></i>Nights in between</span><span><span class="strike num">12</span>Booked</span><span>Thu and Fri nights use the weekend rate</span></div>
+        </div>
+        <div class="stay">
+          <div><span class="t-xs muted">Check in</span><span class="t-sm med" id="b-ci">Pick a date</span><span class="t-xs muted">from <span class="num">4:00 pm</span></span></div>
+          <div><span class="t-xs muted">Check out</span><span class="t-sm med" id="b-co">Pick a date</span><span class="t-xs muted">by <span class="num">12:00 pm</span></span></div>
+        </div>
+        <div class="field">
+          <span class="lab" id="g-lab">Guests</span>
+          <div class="stepper" role="group" aria-labelledby="g-lab">
+            <button class="icon-btn" type="button" id="g-minus" aria-label="One guest fewer"><svg class="i" aria-hidden="true"><use href="#i-minus"/></svg></button>
+            <output id="g-out" aria-live="polite">2</output>
+            <button class="icon-btn" type="button" id="g-plus" aria-label="One guest more"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            <span class="t-sm muted" id="g-max">Up to 3 guests</span>
+          </div>
+        </div>
+        <div class="lines" id="b-lines" aria-live="polite"></div>
+        <p class="alert-box" id="e1" role="alert" hidden></p>
+      </form>
+
+      <form class="step" data-step="2" novalidate hidden>
+        <h3 tabindex="-1">Your details for the contract</h3>
+        <div class="grid2">
+          <div class="field"><label for="f-name">Full name, as on your ID</label><input class="input" id="f-name" autocomplete="name" placeholder="Sara Ahmed Alharbi" aria-describedby="f-name-e"><p class="err" id="f-name-e" hidden></p></div>
+          <div class="field"><label for="f-nat">Nationality</label><input class="input" id="f-nat" autocomplete="country-name" placeholder="Saudi" aria-describedby="f-nat-e"><p class="err" id="f-nat-e" hidden></p></div>
+          <div class="field"><label for="f-id">ID, Iqama or passport number</label><input class="input num" id="f-id" autocomplete="off" inputmode="text" placeholder="1012345678" aria-describedby="f-id-h f-id-e"><span class="hint" id="f-id-h">Letters and digits, no spaces</span><p class="err" id="f-id-e" hidden></p></div>
+          <div class="field"><label for="f-tel">Mobile number</label><input class="input num" id="f-tel" type="tel" autocomplete="tel" placeholder="0501234567" aria-describedby="f-tel-h f-tel-e"><span class="hint" id="f-tel-h">A Saudi mobile or an international number with its country code</span><p class="err" id="f-tel-e" hidden></p></div>
+        </div>
+        <div class="field"><label for="f-comp">Companion names <span class="muted">(optional)</span></label><textarea class="textarea" id="f-comp" placeholder="Omar Ahmed, Lina Ahmed"></textarea><span class="hint" id="f-comp-h">You plus 1 companion</span></div>
+        <p class="note-box"><svg class="i" aria-hidden="true"><use href="#i-lock-key"/></svg>Your ID details are used only to create the contract. This site does not store them.</p>
+      </form>
+
+      <form class="step" data-step="3" novalidate hidden>
+        <h3 tabindex="-1">Read, sign and hold your dates</h3>
+        <dl class="summary" id="b-summary"></dl>
+        <div class="field">
+          <span class="lab">House rules</span>
+          <ul class="rules">
+            <li><svg class="i" aria-hidden="true"><use href="#i-x"/></svg>No smoking of any kind inside, including vapes and shisha, and no charcoal</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-x"/></svg>No pets without the hosts' approval</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Keep it quiet and respect the neighbours</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>The booking is confirmed once the agreed rent is paid to the hosts</li>
+          </ul>
+        </div>
+        <details class="terms">
+          <summary>All eight contract terms<svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <ol>
+            <li>You keep the apartment and its contents in good condition, return it as you received it, and pay for any damage or loss during the stay.</li>
+            <li>No smoking of any kind inside, including vapes and shisha, and no charcoal. No pets without the hosts' approval.</li>
+            <li>Keep it quiet and respect the neighbours' privacy and local rules.</li>
+            <li>Check in from 4:00 pm and check out by 12:00 pm. A late check out needs the hosts' approval and may cost extra.</li>
+            <li>The booking is confirmed once the agreed rent is paid. Cancellation and refunds follow what you and the hosts agree.</li>
+            <li>The hosts are not responsible for belongings or money left in the apartment.</li>
+            <li>The hosts may end the stay without a refund if a term or a local rule is broken.</li>
+            <li>Your electronic signature confirms that you read, understood and accept every term.</li>
+          </ol>
+        </details>
+        <div class="field">
+          <div class="cal-top"><span class="lab" id="sig-lab">Your signature</span><button class="link t-sm" type="button" id="sig-clear">Clear signature</button></div>
+          <div class="sig-wrap"><canvas id="sig" aria-labelledby="sig-lab" role="img"></canvas><span class="base" aria-hidden="true"></span><span class="ph" id="sig-ph">Sign here with your finger or mouse</span></div>
+          <p class="err" id="sig-e" hidden></p>
+        </div>
+        <label class="check"><input type="checkbox" id="f-agree" aria-describedby="agree-e"><span>I read the contract terms and the house rules, and my details are correct.</span></label>
+        <p class="err" id="agree-e" hidden></p>
+      </form>
+
+      <div class="step" data-step="hold" hidden aria-label="Holding your dates">
+        <div class="skeleton" style="height:160px"></div>
+        <div class="skeleton" style="height:24px;width:60%"></div>
+        <div class="skeleton" style="height:96px"></div>
+      </div>
+
+      <div class="step" data-step="done" hidden>
+        <div class="done-card">
+          <span class="tick"><svg class="i-24" aria-hidden="true"><use href="#i-check"/></svg></span>
+          <h3 tabindex="-1">Your dates are held</h3>
+          <p class="t-sm ink2">Contract <b class="num" id="d-no">SH 2611 0427</b>. The hosts confirm on WhatsApp, then send the payment details.</p>
+        </div>
+        <ol class="next">
+          <li><span><b>Send the contract to the hosts on WhatsApp.</b> The message below is ready.</span></li>
+          <li><span><b>The hosts confirm your dates</b> and tell you how to pay. Nothing is charged before that.</span></li>
+          <li><span><b>Your door code arrives on WhatsApp</b> before check in at <span class="num">4:00 pm</span>.</span></li>
+        </ol>
+        <div class="cta-row">
+          <a class="btn btn-wa" id="d-wa" href="https://wa.me/966504895569" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg>Send on WhatsApp</a>
+          <button class="btn btn-ghost" type="button" id="d-pdf"><svg class="i" aria-hidden="true"><use href="#i-receipt"/></svg>Download contract PDF</button>
+        </div>
+        <p class="note-box" id="d-pdf-note" role="status" hidden><svg class="i" aria-hidden="true"><use href="#i-info"/></svg>On the live site this saves the signed contract as a PDF. This concept shows the step only.</p>
+        <p class="t-sm muted">If WhatsApp does not open, message <span class="num tel">+966 50 489 5569</span> with your contract number.</p>
+      </div>
+
+    </div>
+    <div class="sheet-foot">
+      <div class="sum"><span class="t-base semi num" id="f-total">SAR 0</span><span class="t-xs muted" id="f-meta">Pick your dates</span></div>
+      <div class="actions">
+        <button class="btn btn-ghost" type="button" id="b-back" hidden>Back</button>
+        <button class="btn btn-primary" type="button" id="b-next">Continue</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="doc" id="privacy" aria-labelledby="privacy-h">
+  <div class="doc-in">
+    <div class="cal-top"><h2 id="privacy-h">Privacy</h2><button class="icon-btn" type="button" data-close aria-label="Close privacy"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+    <p>We collect only what the stay contract needs: your full name, nationality, ID, Iqama or passport number, mobile number, and the names of any companions you add.</p>
+    <p>These details are used to create the contract and to reach you on WhatsApp about your stay. This site does not store your ID details and sets no tracking cookies.</p>
+    <p>To correct or remove anything you sent, message the hosts on WhatsApp at <span class="num tel">+966 50 489 5569</span>.</p>
+  </div>
+</dialog>
+
+<dialog class="doc" id="terms" aria-labelledby="terms-h">
+  <div class="doc-in">
+    <div class="cal-top"><h2 id="terms-h">Terms of stay</h2><button class="icon-btn" type="button" data-close aria-label="Close terms"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+    <p>Every direct booking comes with a short stay contract. These are its terms.</p>
+    <ol>
+      <li>You keep the apartment and its contents in good condition, return it as you received it, and pay for any damage or loss during the stay.</li>
+      <li>No smoking of any kind inside, including vapes and shisha, and no charcoal. No pets without the hosts' approval.</li>
+      <li>Keep it quiet and respect the neighbours' privacy and local rules.</li>
+      <li>Check in from 4:00 pm and check out by 12:00 pm. A late check out needs the hosts' approval and may cost extra.</li>
+      <li>The booking is confirmed once the agreed rent is paid. Cancellation and refunds follow what you and the hosts agree.</li>
+      <li>The hosts are not responsible for belongings or money left in the apartment.</li>
+      <li>The hosts may end the stay without a refund if a term or a local rule is broken.</li>
+      <li>Your electronic signature confirms that you read, understood and accept every term.</li>
+    </ol>
+  </div>
+</dialog>
+
+<a class="concepts-pill" href="../index.html"><svg class="i" aria-hidden="true"><use href="#i-arrow-left"/></svg>All concepts</a>
+
+<script>
+(() => {
+  /* ---------- Data (shared/apartments.json, English fields; prices are placeholders) ---------- */
+  const APTS = [
+    { id: 'midcentury', name: 'Mid century Studio', area: 'Al Nahda', street: 'King Road', group: 'King Road', type: 'Studio', bedrooms: 1, beds: 1, baths: 1, guests: 3, rating: 4.90, reviews: 105, host: 'Sultan', superhost: true, price: 349, weekend: 419, airbnb: 'https://www.airbnb.com/rooms/1548537821036118490', photo: '../photos/midcentury-1-living.jpg', w: 1400, h: 931, alt: 'Living room of the Mid century Studio, with a loft bed above a checkerboard rug', hl: ['Warm jacuzzi', 'Sofa that turns into a cinema seat'] },
+    { id: 'cozy', name: 'Cozy Home', area: 'Al Nahda', street: 'King Road', group: 'King Road', type: '1 bedroom', bedrooms: 1, beds: 1, baths: 1, guests: 3, rating: 4.90, reviews: 86, host: 'Sultan', superhost: true, price: 329, weekend: 399, airbnb: 'https://www.airbnb.com/rooms/1545433977273675752', photo: '../photos/cozy-1-neon-cinema.jpg', w: 1050, h: 1400, alt: 'Cozy Home lit in blue neon, with the loft bed above the cinema screen', hl: ['Sofa that turns into a cinema bed', 'Full kitchen and washing machine'] },
+    { id: 'suite', name: 'Luxury Suite', area: 'Al Nahda', street: 'King Road', group: 'King Road', type: '1 bedroom', bedrooms: 1, beds: 1, baths: 1, guests: 4, rating: 4.93, reviews: 69, host: 'Sultan', superhost: true, price: 379, weekend: 449, airbnb: 'https://www.airbnb.com/rooms/1545416629708956462', photo: '../photos/suite-1-living.jpg', w: 1400, h: 931, alt: 'Living room of the Luxury Suite with a large screen and a corner sofa', hl: ['Premium massage chair', 'Work desk'] },
+    { id: 'ajawid', name: 'Al Ajawid House', area: 'Al Ajawid', street: 'South east Jeddah', group: 'Al Ajawid', type: '3 bedrooms', bedrooms: 3, beds: 5, baths: 2, guests: 6, rating: 4.85, reviews: 26, host: 'Hussam', superhost: false, price: 649, weekend: 749, airbnb: 'https://www.airbnb.com/rooms/1548398523561225848', photo: '../photos/ajawid-1-living.jpg', w: 1400, h: 1050, alt: 'Living room of the Al Ajawid House with grey sofas and yellow cushions', hl: ['Three large bedrooms', 'Walk to the mosque and Park Square'] },
+    { id: 'madinah', name: 'Madinah Road Apartment', area: 'Madinah Road', street: 'Behind Al Juffali Mercedes', group: 'Madinah Road', type: '2 bedrooms', bedrooms: 2, beds: 3, baths: 2, guests: 4, rating: 4.69, reviews: 144, host: 'Sultan', superhost: true, price: 429, weekend: 499, airbnb: 'https://www.airbnb.com/rooms/1308042141503902547', photo: '../photos/madinah-1-living.jpg', w: 1400, h: 1047, alt: 'Living room of the Madinah Road Apartment with a grey corner sofa', hl: ['Near the airport, malls and waterfront', 'Most reviewed of the seven'] },
+    { id: 'orange', name: 'Orange Suite', area: 'Al Ajawid', street: 'South east Jeddah', group: 'Al Ajawid', type: '1 bedroom', bedrooms: 1, beds: 1, baths: 1, guests: 3, rating: 4.87, reviews: 68, host: 'Hussam', superhost: false, price: 319, weekend: 389, airbnb: 'https://www.airbnb.com/rooms/1557132730241179243', photo: '../photos/orange-1-living.jpg', w: 1050, h: 1400, alt: 'Living room of the Orange Suite with a white cinema sofa and orange touches', hl: ['Cinema sofa facing a 65 inch screen', 'Smart lock self check in'] },
+    { id: 'fawaz', name: 'Prince Fawaz Home', area: 'Prince Fawaz', street: 'South east Jeddah', group: 'Prince Fawaz', type: '2 bedrooms', bedrooms: 2, beds: 6, baths: 2, guests: 6, rating: 4.63, reviews: 19, host: 'Hussam', superhost: false, price: 489, weekend: 569, airbnb: 'https://www.airbnb.com/rooms/1664751285940407075', photo: '../photos/fawaz-1-living.jpg', w: 1400, h: 931, alt: 'Living room of the Prince Fawaz Home with mustard sofas', hl: ['Kids room with a loft bed', 'High chair and baby cot'] }
+  ];
+  const byId = Object.fromEntries(APTS.map(a => [a.id, a]));
+  const WA = '966504895569';
+  window.SH = { APTS, byId };
+
+  /* ---------- Helpers ---------- */
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const money = n => 'SAR ' + n.toLocaleString('en-US');
+  const today = (() => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; })();
+  const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+  const iso = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  const fmtShort = new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+  const fmtLong = new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+  const fmtMonth = new Intl.DateTimeFormat('en-GB', { month: 'long', year: 'numeric' });
+  const fmtAria = new Intl.DateTimeFormat('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  const isWeekend = d => d.getDay() === 4 || d.getDay() === 5;
+  const plural = (n, one, many) => n + ' ' + (n === 1 ? one : many);
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Simulated synced calendars (booked nights per apartment) ---------- */
+  const rng = seed => { let s = seed >>> 0; return () => (s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296; };
+  const BOOKED = {};
+  APTS.forEach((a, i) => {
+    const r = rng(97 + i * 131), set = new Set();
+    let c = addDays(today, 1 + Math.floor(r() * 3));
+    const end = addDays(today, 180);
+    while (c < end) {
+      const len = 1 + Math.floor(r() * 3);
+      for (let k = 0; k < len; k++) set.add(iso(addDays(c, k)));
+      c = addDays(c, len + 3 + Math.floor(r() * 6));
+    }
+    BOOKED[a.id] = set;
+  });
+  const isBooked = (id, d) => BOOKED[id].has(iso(d));
+  const rangeFree = (id, ci, co) => { for (let d = new Date(ci); d < co; d = addDays(d, 1)) if (isBooked(id, d)) return false; return true; };
+  const firstWindow = (id, from, n = 3) => { for (let s = new Date(from), k = 0; k < 120; k++, s = addDays(s, 1)) { if (rangeFree(id, s, addDays(s, n))) return [s, addDays(s, n)]; } return [null, null]; };
+  const quote = (a, ci, co) => {
+    let wk = 0, we = 0;
+    for (let d = new Date(ci); d < co; d = addDays(d, 1)) isWeekend(d) ? we++ : wk++;
+    return { wk, we, nights: wk + we, total: wk * a.price + we * a.weekend };
+  };
+  window.SH.BOOKED = BOOKED;
+
+  /* ---------- Nav: scroll spy and mobile menu ---------- */
+  const toggle = $('.toggle'), menu = $('#menu');
+  const setMenu = open => {
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.classList.toggle('open', open);
+    menu.inert = !open;
+    menu.setAttribute('aria-hidden', String(!open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+  toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+  menu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('open')) setMenu(false); });
+  addEventListener('resize', () => { if (innerWidth >= 960 && menu.classList.contains('open')) setMenu(false); });
+
+  const setCurrent = id => $$('[data-spy]').forEach(a => a.setAttribute('aria-current', String(a.dataset.spy === id)));
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) setCurrent(en.target.dataset.section); });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  window.SH.observeSection = el => spy.observe(el);
+  $$('[data-section]').forEach(el => spy.observe(el));
+
+  /* ---------- Scroll reveal: complete at rest, armed on the first scroll ---------- */
+  const revealIO = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); revealIO.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  addEventListener('scroll', () => {
+    $$('.reveal').forEach(el => {
+      if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('pre'); revealIO.observe(el); }
+    });
+  }, { passive: true, once: true });
+
+  /* ---------- Copy buttons ---------- */
+  document.addEventListener('click', async e => {
+    const b = e.target.closest('[data-copy]');
+    if (!b) return;
+    const label = b.querySelector('[data-label]') || b;
+    const old = label.textContent;
+    try { await navigator.clipboard.writeText(b.dataset.copy); label.textContent = 'Copied'; }
+    catch { const t = document.getElementById(b.dataset.target); if (t) { const r = document.createRange(); r.selectNodeContents(t); const s = getSelection(); s.removeAllRanges(); s.addRange(r); } label.textContent = 'Selected, press copy'; }
+    setTimeout(() => { label.textContent = old; }, 2000);
+  });
+
+  /* ---------- Booking sheet ---------- */
+  const dlg = $('#book');
+  const S = { apt: APTS[0].id, ci: null, co: null, guests: 2, step: 1, view: null, loading: false };
+  const aptSel = $('#b-apt');
+  aptSel.innerHTML = APTS.map(a => `<option value="${a.id}">${a.name}, ${a.area} · from ${money(a.price)}</option>`).join('');
+  const wide = matchMedia('(min-width: 640px)');
+
+  const resetDates = () => {
+    const [ci, co] = firstWindow(S.apt, addDays(today, 7), 3);
+    S.ci = ci; S.co = co;
+    S.view = new Date((ci || today).getFullYear(), (ci || today).getMonth(), 1);
+    S.guests = Math.min(Math.max(S.guests, 1), byId[S.apt].guests);
+  };
+
+  function renderCalendar() {
+    const box = $('#cal-months');
+    if (S.loading) {
+      box.innerHTML = Array.from({ length: wide.matches ? 2 : 1 }, () => `<div class="month"><div class="skeleton" style="height:16px;width:96px;margin-bottom:8px"></div><div class="skeleton" style="height:216px;max-width:304px"></div></div>`).join('');
+      return;
+    }
+    const months = wide.matches ? 2 : 1, a = byId[S.apt];
+    let html = '';
+    for (let m = 0; m < months; m++) {
+      const first = new Date(S.view.getFullYear(), S.view.getMonth() + m, 1);
+      const lead = first.getDay();
+      const days = new Date(first.getFullYear(), first.getMonth() + 1, 0).getDate();
+      html += `<div class="month"><h4>${fmtMonth.format(first)}</h4><div class="wk" aria-hidden="true">${['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(x => `<span>${x}</span>`).join('')}</div><div class="days">`;
+      for (let k = 0; k < lead; k++) html += '<span></span>';
+      for (let n = 1; n <= days; n++) {
+        const d = new Date(first.getFullYear(), first.getMonth(), n);
+        const past = d < today, booked = isBooked(a.id, d);
+        const pickingOut = S.ci && !S.co && d > S.ci;
+        const canOut = pickingOut && rangeFree(a.id, S.ci, d);
+        const disabled = past || (booked && !canOut);
+        const sel = (S.ci && +d === +S.ci) || (S.co && +d === +S.co);
+        const inRange = S.ci && S.co && d > S.ci && d < S.co;
+        const cls = ['d', past ? 'past' : '', booked ? 'booked' : '', sel ? 'sel' : '', inRange ? 'range' : '', +d === +today ? 'today' : ''].join(' ');
+        const state = booked ? (canOut ? 'booked night, available as check out' : 'booked') : past ? 'past' : 'available';
+        html += `<button type="button" class="${cls}" data-day="${iso(d)}" ${disabled ? 'disabled' : ''} aria-pressed="${sel ? 'true' : 'false'}" aria-label="${fmtAria.format(d)}, ${state}"${booked ? ' title="Booked"' : ''}>${n}</button>`;
+      }
+      html += '</div></div>';
+    }
+    box.innerHTML = html;
+    const min = new Date(today.getFullYear(), today.getMonth(), 1);
+    $('#cal-prev').disabled = S.view <= min;
+    $('#cal-hint').textContent = !S.ci ? 'Pick a check in date' : !S.co ? 'Now pick a check out date' : plural(quote(a, S.ci, S.co).nights, 'night', 'nights') + ' selected';
+  }
+
+  function renderStep1() {
+    const a = byId[S.apt];
+    $('#book-title').textContent = a.name;
+    aptSel.value = a.id;
+    $('#b-ci').textContent = S.ci ? fmtShort.format(S.ci) : 'Pick a date';
+    $('#b-co').textContent = S.co ? fmtShort.format(S.co) : 'Pick a date';
+    $('#g-out').textContent = S.guests;
+    $('#g-max').textContent = 'Up to ' + plural(a.guests, 'guest', 'guests');
+    $('#g-minus').disabled = S.guests <= 1;
+    $('#g-plus').disabled = S.guests >= a.guests;
+    const lines = $('#b-lines');
+    if (S.ci && S.co && !S.loading) {
+      const q = quote(a, S.ci, S.co);
+      lines.innerHTML =
+        (q.wk ? `<div><span>${plural(q.wk, 'weeknight', 'weeknights')} × <span class="num">${money(a.price)}</span></span><span class="num">${money(q.wk * a.price)}</span></div>` : '') +
+        (q.we ? `<div><span>${plural(q.we, 'Thu or Fri night', 'Thu or Fri nights')} × <span class="num">${money(a.weekend)}</span></span><span class="num">${money(q.we * a.weekend)}</span></div>` : '') +
+        `<div><span>Service fee</span><span class="num">SAR 0</span></div><hr><div class="total"><span>Total</span><span class="num">${money(q.total)}</span></div>`;
+    } else if (S.loading) {
+      lines.innerHTML = '<div class="skeleton" style="height:16px"></div><div class="skeleton" style="height:16px;width:70%"></div><div class="skeleton" style="height:24px"></div>';
+    } else {
+      lines.innerHTML = '<p class="muted">Pick your dates to see the total.</p>';
+    }
+    renderCalendar();
+    renderFoot();
+  }
+
+  function renderFoot() {
+    const a = byId[S.apt];
+    if (S.ci && S.co) {
+      const q = quote(a, S.ci, S.co);
+      $('#f-total').textContent = money(q.total);
+      $('#f-meta').textContent = plural(q.nights, 'night', 'nights') + ' · ' + plural(S.guests, 'guest', 'guests') + ' · no service fee';
+    } else { $('#f-total').textContent = 'SAR 0'; $('#f-meta').textContent = 'Pick your dates'; }
+    $('#b-back').hidden = S.step === 1 || S.step === 'done' || S.step === 'hold';
+    const next = $('#b-next');
+    next.disabled = S.step === 'hold';
+    next.textContent = S.step === 1 ? 'Continue' : S.step === 2 ? 'Continue to contract' : S.step === 3 ? 'Sign and hold my dates' : S.step === 'hold' ? 'Holding your dates' : 'Done';
+    $$('.steps li').forEach(li => {
+      const n = +li.dataset.st, cur = S.step === 'done' || S.step === 'hold' ? 4 : S.step;
+      li.classList.toggle('done', n < cur);
+      if (n === cur) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+    });
+  }
+
+  function showStep(step) {
+    S.step = step;
+    $$('.sheet-body [data-step]').forEach(el => { el.hidden = String(el.dataset.step) !== String(step); });
+    $('.sheet-body').scrollTop = 0;
+    if (step === 1) renderStep1();
+    if (step === 2) { const a = byId[S.apt]; $('#f-comp-h').textContent = S.guests > 1 ? 'You plus ' + plural(S.guests - 1, 'companion', 'companions') : 'Just you'; }
+    if (step === 3) { renderSummary(); sizeSig(); }
+    renderFoot();
+    const h = $(`.sheet-body [data-step="${step}"] h3`);
+    if (h) h.focus({ preventScroll: true });
+  }
+
+  function loadApt(id) {
+    S.apt = id; S.loading = true; resetDates(); renderStep1();
+    setTimeout(() => { S.loading = false; renderStep1(); }, 600);
+  }
+
+  window.openBooking = id => {
+    const target = id && byId[id] ? id : S.apt;
+    if (target !== S.apt || !S.ci) { S.apt = target; resetDates(); }
+    $('#e1').hidden = true;
+    showStep(1);
+    if (!dlg.open) dlg.showModal();
+    $('#book-title').focus({ preventScroll: true });
+  };
+
+  aptSel.addEventListener('change', () => { $('#e1').hidden = true; loadApt(aptSel.value); });
+  $('#cal-prev').addEventListener('click', () => { S.view = new Date(S.view.getFullYear(), S.view.getMonth() - 1, 1); renderCalendar(); });
+  $('#cal-next').addEventListener('click', () => { S.view = new Date(S.view.getFullYear(), S.view.getMonth() + 1, 1); renderCalendar(); });
+  wide.addEventListener('change', () => { if (dlg.open && S.step === 1) renderCalendar(); });
+  $('#g-minus').addEventListener('click', () => { S.guests = Math.max(1, S.guests - 1); renderStep1(); });
+  $('#g-plus').addEventListener('click', () => { S.guests = Math.min(byId[S.apt].guests, S.guests + 1); renderStep1(); });
+  $('#cal-months').addEventListener('click', e => {
+    const b = e.target.closest('[data-day]');
+    if (!b || b.disabled) return;
+    const [y, m, dd] = b.dataset.day.split('-').map(Number);
+    const d = new Date(y, m - 1, dd), a = byId[S.apt], err = $('#e1');
+    err.hidden = true;
+    if (!S.ci || S.co || d <= S.ci) {
+      if (isBooked(a.id, d)) return;
+      S.ci = d; S.co = null;
+    } else if (!rangeFree(a.id, S.ci, d)) {
+      err.innerHTML = '<svg class="i" aria-hidden="true"><use href="#i-warning-circle"/></svg>A night between those dates is already booked. Pick a check out date before the first crossed out night.';
+      err.hidden = false; return;
+    } else if ((d - S.ci) / 86400000 > 28) {
+      err.innerHTML = '<svg class="i" aria-hidden="true"><use href="#i-warning-circle"/></svg>Direct stays are up to 28 nights. For a longer stay, message the hosts on WhatsApp.';
+      err.hidden = false; return;
+    } else { S.co = d; }
+    renderStep1();
+  });
+
+  /* Step 2 validation */
+  const fields = {
+    'f-name': v => v.trim().split(/\s+/).filter(Boolean).length >= 2 ? '' : 'Write your full name as it appears on your ID, first and last name.',
+    'f-nat': v => v.trim().length >= 2 ? '' : 'Enter your nationality.',
+    'f-id': v => /^[A-Za-z0-9]{6,15}$/.test(v.trim()) ? '' : 'Enter your ID, Iqama or passport number in letters and digits, with no spaces.',
+    'f-tel': v => { const t = v.replace(/[\s()]/g, ''); return /^05\d{8}$/.test(t) || /^\+9665\d{8}$/.test(t) || /^\+[1-9]\d{7,14}$/.test(t) ? '' : 'Enter a mobile number like 0501234567, or an international number starting with +.'; }
+  };
+  const checkField = id => {
+    const el = $('#' + id), msg = fields[id](el.value), e = $('#' + id + '-e');
+    el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    e.hidden = !msg;
+    e.innerHTML = msg ? `<svg class="i" aria-hidden="true"><use href="#i-warning-circle"/></svg>${msg}` : '';
+    return !msg;
+  };
+  Object.keys(fields).forEach(id => $('#' + id).addEventListener('blur', () => { if ($('#' + id).value) checkField(id); }));
+
+  /* Step 3: summary, signature, agreement */
+  function renderSummary() {
+    const a = byId[S.apt], q = quote(a, S.ci, S.co);
+    const rows = [
+      ['Apartment', a.name + ', ' + a.area],
+      ['Check in', fmtLong.format(S.ci) + ', from 4:00 pm'],
+      ['Check out', fmtLong.format(S.co) + ', by 12:00 pm'],
+      ['Stay', plural(q.nights, 'night', 'nights') + ', ' + plural(S.guests, 'guest', 'guests')],
+      ['Guest', $('#f-name').value.trim()],
+      ['Mobile', $('#f-tel').value.trim()],
+      ['Total', money(q.total) + ', no service fee']
+    ];
+    $('#b-summary').innerHTML = rows.map(([k, v]) => `<div><dt>${k}</dt><dd${/Total|Mobile/.test(k) ? ' class="num"' : ''}>${v.replace(/</g, '&lt;')}</dd></div>`).join('');
+  }
+  const cv = $('#sig'), ctx = cv.getContext('2d');
+  let inked = false, drawing = false, last = null;
+  function sizeSig() {
+    requestAnimationFrame(() => {
+      const r = cv.getBoundingClientRect(), dpr = devicePixelRatio || 1;
+      if (!r.width) return;
+      cv.width = Math.round(r.width * dpr); cv.height = Math.round(160 * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.lineWidth = 2.5; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#0B0B0B';
+      inked = false; $('#sig-ph').hidden = false;
+    });
+  }
+  const pt = e => { const r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+  cv.addEventListener('pointerdown', e => { drawing = true; last = pt(e); cv.setPointerCapture(e.pointerId); });
+  cv.addEventListener('pointermove', e => {
+    if (!drawing) return;
+    const p = pt(e);
+    ctx.beginPath(); ctx.moveTo(last[0], last[1]); ctx.lineTo(p[0], p[1]); ctx.stroke();
+    last = p; if (!inked) { inked = true; $('#sig-ph').hidden = true; $('#sig-e').hidden = true; }
+  });
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(t => cv.addEventListener(t, () => { drawing = false; }));
+  $('#sig-clear').addEventListener('click', () => { ctx.clearRect(0, 0, cv.width, cv.height); inked = false; $('#sig-ph').hidden = false; });
+  $('#f-agree').addEventListener('change', () => { if ($('#f-agree').checked) $('#agree-e').hidden = true; });
+
+  /* Footer actions */
+  $('#b-back').addEventListener('click', () => showStep(S.step === 3 ? 2 : 1));
+  $('#b-next').addEventListener('click', () => {
+    if (S.step === 1) {
+      if (!S.ci || !S.co) { const e = $('#e1'); e.innerHTML = '<svg class="i" aria-hidden="true"><use href="#i-warning-circle"/></svg>Pick a check in date, then a check out date.'; e.hidden = false; return; }
+      showStep(2);
+    } else if (S.step === 2) {
+      const ok = Object.keys(fields).map(checkField).every(Boolean);
+      if (!ok) { const bad = $('[aria-invalid="true"]', $('[data-step="2"]')); if (bad) bad.focus(); return; }
+      showStep(3);
+    } else if (S.step === 3) {
+      let ok = true;
+      if (!inked) { const e = $('#sig-e'); e.innerHTML = '<svg class="i" aria-hidden="true"><use href="#i-warning-circle"/></svg>Sign in the box with your finger or mouse.'; e.hidden = false; ok = false; }
+      if (!$('#f-agree').checked) { const e = $('#agree-e'); e.innerHTML = '<svg class="i" aria-hidden="true"><use href="#i-warning-circle"/></svg>Tick the box to agree to the contract terms.'; e.hidden = false; ok = false; }
+      if (!ok) return;
+      showStep('hold');
+      setTimeout(finish, 900);
+    } else { dlg.close(); }
+  });
+
+  function finish() {
+    const a = byId[S.apt], q = quote(a, S.ci, S.co);
+    const no = 'SH ' + String(S.ci.getFullYear()).slice(2) + String(S.ci.getMonth() + 1).padStart(2, '0') + ' ' + String(1000 + Math.floor(Math.random() * 9000));
+    $('#d-no').textContent = no;
+    const msg = [
+      'Hello sh.apartment, I signed a direct booking contract.',
+      'Contract: ' + no,
+      'Apartment: ' + a.name + ', ' + a.area,
+      'Check in: ' + fmtLong.format(S.ci) + ' from 4:00 pm',
+      'Check out: ' + fmtLong.format(S.co) + ' by 12:00 pm (' + plural(q.nights, 'night', 'nights') + ')',
+      'Guests: ' + S.guests,
+      'Guest: ' + $('#f-name').value.trim(),
+      'Mobile: ' + $('#f-tel').value.trim(),
+      'Total: ' + money(q.total),
+      'Please confirm the dates and send the payment details.'
+    ].join('\n');
+    $('#d-wa').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+    for (let d = new Date(S.ci); d < S.co; d = addDays(d, 1)) BOOKED[a.id].add(iso(d));
+    $('#d-pdf-note').hidden = true;
+    showStep('done');
+    S.ci = null; S.co = null;
+  }
+  $('#d-pdf').addEventListener('click', () => { $('#d-pdf-note').hidden = false; });
+
+  dlg.addEventListener('close', () => {
+    if (S.step === 'done') { S.step = 1; }
+    if (location.hash === '#book') history.replaceState(null, '', location.pathname + location.search);
+  });
+  $$('[data-close]').forEach(b => b.addEventListener('click', () => b.closest('dialog').close()));
+  $$('dialog.doc').forEach(d => d.addEventListener('close', () => { if (location.hash === '#' + d.id) history.replaceState(null, '', location.pathname + location.search); }));
+  $$('dialog').forEach(d => d.addEventListener('click', e => { if (e.target === d) d.close(); }));
+
+  document.addEventListener('click', e => {
+    const t = e.target.closest('[data-book]');
+    if (!t) return;
+    e.preventDefault();
+    if (menu.classList.contains('open')) setMenu(false);
+    openBooking(t.dataset.book || undefined);
+  });
+
+  /* ---------- Hash routes: #book, #privacy, #terms, branded 404 ---------- */
+  function route() {
+    const h = decodeURIComponent(location.hash.slice(1));
+    const nf = $('#notfound'), main = $('#main'), foot = $('#site-footer');
+    const missing = h === '404' || (h && !document.getElementById(h));
+    nf.hidden = !missing; main.hidden = missing; if (foot) foot.hidden = missing;
+    if (missing) { scrollTo(0, 0); $('#nf-h').setAttribute('tabindex', '-1'); $('#nf-h').focus({ preventScroll: true }); return; }
+    if (h === 'book') { openBooking(); return; }
+    if (h === 'privacy' || h === 'terms') { const d = document.getElementById(h); if (!d.open) d.showModal(); return; }
+    if (h) { const el = document.getElementById(h); if (el) requestAnimationFrame(() => el.scrollIntoView()); }
+  }
+  addEventListener('hashchange', route);
+  window.SH.route = route;
+
+  /* Proof table, sorted by number of reviews */
+  $('#rt-body').innerHTML = [...APTS].sort((x, y) => y.reviews - x.reviews).map(a => `<tr>
+      <td class="nm">${a.name}</td>
+      <td>${a.area}${a.street === 'King Road' ? ', King Road' : ''}</td>
+      <td>${a.host}${a.superhost ? ', Superhost' : ''}</td>
+      <td class="r num"><svg class="i star" aria-hidden="true"><use href="#i-star-fill"/></svg> ${a.rating.toFixed(2)}</td>
+      <td class="r num">${a.reviews}</td>
+      <td><a class="link" href="${a.airbnb}" target="_blank" rel="noopener">Read on Airbnb<svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></td>
+    </tr>`).join('');
+
+  /* No orphans (B1): join the last two words of every text block with a no break space */
+  const NB = '\u00A0';
+  const noOrphans = root => {
+    $$('h1, h2, h3, h4, p, li, figcaption, dt, dd, summary', root).forEach(el => {
+      if (el.closest('#tagline, svg') || el.dataset.nb) return;
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, { acceptNode: n => n.parentElement.closest('svg') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT });
+      const nodes = []; for (let n; (n = walker.nextNode());) if (n.textContent.trim()) nodes.push(n);
+      for (let i = nodes.length - 1; i >= 0; i--) {
+        const t = nodes[i].textContent, trimmed = t.replace(/\s+$/, '');
+        const at = trimmed.search(/\s+\S+$/);
+        if (at > 0 && trimmed.slice(0, at).trim()) { nodes[i].textContent = trimmed.slice(0, at) + NB + trimmed.slice(at).trim() + t.slice(trimmed.length); break; }
+        if (i > 0 && /\s$/.test(nodes[i - 1].textContent) && !/\s/.test(trimmed.trim())) { nodes[i - 1].textContent = nodes[i - 1].textContent.replace(/\s+$/, NB); break; }
+        if (/\s/.test(trimmed.trim())) break;
+      }
+      el.dataset.nb = '1';
+    });
+  };
+  window.SH.noOrphans = noOrphans;
+
+  /* Apartments: cards and filters */
+  const F = { area: 'all', bed: 0 };
+  const facts = a => [a.type === 'Studio' ? 'Studio' : plural(a.bedrooms, 'bedroom', 'bedrooms'), plural(a.beds, 'bed', 'beds'), plural(a.baths, 'bath', 'baths'), 'up to ' + plural(a.guests, 'guest', 'guests')].join(' · ');
+  const card = (a, wideCard) => `<article class="card${wideCard ? ' wide' : ''}">
+      <figure class="card-img"><img src="${a.photo}" width="${a.w}" height="${a.h}" alt="${a.alt}">${a.superhost ? '<span class="badge"><svg class="i" aria-hidden="true"><use href="#i-seal-check"/></svg>Superhost</span>' : ''}</figure>
+      <div class="card-body">
+        <div class="card-row"><h3>${a.name}</h3><span class="rate num"><svg class="i star" aria-hidden="true"><use href="#i-star-fill"/></svg>${a.rating.toFixed(2)} <span class="muted">(${a.reviews})</span></span></div>
+        <p class="card-meta"><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg>${a.area}${a.street === 'King Road' ? ', King Road' : a.id === 'madinah' ? ', behind Al Juffali Mercedes' : ''}</p>
+        <p class="card-facts">${facts(a)}</p>
+        <p class="card-hl">${a.hl.join('. ')}.</p>
+        <hr>
+        <div class="card-foot">
+          <p class="price"><span class="t-xl semi num">${money(a.price)}</span><span class="t-sm muted">a night, <span class="num">${money(a.weekend)}</span> Thu and Fri</span></p>
+          <div class="card-actions"><button class="btn btn-primary" type="button" data-book="${a.id}">Book direct</button><a class="link t-sm" href="${a.airbnb}" target="_blank" rel="noopener">On Airbnb<svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></div>
+        </div>
+      </div>
+    </article>`;
+  function renderCards() {
+    const list = APTS.filter(a => (F.area === 'all' || a.group === F.area) && (!F.bed || a.bedrooms === F.bed));
+    const all = list.length === APTS.length;
+    const box = $('#cards');
+    box.classList.toggle('featured', all);
+    box.innerHTML = list.map(a => card(a, all && (a.id === 'midcentury' || a.id === 'ajawid'))).join('');
+    box.hidden = !list.length;
+    $('#empty').hidden = !!list.length;
+    $('#apt-count').innerHTML = `Showing <span class="num">${list.length}</span> of <span class="num">${APTS.length}</span>`;
+    noOrphans(box);
+  }
+  $$('[data-area]').forEach(b => b.addEventListener('click', () => { F.area = b.dataset.area; $$('[data-area]').forEach(x => x.setAttribute('aria-pressed', String(x === b))); renderCards(); }));
+  $$('[data-bed]').forEach(b => b.addEventListener('click', () => { F.bed = +b.dataset.bed; $$('[data-bed]').forEach(x => x.setAttribute('aria-pressed', String(x === b))); renderCards(); }));
+  $('#clear-filters').addEventListener('click', () => { F.area = 'all'; F.bed = 0; $$('[data-area]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.area === 'all'))); $$('[data-bed]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.bed === '0'))); renderCards(); $('[data-area="all"]').focus(); });
+  renderCards();
+
+  /* Tagline reveal: one rAF throttled scroll listener, words activate in reading order */
+  const tl = $('#tagline');
+  const tLines = tl.dataset.lines.split('|');
+  tl.innerHTML = tLines.map((line, li) => line.trim().split(/\s+/).map((w, i, arr) => `<span class="w${i === arr.length - 1 && li < tLines.length - 1 ? ' eol' : ''}">${w}</span>`).join(' ')).join(' ');
+  const words = $$('.w', tl);
+  let ticking = false;
+  const paintWords = () => {
+    ticking = false;
+    const r = tl.getBoundingClientRect();
+    const start = innerHeight * 0.85, end = innerHeight * 0.3;
+    const p = Math.min(1, Math.max(0, (start - r.top) / (start - end + r.height * 0.5)));
+    const n = Math.round(p * words.length);
+    words.forEach((w, i) => w.classList.toggle('on', i < n));
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(paintWords); } }, { passive: true });
+  paintWords();
+
+
+  noOrphans(document);
+  route();
+})();
+</script>
+</body>
+</html>

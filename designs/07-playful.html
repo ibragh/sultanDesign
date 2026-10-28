@@ -44,7 +44,10 @@ p { margin: 0; text-wrap: pretty; }
 ul, ol { margin: 0; padding: 0; }
 a { color: inherit; }
 button, input, select, textarea { font: inherit; color: inherit; }
-button { cursor: pointer; }
+button { cursor: pointer; padding: 0; }
+i { font-style: normal; }
+b, strong { font-weight: 600; }
+input[type="checkbox"], input[type="radio"] { margin: 0; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .i { width: 20px; height: 20px; flex: none; }
 .i-sm { width: 16px; height: 16px; flex: none; }
@@ -102,10 +105,10 @@ section.band { padding-block: 64px; }
 .logo svg { width: 24px; height: 24px; }
 .logo b { color: var(--orange-ink); font-weight: 600; }
 .nav-links { display: none; align-items: center; gap: 4px; list-style: none; }
-.nav-links a { display: block; padding: 8px 12px; border-radius: 9999px; text-decoration: none; font-size: 14px; line-height: 20px; font-weight: 500; color: var(--muted); transition: background-color 300ms var(--curve), color 300ms var(--curve); }
+.nav-links a { display: block; white-space: nowrap; padding: 8px 12px; border-radius: 9999px; text-decoration: none; font-size: 14px; line-height: 20px; font-weight: 500; color: var(--muted); transition: background-color 300ms var(--curve), color 300ms var(--curve); }
 .nav-links a:hover { background: var(--soft); color: var(--ink); }
 .nav-links a[aria-current="true"] { background: var(--ink); color: #fff; }
-.nav .btn { border-radius: 9999px; }
+.nav .btn { border-radius: 9999px; white-space: nowrap; }
 .toggle { width: 40px; height: 40px; border-radius: 9999px; border: 1px solid var(--line); background: #fff; display: grid; place-items: center; transition: background-color 300ms var(--curve); }
 .toggle:hover { background: var(--soft); }
 .toggle span { grid-area: 1 / 1; width: 16px; height: 2px; border-radius: 2px; background: var(--ink); transition: transform 500ms var(--curve); }
@@ -140,10 +143,10 @@ section.band { padding-block: 64px; }
 
 /* 3D block of the seven apartments */
 .stage { display: grid; gap: 24px; justify-items: center; min-width: 0; }
-.scene-box { width: 100%; max-width: 440px; height: 336px; position: relative; }
-.scene { position: absolute; left: 50%; top: 0; width: 440px; height: 400px; margin-left: -220px; transform-origin: top center; }
-@media (max-width: 479px) { .scene-box { height: 280px; } .scene { transform: scale(0.8); } }
-.iso { position: absolute; left: 76px; top: 120px; width: 288px; height: 288px; transform-style: preserve-3d; transform: rotateX(60deg) rotateZ(-45deg); }
+.scene-box { width: 100%; max-width: 440px; height: 384px; position: relative; }
+.scene { position: absolute; left: 50%; top: 0; width: 440px; height: 400px; transform: translateX(-50%); transform-origin: top center; }
+@media (max-width: 479px) { .scene-box { height: 308px; } .scene { transform: translateX(-50%) scale(0.8); } }
+.iso { position: absolute; left: 0; right: 0; margin-inline: auto; top: 96px; width: 288px; height: 288px; transform-style: preserve-3d; transform: rotateX(60deg) rotateZ(-45deg); }
 .box { position: absolute; left: 0; top: 0; width: var(--w); height: var(--d); transform-style: preserve-3d; transform: translate3d(var(--x), calc(var(--y) + var(--dy, 0px)), var(--z)); }
 .box > i { position: absolute; display: flex; align-items: center; justify-content: center; gap: 8px; }
 .f-t { inset: 0; transform: translateZ(var(--h)); background: var(--c-l); }
@@ -167,15 +170,321 @@ section.band { padding-block: 64px; }
 .legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; list-style: none; }
 .legend li { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 9999px; font-size: 12px; line-height: 16px; color: var(--muted); background: #fff; }
 .legend i { width: 12px; height: 12px; border-radius: 4px; background: var(--c); }
-.pick { width: 100%; max-width: 440px; display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 16px; align-items: center; padding: 8px; border: 1px solid var(--line); border-radius: 24px; background: #fff; box-shadow: 0 16px 40px rgb(22 18 15 / .08); }
+.pick { width: 100%; max-width: 440px; display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 16px; align-items: start; padding: 8px; border-radius: 24px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 16px 40px rgb(22 18 15 / .08); }
 .pick img { width: 112px; height: 112px; object-fit: cover; border-radius: 16px; }
 .pick-body { display: grid; gap: 4px; min-width: 0; padding-right: 8px; }
 .pick-name { font-weight: 600; }
 .pick-meta { color: var(--muted); }
 .hint { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; line-height: 16px; color: var(--muted); }
 
+/* Playful flat extrusion: a darker flat layer sits 8px below each card */
+.pop { position: relative; background: #fff; border-radius: 24px; box-shadow: 0 0 0 1px var(--ink), 0 8px 0 0 var(--c-d, var(--ink)), 0 8px 0 1px var(--ink); transition: transform 300ms var(--curve); }
+.pop:hover { transform: translateY(-4px); }
+
+/* A6.2 Benefits */
+.benefits { list-style: none; display: grid; gap: 24px; }
+@media (min-width: 768px) { .benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.benefits li { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 16px; align-items: start; padding: 24px; }
+.benefits h3 { margin-bottom: 8px; }
+.tile { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; background: var(--c); color: var(--ink); border: 1px solid var(--ink); }
+
+/* A6.3 How it works */
+.steps { list-style: none; display: grid; gap: 32px; }
+@media (min-width: 1024px) { .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; } }
+.steps li { display: grid; gap: 12px; align-content: start; padding: 24px; }
+.cube-mini { position: relative; width: 120px; height: 96px; }
+.iso-mini { position: absolute; left: 32px; top: 32px; width: 56px; height: 56px; transform-style: preserve-3d; transform: rotateX(60deg) rotateZ(-45deg); }
+.iso-mini .f-t b { font-size: 30px; line-height: 36px; font-weight: 700; color: var(--ink); }
+.after-steps { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 48px; }
+
+/* A6.4 Proof */
+.proof-grid { display: grid; gap: 32px; align-items: start; }
+@media (min-width: 1024px) { .proof-grid { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); } }
+.score { display: grid; gap: 16px; padding: 32px; --c-d: var(--teal-d); }
+.score-num { color: var(--ink); }
+.host { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; align-items: center; padding: 8px; border-radius: 16px; background: var(--soft); }
+.host .tile { border-radius: 8px; }
+.rating-list { padding: 8px; --c-d: var(--teal-d); }
+.r-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 16px; align-items: center; padding: 12px 16px; border-radius: 16px; }
+.r-row:hover { background: var(--soft); }
+.r-name { font-weight: 600; }
+.r-where { color: var(--muted); }
+.r-score { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; }
+.r-bar { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; }
+.r-track { height: 8px; border-radius: 9999px; background: var(--line); overflow: hidden; }
+.r-fill { height: 8px; border-radius: 9999px; background: var(--teal); transform-origin: left; }
+.r-link { display: inline-flex; align-items: center; gap: 4px; }
+.note { margin-top: 24px; }
+
+/* A6.5 FAQ */
+.faq-grid { display: grid; gap: 0; }
+@media (min-width: 1024px) { .faq-grid { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 48px; align-items: start; } .faq-grid .head { position: sticky; top: 96px; } }
+.faq { display: grid; gap: 12px; }
+.faq details { border-radius: 16px; background: #fff; box-shadow: 0 0 0 1px var(--line); transition: box-shadow 300ms var(--curve); }
+.faq details:hover, .faq details[open] { box-shadow: 0 0 0 1px var(--ink); }
+.faq summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 24px; font-size: 18px; line-height: 28px; font-weight: 600; cursor: pointer; border-radius: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq .plus { transition: transform 500ms var(--curve); }
+.faq details[open] .plus { transform: rotate(45deg); }
+.faq details p { padding: 0 24px 24px; color: var(--muted); max-width: 680px; }
+
+/* A6.6 Final CTA */
+.final { display: grid; gap: 32px; align-items: center; padding: 32px; }
+@media (min-width: 1024px) { .final { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); padding: 48px; } }
+.final-copy { display: grid; gap: 24px; min-width: 0; }
+.final-h { max-width: 680px; font-size: 30px; line-height: 36px; }
+@media (min-width: 768px) { .final-h { font-size: 36px; line-height: 40px; } }
+.final-art { position: relative; height: 240px; }
+.iso-final { position: absolute; left: 0; right: 0; margin-inline: auto; top: 80px; width: 168px; height: 168px; transform-style: preserve-3d; transform: rotateX(60deg) rotateZ(-45deg); }
+
+/* Story: four doubts with 3D objects */
+.doubts { display: grid; gap: 64px; }
+.doubt { display: grid; gap: 32px; align-items: center; }
+@media (min-width: 1024px) { .doubt { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; } .doubt:nth-child(even) .doubt-copy { order: 2; } }
+.doubt-copy { display: grid; gap: 16px; align-content: start; max-width: 560px; min-width: 0; }
+.chip { justify-self: start; display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border: 1px solid var(--ink); border-radius: 9999px; background: var(--c-l); font-size: 14px; line-height: 20px; font-weight: 600; }
+.obj { display: grid; justify-items: center; gap: 24px; min-width: 0; }
+.legend-list { list-style: none; display: grid; gap: 8px; }
+.legend-list li { display: flex; align-items: center; gap: 8px; }
+.dot { width: 12px; height: 12px; border-radius: 4px; background: var(--c); border: 1px solid var(--ink); flex: none; }
+.dot.ink { background: var(--ink); }
+
+/* Flip card */
+.flip { width: 280px; height: 384px; perspective: 1200px; }
+.flip-in { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transform: rotateY(-12deg) rotateX(6deg); transition: transform 800ms var(--curve); }
+.flip.on .flip-in { transform: rotateY(168deg) rotateX(6deg); }
+.face { position: absolute; inset: 0; display: grid; align-content: start; gap: 8px; padding: 8px 8px 24px; box-shadow: 0 0 0 1px var(--ink); border-radius: 24px; background: #fff; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.face img { width: 100%; height: 192px; object-fit: cover; border-radius: 16px; margin-bottom: 8px; }
+.face > :not(img) { margin-inline: 16px; }
+.face.back { transform: rotateY(180deg); background: var(--orange-t); }
+
+/* Calendar layers */
+.layers { position: relative; width: 320px; height: 336px; }
+.layers-in { position: absolute; left: 0; right: 0; margin-inline: auto; top: 96px; width: 224px; height: 224px; transform-style: preserve-3d; transform: rotateX(56deg) rotateZ(-36deg); }
+.sheet { position: absolute; inset: 0; display: grid; align-content: start; gap: 8px; padding: 12px; box-shadow: 0 0 0 1px var(--ink); border-radius: 16px; background: #fff; transform: translateZ(var(--z)); }
+.sheet-l { font-size: 12px; line-height: 16px; font-weight: 600; }
+.cells { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.cells i { aspect-ratio: 1; border-radius: 4px; background: var(--line); }
+.cells i.air { background: var(--flamingo); }
+.cells i.dir { background: var(--teal); }
+.s-one { background: #fff; }
+.s-direct { background: var(--teal-t); }
+.s-air { background: var(--flamingo-t); }
+.rv.pre .sheet { transform: translateZ(0px); }
+.rv.pre.in .sheet { transform: translateZ(var(--z)); transition: transform 800ms var(--curve) 200ms; }
+
+/* Pay last stairs */
+.stairs { position: relative; width: 320px; height: 320px; }
+.iso-stairs { position: absolute; left: 0; right: 0; margin-inline: auto; top: 96px; width: 216px; height: 216px; transform-style: preserve-3d; transform: rotateX(60deg) rotateZ(-45deg); }
+.iso-stairs .f-t b, .cube-mini .f-t b { font-size: 30px; line-height: 36px; font-weight: 700; }
+.rv.pre .step { transform: translate3d(var(--x), var(--y), var(--z)) scale3d(1, 1, 0.05); }
+.rv.pre.in .step { transform: translate3d(var(--x), var(--y), var(--z)) scale3d(1, 1, 1); transition: transform 700ms var(--curve) var(--sd); }
+
+/* Smart lock */
+.lock { width: 256px; height: 352px; perspective: 1000px; display: grid; place-items: center; }
+.lock-in { position: relative; width: 200px; height: 296px; transform-style: preserve-3d; transform: rotateY(-24deg) rotateX(-10deg); }
+.lock-side { position: absolute; left: 100%; top: 0; width: 24px; height: 100%; transform-origin: left; transform: rotateY(-90deg); background: #3A332E; }
+.lock-top { position: absolute; left: 0; bottom: 100%; width: 100%; height: 24px; transform-origin: bottom; transform: rotateX(-90deg); background: #554D46; }
+.lock-front { position: absolute; inset: 0; display: grid; grid-template-rows: auto 1fr; gap: 16px; padding: 16px; border-radius: 24px; background: var(--ink); color: #fff; transform: translateZ(24px); }
+.scr { display: grid; place-items: center; gap: 4px; height: 64px; border-radius: 8px; background: #2A2420; }
+.scr-dots { font-size: 18px; line-height: 28px; color: var(--orange-l); }
+.unl { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; line-height: 16px; font-weight: 600; color: var(--teal-l); }
+.keys { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.k { position: relative; display: grid; place-items: center; border-radius: 8px; background: #2A2420; font-size: 14px; line-height: 20px; font-weight: 600; }
+.k::after { content: ""; position: absolute; inset: 0; border-radius: 8px; background: var(--orange); opacity: 0; }
+.k-ok { color: var(--teal-l); }
+.rv.pre .unl { opacity: 0; }
+.rv.pre.in .unl { opacity: 1; transition: opacity 500ms var(--curve) 1300ms; }
+.rv.pre.in .k.hit::after { animation: tap 600ms var(--curve) var(--d) both; }
+@keyframes tap { 0% { opacity: 0; } 40% { opacity: 0.85; } 100% { opacity: 0; } }
+
+/* Apartments: filters and 3D tilt cards */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+.fchip { padding: 8px 12px; border: 1px solid var(--line); border-radius: 9999px; background: #fff; font-size: 14px; line-height: 20px; font-weight: 600; transition: background-color 300ms var(--curve), border-color 300ms var(--curve), transform 300ms var(--curve); }
+.fchip:hover { border-color: var(--ink); transform: translateY(-2px); }
+.fchip:active { transform: scale(0.98); }
+.fchip[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.apts { display: grid; gap: 32px; }
+@media (min-width: 640px) { .apts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .apts { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.apt { display: grid; align-content: start; gap: 16px; padding: 8px 8px 24px; transform-style: preserve-3d; transition: transform 500ms var(--curve); }
+.apt[hidden] { display: none; }
+.apt:hover { transform: none; }
+.apt-photo { position: relative; transform-style: preserve-3d; }
+.apt-photo img { width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover; border-radius: 16px; }
+.badge { position: absolute; left: 12px; top: 12px; display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px; border: 1px solid var(--ink); border-radius: 4px; background: #fff; font-size: 12px; line-height: 16px; font-weight: 600; transform: translateZ(40px); }
+.apt-body { display: grid; gap: 8px; padding-inline: 16px; transform: translateZ(16px); }
+.apt-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
+.price b { font-size: 20px; line-height: 28px; font-weight: 600; }
+.apt .link { display: inline-flex; align-items: center; gap: 4px; }
+@media (min-width: 640px) {
+  .apt.wide { grid-column: 1 / -1; }
+  .apt.wide2 { grid-column: span 2; }
+  .apt.wide, .apt.wide2 { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; padding: 8px; }
+  .apt.wide .apt-body, .apt.wide2 .apt-body { padding-block: 16px; }
+}
+
+/* Tagline reveal */
+.tagline-band { background: var(--bg); }
+.tagline { max-width: 680px; font-size: 36px; line-height: 40px; font-weight: 600; }
+@media (min-width: 768px) { .tagline { font-size: 48px; line-height: 1; } }
+.tagline .line { display: block; text-wrap: balance; }
+.tagline .line + .line { margin-top: 24px; }
+.tagline .w { opacity: 0.3; transition: opacity 500ms var(--curve); }
+.tagline .w.on { opacity: 1; }
+
+/* Risk reversal */
+.risk { display: grid; gap: 32px; padding: 32px; }
+@media (min-width: 1024px) { .risk { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); padding: 48px; gap: 48px; align-items: center; } }
+.risk-copy { display: grid; gap: 16px; }
+.risk-list { list-style: none; display: grid; gap: 16px; }
+.risk-list li { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 16px; align-items: start; }
+
+/* Footer */
+.foot { background: #131209; color: #D9D2CA; padding-block: 64px 96px; }
+.foot-grid { display: grid; gap: 40px; }
+@media (min-width: 768px) { .foot-grid { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); } }
+.foot-brand { display: grid; gap: 12px; align-content: start; max-width: 420px; }
+.logo-dark { color: #fff; justify-self: start; }
+.logo-dark b { color: var(--orange); }
+.wa-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; color: #fff; }
+.link-light { color: var(--orange-l); justify-self: start; }
+.link-light:hover { color: #fff; }
+.foot-col { display: grid; gap: 8px; align-content: start; }
+.foot-col h2 { color: #fff; margin-bottom: 4px; }
+.foot-col a { justify-self: start; text-decoration: none; font-size: 14px; line-height: 20px; color: #D9D2CA; transition: color 300ms var(--curve); }
+.foot-col a:hover { color: #fff; }
+.foot-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 48px; padding-top: 24px; color: #A39A90; }
+.foot :focus-visible { outline-color: var(--orange-l); }
+
+/* Dialogs */
+.dlg { padding: 0; border: 0; background: transparent; max-width: none; max-height: none; width: 100%; height: 100%; margin: 0; }
+.dlg::backdrop { background: rgb(19 18 9 / .48); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.dlg-card { display: grid; grid-template-rows: auto auto minmax(0, 1fr); width: 100%; height: 100%; background: #fff; opacity: 0; transform: translateY(24px); transition: opacity 500ms var(--curve), transform 500ms var(--curve); }
+.dlg.shown .dlg-card { opacity: 1; transform: none; }
+@media (min-width: 768px) {
+  .dlg { display: grid; place-items: center; padding: 32px; }
+  .dlg:not([open]) { display: none; }
+  .dlg-card { width: min(100%, 600px); height: auto; max-height: calc(100vh - 64px); border: 1px solid var(--ink); border-radius: 24px; box-shadow: 0 8px 0 0 var(--orange-d); }
+  .dlg-text .dlg-card { box-shadow: 0 8px 0 0 var(--ink); }
+}
+.dlg-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: calc(env(safe-area-inset-top, 0px) + 16px) 24px 16px; }
+@media (min-width: 768px) { .dlg-head { padding: 24px 24px 16px; } }
+.dlg-body { overflow-y: auto; padding: 0 24px 24px; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 24px); }
+.prose { display: grid; gap: 16px; color: var(--muted); }
+.icon-btn { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 9999px; background: #fff; transition: background-color 300ms var(--curve), transform 300ms var(--curve); }
+.icon-btn:hover { background: var(--soft); }
+.icon-btn:active { transform: scale(0.98); }
+.icon-btn[disabled] { opacity: .35; cursor: not-allowed; }
+.live-dot { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 9999px; background: var(--good); }
+.progress { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 0 24px 16px; }
+.progress li { display: flex; align-items: center; gap: 8px; padding: 4px 12px 4px 4px; border-radius: 9999px; box-shadow: 0 0 0 1px var(--line); color: var(--muted); font-weight: 600; }
+.progress span { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 9999px; background: var(--soft); }
+.progress li[aria-current="step"] { box-shadow: 0 0 0 1px var(--ink); color: var(--ink); }
+.progress li[aria-current="step"] span, .progress li.done span { background: var(--orange); color: var(--ink); }
+.pane { display: grid; gap: 24px; }
+.field { display: grid; gap: 8px; }
+.field label, .lbl { font-size: 14px; line-height: 20px; font-weight: 600; }
+.field input, .field select, .field textarea { width: 100%; padding: 12px 16px; border: 1px solid var(--line); border-radius: 12px; background: #fff; font-size: 16px; line-height: 24px; transition: border-color 300ms var(--curve); }
+.field input:hover, .field select:hover, .field textarea:hover { border-color: var(--muted); }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--ink); outline-offset: 0; border-color: var(--ink); }
+.field [aria-invalid="true"] { border-color: var(--bad); background: var(--bad-t); }
+.err { display: flex; gap: 8px; color: var(--bad); font-size: 14px; line-height: 20px; font-weight: 500; }
+.err[hidden] { display: none; }
+.hint-s { font-size: 12px; line-height: 16px; color: var(--muted); }
+.stepper { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.stepper output { min-width: 24px; text-align: center; }
+.safe { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 12px; background: var(--soft); color: var(--muted); }
+.pane-actions { position: sticky; bottom: 0; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; padding-top: 16px; background: #fff; }
+
+/* Apartment picker */
+.apt-field { border: 0; padding: 0; margin: 0; min-width: 0; }
+.apt-field legend { padding: 0; margin-bottom: 8px; }
+.apt-pick { display: flex; gap: 8px; overflow-x: auto; padding: 2px; scrollbar-width: thin; }
+.opt { position: relative; flex: none; display: grid; grid-template-columns: 40px auto; gap: 8px; align-items: center; padding: 4px 12px 4px 4px; border-radius: 12px; background: #fff; box-shadow: 0 0 0 1px var(--line); cursor: pointer; transition: background-color 300ms var(--curve), box-shadow 300ms var(--curve), transform 300ms var(--curve); }
+.opt:hover { transform: translateY(-2px); }
+.opt:active { transform: scale(0.98); }
+.opt input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.opt img { width: 40px; height: 40px; object-fit: cover; border-radius: 8px; }
+.opt span { display: grid; font-size: 14px; line-height: 20px; font-weight: 600; white-space: nowrap; }
+.opt small { font-size: 12px; line-height: 16px; font-weight: 400; color: var(--muted); }
+.opt:has(input:checked) { background: var(--orange-t); box-shadow: 0 0 0 2px var(--ink); }
+.opt:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* Calendar */
+.cal { border-radius: 16px; padding: 8px; box-shadow: 0 0 0 1px var(--line); }
+.cal-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 12px; }
+.cal-dow, .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; text-align: center; }
+.cal-dow { margin-bottom: 4px; }
+.day { position: relative; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid transparent; border-radius: 8px; background: none; font-size: 14px; line-height: 20px; font-weight: 600; font-variant-numeric: tabular-nums; transition: background-color 300ms var(--curve), transform 300ms var(--curve); }
+.day:hover:not([disabled]) { background: var(--soft); transform: translateY(-2px); }
+.day:active:not([disabled]) { transform: scale(0.98); }
+.day[disabled] { color: #B3ABA2; cursor: not-allowed; }
+.day.booked { text-decoration: line-through; color: #B3ABA2; background: var(--soft); }
+.day.co-ok { color: var(--ink); text-decoration: none; }
+.day.in-range { background: var(--orange-t); border-radius: 4px; }
+.day.edge { background: var(--orange); color: var(--ink); font-weight: 700; border-color: var(--ink); }
+.day.today { border-color: var(--line); }
+.day.blank { visibility: hidden; }
+.cal-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 12px; }
+.cal-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.lg-sel, .lg-booked { width: 12px; height: 12px; border-radius: 4px; }
+.lg-sel { background: var(--orange); border: 1px solid var(--ink); }
+.lg-booked { background: var(--soft); border: 1px solid var(--line); }
+.dates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.dates div { display: grid; gap: 4px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 12px; }
+
+/* Summary: empty, loading, ready */
+.summary { border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+.empty { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; align-items: center; color: var(--muted); }
+.empty .tile { background: var(--orange-t); }
+.sum-rows { display: grid; gap: 8px; font-variant-numeric: tabular-nums; }
+.sum-rows div { display: flex; justify-content: space-between; gap: 12px; }
+.sum-total { padding-top: 12px; margin-top: 4px; font-weight: 600; font-size: 18px; line-height: 28px; }
+.free { color: var(--good); font-weight: 600; }
+.skeleton { display: block; border-radius: 4px; background: var(--line); animation: pulse 1200ms var(--curve) infinite alternate; }
+.skeleton-line { height: 16px; width: 100%; }
+.skeleton-line.w60 { width: 60%; } .skeleton-line.w80 { width: 80%; }
+.skeleton-block { height: 64px; width: 100%; border-radius: 8px; }
+@keyframes pulse { from { opacity: 1; } to { opacity: .4; } }
+.skeleton-wrap { display: grid; gap: 12px; }
+.loading { display: grid; gap: 12px; padding: 16px; border: 1px solid var(--line); border-radius: 16px; }
+
+/* Contract step */
+.contract { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 16px; padding: 16px; border: 1px solid var(--line); border-radius: 16px; margin: 0; }
+.contract dt { color: var(--muted); }
+.contract dd { margin: 0; font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+.rules { display: grid; gap: 8px; }
+.rules ul, .terms ol { display: grid; gap: 8px; padding-left: 24px; color: var(--muted); }
+.terms { border-radius: 12px; box-shadow: 0 0 0 1px var(--line); }
+.terms summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 16px; font-weight: 600; cursor: pointer; border-radius: 12px; }
+.terms summary::-webkit-details-marker { display: none; }
+.terms .plus { transition: transform 500ms var(--curve); }
+.terms[open] .plus { transform: rotate(180deg); }
+.terms ol { padding: 0 16px 16px 40px; }
+.sig-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.sig { width: 100%; height: 160px; border: 1px solid var(--line); border-radius: 12px; background: var(--soft); touch-action: none; cursor: crosshair; }
+.sig[aria-invalid="true"] { border-color: var(--bad); }
+.agree { display: flex; align-items: flex-start; gap: 12px; }
+.agree input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--orange-d); flex: none; }
+
+/* Done */
+.done { display: grid; justify-items: center; gap: 8px; padding: 24px; border: 1px solid var(--ink); border-radius: 16px; background: var(--teal-t); text-align: center; }
+.done-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 9999px; background: var(--teal); color: #fff; }
+.next { display: grid; gap: 12px; padding-left: 24px; }
+.msg { margin: 0; padding: 16px; border-radius: 12px; background: var(--soft); white-space: pre-wrap; font-family: var(--font); color: var(--ink); }
+
+/* 404 */
+.nf { position: fixed; inset: 0; z-index: 60; display: grid; place-content: center; justify-items: center; gap: 24px; padding: 32px max(16px, env(safe-area-inset-right, 0px)) 32px max(16px, env(safe-area-inset-left, 0px)); background: #fff; text-align: center; }
+.nf[hidden] { display: none; }
+.nf-art { position: relative; width: 320px; height: 200px; }
+.iso-nf { position: absolute; left: 0; right: 0; margin-inline: auto; top: 48px; width: 248px; height: 72px; transform-style: preserve-3d; transform: rotateX(60deg) rotateZ(-45deg); }
+.iso-nf .f-t b { font-size: 48px; line-height: 1; font-weight: 700; }
+
+/*CSS:MORE*/
+
 /* Gallery pill */
-.back { position: fixed; z-index: 45; left: max(16px, env(safe-area-inset-left, 0px)); bottom: calc(env(safe-area-inset-bottom, 0px) + 16px); display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 9999px; background: rgb(255 255 255 / .88); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); font-size: 12px; line-height: 16px; font-weight: 600; text-decoration: none; color: var(--muted); transition: transform 300ms var(--curve), color 300ms var(--curve); }
+.back { position: fixed; z-index: 45; left: max(16px, env(safe-area-inset-left, 0px)); bottom: calc(env(safe-area-inset-bottom, 0px) + 16px); display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 9999px; background: rgb(255 255 255 / .88); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); font-size: 14px; line-height: 20px; font-weight: 600; text-decoration: none; color: var(--muted); transition: transform 300ms var(--curve), color 300ms var(--curve); }
 .back:hover { color: var(--ink); transform: translateY(-2px); }
 
 /* Scroll reveals: armed only after the first scroll, for sections still below the fold */
@@ -190,7 +499,7 @@ section.band { padding-block: 64px; }
 </style>
 </head>
 <body>
-<!--ICONS--><svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="i-arrow-left" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-calendar-check" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-38.34-85.66a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L116,164.69l42.34-42.35A8,8,0,0,1,169.66,122.34Z"/></symbol><symbol id="i-hand-coins" viewBox="0 0 256 256" fill="currentColor"><path d="M230.33,141.06a24.43,24.43,0,0,0-21.24-4.23l-41.84,9.62A28,28,0,0,0,140,112H89.94a31.82,31.82,0,0,0-22.63,9.37L44.69,144H16A16,16,0,0,0,0,160v40a16,16,0,0,0,16,16H120a7.93,7.93,0,0,0,1.94-.24l64-16a6.94,6.94,0,0,0,1.19-.4L226,182.82l.44-.2a24.6,24.6,0,0,0,3.93-41.56ZM16,160H40v40H16Zm203.43,8.21-38,16.18L119,200H56V155.31l22.63-22.62A15.86,15.86,0,0,1,89.94,128H140a12,12,0,0,1,0,24H112a8,8,0,0,0,0,16h32a8.32,8.32,0,0,0,1.79-.2l67-15.41.31-.08a8.6,8.6,0,0,1,6.3,15.9ZM164,96a36,36,0,0,0,5.9-.48,36,36,0,1,0,28.22-47A36,36,0,1,0,164,96Zm60-12a20,20,0,1,1-20-20A20,20,0,0,1,224,84ZM164,40a20,20,0,0,1,19.25,14.61,36,36,0,0,0-15,24.93A20.42,20.42,0,0,1,164,80a20,20,0,0,1,0-40Z"/></symbol><symbol id="i-star-fill" viewBox="0 0 256 256" fill="currentColor"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></symbol></svg><!--/ICONS-->
+<!--ICONS--><svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="i-arrow-left" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-arrow-up-right" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></symbol><symbol id="i-buildings" viewBox="0 0 256 256" fill="currentColor"><path d="M240,208H224V96a16,16,0,0,0-16-16H144V32a16,16,0,0,0-24.88-13.32L39.12,72A16,16,0,0,0,32,85.34V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM208,96V208H144V96ZM48,85.34,128,32V208H48ZM112,112v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm-32,0v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm0,56v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Zm32,0v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-calendar-check" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-38.34-85.66a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L116,164.69l42.34-42.35A8,8,0,0,1,169.66,122.34Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256" fill="currentColor"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-chat-circle-dots" viewBox="0 0 256 256" fill="currentColor"><path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-check-circle-fill" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-copy" viewBox="0 0 256 256" fill="currentColor"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></symbol><symbol id="i-hand-coins" viewBox="0 0 256 256" fill="currentColor"><path d="M230.33,141.06a24.43,24.43,0,0,0-21.24-4.23l-41.84,9.62A28,28,0,0,0,140,112H89.94a31.82,31.82,0,0,0-22.63,9.37L44.69,144H16A16,16,0,0,0,0,160v40a16,16,0,0,0,16,16H120a7.93,7.93,0,0,0,1.94-.24l64-16a6.94,6.94,0,0,0,1.19-.4L226,182.82l.44-.2a24.6,24.6,0,0,0,3.93-41.56ZM16,160H40v40H16Zm203.43,8.21-38,16.18L119,200H56V155.31l22.63-22.62A15.86,15.86,0,0,1,89.94,128H140a12,12,0,0,1,0,24H112a8,8,0,0,0,0,16h32a8.32,8.32,0,0,0,1.79-.2l67-15.41.31-.08a8.6,8.6,0,0,1,6.3,15.9ZM164,96a36,36,0,0,0,5.9-.48,36,36,0,1,0,28.22-47A36,36,0,1,0,164,96Zm60-12a20,20,0,1,1-20-20A20,20,0,0,1,224,84ZM164,40a20,20,0,0,1,19.25,14.61,36,36,0,0,0-15,24.93A20.42,20.42,0,0,1,164,80a20,20,0,0,1,0-40Z"/></symbol><symbol id="i-house-line" viewBox="0 0 256 256" fill="currentColor"><path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-list-bullets" viewBox="0 0 256 256" fill="currentColor"><path d="M80,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H88A8,8,0,0,1,80,64Zm136,56H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,64H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM44,52A12,12,0,1,0,56,64,12,12,0,0,0,44,52Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,116Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,180Z"/></symbol><symbol id="i-lock-key" viewBox="0 0 256 256" fill="currentColor"><path d="M128,112a28,28,0,0,0-8,54.83V184a8,8,0,0,0,16,0V166.83A28,28,0,0,0,128,112Zm0,40a12,12,0,1,1,12-12A12,12,0,0,1,128,152Zm80-72H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-minus" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-receipt" viewBox="0 0 256 256" fill="currentColor"><path d="M72,104a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,104Zm8,40h96a8,8,0,0,0,0-16H80a8,8,0,0,0,0,16ZM232,56V208a8,8,0,0,1-11.58,7.15L192,200.94l-28.42,14.21a8,8,0,0,1-7.16,0L128,200.94,99.58,215.15a8,8,0,0,1-7.16,0L64,200.94,35.58,215.15A8,8,0,0,1,24,208V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-16,0H40V195.06l20.42-10.22a8,8,0,0,1,7.16,0L96,199.06l28.42-14.22a8,8,0,0,1,7.16,0L160,199.06l28.42-14.22a8,8,0,0,1,7.16,0L216,195.06Z"/></symbol><symbol id="i-seal-check" viewBox="0 0 256 256" fill="currentColor"><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"/></symbol><symbol id="i-shield-check" viewBox="0 0 256 256" fill="currentColor"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></symbol><symbol id="i-star" viewBox="0 0 256 256" fill="currentColor"><path d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.38,16.38,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65a8,8,0,0,0-8.38,0L69.09,215.94c-.15.09-.19.12-.38,0a.37.37,0,0,1-.17-.48l14.88-62.8a8,8,0,0,0-2.56-7.91l-48.7-42c-.12-.1-.23-.19-.13-.5s.18-.27.33-.29l63.92-5.16A8,8,0,0,0,103,91.86l24.62-59.61c.08-.17.11-.25.35-.25s.27.08.35.25L153,91.86a8,8,0,0,0,6.75,4.92l63.92,5.16c.15,0,.24,0,.33.29S224,102.63,223.84,102.73Z"/></symbol><symbol id="i-star-fill" viewBox="0 0 256 256" fill="currentColor"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></symbol><symbol id="i-warning-circle" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z"/></symbol><symbol id="i-whatsapp-logo" viewBox="0 0 256 256" fill="currentColor"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol></svg><!--/ICONS-->
 <a class="skip" href="#main">Skip to content</a>
 
 <nav class="nav" aria-label="Main">
@@ -261,23 +570,469 @@ section.band { padding-block: 64px; }
   </div>
 </header>
 
-<!--SECTION:story-->
-<!--SECTION:apartments-->
-<!--SECTION:benefits-->
-<!--SECTION:tagline-->
-<!--SECTION:how-->
-<!--SECTION:proof-->
-<!--SECTION:faq-->
-<!--SECTION:risk-->
-<!--SECTION:final-->
+<!-- Story: problem to solution, four doubts answered one by one -->
+<section class="band soft" id="story" aria-labelledby="story-h">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow t-sm"><svg class="i-sm" aria-hidden="true"><use href="#i-info"/></svg>Four doubts, answered</span>
+      <h2 id="story-h">Booking outside Airbnb feels risky. Here is what actually happens.</h2>
+      <p class="t-lg muted">Most guests find these homes in a post, a friend’s link or their Airbnb history. The questions are always the same four.</p>
+    </div>
+
+    <div class="doubts">
+      <article class="doubt rv">
+        <div class="doubt-copy">
+          <span class="chip a-ajawid"><svg class="i-sm" aria-hidden="true"><use href="#i-house-line"/></svg>Same home</span>
+          <h3 class="t-2xl">Is it really the same apartment?</h3>
+          <p class="muted">Yes. All seven homes are listed on Airbnb by the same hosts, with the same photos and the same 517 reviews. Open any listing from this page and compare before you book.</p>
+          <p class="t-sm"><a class="link" href="https://ar.airbnb.com/rooms/1548537821036118490" target="_blank" rel="noopener">See the Mid century Studio on Airbnb</a></p>
+        </div>
+        <div class="obj">
+          <div class="flip" id="flip">
+            <div class="flip-in">
+              <div class="face front">
+                <img src="../photos/midcentury-1-living.jpg" alt="Mid century Studio living room as shown on its Airbnb listing" width="264" height="176" loading="lazy">
+                <span class="chip a-ajawid">On Airbnb</span>
+                <b class="t-lg">Mid century Studio</b>
+                <span class="t-sm num"><svg class="i-sm star" aria-hidden="true"><use href="#i-star-fill"/></svg> 4.90 · 105 reviews</span>
+                <span class="t-sm muted">Al Nahda, King Road</span>
+              </div>
+              <div class="face back">
+                <img src="../photos/midcentury-1-living.jpg" alt="The same living room, booked direct" width="264" height="176" loading="lazy">
+                <span class="chip a-nahda">Booked direct</span>
+                <b class="t-lg">Mid century Studio</b>
+                <span class="t-sm num">SAR 349 a night</span>
+                <span class="t-sm num muted">Service fee SAR 0</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-ghost btn-sm" type="button" id="flip-btn" aria-pressed="false" aria-controls="flip"><svg class="i-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg>Flip the card</button>
+        </div>
+      </article>
+
+      <article class="doubt rv">
+        <div class="doubt-copy">
+          <span class="chip a-madinah"><svg class="i-sm" aria-hidden="true"><use href="#i-calendar-check"/></svg>One calendar</span>
+          <h3 class="t-2xl">What if it gets booked on Airbnb at the same time?</h3>
+          <p class="muted">Each home has one calendar. Airbnb bookings block nights here, and direct bookings block them on Airbnb. Your dates are held when you sign, and the host checks the calendar again before confirming.</p>
+          <ul class="legend-list t-sm">
+            <li><i class="dot a-ajawid"></i>Nights booked on Airbnb</li>
+            <li><i class="dot a-madinah"></i>Nights booked direct</li>
+            <li><i class="dot ink"></i>One calendar with both</li>
+          </ul>
+        </div>
+        <div class="obj">
+          <div class="layers" aria-hidden="true">
+            <div class="layers-in">
+              <div class="sheet s-one" style="--z:0px"><span class="sheet-l">One calendar</span><div class="cells" data-cells="both"></div></div>
+              <div class="sheet s-direct" style="--z:64px"><span class="sheet-l">Direct</span><div class="cells" data-cells="direct"></div></div>
+              <div class="sheet s-air" style="--z:128px"><span class="sheet-l">Airbnb</span><div class="cells" data-cells="air"></div></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="doubt rv">
+        <div class="doubt-copy">
+          <span class="chip a-fawaz"><svg class="i-sm" aria-hidden="true"><use href="#i-hand-coins"/></svg>Pay last</span>
+          <h3 class="t-2xl">Do I pay before anyone confirms?</h3>
+          <p class="muted">No. You sign the stay contract and your dates are held. The host confirms on WhatsApp, and only then do you pay the agreed amount. Nothing is charged on this site.</p>
+          <ol class="legend-list t-sm">
+            <li><i class="dot a-nahda"></i>1 You sign, your dates are held</li>
+            <li><i class="dot a-madinah"></i>2 The host confirms on WhatsApp</li>
+            <li><i class="dot a-fawaz"></i>3 You pay the agreed amount</li>
+          </ol>
+        </div>
+        <div class="obj">
+          <div class="stairs" aria-hidden="true">
+            <div class="iso-stairs">
+              <div class="box step a-nahda" style="--w:72px;--d:72px;--h:40px;--x:0px;--y:96px;--z:0px;--sd:0ms"><i class="f-t"><b>1</b></i><i class="f-s"></i><i class="f-w"></i></div>
+              <div class="box step a-madinah" style="--w:72px;--d:72px;--h:80px;--x:72px;--y:96px;--z:0px;--sd:120ms"><i class="f-t"><b>2</b></i><i class="f-s"></i><i class="f-w"></i></div>
+              <div class="box step a-fawaz" style="--w:72px;--d:72px;--h:120px;--x:144px;--y:96px;--z:0px;--sd:240ms"><i class="f-t"><b>3</b></i><i class="f-s"></i><i class="f-w"></i></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="doubt rv">
+        <div class="doubt-copy">
+          <span class="chip a-nahda"><svg class="i-sm" aria-hidden="true"><use href="#i-lock-key"/></svg>Self check in</span>
+          <h3 class="t-2xl">How do I get in if I land at 2 am?</h3>
+          <p class="muted">Every home has a smart lock. Your code comes on WhatsApp before you arrive, and you can let yourself in any time after 4:00 pm. No front desk, no key handover.</p>
+        </div>
+        <div class="obj">
+          <div class="lock" aria-hidden="true">
+            <div class="lock-in">
+              <i class="lock-side"></i><i class="lock-top"></i>
+              <div class="lock-front">
+                <div class="scr"><span class="scr-dots num">• • • •</span><span class="unl"><svg class="i-sm" aria-hidden="true"><use href="#i-check-circle-fill"/></svg>Unlocked</span></div>
+                <div class="keys">
+                  <span class="k hit" style="--d:0ms">1</span><span class="k">2</span><span class="k">3</span>
+                  <span class="k hit" style="--d:300ms">4</span><span class="k">5</span><span class="k">6</span>
+                  <span class="k hit" style="--d:600ms">7</span><span class="k">8</span><span class="k hit" style="--d:900ms">9</span>
+                  <span class="k">✱</span><span class="k">0</span><span class="k k-ok">✓</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- The seven apartments as 3D tilt cards -->
+<section class="band" id="apartments" aria-labelledby="apts-h">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow t-sm"><svg class="i-sm" aria-hidden="true"><use href="#i-buildings"/></svg>The seven homes</span>
+      <h2 id="apts-h">Seven homes, three of them in one building on King Road</h2>
+      <p class="t-lg muted">Every card links to its Airbnb listing, so you can read the reviews there before you book here.</p>
+    </div>
+    <div class="filters rv" role="group" aria-label="Filter homes">
+      <button class="fchip" type="button" data-f="all" aria-pressed="true">All seven</button>
+      <button class="fchip" type="button" data-f="nahda" aria-pressed="false">King Road</button>
+      <button class="fchip" type="button" data-f="ajawid" aria-pressed="false">Al Ajawid</button>
+      <button class="fchip" type="button" data-f="madinah" aria-pressed="false">Madinah Road</button>
+      <button class="fchip" type="button" data-f="fawaz" aria-pressed="false">Prince Fawaz</button>
+      <button class="fchip" type="button" data-f="big" aria-pressed="false">Sleeps 5 or more</button>
+    </div>
+    <div class="apts" id="apts"></div>
+  </div>
+</section>
+<!-- A6.2 Benefits -->
+<section class="band soft" id="benefits" aria-labelledby="benefits-h">
+  <div class="wrap rv">
+    <div class="head">
+      <span class="eyebrow t-sm"><svg class="i-sm" aria-hidden="true"><use href="#i-seal-check"/></svg>Why book here</span>
+      <h2 id="benefits-h">What changes when you book direct</h2>
+      <p class="t-lg muted">The home, the hosts and the reviews stay the same. Four things work in your favour.</p>
+    </div>
+    <ul class="benefits">
+      <li class="pop a-fawaz"><span class="tile"><svg class="i" aria-hidden="true"><use href="#i-hand-coins"/></svg></span><div><h3 class="t-xl">Nothing to pay until the host confirms</h3><p class="muted">Sign the contract and your dates are held. You pay only after the host confirms on WhatsApp.</p></div></li>
+      <li class="pop a-ajawid"><span class="tile"><svg class="i" aria-hidden="true"><use href="#i-seal-check"/></svg></span><div><h3 class="t-xl">Check it on Airbnb first</h3><p class="muted">Every home links to its Airbnb listing, so you can read all its reviews before you book here.</p></div></li>
+      <li class="pop a-madinah"><span class="tile"><svg class="i" aria-hidden="true"><use href="#i-calendar-check"/></svg></span><div><h3 class="t-xl">One calendar, no double bookings</h3><p class="muted">Airbnb and direct bookings share one calendar, and the host checks it again before confirming your dates.</p></div></li>
+      <li class="pop a-nahda"><span class="tile"><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg></span><div><h3 class="t-xl">A signed contract, not a chat promise</h3><p class="muted">The home, your dates, the price and the house rules are written into a contract you sign on your phone.</p></div></li>
+    </ul>
+  </div>
+</section>
+<!-- Tagline reveal (mandatory) -->
+<section class="band tagline-band" aria-label="Our promise">
+  <div class="wrap">
+    <p class="tagline" id="tagline"><span class="line">You already trust the apartment.</span> <span class="line">Now book it with the people who host it.</span></p>
+  </div>
+</section>
+<!-- A6.3 How it works -->
+<section class="band" id="how" aria-labelledby="how-h">
+  <div class="wrap rv">
+    <div class="head">
+      <span class="eyebrow t-sm"><svg class="i-sm" aria-hidden="true"><use href="#i-list-bullets"/></svg>How it works</span>
+      <h2 id="how-h">Three steps from dates to door code</h2>
+      <p class="t-lg muted">The same flow the hosts already run today, just easier to follow on a phone.</p>
+    </div>
+    <ol class="steps">
+      <li class="pop a-nahda">
+        <div class="cube-mini" aria-hidden="true"><div class="iso-mini"><div class="box" style="--w:56px;--d:56px;--h:40px;--x:0px;--y:0px;--z:0px"><i class="f-t"><b>1</b></i><i class="f-s"></i><i class="f-w"></i></div></div></div>
+        <h3 class="t-xl">Pick an apartment and your dates</h3>
+        <p class="muted">The calendar is synced with Airbnb, so nights already booked there are crossed out here.</p>
+      </li>
+      <li class="pop a-madinah">
+        <div class="cube-mini" aria-hidden="true"><div class="iso-mini"><div class="box" style="--w:56px;--d:56px;--h:40px;--x:0px;--y:0px;--z:0px"><i class="f-t"><b>2</b></i><i class="f-s"></i><i class="f-w"></i></div></div></div>
+        <h3 class="t-xl">Sign the stay contract on your phone</h3>
+        <p class="muted">Your name, your ID number and a finger signature. Your dates are held right away.</p>
+      </li>
+      <li class="pop a-fawaz">
+        <div class="cube-mini" aria-hidden="true"><div class="iso-mini"><div class="box" style="--w:56px;--d:56px;--h:40px;--x:0px;--y:0px;--z:0px"><i class="f-t"><b>3</b></i><i class="f-s"></i><i class="f-w"></i></div></div></div>
+        <h3 class="t-xl">Confirm on WhatsApp</h3>
+        <p class="muted">The host confirms, you pay, and the door code arrives before you do.</p>
+      </li>
+    </ol>
+    <div class="after-steps">
+      <button class="btn btn-primary" type="button" data-book><svg class="i" aria-hidden="true"><use href="#i-calendar-check"/></svg>Check dates and book direct</button>
+      <span class="t-sm muted">Takes about two minutes on a phone.</span>
+    </div>
+  </div>
+</section>
+<!-- A6.4 Proof -->
+<section class="band teal" id="reviews" aria-labelledby="reviews-h">
+  <div class="wrap rv">
+    <div class="head">
+      <span class="eyebrow t-sm"><svg class="i-sm" aria-hidden="true"><use href="#i-star"/></svg>Reviews</span>
+      <h2 id="reviews-h">517 guests already rated these homes on Airbnb</h2>
+      <p class="t-lg muted">We show the real numbers and link to every listing, so you can read the reviews where they were written.</p>
+    </div>
+    <div class="proof-grid">
+      <div class="score pop">
+        <p class="score-num num"><span class="t-6xl w6">4.83</span></p>
+        <p class="t-lg"><svg class="i star" aria-hidden="true"><use href="#i-star-fill"/></svg> Average from <b class="num">517</b> Airbnb reviews across seven homes</p>
+        <div class="host">
+          <span class="tile a-ajawid"><svg class="i" aria-hidden="true"><use href="#i-seal-check"/></svg></span>
+          <p class="t-sm"><b>Sultan is an Airbnb Superhost.</b> He hosts four of the seven homes, and Hussam hosts the other three.</p>
+        </div>
+      </div>
+      <div class="rating-list pop" role="list" id="rating-list"></div>
+    </div>
+    <p class="t-xs muted note">Ratings and review counts as shown on each Airbnb listing in October 2026. Bars show the number of reviews.</p>
+  </div>
+</section>
+<!-- A6.5 FAQ -->
+<section class="band" id="faq" aria-labelledby="faq-h">
+  <div class="wrap rv faq-grid">
+    <div class="head">
+      <span class="eyebrow t-sm"><svg class="i-sm" aria-hidden="true"><use href="#i-chat-circle-dots"/></svg>FAQ</span>
+      <h2 id="faq-h">Questions people ask before booking outside Airbnb</h2>
+      <p class="t-lg muted">Still unsure about something? Ask the hosts on WhatsApp at <span class="num w6">+966 50 489 5569</span>.</p>
+    </div>
+    <div class="faq">
+      <details><summary>Is booking outside Airbnb safe?<svg class="i plus" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>You book with the same hosts who run the Airbnb listings, and you sign a contract that names the home, your dates, the price and the house rules. You pay nothing on this site, and nothing at all until the host confirms on WhatsApp.</p></details>
+      <details><summary>What if the home gets booked on Airbnb at the same time?<svg class="i plus" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Your dates are held as soon as you sign. Each home has one calendar synced with Airbnb, and the host checks it again before confirming. If a clash ever slipped through, you would not have paid anything.</p></details>
+      <details><summary>When and how do I pay?<svg class="i plus" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>After the host confirms your dates on WhatsApp, they send the agreed amount and the payment details. This site never asks for card details.</p></details>
+      <details><summary>What happens to my ID details?<svg class="i plus" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>They are used only to fill in your contract on your phone. The site does not store them. The contract travels in the WhatsApp message you send to the host.</p></details>
+      <details><summary>How do I get in?<svg class="i plus" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Every home has a smart lock. The door code comes on WhatsApp before you arrive, so you can let yourself in any time after 4:00 pm, even if you land late at night.</p></details>
+      <details><summary>Can I cancel?<svg class="i plus" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Cancellation terms are agreed with the host before you pay and written into your contract.</p></details>
+      <details><summary>What are the check in and check out times?<svg class="i plus" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Check in from 4:00 pm and check out by 12:00 pm. A late check out needs the host’s approval and may cost extra.</p></details>
+      <details><summary>Can I smoke or bring a pet?<svg class="i plus" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>No smoking of any kind inside, including vapes and shisha, and no charcoal. Pets are welcome only with the host’s approval before you book.</p></details>
+    </div>
+  </div>
+</section>
+<!-- Risk reversal -->
+<section class="band flamingo" id="risk" aria-labelledby="risk-h">
+  <div class="wrap rv">
+    <div class="risk pop a-ajawid">
+      <div class="risk-copy">
+        <span class="chip a-ajawid"><svg class="i-sm" aria-hidden="true"><use href="#i-shield-check"/></svg>No risk to try it</span>
+        <h2 id="risk-h" class="final-h">Nothing to pay until the host confirms</h2>
+        <p class="t-lg muted">Signing holds your dates. It does not charge you anything.</p>
+      </div>
+      <ul class="risk-list">
+        <li><span class="tile a-madinah"><svg class="i" aria-hidden="true"><use href="#i-calendar-check"/></svg></span><p><b>Your dates are held as soon as you sign.</b> Nobody else can take them while the host checks.</p></li>
+        <li><span class="tile a-fawaz"><svg class="i" aria-hidden="true"><use href="#i-hand-coins"/></svg></span><p><b>You pay only after the host confirms.</b> The amount is the one in your contract, with no service fee.</p></li>
+        <li><span class="tile a-nahda"><svg class="i" aria-hidden="true"><use href="#i-seal-check"/></svg></span><p><b>Same homes, same calendar as Airbnb.</b> Check the listing and its reviews first, then book here.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- A6.6 Final CTA, identical to the hero -->
+<section class="band orange" id="book" aria-labelledby="final-h">
+  <div class="wrap rv">
+    <div class="final pop a-nahda">
+      <div class="final-copy">
+        <h2 id="final-h" class="final-h">Same Jeddah apartment, without the app in the middle</h2>
+        <p class="t-lg muted">Pick your dates, sign on your phone, and pay only after the host confirms.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" type="button" data-book><svg class="i" aria-hidden="true"><use href="#i-calendar-check"/></svg>Check dates and book direct</button>
+        </div>
+        <p class="proof"><svg class="i star" aria-hidden="true"><use href="#i-star-fill"/></svg><span><b class="num">4.83</b> from <b class="num">517</b> Airbnb reviews</span></p>
+      </div>
+      <div class="final-art" aria-hidden="true">
+        <div class="iso-final">
+          <div class="box a-nahda" style="--w:72px;--d:72px;--h:40px;--x:96px;--y:0px;--z:0px"><i class="f-t"></i><i class="f-s"><span class="win"></span><span class="win"></span></i><i class="f-w"><span class="win"></span></i></div>
+          <div class="box a-nahda" style="--w:72px;--d:72px;--h:40px;--x:96px;--y:0px;--z:48px"><i class="f-t"></i><i class="f-s"><span class="win"></span><span class="win"></span></i><i class="f-w"><span class="win"></span></i></div>
+          <div class="box a-nahda" style="--w:72px;--d:72px;--h:40px;--x:96px;--y:0px;--z:96px"><i class="f-t"></i><i class="f-s"><span class="win"></span><span class="win"></span></i><i class="f-w"><span class="win"></span></i></div>
+          <div class="box a-ajawid" style="--w:72px;--d:72px;--h:40px;--x:0px;--y:0px;--z:0px"><i class="f-t"></i><i class="f-s"><span class="win"></span><span class="win"></span></i><i class="f-w"><span class="win"></span></i></div>
+          <div class="box a-ajawid" style="--w:72px;--d:72px;--h:40px;--x:0px;--y:0px;--z:48px"><i class="f-t"></i><i class="f-s"><span class="win"></span><span class="win"></span></i><i class="f-w"><span class="win"></span></i></div>
+          <div class="box a-madinah" style="--w:72px;--d:72px;--h:40px;--x:96px;--y:96px;--z:0px"><i class="f-t"></i><i class="f-s"><span class="win"></span><span class="win"></span></i><i class="f-w"><span class="win"></span></i></div>
+          <div class="box a-fawaz" style="--w:72px;--d:72px;--h:40px;--x:0px;--y:96px;--z:0px"><i class="f-t"></i><i class="f-s"><span class="win"></span><span class="win"></span></i><i class="f-w"><span class="win"></span></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<!--SECTION:footer-->
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo logo-dark" href="#top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12.5 12 5l9 7.5" fill="none" stroke="#F59A1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="9.5" y="13" width="2.2" height="2.2" fill="#FFFFFF"/><rect x="12.3" y="13" width="2.2" height="2.2" fill="#FFFFFF"/><rect x="9.5" y="15.8" width="2.2" height="2.2" fill="#FFFFFF"/><rect x="12.3" y="15.8" width="2.2" height="2.2" fill="#FFFFFF"/></svg><span><b>sh.</b>apartment</span></a>
+      <p class="t-sm">Seven self check in homes in Jeddah, hosted by Sultan and Hussam. Your stay, our priority.</p>
+      <div class="wa-row">
+        <span class="t-lg w6 num" id="wa-num">+966 50 489 5569</span>
+        <button class="btn btn-ghost btn-sm" type="button" id="copy-num"><svg class="i-sm" aria-hidden="true"><use href="#i-copy"/></svg>Copy number</button>
+      </div>
+      <p class="t-xs" id="copy-msg" role="status"></p>
+      <a class="link link-light t-sm" href="https://wa.me/966504895569" target="_blank" rel="noopener">Message the hosts on WhatsApp</a>
+    </div>
+    <nav class="foot-col" aria-label="Footer">
+      <h2 class="t-sm w6">Explore</h2>
+      <a href="#story">Four doubts</a><a href="#apartments">The seven homes</a><a href="#how">How it works</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="foot-col">
+      <h2 class="t-sm w6">Legal</h2>
+      <a href="#privacy">Privacy policy</a><a href="#terms">Terms of stay</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom t-xs">
+    <span>© 2026 sh.apartment · Jeddah, Saudi Arabia</span>
+    <span>Nightly prices shown here are examples until the hosts publish their rates.</span>
+  </div>
+</footer>
 
 <a class="back" href="../index.html"><svg class="i-sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>All concepts</a>
 
-<!--SECTION:dialogs-->
+<!-- Booking: the one primary action -->
+<dialog class="dlg" id="book-dlg" aria-labelledby="bk-title">
+  <div class="dlg-card">
+    <div class="dlg-head">
+      <div>
+        <h2 class="t-xl" id="bk-title">Book direct</h2>
+        <p class="t-sm muted" id="bk-sub"><span class="live-dot"></span>Calendar synced with Airbnb 6 minutes ago</p>
+      </div>
+      <button class="icon-btn" type="button" data-close aria-label="Close booking"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <ol class="progress t-xs" aria-label="Booking steps">
+      <li data-p="1" aria-current="step"><span>1</span>Dates</li>
+      <li data-p="2"><span>2</span>Your details</li>
+      <li data-p="3"><span>3</span>Sign</li>
+    </ol>
+    <div class="dlg-body">
+
+      <form class="pane" id="p1" novalidate>
+        <fieldset class="field apt-field">
+          <legend class="lbl">Apartment</legend>
+          <div class="apt-pick" id="bk-apt"></div>
+        </fieldset>
+        <div class="field">
+          <span class="lbl" id="g-lbl">Guests</span>
+          <div class="stepper" role="group" aria-labelledby="g-lbl">
+            <button class="icon-btn" type="button" id="g-minus" aria-label="One guest fewer"><svg class="i" aria-hidden="true"><use href="#i-minus"/></svg></button>
+            <output class="t-lg w6 num" id="g-val" aria-live="polite">2</output>
+            <button class="icon-btn" type="button" id="g-plus" aria-label="One more guest"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            <span class="t-xs muted" id="g-max">Up to 3 guests</span>
+          </div>
+        </div>
+        <div class="cal" id="cal">
+          <div class="cal-head">
+            <button class="icon-btn" type="button" id="cal-prev" aria-label="Previous month"><svg class="i" aria-hidden="true"><use href="#i-caret-left"/></svg></button>
+            <b class="t-base" id="cal-month" aria-live="polite">November 2026</b>
+            <button class="icon-btn" type="button" id="cal-next" aria-label="Next month"><svg class="i" aria-hidden="true"><use href="#i-caret-right"/></svg></button>
+          </div>
+          <div class="cal-dow t-xs muted" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+          <div class="cal-grid" id="cal-grid" role="group" aria-label="Pick check in, then check out"></div>
+          <div class="cal-legend t-xs muted"><span><i class="lg-sel"></i>Your stay</span><span><i class="lg-booked"></i>Booked</span><span>Thu and Fri nights cost a little more</span></div>
+        </div>
+        <div class="dates t-sm num" id="dates-read">
+          <div><span class="muted">Check in</span><b id="ci-read">Pick a date</b></div>
+          <div><span class="muted">Check out</span><b id="co-read">Pick a date</b></div>
+        </div>
+        <p class="err" id="p1-err" role="alert" hidden></p>
+        <div class="summary" id="summary" aria-live="polite"></div>
+        <div class="pane-actions">
+          <button class="btn btn-primary" type="submit" id="p1-next">Continue to your details<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+        </div>
+      </form>
+
+      <form class="pane" id="p2" novalidate hidden>
+        <div class="field"><label for="f-name">Full name as on your ID</label><input id="f-name" name="name" autocomplete="name" aria-describedby="e-name"><p class="err" id="e-name" hidden></p></div>
+        <div class="field"><label for="f-nat">Nationality</label><input id="f-nat" name="nat" autocomplete="country-name" placeholder="For example, Saudi" aria-describedby="e-nat"><p class="err" id="e-nat" hidden></p></div>
+        <div class="field"><label for="f-id">ID, Iqama or passport number</label><input id="f-id" name="idno" inputmode="text" autocapitalize="characters" aria-describedby="h-id e-id"><p class="hint-s" id="h-id">Digits or Latin letters, no spaces.</p><p class="err" id="e-id" hidden></p></div>
+        <div class="field"><label for="f-phone">Mobile number</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="05XXXXXXXX" aria-describedby="e-phone"><p class="err" id="e-phone" hidden></p></div>
+        <div class="field"><label for="f-email">Email <span class="muted">(optional, for a copy of the contract)</span></label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" aria-describedby="e-email"><p class="err" id="e-email" hidden></p></div>
+        <div class="field"><label for="f-comp">Companion names <span class="muted" id="comp-count">(optional)</span></label><textarea id="f-comp" name="comp" rows="2" placeholder="For example, Mohammed Ahmed, Sara Ahmed"></textarea></div>
+        <p class="safe t-sm"><svg class="i-sm" aria-hidden="true"><use href="#i-lock-key"/></svg>Your ID details fill in your contract on this phone. The site does not store them.</p>
+        <div class="pane-actions">
+          <button class="btn btn-ghost" type="button" data-back="1"><svg class="i" aria-hidden="true"><use href="#i-arrow-left"/></svg>Back</button>
+          <button class="btn btn-primary" type="submit">Continue to the contract<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+        </div>
+      </form>
+
+      <form class="pane" id="p3" novalidate hidden>
+        <dl class="contract t-sm" id="contract"></dl>
+        <div class="rules">
+          <h3 class="t-base">House rules</h3>
+          <ul class="t-sm">
+            <li>Check in from 4:00 pm and check out by 12:00 pm.</li>
+            <li>No smoking of any kind inside, including vapes and shisha, and no charcoal.</li>
+            <li>No pets without the host’s approval.</li>
+            <li>Keep it quiet and respect the neighbours.</li>
+          </ul>
+        </div>
+        <details class="terms t-sm">
+          <summary>Read all 8 contract terms<svg class="i plus" aria-hidden="true"><use href="#i-caret-down"/></svg></summary>
+          <ol>
+            <li>You keep the home and its contents in the condition you received them, and you are responsible for any damage or loss during your stay.</li>
+            <li>No smoking of any kind inside, including vapes and shisha, and no charcoal. No pets without the host’s approval.</li>
+            <li>You keep it quiet and respect the neighbours, public rules and local customs.</li>
+            <li>Check in from 4:00 pm and check out by 12:00 pm. A late check out needs the host’s approval and may cost extra.</li>
+            <li>The booking is confirmed once you pay the rent agreed with the host. Cancellation and refunds follow what you both agree.</li>
+            <li>The host is not responsible for personal belongings or money left in the home.</li>
+            <li>The host may end the stay without a refund if any term or rule is broken.</li>
+            <li>Your electronic signature confirms you read, understood and agreed to all the terms.</li>
+          </ol>
+        </details>
+        <div class="field">
+          <div class="sig-head"><span class="lbl" id="sig-lbl">Your signature</span><button class="btn btn-ghost btn-sm" type="button" id="sig-clear">Clear</button></div>
+          <canvas class="sig" id="sig" aria-labelledby="sig-lbl" role="img" aria-describedby="e-sig"></canvas>
+          <p class="hint-s">Sign inside the box with your finger or mouse.</p>
+          <p class="err" id="e-sig" hidden></p>
+        </div>
+        <label class="agree t-sm"><input type="checkbox" id="f-agree" aria-describedby="e-agree"><span>I have read the contract and agree to it, and my details are correct.</span></label>
+        <p class="err" id="e-agree" hidden></p>
+        <div class="loading" id="p3-loading" hidden aria-live="polite"><span class="skeleton skeleton-line w60"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line w80"></span><span class="skeleton skeleton-block"></span><span class="t-sm muted">Holding your dates</span></div>
+        <div class="pane-actions">
+          <button class="btn btn-ghost" type="button" data-back="2"><svg class="i" aria-hidden="true"><use href="#i-arrow-left"/></svg>Back</button>
+          <button class="btn btn-primary" type="submit" id="sign-btn"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Sign and hold my dates</button>
+        </div>
+      </form>
+
+      <div class="pane" id="p4" hidden>
+        <div class="done">
+          <span class="done-icon"><svg class="i" aria-hidden="true"><use href="#i-check-circle-fill"/></svg></span>
+          <h3 class="t-2xl" id="done-title">Contract ready</h3>
+          <p class="num w6" id="done-no"></p>
+          <p class="muted" id="done-held"></p>
+        </div>
+        <ol class="next t-sm">
+          <li><b>Send the contract to the host on WhatsApp.</b> The message below is ready to send.</li>
+          <li><b>The host confirms your dates</b> and sends the payment details. You pay nothing before that.</li>
+          <li><b>Your door code arrives</b> on WhatsApp before you do.</li>
+        </ol>
+        <pre class="msg t-sm" id="wa-preview"></pre>
+        <p class="t-sm muted" id="pdf-note" role="status" hidden>The live site creates the contract PDF on your phone. This preview does not download files.</p>
+        <div class="pane-actions">
+          <a class="btn btn-primary" id="wa-send" href="https://wa.me/966504895569" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg>Send to the host on WhatsApp</a>
+          <button class="btn btn-ghost" type="button" id="pdf-btn"><svg class="i" aria-hidden="true"><use href="#i-receipt"/></svg>Download the PDF</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</dialog>
+
+<dialog class="dlg dlg-text" id="privacy" aria-labelledby="pv-title">
+  <div class="dlg-card">
+    <div class="dlg-head"><h2 class="t-xl" id="pv-title">Privacy policy</h2><button class="icon-btn" type="button" data-close aria-label="Close privacy policy"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+    <div class="dlg-body prose t-sm">
+      <p>This site does not store your ID, Iqama or passport details. They fill in your contract on your phone and travel only inside the WhatsApp message you send to the host.</p>
+      <p>When you sign, the site holds your dates and keeps your name, mobile number and stay dates so the host can confirm the booking. The hosts use them only for your stay.</p>
+      <p>The site sets no advertising or tracking cookies. To ask about your data, message the hosts on WhatsApp at +966 50 489 5569.</p>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="dlg dlg-text" id="terms" aria-labelledby="tm-title">
+  <div class="dlg-card">
+    <div class="dlg-head"><h2 class="t-xl" id="tm-title">Terms of stay</h2><button class="icon-btn" type="button" data-close aria-label="Close terms of stay"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+    <div class="dlg-body prose t-sm">
+      <p>A direct booking is a contract between you and the host of the home. It is confirmed once the host confirms on WhatsApp and you pay the agreed rent.</p>
+      <p>Check in from 4:00 pm, check out by 12:00 pm. No smoking of any kind inside, including vapes and shisha, and no charcoal. No pets without the host’s approval. Keep it quiet and respect the neighbours.</p>
+      <p>You keep the home in the condition you received it. The host is not responsible for belongings left behind, and may end a stay without a refund if the rules are broken. Cancellation terms are agreed before you pay and written into your contract.</p>
+    </div>
+  </div>
+</dialog>
+
+<!-- Branded 404 for unknown links -->
+<section class="nf" id="notfound" hidden aria-labelledby="nf-title">
+  <div class="nf-art" aria-hidden="true">
+    <div class="iso-nf">
+      <div class="box a-ajawid" style="--w:72px;--d:72px;--h:72px;--x:0px;--y:0px;--z:0px"><i class="f-t"><b>4</b></i><i class="f-s"></i><i class="f-w"></i></div>
+      <div class="box a-nahda" style="--w:72px;--d:72px;--h:72px;--x:88px;--y:0px;--z:0px"><i class="f-t"><b>0</b></i><i class="f-s"></i><i class="f-w"></i></div>
+      <div class="box a-madinah" style="--w:72px;--d:72px;--h:72px;--x:176px;--y:0px;--z:0px"><i class="f-t"><b>4</b></i><i class="f-s"></i><i class="f-w"></i></div>
+    </div>
+  </div>
+  <h2 class="t-3xl" id="nf-title">This page checked out early</h2>
+  <p class="t-lg muted">The link you followed does not lead anywhere on sh.apartment. The seven homes are still here.</p>
+  <a class="btn btn-primary" href="#top"><svg class="i" aria-hidden="true"><use href="#i-arrow-left"/></svg>Back to sh.apartment</a>
+</section>
 
 <script>
 const APTS = [
@@ -351,6 +1106,446 @@ function selectApt(id) {
   menu.addEventListener('click', e => { if (e.target.closest('a, button')) set(false); });
   addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('open')) set(false); });
   window.closeMenu = () => set(false);
+})();
+
+/* Proof: real ratings per home, most reviewed first */
+(function ratings() {
+  const list = document.getElementById('rating-list');
+  const max = Math.max(...APTS.map(a => a.reviews));
+  [...APTS].sort((a, b) => b.reviews - a.reviews).forEach(a => {
+    const row = document.createElement('div');
+    row.className = 'r-row';
+    row.setAttribute('role', 'listitem');
+    row.innerHTML = `<div><span class="r-name">${a.name}</span> <span class="r-where t-sm">${a.where}</span></div>
+      <span class="r-score num"><svg class="i-sm star" aria-hidden="true"><use href="#i-star-fill"/></svg>${a.rating}</span>
+      <div class="r-bar"><span class="r-track"><span class="r-fill" style="display:block;transform:scaleX(${(a.reviews / max).toFixed(3)})"></span></span>
+      <a class="link t-sm r-link num" href="${a.airbnb}" target="_blank" rel="noopener">${a.reviews} reviews<svg class="i-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></div>`;
+    list.appendChild(row);
+  });
+})();
+
+/* Apartments: cards, filters, 3D tilt */
+(function apartments() {
+  const grid = document.getElementById('apts');
+  APTS.forEach(a => {
+    const card = document.createElement('article');
+    card.className = `apt pop a-${a.area}`;
+    card.dataset.area = a.area;
+    card.dataset.guests = a.guests;
+    card.innerHTML = `<div class="apt-photo"><img src="../photos/${a.photo}.jpg" alt="${a.alt}" width="400" height="300">
+        <span class="badge num"><svg class="i-sm star" aria-hidden="true"><use href="#i-star-fill"/></svg>${a.rating} · ${a.reviews}</span></div>
+      <div class="apt-body">
+        <h3 class="t-xl">${a.name}</h3>
+        <p class="t-sm muted">${a.where}</p>
+        <p class="t-sm num">${a.type} · ${a.beds} ${a.beds > 1 ? 'beds' : 'bed'} · ${a.baths} ${a.baths > 1 ? 'baths' : 'bath'} · up to ${a.guests} guests</p>
+        <p class="t-sm">${a.hl}</p>
+        <div class="apt-foot"><p class="price num"><b>SAR ${fmt(a.price)}</b> <span class="t-sm muted">a night</span><br><span class="t-xs muted">SAR ${fmt(a.weekend)} on Thu and Fri</span></p>
+          <button class="btn btn-primary btn-sm" type="button" data-book="${a.id}">Book direct</button></div>
+        <a class="link t-sm" href="${a.airbnb}" target="_blank" rel="noopener">Read its ${a.reviews} reviews on Airbnb<svg class="i-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+      </div>`;
+    grid.appendChild(card);
+  });
+  const chips = [...document.querySelectorAll('.fchip')];
+  chips.forEach(c => c.addEventListener('click', () => {
+    chips.forEach(x => x.setAttribute('aria-pressed', String(x === c)));
+    const f = c.dataset.f;
+    grid.querySelectorAll('.apt').forEach(card => {
+      const show = f === 'all' || (f === 'big' ? +card.dataset.guests >= 5 : card.dataset.area === f);
+      card.hidden = !show;
+    });
+    layout();
+  }));
+  /* Never leave one card alone in a row: the last card widens to fill it */
+  const mq3 = matchMedia('(min-width: 1024px)'), mq2 = matchMedia('(min-width: 640px)');
+  function layout() {
+    const cols = mq3.matches ? 3 : mq2.matches ? 2 : 1;
+    const shown = [...grid.querySelectorAll('.apt')].filter(c => !c.hidden);
+    shown.forEach(c => c.classList.remove('wide', 'wide2'));
+    const rem = shown.length % cols, last = shown[shown.length - 1];
+    if (!last || cols === 1 || rem === 0) return;
+    last.classList.add(rem === 1 ? 'wide' : 'wide2');
+  }
+  mq3.addEventListener('change', layout); mq2.addEventListener('change', layout);
+  layout();
+  if (reduce || !matchMedia('(pointer: fine)').matches) return;
+  grid.querySelectorAll('.apt').forEach(card => {
+    let raf = 0, px = 0, py = 0;
+    card.addEventListener('pointermove', e => {
+      const r = card.getBoundingClientRect();
+      px = (e.clientX - r.left) / r.width - 0.5;
+      py = (e.clientY - r.top) / r.height - 0.5;
+      if (!raf) raf = requestAnimationFrame(() => { raf = 0; card.style.transform = `perspective(900px) rotateX(${(-py * 8).toFixed(2)}deg) rotateY(${(px * 8).toFixed(2)}deg) translateY(-4px)`; });
+    });
+    card.addEventListener('pointerleave', () => { cancelAnimationFrame(raf); raf = 0; card.style.transform = ''; });
+  });
+})();
+
+/* Story objects */
+(function story() {
+  const flip = document.getElementById('flip');
+  const btn = document.getElementById('flip-btn');
+  btn.addEventListener('click', () => {
+    const on = !flip.classList.contains('on');
+    flip.classList.toggle('on', on);
+    btn.setAttribute('aria-pressed', String(on));
+    btn.lastChild.textContent = on ? 'Flip it back' : 'Flip the card';
+  });
+  flip.addEventListener('click', () => btn.click());
+  const AIR = [2, 3, 9, 10, 11, 20, 21], DIR = [6, 7, 15, 16, 24];
+  document.querySelectorAll('[data-cells]').forEach(el => {
+    const kind = el.dataset.cells;
+    for (let i = 0; i < 28; i++) {
+      const c = document.createElement('i');
+      if ((kind === 'air' || kind === 'both') && AIR.includes(i)) c.className = 'air';
+      if ((kind === 'direct' || kind === 'both') && DIR.includes(i)) c.className = 'dir';
+      el.appendChild(c);
+    }
+  });
+})();
+
+/* Scroll reveals: armed on the first scroll, only for elements still below the fold, revealed once */
+(function reveals() {
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+  }), { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+  addEventListener('scroll', () => {
+    document.querySelectorAll('.rv').forEach(el => {
+      if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('pre'); io.observe(el); }
+    });
+  }, { passive: true, once: true });
+})();
+
+/* Tagline: words go from muted to full one at a time, in reading order, driven by scroll through rAF */
+(function tagline() {
+  const el = document.getElementById('tagline');
+  el.querySelectorAll('.line').forEach(line => {
+    line.innerHTML = line.textContent.split(' ').map(w => `<span class="w">${w}</span>`).join(' ');
+  });
+  const words = [...el.querySelectorAll('.w')];
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const r = el.getBoundingClientRect();
+    const start = innerHeight * 0.85, end = innerHeight * 0.3;
+    const p = Math.min(1, Math.max(0, (start - r.top) / (start - end)));
+    const n = Math.round(p * words.length);
+    words.forEach((w, i) => w.classList.toggle('on', i < n));
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  update();
+})();
+
+/* Current section in the navigation */
+(function spy() {
+  const ids = ['story', 'apartments', 'how', 'reviews', 'faq'];
+  const links = id => document.querySelectorAll(`.nav-links a[href="#${id}"], .menu a[href="#${id}"]`);
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    ids.forEach(id => links(id).forEach(a => a.removeAttribute('aria-current')));
+    links(en.target.id).forEach(a => a.setAttribute('aria-current', 'true'));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  ids.forEach(id => io.observe(document.getElementById(id)));
+})();
+
+/* Dialog helpers with an entrance on the base curve */
+function openDlg(d) {
+  if (d.open) return;
+  d.showModal();
+  requestAnimationFrame(() => requestAnimationFrame(() => d.classList.add('shown')));
+}
+function closeDlg(d) {
+  d.classList.remove('shown');
+  setTimeout(() => { if (d.open) d.close(); }, reduce ? 0 : 300);
+  if (d.id === 'privacy' || d.id === 'terms') { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} }
+}
+document.querySelectorAll('.dlg').forEach(d => {
+  d.addEventListener('cancel', e => { e.preventDefault(); closeDlg(d); });
+  d.addEventListener('click', e => { if (e.target === d) closeDlg(d); });
+  d.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => closeDlg(d)));
+});
+
+/* Router: sections scroll natively, #privacy and #terms open, anything else shows the branded 404 */
+(function router() {
+  const known = new Set(['', 'top', 'main', 'story', 'apartments', 'benefits', 'how', 'reviews', 'faq', 'risk', 'book']);
+  const nf = document.getElementById('notfound');
+  const route = () => {
+    let h = '';
+    try { h = decodeURIComponent(location.hash.slice(1)); } catch (e) { h = '404'; }
+    if (h === 'privacy' || h === 'terms') { nf.hidden = true; openDlg(document.getElementById(h)); return; }
+    if (known.has(h)) { nf.hidden = true; return; }
+    nf.hidden = false;
+    nf.querySelector('a').focus();
+  };
+  addEventListener('hashchange', route);
+  route();
+})();
+
+/* Copy the WhatsApp number */
+document.getElementById('copy-num').addEventListener('click', () => {
+  const msg = document.getElementById('copy-msg');
+  const num = document.getElementById('wa-num');
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(num); const s = getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent = 'Number selected. Copy it from the menu.'; };
+  try {
+    navigator.clipboard.writeText('+966504895569').then(() => { msg.textContent = 'Number copied.'; }, fallback);
+  } catch (e) { fallback(); }
+});
+
+/* Booking flow: dates, details, contract, done. Everything is simulated on this page. */
+(function booking() {
+  const dlg = document.getElementById('book-dlg');
+  const $ = id => document.getElementById(id);
+  const DAY = 86400000;
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const key = d => `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`;
+  const fromKey = k => new Date(+k.slice(0, 4), +k.slice(4, 6) - 1, +k.slice(6, 8));
+  const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+  const long = d => d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }).replace(',', '');
+  const short = d => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  const booked = {};
+  APTS.forEach(a => { booked[a.id] = new Set(); a.booked.forEach(([s, n]) => { for (let i = 0; i < n; i++) booked[a.id].add(key(addDays(today, s + i))); }); });
+  const B = { apt: 'midcentury', guests: 2, ci: null, co: null, view: new Date(today.getFullYear(), today.getMonth(), 1), loading: false, timer: 0, tried2: false };
+
+  const sel = $('bk-apt');
+  sel.innerHTML = APTS.map(a => `<label class="opt"><input type="radio" name="apt" value="${a.id}"><img src="../photos/${a.photo}.jpg" alt="" width="40" height="40" loading="lazy"><span>${a.name}<small>${a.where}</small></span></label>`).join('');
+  const setPicked = () => { const r = sel.querySelector(`input[value="${B.apt}"]`); r.checked = true; };
+  const apt = () => byId[B.apt];
+  const nights = () => { const out = []; for (let d = fromKey(B.ci); key(d) < B.co; d = addDays(d, 1)) out.push(d); return out; };
+  const free = (ci, co) => { for (let d = fromKey(ci); key(d) < co; d = addDays(d, 1)) if (booked[B.apt].has(key(d))) return false; return true; };
+  const isWeekend = d => d.getDay() === 4 || d.getDay() === 5;
+  const quote = () => {
+    const n = nights(), a = apt();
+    const wk = n.filter(isWeekend).length, wd = n.length - wk;
+    return { n: n.length, wd, wk, total: wd * a.price + wk * a.weekend };
+  };
+  const err = (id, text) => { const e = $(id); if (text) { e.innerHTML = `<svg class="i-sm" aria-hidden="true"><use href="#i-warning-circle"/></svg><span>${text}</span>`; e.hidden = false; } else { e.hidden = true; e.textContent = ''; } };
+
+  function renderGuests() {
+    const max = apt().guests;
+    B.guests = Math.min(Math.max(1, B.guests), max);
+    $('g-val').textContent = B.guests;
+    $('g-max').textContent = `Up to ${max} guests`;
+    $('g-minus').disabled = B.guests <= 1;
+    $('g-plus').disabled = B.guests >= max;
+  }
+
+  function renderCal() {
+    const g = $('cal-grid');
+    const y = B.view.getFullYear(), m = B.view.getMonth();
+    $('cal-month').textContent = B.view.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+    $('cal-prev').disabled = y === today.getFullYear() && m === today.getMonth();
+    $('cal-next').disabled = (y - today.getFullYear()) * 12 + (m - today.getMonth()) >= 5;
+    const first = new Date(y, m, 1).getDay();
+    const days = new Date(y, m + 1, 0).getDate();
+    let html = '';
+    for (let i = 0; i < first; i++) html += '<span class="day blank" aria-hidden="true"></span>';
+    for (let d = 1; d <= days; d++) {
+      const date = new Date(y, m, d), k = key(date);
+      const past = date < today;
+      const isBooked = booked[B.apt].has(k);
+      const coOk = isBooked && B.ci && !B.co && k > B.ci && free(B.ci, k);
+      const cls = ['day'];
+      if (isBooked) cls.push('booked');
+      if (coOk) cls.push('co-ok');
+      if (k === key(today)) cls.push('today');
+      if (B.ci && B.co && k > B.ci && k < B.co) cls.push('in-range');
+      if (k === B.ci || k === B.co) cls.push('edge');
+      const label = `${date.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' })}${isBooked ? (coOk ? ', booked from that night, you can check out' : ', booked') : ''}${k === B.ci ? ', check in' : ''}${k === B.co ? ', check out' : ''}`;
+      html += `<button type="button" class="${cls.join(' ')}" data-k="${k}" ${past || (isBooked && !coOk) ? 'disabled' : ''} aria-label="${label}">${d}</button>`;
+    }
+    g.innerHTML = html;
+    $('ci-read').textContent = B.ci ? `${long(fromKey(B.ci))}, from 4:00 pm` : 'Pick a date';
+    $('co-read').textContent = B.co ? `${long(fromKey(B.co))}, by 12:00 pm` : (B.ci ? 'Now pick a date' : 'Pick a date');
+  }
+
+  function renderSummary() {
+    const box = $('summary');
+    if (!B.ci || !B.co) {
+      box.innerHTML = `<div class="empty"><span class="tile"><svg class="i" aria-hidden="true"><use href="#i-calendar-blank"/></svg></span><p class="t-sm">${B.ci ? 'Now pick your check out date. The total appears here.' : 'Pick your check in date to see the total. Nights already booked are crossed out.'}</p></div>`;
+      return;
+    }
+    if (B.loading) {
+      box.innerHTML = '<div class="skeleton-wrap" aria-label="Checking the calendar"><span class="skeleton skeleton-line w60"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-line w80"></span><span class="skeleton skeleton-line"></span></div>';
+      return;
+    }
+    const q = quote(), a = apt();
+    box.innerHTML = `<div class="sum-rows t-sm">
+      <div><span>${short(fromKey(B.ci))} to ${short(fromKey(B.co))} · ${q.n} ${q.n > 1 ? 'nights' : 'night'} · ${B.guests} ${B.guests > 1 ? 'guests' : 'guest'}</span><span class="free">Free on these dates</span></div>
+      ${q.wd ? `<div><span>${q.wd} ${q.wd > 1 ? 'weeknights' : 'weeknight'} × SAR ${fmt(a.price)}</span><span>SAR ${fmt(q.wd * a.price)}</span></div>` : ''}
+      ${q.wk ? `<div><span>${q.wk} Thu or Fri ${q.wk > 1 ? 'nights' : 'night'} × SAR ${fmt(a.weekend)}</span><span>SAR ${fmt(q.wk * a.weekend)}</span></div>` : ''}
+      <div><span>Service fee</span><span class="free">SAR 0</span></div>
+      <div class="sum-total"><span>Total</span><span>SAR ${fmt(q.total)}</span></div></div>`;
+  }
+
+  function pick(k) {
+    err('p1-err');
+    if (!B.ci || B.co || k <= B.ci) { B.ci = k; B.co = null; }
+    else if (!free(B.ci, k)) { err('p1-err', 'Those dates include a night that is already booked. Pick a shorter stay or other dates.'); return renderCal(); }
+    else {
+      B.co = k; B.loading = true;
+      clearTimeout(B.timer);
+      B.timer = setTimeout(() => { B.loading = false; renderSummary(); }, 650);
+    }
+    renderCal(); renderSummary();
+  }
+
+  $('cal-grid').addEventListener('click', e => { const b = e.target.closest('button.day'); if (b && !b.disabled) pick(b.dataset.k); });
+  $('cal-prev').addEventListener('click', () => { B.view = new Date(B.view.getFullYear(), B.view.getMonth() - 1, 1); renderCal(); });
+  $('cal-next').addEventListener('click', () => { B.view = new Date(B.view.getFullYear(), B.view.getMonth() + 1, 1); renderCal(); });
+  $('g-minus').addEventListener('click', () => { B.guests--; renderGuests(); renderSummary(); });
+  $('g-plus').addEventListener('click', () => { B.guests++; renderGuests(); renderSummary(); });
+  sel.addEventListener('change', e => {
+    B.apt = e.target.value; err('p1-err');
+    if (B.ci && B.co && !free(B.ci, B.co)) { B.co = null; err('p1-err', `${apt().name} is booked on one of those nights. Pick your check out again or choose new dates.`); }
+    if (B.ci && booked[B.apt].has(B.ci)) { B.ci = null; B.co = null; }
+    renderGuests(); renderCal(); renderSummary();
+  });
+
+  function goStep(n) {
+    ['p1', 'p2', 'p3', 'p4'].forEach((id, i) => { $(id).hidden = i + 1 !== n; });
+    document.querySelectorAll('.progress li').forEach(li => {
+      const p = +li.dataset.p;
+      li.classList.toggle('done', p < n);
+      if (p === n) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+    });
+    dlg.querySelector('.dlg-body').scrollTop = 0;
+    $('bk-title').textContent = n === 4 ? 'Dates held' : 'Book direct';
+    if (n === 3) { renderContract(); requestAnimationFrame(sizeSig); }
+    const focusEl = $(['p1', 'p2', 'p3', 'p4'][n - 1]).querySelector('input, select, button, a');
+    if (focusEl && n !== 1) focusEl.focus({ preventScroll: true });
+  }
+  dlg.querySelectorAll('[data-back]').forEach(b => b.addEventListener('click', () => goStep(+b.dataset.back)));
+
+  $('p1').addEventListener('submit', e => {
+    e.preventDefault();
+    if (!B.ci || !B.co) return err('p1-err', B.ci ? 'Pick your check out date to continue.' : 'Pick a check in and a check out date to continue.');
+    if (B.loading) return;
+    err('p1-err');
+    $('comp-count').textContent = B.guests > 1 ? `(optional, ${B.guests - 1} ${B.guests - 1 > 1 ? 'companions' : 'companion'})` : '(optional)';
+    goStep(2);
+  });
+
+  const digits = v => v.replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d));
+  const checks = {
+    'f-name': v => v.trim().split(/\s+/).filter(Boolean).length >= 2 ? '' : 'Write your full name as it appears on your ID, first and family name.',
+    'f-nat': v => v.trim().length >= 2 ? '' : 'Write your nationality.',
+    'f-id': v => /^[A-Za-z0-9]{5,20}$/.test(digits(v).replace(/\s+/g, '')) ? '' : 'Write the ID, Iqama or passport number using digits or Latin letters, no spaces.',
+    'f-phone': v => { const p = digits(v).replace(/[\s()]/g, ''); return /^(05\d{8}|\+?9665\d{8}|\+\d{8,15})$/.test(p) ? '' : 'Write a mobile number like 0501234567 or +966501234567.'; },
+    'f-email': v => !v.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Write a valid email like name@example.com, or leave it empty.',
+  };
+  const errFor = id => 'e-' + { 'f-name': 'name', 'f-nat': 'nat', 'f-id': 'id', 'f-phone': 'phone', 'f-email': 'email' }[id];
+  const validate = id => { const input = $(id), msg = checks[id](input.value); input.setAttribute('aria-invalid', msg ? 'true' : 'false'); err(errFor(id), msg); return !msg; };
+  Object.keys(checks).forEach(id => {
+    $(id).addEventListener('blur', () => { if ($(id).value || B.tried2) validate(id); });
+    $(id).addEventListener('input', () => { if ($(id).getAttribute('aria-invalid') === 'true') validate(id); });
+  });
+  $('p2').addEventListener('submit', e => {
+    e.preventDefault();
+    B.tried2 = true;
+    const bad = Object.keys(checks).filter(id => !validate(id));
+    if (bad.length) return $(bad[0]).focus();
+    goStep(3);
+  });
+
+  function renderContract() {
+    const a = apt(), q = quote();
+    const rows = [
+      ['Home', `${a.name}, ${a.where}`],
+      ['Check in', `${long(fromKey(B.ci))}, from 4:00 pm`],
+      ['Check out', `${long(fromKey(B.co))}, by 12:00 pm`],
+      ['Nights and guests', `${q.n} ${q.n > 1 ? 'nights' : 'night'} · ${B.guests} ${B.guests > 1 ? 'guests' : 'guest'}`],
+      ['Guest', $('f-name').value.trim()],
+      ['Mobile', digits($('f-phone').value).replace(/\s+/g, '')],
+      ['Total', `SAR ${fmt(q.total)}, service fee SAR 0`],
+    ];
+    $('contract').innerHTML = rows.map(([k, v]) => `<dt>${k}</dt><dd></dd>`).join('');
+    $('contract').querySelectorAll('dd').forEach((dd, i) => { dd.textContent = rows[i][1]; });
+  }
+
+  /* Signature pad */
+  const cv = $('sig'), ctx = cv.getContext('2d');
+  let ink = false, drawing = false;
+  function sizeSig() {
+    const r = cv.getBoundingClientRect(), dpr = devicePixelRatio || 1;
+    if (!r.width) return;
+    cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.lineWidth = 2.5; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#16120F';
+    ink = false;
+  }
+  const pt = e => { const r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+  cv.addEventListener('pointerdown', e => { drawing = true; cv.setPointerCapture(e.pointerId); const [x, y] = pt(e); ctx.beginPath(); ctx.moveTo(x, y); });
+  cv.addEventListener('pointermove', e => { if (!drawing) return; const [x, y] = pt(e); ctx.lineTo(x, y); ctx.stroke(); ink = true; cv.setAttribute('aria-invalid', 'false'); err('e-sig'); });
+  const stop = () => { drawing = false; };
+  cv.addEventListener('pointerup', stop); cv.addEventListener('pointercancel', stop);
+  $('sig-clear').addEventListener('click', () => { ctx.clearRect(0, 0, cv.width, cv.height); ink = false; });
+  addEventListener('resize', () => { if (!$('p3').hidden && !ink) sizeSig(); });
+  $('f-agree').addEventListener('change', () => { if ($('f-agree').checked) err('e-agree'); });
+
+  $('p3').addEventListener('submit', e => {
+    e.preventDefault();
+    let ok = true;
+    if (!ink) { ok = false; cv.setAttribute('aria-invalid', 'true'); err('e-sig', 'Sign inside the box with your finger or mouse.'); }
+    if (!$('f-agree').checked) { ok = false; err('e-agree', 'Tick the box to agree to the contract.'); }
+    if (!ok) return;
+    $('p3-loading').hidden = false;
+    $('sign-btn').disabled = true;
+    setTimeout(() => { $('p3-loading').hidden = true; $('sign-btn').disabled = false; finish(); }, 900);
+  });
+
+  function finish() {
+    const a = apt(), q = quote();
+    const no = `SH ${String(today.getFullYear()).slice(2)}${String(today.getMonth() + 1).padStart(2, '0')} ${1000 + Math.floor(Math.random() * 9000)}`;
+    $('done-no').textContent = `Contract ${no}`;
+    $('done-held').textContent = `Your ${q.n} ${q.n > 1 ? 'nights' : 'night'} at the ${a.name}, ${short(fromKey(B.ci))} to ${short(fromKey(B.co))}, are held until the host confirms.`;
+    const msg = [
+      'Hello, this is a direct booking request from the sh.apartment site.',
+      `Contract: ${no}`,
+      `Home: ${a.name}, ${a.where}`,
+      `Guest: ${$('f-name').value.trim()}`,
+      `Mobile: ${digits($('f-phone').value).replace(/\s+/g, '')}`,
+      `Check in: ${long(fromKey(B.ci))}, from 4:00 pm`,
+      `Check out: ${long(fromKey(B.co))}, by 12:00 pm`,
+      `Nights: ${q.n} · Guests: ${B.guests}`,
+      `Total: SAR ${fmt(q.total)}`,
+      'Please confirm my dates.',
+    ].join('\n');
+    $('wa-preview').textContent = msg;
+    $('wa-send').href = `https://wa.me/966504895569?text=${encodeURIComponent(msg)}`;
+    $('pdf-note').hidden = true;
+    nights().forEach(d => booked[B.apt].add(key(d)));
+    goStep(4);
+  }
+  $('pdf-btn').addEventListener('click', () => { $('pdf-note').hidden = false; });
+
+  window.openBooking = id => {
+    if (id && id !== B.apt) { B.apt = id; if (B.ci && B.co && !free(B.ci, B.co)) { B.ci = null; B.co = null; } }
+    if (!id && state.selected !== B.apt) { B.apt = state.selected; if (B.ci && B.co && !free(B.ci, B.co)) { B.ci = null; B.co = null; } }
+    setPicked();
+    err('p1-err');
+    renderGuests(); renderCal(); renderSummary();
+    goStep(1);
+    window.closeMenu && window.closeMenu();
+    openDlg(dlg);
+  };
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-book]');
+    if (b) window.openBooking(b.dataset.book || null);
+  });
+  renderGuests(); renderCal(); renderSummary();
+})();
+
+/* No orphaned words: keep the last two words of every text block together */
+(function noOrphans() {
+  document.querySelectorAll('main p, main li, main h2, main h3, main summary, main dd, .foot p, .dlg p, .dlg li, .nf p').forEach(el => {
+    if (el.closest('.tagline, .box, pre') || el.querySelector('p, div, ul, ol, h2, h3')) return;
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    let last = null;
+    while (walker.nextNode()) if (walker.currentNode.nodeValue.trim()) last = walker.currentNode;
+    if (!last) return;
+    const v = last.nodeValue.replace(/\s+$/, '');
+    const i = v.lastIndexOf(' ');
+    if (i > 0) last.nodeValue = v.slice(0, i) + ' ' + v.slice(i + 1) + last.nodeValue.slice(v.length);
+  });
 })();
 </script>
 </body>
