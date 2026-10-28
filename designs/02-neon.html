@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>sh.apartment · ليلة في جدة</title>
+<meta name="description" content="سبع شقق فاخرة في جدة بدخول ذاتي. احجز مباشرة من المضيف بلا رسوم منصات، ووقّع العقد على جوالك، ويصلك رمز الباب على واتساب.">
+<meta name="theme-color" content="#131209">
+<meta property="og:title" content="sh.apartment · ليلة في جدة">
+<meta property="og:description" content="سبع شقق فاخرة في جدة بدخول ذاتي. 4.83 من 517 تقييماً على Airbnb.">
+<meta property="og:image" content="../photos/midcentury-3-neon-night.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131209'/%3E%3Cpath d='M14 34 32 18l18 16' fill='none' stroke='%23F59A1E' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='27' y='34' width='10' height='10' rx='2' fill='%23F59A1E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: long form story (skill layout B). Floating pill nav, hero with two neon photos, an hourly timeline of one night,
+   the seven apartments in two clusters, proof, why direct, tagline reveal, three steps, a live price calculator,
+   FAQ, risk reversal, the same CTA again. Dark backgrounds only from the skill palette. */
+:root {
+  color-scheme: dark;
+  --bg: #131209;
+  --bg-2: #181818;
+  --surface: #1F1F1F;
+  --surface-2: #272727;
+  --surface-3: #313131;
+  --black: #000000;
+  --fg: #F3F0EA;
+  --fg-2: #D3CEC4;
+  --muted: #9C978C;
+  --line: rgba(255, 255, 255, 0.09);
+  --line-2: rgba(255, 255, 255, 0.18);
+  --accent: #F59A1E;
+  --accent-ink: #131209;
+  --accent-soft: rgba(245, 154, 30, 0.14);
+  --ok: #7BD49F;
+  --ok-soft: rgba(123, 212, 159, 0.12);
+  --err: #FF9A8A;
+  --err-soft: rgba(255, 154, 138, 0.12);
+  --glass: rgba(31, 31, 31, 0.72);
+  --scrim: rgba(19, 18, 9, 0.8);
+
+  --font: "Geist", "Noto Kufi Arabic", system-ui, sans-serif;
+  --mono: "Geist Mono", "Noto Kufi Arabic", ui-monospace, monospace;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Spacing tokens (skill B2) */
+  --s25: 2px; --s50: 4px; --s75: 8px; --s100: 12px; --s200: 16px; --s300: 24px;
+  --s400: 32px; --s500: 40px; --s600: 48px; --s700: 64px; --s800: 80px; --s900: 96px;
+  /* Radius (Tailwind) */
+  --r-md: 6px; --r-lg: 8px; --r-xl: 12px; --r-2xl: 16px; --r-3xl: 24px; --r-full: 9999px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: var(--font); font-size: 16px; line-height: 24px; font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--bg); }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, h4, p { margin: 0; }
+h1, h2, h3 { text-wrap: balance; font-weight: 700; }
+p, li, dd, summary { text-wrap: pretty; }
+button, input, select { font: inherit; color: inherit; }
+.num, time, .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.tnum { font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: var(--r-md); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.i { width: 1em; height: 1em; flex: none; }
+
+/* Type scale (Tailwind steps only) */
+.t-xs { font-size: 12px; line-height: 16px; }
+.t-sm { font-size: 14px; line-height: 20px; }
+.t-base { font-size: 16px; line-height: 24px; }
+.t-lg { font-size: 18px; line-height: 28px; }
+.t-xl { font-size: 20px; line-height: 28px; }
+.t-2xl { font-size: 24px; line-height: 32px; }
+.t-3xl { font-size: 30px; line-height: 36px; }
+.t-4xl { font-size: 36px; line-height: 40px; }
+.t-5xl { font-size: 48px; line-height: 1; }
+.t-6xl { font-size: 60px; line-height: 1; }
+.muted { color: var(--muted); }
+.fg2 { color: var(--fg-2); }
+
+/* Wrappers and bands */
+.wrap { max-width: 1200px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 768px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+.band { padding-block: var(--s700); }
+@media (min-width: 900px) { .band { padding-block: var(--s900); } }
+.band.alt { background: var(--bg-2); }
+.eyebrow { display: inline-flex; align-items: center; gap: var(--s75); color: var(--accent); font-size: 14px; line-height: 20px; font-weight: 600; }
+.sec-head { display: grid; gap: var(--s200); max-width: 680px; margin-bottom: var(--s600); }
+.sec-head h2 { font-size: 30px; line-height: 36px; }
+.sec-head p { color: var(--fg-2); font-size: 18px; line-height: 28px; }
+@media (min-width: 900px) { .sec-head h2 { font-size: 36px; line-height: 40px; } }
+
+/* Skip link */
+.skip { position: fixed; top: calc(env(safe-area-inset-top, 0px) + var(--s200)); right: var(--s200); z-index: 100; background: var(--accent); color: var(--accent-ink); padding: var(--s75) var(--s100); border-radius: var(--r-lg); font-weight: 600; text-decoration: none; transform: translateY(-200%); transition: transform 300ms var(--ease); }
+.skip:focus { transform: none; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--s75); padding: var(--s75) var(--s100); border-radius: var(--r-xl); border: 1px solid transparent; font-size: 16px; line-height: 24px; font-weight: 600; text-decoration: none; cursor: pointer; transition: transform 300ms var(--ease), background-color 300ms var(--ease), border-color 300ms var(--ease), opacity 300ms var(--ease); }
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { transform: translateY(-2px); background: #FFAA3A; }
+.btn-primary:active { transform: scale(0.98); }
+.btn-ghost { background: var(--surface-2); color: var(--fg); border-color: var(--line); }
+.btn-ghost:hover { background: var(--surface-3); border-color: var(--line-2); }
+.btn-lg { padding: var(--s100) var(--s300); }
+.btn-sm { font-size: 14px; line-height: 20px; }
+.btn[disabled] { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+/* Floating nav (skill B7) */
+.nav { position: fixed; z-index: 50; top: calc(env(safe-area-inset-top, 0px) + var(--s200)); left: 50%; transform: translateX(-50%); width: max-content; max-width: calc(100% - var(--s400)); display: flex; align-items: center; gap: var(--s200); padding: var(--s75); padding-inline-start: var(--s200); border-radius: var(--r-full); background: var(--glass); border: 1px solid var(--line); -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%); }
+.brand { display: inline-flex; align-items: center; gap: var(--s75); text-decoration: none; font-weight: 700; font-size: 18px; line-height: 28px; direction: ltr; white-space: nowrap; }
+.brand b { color: var(--accent); font-weight: 700; }
+.brand svg { width: 22px; height: 22px; }
+.nav-links { display: none; align-items: center; gap: var(--s50); list-style: none; margin: 0; padding: 0; }
+.nav-links a { display: block; padding: var(--s75) var(--s100); border-radius: var(--r-full); text-decoration: none; color: var(--fg-2); font-size: 14px; line-height: 20px; font-weight: 500; transition: color 300ms var(--ease), background-color 300ms var(--ease); }
+.nav-links a:hover { color: var(--fg); background: rgba(255, 255, 255, 0.06); }
+.nav-links a[aria-current="true"] { color: var(--fg); background: rgba(255, 255, 255, 0.08); }
+.nav-cta { border-radius: var(--r-full); font-size: 14px; line-height: 20px; padding: var(--s75) var(--s200); }
+.menu-btn { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: var(--r-full); border: 1px solid var(--line); background: var(--surface-2); cursor: pointer; }
+.menu-btn span { grid-area: 1 / 1; width: 16px; height: 2px; border-radius: 2px; background: var(--fg); transition: transform 500ms var(--ease); }
+.menu-btn span:first-child { transform: translateY(-4px); }
+.menu-btn span:last-child { transform: translateY(4px); }
+.menu-btn[aria-expanded="true"] span:first-child { transform: rotate(45deg); }
+.menu-btn[aria-expanded="true"] span:last-child { transform: rotate(-45deg); }
+@media (min-width: 960px) { .nav-links { display: flex; } .menu-btn { display: none; } }
+@media (max-width: 420px) { .nav .nav-cta { display: none; } }
+
+.menu { position: fixed; inset: 0; z-index: 45; background: rgba(19, 18, 9, 0.94); -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px); padding-top: calc(env(safe-area-inset-top, 0px) + var(--s900)); padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--s400)); padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); opacity: 0; visibility: hidden; transition: opacity 500ms var(--ease), visibility 0s linear 500ms; }
+.menu.open { opacity: 1; visibility: visible; transition: opacity 500ms var(--ease); }
+.menu ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s200); }
+.menu li { opacity: 0; transform: translateY(24px); transition: opacity 500ms var(--ease), transform 500ms var(--ease); }
+.menu.open li { opacity: 1; transform: none; }
+.menu a.m-link { display: flex; justify-content: space-between; align-items: center; padding-block: var(--s100); font-size: 30px; line-height: 36px; font-weight: 600; text-decoration: none; border-bottom: 0; }
+.menu a.m-link[aria-current="true"] { color: var(--accent); }
+.menu .m-foot { margin-top: var(--s600); display: grid; gap: var(--s200); }
+
+/* Hero */
+.hero { padding-top: calc(env(safe-area-inset-top, 0px) + var(--s900)); padding-bottom: var(--s700); }
+@media (min-width: 900px) { .hero { padding-bottom: var(--s900); } }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s600); align-items: center; }
+@media (min-width: 900px) { .hero-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: var(--s700); } }
+.hero-copy { display: grid; gap: var(--s300); min-width: 0; }
+.hero h1 { max-width: 680px; font-size: 30px; line-height: 36px; font-weight: 700; padding-block: var(--s75); background: linear-gradient(to left, #FFFFFF, #9B9B9B); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@media (min-width: 420px) { .hero h1 { font-size: 36px; line-height: 40px; } }
+@media (min-width: 640px) { .hero h1 { font-size: 48px; line-height: 1; } }
+.hero h1 .ln { display: block; padding-block: var(--s75); }
+.hero .sub { max-width: 680px; font-size: 18px; line-height: 28px; color: var(--fg-2); }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s200); }
+.proof { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s75) var(--s200); color: var(--fg-2); font-size: 14px; line-height: 20px; }
+.proof .stars { display: inline-flex; gap: var(--s25); color: var(--accent); }
+.proof b { color: var(--fg); font-weight: 600; }
+.proof .sep { width: 4px; height: 4px; border-radius: var(--r-full); background: var(--surface-3); }
+.hero-media { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: var(--s200); align-items: start; }
+.shot { position: relative; margin: 0; border-radius: var(--r-2xl); overflow: hidden; border: 1px solid var(--line); background: var(--surface); aspect-ratio: 3 / 4; max-width: 100%; }
+.shot img { width: 100%; height: 100%; object-fit: cover; }
+.hero-media .shot:nth-child(2) { margin-top: var(--s600); }
+.shot figcaption { position: absolute; inset-inline: var(--s75); bottom: var(--s75); display: flex; justify-content: space-between; align-items: center; gap: var(--s75); padding: var(--s75) var(--s100); border-radius: var(--r-lg); background: var(--scrim); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); font-size: 12px; line-height: 16px; color: var(--fg); }
+.shot figcaption time { color: var(--accent); }
+
+/* Timeline story */
+.timeline { position: relative; display: grid; gap: var(--s700); }
+.timeline::before { content: ""; position: absolute; top: var(--s75); bottom: var(--s75); inset-inline-start: 7px; width: 2px; background: var(--surface-3); border-radius: 2px; }
+.step { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s300); padding-inline-start: var(--s600); }
+.step::before { content: ""; position: absolute; inset-inline-start: 0; top: var(--s75); width: 16px; height: 16px; border-radius: var(--r-full); background: var(--bg-2); border: 2px solid var(--accent); }
+.step.end::before { background: var(--accent); }
+@media (min-width: 900px) {
+  .step { grid-template-columns: 128px minmax(0, 1fr) minmax(0, 1.1fr); gap: var(--s400); align-items: start; }
+  .step.no-media { grid-template-columns: 128px minmax(0, 1fr); }
+}
+.step time { font-size: 24px; line-height: 32px; color: var(--accent); font-weight: 500; }
+.step time small { display: block; font-family: var(--font); font-size: 12px; line-height: 16px; color: var(--muted); font-weight: 400; }
+.step-body { display: grid; gap: var(--s100); min-width: 0; align-content: start; }
+.step-body h3 { font-size: 24px; line-height: 32px; }
+.step-body p { color: var(--fg-2); font-size: 18px; line-height: 28px; max-width: 520px; }
+.step-body .tag { display: inline-flex; align-items: center; gap: var(--s75); justify-self: start; padding: var(--s50) var(--s100); border-radius: var(--r-full); background: var(--surface); border: 1px solid var(--line); color: var(--fg-2); font-size: 12px; line-height: 16px; }
+.step-media { display: grid; gap: var(--s200); grid-template-columns: 1fr 1fr; min-width: 0; }
+.step-media.one { grid-template-columns: 1fr; }
+.step-media .shot { aspect-ratio: 4 / 5; }
+.step-media.one .shot { aspect-ratio: 16 / 10; }
+.step-media.one .shot.tall { aspect-ratio: 4 / 5; max-width: 360px; }
+.fountain { aspect-ratio: 16 / 10; border-radius: var(--r-2xl); border: 1px solid var(--line); background: var(--black); overflow: hidden; }
+.fountain svg { width: 100%; height: 100%; display: block; }
+
+/* Apartments */
+.cluster { display: grid; gap: var(--s300); }
+.cluster + .cluster { margin-top: var(--s700); }
+.cluster-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s75) var(--s300); }
+.cluster-head h3 { font-size: 20px; line-height: 28px; }
+.cluster-head p { color: var(--muted); font-size: 14px; line-height: 20px; }
+.cards { display: grid; gap: var(--s300); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 720px) { .cards.n4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cards.n3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .cards.n4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.card { display: grid; grid-template-rows: auto 1fr; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-2xl); overflow: hidden; transition: border-color 300ms var(--ease), transform 500ms var(--ease); }
+.card:hover { border-color: var(--line-2); }
+.card-img { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--surface-2); }
+.card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--ease); }
+.card:hover .card-img img { transform: scale(1.04); }
+.card-img .badge { position: absolute; top: var(--s75); inset-inline-start: var(--s75); display: inline-flex; align-items: center; gap: var(--s50); padding: var(--s50) var(--s75); border-radius: var(--r-lg); background: var(--scrim); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); font-size: 12px; line-height: 16px; }
+.card-body { display: grid; gap: var(--s100); padding: var(--s200); align-content: start; min-width: 0; }
+.card-body h4 { font-size: 18px; line-height: 28px; font-weight: 600; }
+.card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s50) var(--s100); color: var(--muted); font-size: 14px; line-height: 20px; }
+.rate { display: inline-flex; align-items: center; gap: var(--s50); color: var(--fg); }
+.rate .i { color: var(--accent); }
+.facts { display: flex; flex-wrap: wrap; gap: var(--s75) var(--s200); color: var(--fg-2); font-size: 14px; line-height: 20px; }
+.facts span { display: inline-flex; align-items: center; gap: var(--s50); }
+.hl { color: var(--fg-2); font-size: 14px; line-height: 20px; }
+.card-foot { display: flex; align-items: center; justify-content: space-between; gap: var(--s100); padding-top: var(--s100); margin-top: var(--s50); border-top: 1px solid var(--line); flex-wrap: wrap; }
+.price { font-size: 14px; line-height: 20px; color: var(--muted); }
+.price b { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--fg); font-size: 18px; line-height: 28px; font-weight: 600; }
+.card-actions { display: flex; gap: var(--s75); }
+
+/* Proof */
+.proof-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s400); }
+@media (min-width: 640px) { th, td { padding: var(--s100) var(--s200); } }
+@media (min-width: 900px) { .proof-grid { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: var(--s700); align-items: start; } }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s200); }
+.stat { padding: var(--s300); border-radius: var(--r-2xl); background: var(--surface); border: 1px solid var(--line); display: grid; gap: var(--s75); align-content: start; }
+.stat .num { font-size: 48px; line-height: 1; font-weight: 600; }
+.stat .num.acc { color: var(--accent); }
+.stat p { color: var(--muted); font-size: 14px; line-height: 20px; }
+.table-wrap { position: relative; overflow-x: auto; border-radius: var(--r-2xl); border: 1px solid var(--line); background: var(--surface); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 20px; }
+th, td { text-align: start; padding: var(--s100) var(--s100); border-bottom: 1px solid var(--line); vertical-align: middle; }
+thead th { color: var(--muted); font-weight: 500; font-size: 12px; line-height: 16px; }
+tbody tr:last-child td { border-bottom: 0; }
+td.n { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+td a { display: inline-flex; align-items: center; gap: var(--s50); color: var(--fg-2); text-decoration: none; border-radius: var(--r-md); transition: color 300ms var(--ease); }
+td a:hover { color: var(--accent); }
+.note { color: var(--muted); font-size: 12px; line-height: 16px; margin-top: var(--s100); }
+
+/* Benefits */
+.benefits { display: grid; gap: var(--s200); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 720px) { .benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.benefit { display: grid; gap: var(--s100); padding: var(--s300); border-radius: var(--r-2xl); background: var(--surface); border: 1px solid var(--line); align-content: start; }
+.benefit .ic { width: 40px; height: 40px; display: grid; place-items: center; border-radius: var(--r-xl); background: var(--accent-soft); color: var(--accent); font-size: 20px; }
+.benefit h3 { font-size: 20px; line-height: 28px; }
+.benefit p { color: var(--fg-2); }
+
+/* Tagline reveal (skill B11) */
+.tagline { padding-block: var(--s900); }
+.tagline p { max-width: 680px; font-size: 36px; line-height: 40px; font-weight: 600; text-wrap: balance; }
+@media (min-width: 900px) { .tagline p { max-width: 880px; font-size: 48px; line-height: 1; } .tagline p .w { padding-block: var(--s50); } }
+.tagline .w { display: inline-block; color: var(--fg); opacity: 0.3; transition: opacity 600ms var(--ease); }
+.tagline .w.on { opacity: 1; }
+.tagline .w.acc.on { color: var(--accent); }
+
+/* Steps */
+.steps { display: grid; gap: var(--s200); grid-template-columns: minmax(0, 1fr); counter-reset: st; list-style: none; margin: 0; padding: 0; }
+@media (min-width: 900px) { .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.steps li { display: grid; gap: var(--s100); align-content: start; padding: var(--s300); border-radius: var(--r-2xl); background: var(--surface); border: 1px solid var(--line); }
+.steps .k { font-family: var(--mono); color: var(--accent); font-size: 14px; line-height: 20px; }
+.steps h3 { font-size: 20px; line-height: 28px; }
+.steps p { color: var(--fg-2); }
+
+/* Booking calculator */
+.book-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s300); }
+@media (min-width: 960px) { .book-grid { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: var(--s400); align-items: start; } }
+.panel { padding: var(--s300); border-radius: var(--r-2xl); background: var(--surface); border: 1px solid var(--line); }
+form.book { display: grid; gap: var(--s200); }
+.field { display: grid; gap: var(--s75); min-width: 0; }
+.field label, .field .lbl { font-size: 14px; line-height: 20px; font-weight: 500; color: var(--fg-2); }
+.row2 { display: grid; gap: var(--s200); grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.control { width: 100%; min-height: 48px; padding: var(--s100); border-radius: var(--r-xl); background: var(--surface-2); border: 1px solid var(--line); transition: border-color 300ms var(--ease), background-color 300ms var(--ease); }
+.control:hover { border-color: var(--line-2); }
+.control:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-color: transparent; }
+.control[aria-invalid="true"] { border-color: var(--err); }
+.select-wrap { position: relative; }
+.select-wrap select { appearance: none; -webkit-appearance: none; padding-inline-end: var(--s500); }
+.select-wrap .i { position: absolute; inset-inline-end: var(--s100); top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--muted); }
+input[type="date"] { direction: ltr; text-align: end; }
+input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.85); cursor: pointer; }
+.err { display: flex; align-items: flex-start; gap: var(--s50); color: var(--err); font-size: 14px; line-height: 20px; }
+.err[hidden] { display: none; }
+.stepper { display: flex; align-items: center; justify-content: space-between; gap: var(--s100); min-height: 48px; padding: var(--s50); border-radius: var(--r-xl); background: var(--surface-2); border: 1px solid var(--line); }
+.stepper button { width: 40px; height: 40px; display: grid; place-items: center; border-radius: var(--r-lg); border: 1px solid var(--line); background: var(--surface-3); cursor: pointer; transition: background-color 300ms var(--ease), transform 300ms var(--ease); }
+.stepper button:hover { background: #3A3A3A; }
+.stepper button:active { transform: scale(0.98); }
+.stepper button[disabled] { opacity: 0.35; cursor: not-allowed; }
+.stepper output { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 18px; line-height: 28px; }
+.hint { color: var(--muted); font-size: 12px; line-height: 16px; }
+.sync { display: inline-flex; align-items: center; gap: var(--s75); color: var(--fg-2); font-size: 14px; line-height: 20px; }
+.sync .dot { width: 8px; height: 8px; border-radius: var(--r-full); background: var(--ok); box-shadow: 0 0 0 4px var(--ok-soft); }
+
+.result { display: grid; gap: var(--s300); min-height: 100%; }
+.res-head { display: flex; gap: var(--s200); align-items: center; min-width: 0; }
+.res-head img { width: 64px; height: 64px; border-radius: var(--r-lg); object-fit: cover; flex: none; }
+.res-head div { display: grid; gap: var(--s25); min-width: 0; }
+.res-head h3 { font-size: 20px; line-height: 28px; }
+.res-head p { color: var(--muted); font-size: 14px; line-height: 20px; }
+.chip { display: inline-flex; align-items: center; gap: var(--s50); justify-self: start; padding: var(--s50) var(--s100); border-radius: var(--r-full); font-size: 12px; line-height: 16px; font-weight: 600; }
+.chip.ok { background: var(--ok-soft); color: var(--ok); }
+.chip.bad { background: var(--err-soft); color: var(--err); }
+.lines { display: grid; gap: var(--s100); margin: 0; padding: 0; list-style: none; }
+.lines li { display: flex; justify-content: space-between; gap: var(--s200); color: var(--fg-2); }
+.lines li .mono { color: var(--fg); }
+.amt { white-space: nowrap; flex: none; }
+.amt .mono, .lines .mono, .bar .mono { font-family: var(--font); font-weight: 600; }
+.lines li.total { padding-top: var(--s100); border-top: 1px solid var(--line); color: var(--fg); font-weight: 600; font-size: 18px; line-height: 28px; }
+.lines li.total .mono { font-size: 24px; line-height: 32px; color: var(--accent); }
+.lines li.total .amt { color: var(--accent); }
+.zero { color: var(--ok) !important; }
+.compare { display: grid; gap: var(--s100); padding: var(--s200); border-radius: var(--r-xl); background: var(--surface-2); border: 1px solid var(--line); }
+.compare .ttl { display: flex; justify-content: space-between; align-items: center; gap: var(--s100); font-size: 14px; line-height: 20px; color: var(--fg-2); }
+.ex { padding: var(--s25) var(--s75); border-radius: var(--r-md); border: 1px solid var(--line-2); color: var(--muted); font-size: 12px; line-height: 16px; }
+.bar { display: grid; gap: var(--s50); }
+.bar .lab { display: flex; justify-content: space-between; gap: var(--s100); font-size: 14px; line-height: 20px; }
+.bar .track { height: 8px; border-radius: var(--r-full); background: var(--surface-3); overflow: hidden; }
+.bar .fill { height: 100%; border-radius: var(--r-full); background: var(--muted); transform-origin: right center; transition: transform 700ms var(--ease); }
+.bar.direct .fill { background: var(--accent); }
+.res-actions { display: flex; flex-wrap: wrap; gap: var(--s100); }
+.res-note { display: flex; gap: var(--s75); align-items: flex-start; color: var(--muted); font-size: 14px; line-height: 20px; }
+.res-note .i { margin-top: var(--s25); color: var(--ok); }
+.alt-dates { display: grid; gap: var(--s100); padding: var(--s200); border-radius: var(--r-xl); background: var(--err-soft); border: 1px solid rgba(255, 154, 138, 0.25); }
+.alt-dates p { color: var(--fg); }
+.empty { display: grid; gap: var(--s200); place-content: center; text-align: center; padding: var(--s500) var(--s200); }
+.empty .ic { margin-inline: auto; width: 48px; height: 48px; display: grid; place-items: center; border-radius: var(--r-xl); background: var(--accent-soft); color: var(--accent); font-size: 24px; }
+.sk { display: grid; gap: var(--s200); }
+.sk div { border-radius: var(--r-lg); background: var(--surface-3); animation: pulse 1200ms var(--ease) infinite alternate; }
+@keyframes pulse { from { opacity: 0.45; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .sk div { animation: none; } }
+
+/* FAQ */
+.faq { display: grid; gap: var(--s100); max-width: 840px; }
+.faq details { border-radius: var(--r-2xl); background: var(--surface); border: 1px solid var(--line); transition: border-color 300ms var(--ease); }
+.faq details[open] { border-color: var(--line-2); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: var(--s200); padding: var(--s200) var(--s300); font-weight: 600; font-size: 18px; line-height: 28px; border-radius: var(--r-2xl); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary .i { color: var(--muted); transition: transform 500ms var(--ease); }
+.faq details[open] summary .i { transform: rotate(180deg); }
+.faq .ans { padding: 0 var(--s300) var(--s300); color: var(--fg-2); max-width: 680px; }
+
+/* Risk reversal + final CTA */
+.assure { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s300); padding: var(--s400); border-radius: var(--r-3xl); background: var(--surface); border: 1px solid var(--line); }
+@media (min-width: 900px) { .assure { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s600); padding: var(--s600); } }
+.assure h2 { font-size: 30px; line-height: 36px; }
+.assure ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s200); }
+.assure li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--s100); color: var(--fg-2); }
+.assure li .i { color: var(--accent); margin-top: var(--s50); font-size: 18px; }
+.final { text-align: center; display: grid; gap: var(--s300); justify-items: center; }
+.final h2 { max-width: 680px; font-size: 36px; line-height: 40px; background: linear-gradient(to left, #FFFFFF, #9B9B9B); -webkit-background-clip: text; background-clip: text; color: transparent; padding-block: var(--s75); }
+@media (min-width: 900px) { .final h2 { font-size: 48px; line-height: 1; } }
+.final p { max-width: 560px; color: var(--fg-2); font-size: 18px; line-height: 28px; }
+
+/* Footer */
+footer { background: var(--black); border-top: 1px solid var(--line); padding-block: var(--s700) calc(var(--s900) + env(safe-area-inset-bottom, 0px)); }
+.foot { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s400); }
+@media (min-width: 900px) { .foot { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); } }
+.foot h4 { font-size: 14px; line-height: 20px; color: var(--muted); font-weight: 500; margin-bottom: var(--s100); }
+.foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s75); }
+.foot a, .foot .linkbtn { color: var(--fg-2); text-decoration: none; font-size: 14px; line-height: 20px; transition: color 300ms var(--ease); }
+.foot a:hover, .foot .linkbtn:hover { color: var(--fg); }
+.linkbtn { background: none; border: 0; padding: 0; cursor: pointer; text-align: start; border-radius: var(--r-md); }
+.wa { display: flex; align-items: center; gap: var(--s100); flex-wrap: wrap; }
+.wa .numtxt { font-family: var(--mono); direction: ltr; unicode-bidi: isolate; user-select: all; font-size: 16px; line-height: 24px; }
+.copy { display: inline-flex; align-items: center; gap: var(--s50); padding: var(--s50) var(--s100); border-radius: var(--r-lg); border: 1px solid var(--line); background: var(--surface); cursor: pointer; font-size: 12px; line-height: 16px; transition: background-color 300ms var(--ease); }
+.copy:hover { background: var(--surface-2); }
+.legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s100); padding-top: var(--s300); margin-top: var(--s300); border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 16px; }
+
+/* Dialogs */
+dialog { width: min(560px, calc(100% - var(--s400))); max-height: calc(100% - var(--s600)); padding: 0; border-radius: var(--r-2xl); border: 1px solid var(--line-2); background: var(--surface); color: var(--fg); }
+dialog::backdrop { background: rgba(0, 0, 0, 0.6); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.dlg { display: grid; gap: var(--s200); padding: var(--s300); }
+.dlg header { display: flex; justify-content: space-between; align-items: center; gap: var(--s200); }
+.dlg h2 { font-size: 20px; line-height: 28px; }
+.dlg ul { margin: 0; padding-inline-start: var(--s300); display: grid; gap: var(--s75); color: var(--fg-2); }
+.icon-btn { width: 40px; height: 40px; display: grid; place-items: center; border-radius: var(--r-full); border: 1px solid var(--line); background: var(--surface-2); cursor: pointer; }
+
+/* Back to gallery pill */
+.back { position: fixed; z-index: 40; left: calc(env(safe-area-inset-left, 0px) + var(--s200)); bottom: calc(env(safe-area-inset-bottom, 0px) + var(--s200)); display: inline-flex; align-items: center; gap: var(--s75); padding: var(--s75) var(--s100); border-radius: var(--r-full); background: var(--glass); border: 1px solid var(--line); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); color: var(--fg-2); font-size: 12px; line-height: 16px; text-decoration: none; transition: color 300ms var(--ease), background-color 300ms var(--ease); }
+.back:hover { color: var(--fg); background: var(--surface-2); }
+
+/* Scroll reveal (only armed below the fold, after the first scroll) */
+.pre { opacity: 0; transform: translateY(32px); }
+.pre.in { opacity: 1; transform: none; transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
+@media (prefers-reduced-motion: reduce) {
+  .pre { transform: none; }
+  .pre.in { transition: opacity 400ms linear; }
+  .menu li, .menu, .btn, .card-img img, .bar .fill, .tagline .w { transition-duration: 1ms !important; }
+}
+</style>
+</head>
+<body>
+<!--ICONS--><svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="i-airplane-tilt" viewBox="0 0 256 256" fill="currentColor"><path d="M185.33,114.21l29.14-27.42.17-.17a32,32,0,0,0-45.26-45.26c0,.06-.11.11-.17.17L141.79,70.67l-83-30.2a8,8,0,0,0-8.39,1.86l-24,24a8,8,0,0,0,1.22,12.31l63.89,42.59L76.69,136H56a8,8,0,0,0-5.65,2.34l-24,24A8,8,0,0,0,29,175.42l36.82,14.73,14.7,36.75.06.16a8,8,0,0,0,13.18,2.47l23.87-23.88A8,8,0,0,0,120,200V179.31l14.76-14.76,42.59,63.89a8,8,0,0,0,12.31,1.22l24-24a8,8,0,0,0,1.86-8.39Zm-.07,97.23-42.59-63.88A8,8,0,0,0,136.8,144c-.27,0-.53,0-.79,0a8,8,0,0,0-5.66,2.35l-24,24A8,8,0,0,0,104,176v20.69L90.93,209.76,79.43,181A8,8,0,0,0,75,176.57l-28.74-11.5L59.32,152H80a8,8,0,0,0,5.66-2.34l24-24a8,8,0,0,0-1.22-12.32L44.56,70.74l13.5-13.49,83.22,30.26a8,8,0,0,0,8.56-2L180.78,52.6A16,16,0,0,1,203.4,75.23l-32.87,30.93a8,8,0,0,0-2,8.56l30.26,83.22Z"/></symbol><symbol id="i-arrow-left" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-bathtub" viewBox="0 0 256 256" fill="currentColor"><path d="M240,96H208a8,8,0,0,0-8-8H136a8,8,0,0,0-8,8H64V52A12,12,0,0,1,76,40a12.44,12.44,0,0,1,12.16,9.59,8,8,0,0,0,15.68-3.18A28.32,28.32,0,0,0,76,24,28,28,0,0,0,48,52V96H16a8,8,0,0,0-8,8v40a56.06,56.06,0,0,0,56,56v16a8,8,0,0,0,16,0V200h96v16a8,8,0,0,0,16,0V200a56.06,56.06,0,0,0,56-56V104A8,8,0,0,0,240,96Zm-48,8v32H144V104Zm40,40a40,40,0,0,1-40,40H64a40,40,0,0,1-40-40V112H128v32a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V112h24Z"/></symbol><symbol id="i-buildings" viewBox="0 0 256 256" fill="currentColor"><path d="M240,208H224V96a16,16,0,0,0-16-16H144V32a16,16,0,0,0-24.88-13.32L39.12,72A16,16,0,0,0,32,85.34V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM208,96V208H144V96ZM48,85.34,128,32V208H48ZM112,112v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm-32,0v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm0,56v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Zm32,0v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-calendar-check" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-38.34-85.66a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L116,164.69l42.34-42.35A8,8,0,0,1,169.66,122.34Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-chat-circle-dots" viewBox="0 0 256 256" fill="currentColor"><path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"/></symbol><symbol id="i-check-circle" viewBox="0 0 256 256" fill="currentColor"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-coffee" viewBox="0 0 256 256" fill="currentColor"><path d="M80,56V24a8,8,0,0,1,16,0V56a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,120,64Zm32,0a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,152,64Zm96,56v8a40,40,0,0,1-37.51,39.91,96.59,96.59,0,0,1-27,40.09H208a8,8,0,0,1,0,16H32a8,8,0,0,1,0-16H56.54A96.3,96.3,0,0,1,24,136V88a8,8,0,0,1,8-8H208A40,40,0,0,1,248,120ZM200,96H40v40a80.27,80.27,0,0,0,45.12,72h69.76A80.27,80.27,0,0,0,200,136Zm32,24a24,24,0,0,0-16-22.62V136a95.78,95.78,0,0,1-1.2,15A24,24,0,0,0,232,128Z"/></symbol><symbol id="i-copy" viewBox="0 0 256 256" fill="currentColor"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></symbol><symbol id="i-hand-coins" viewBox="0 0 256 256" fill="currentColor"><path d="M230.33,141.06a24.43,24.43,0,0,0-21.24-4.23l-41.84,9.62A28,28,0,0,0,140,112H89.94a31.82,31.82,0,0,0-22.63,9.37L44.69,144H16A16,16,0,0,0,0,160v40a16,16,0,0,0,16,16H120a7.93,7.93,0,0,0,1.94-.24l64-16a6.94,6.94,0,0,0,1.19-.4L226,182.82l.44-.2a24.6,24.6,0,0,0,3.93-41.56ZM16,160H40v40H16Zm203.43,8.21-38,16.18L119,200H56V155.31l22.63-22.62A15.86,15.86,0,0,1,89.94,128H140a12,12,0,0,1,0,24H112a8,8,0,0,0,0,16h32a8.32,8.32,0,0,0,1.79-.2l67-15.41.31-.08a8.6,8.6,0,0,1,6.3,15.9ZM164,96a36,36,0,0,0,5.9-.48,36,36,0,1,0,28.22-47A36,36,0,1,0,164,96Zm60-12a20,20,0,1,1-20-20A20,20,0,0,1,224,84ZM164,40a20,20,0,0,1,19.25,14.61,36,36,0,0,0-15,24.93A20.42,20.42,0,0,1,164,80a20,20,0,0,1,0-40Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-lightning" viewBox="0 0 256 256" fill="currentColor"><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"/></symbol><symbol id="i-list-bullets" viewBox="0 0 256 256" fill="currentColor"><path d="M80,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H88A8,8,0,0,1,80,64Zm136,56H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,64H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM44,52A12,12,0,1,0,56,64,12,12,0,0,0,44,52Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,116Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,180Z"/></symbol><symbol id="i-lock-key" viewBox="0 0 256 256" fill="currentColor"><path d="M128,112a28,28,0,0,0-8,54.83V184a8,8,0,0,0,16,0V166.83A28,28,0,0,0,128,112Zm0,40a12,12,0,1,1,12-12A12,12,0,0,1,128,152Zm80-72H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-map-pin" viewBox="0 0 256 256" fill="currentColor"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></symbol><symbol id="i-minus" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-moon" viewBox="0 0 256 256" fill="currentColor"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-receipt" viewBox="0 0 256 256" fill="currentColor"><path d="M72,104a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,104Zm8,40h96a8,8,0,0,0,0-16H80a8,8,0,0,0,0,16ZM232,56V208a8,8,0,0,1-11.58,7.15L192,200.94l-28.42,14.21a8,8,0,0,1-7.16,0L128,200.94,99.58,215.15a8,8,0,0,1-7.16,0L64,200.94,35.58,215.15A8,8,0,0,1,24,208V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-16,0H40V195.06l20.42-10.22a8,8,0,0,1,7.16,0L96,199.06l28.42-14.22a8,8,0,0,1,7.16,0L160,199.06l28.42-14.22a8,8,0,0,1,7.16,0L216,195.06Z"/></symbol><symbol id="i-seal-check" viewBox="0 0 256 256" fill="currentColor"><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"/></symbol><symbol id="i-shield-check" viewBox="0 0 256 256" fill="currentColor"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></symbol><symbol id="i-star" viewBox="0 0 256 256" fill="currentColor"><path d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.38,16.38,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65a8,8,0,0,0-8.38,0L69.09,215.94c-.15.09-.19.12-.38,0a.37.37,0,0,1-.17-.48l14.88-62.8a8,8,0,0,0-2.56-7.91l-48.7-42c-.12-.1-.23-.19-.13-.5s.18-.27.33-.29l63.92-5.16A8,8,0,0,0,103,91.86l24.62-59.61c.08-.17.11-.25.35-.25s.27.08.35.25L153,91.86a8,8,0,0,0,6.75,4.92l63.92,5.16c.15,0,.24,0,.33.29S224,102.63,223.84,102.73Z"/></symbol><symbol id="i-star-fill" viewBox="0 0 256 256" fill="currentColor"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></symbol><symbol id="i-television" viewBox="0 0 256 256" fill="currentColor"><path d="M216,64H147.31l34.35-34.34a8,8,0,1,0-11.32-11.32L128,60.69,85.66,18.34A8,8,0,0,0,74.34,29.66L108.69,64H40A16,16,0,0,0,24,80V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V80A16,16,0,0,0,216,64ZM40,80H144V200H40ZM216,200H160V80h56V200Zm-16-84a12,12,0,1,1-12-12A12,12,0,0,1,200,116Zm0,48a12,12,0,1,1-12-12A12,12,0,0,1,200,164Z"/></symbol><symbol id="i-whatsapp-logo" viewBox="0 0 256 256" fill="currentColor"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol></svg><!--/ICONS-->
+<a class="skip" href="#main">انتقل إلى المحتوى</a>
+
+<header>
+  <nav class="nav" aria-label="القائمة الرئيسية">
+    <a class="brand" href="#top" aria-label="sh.apartment، أعلى الصفحة">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12.5 12 4.5l9 8" fill="none" stroke="#F59A1E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="9.6" y="12.6" width="4.8" height="4.8" rx="1" fill="#F59A1E"/></svg>
+      <span><b>sh.</b>apartment</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#night" data-spy="night">الليلة</a></li>
+      <li><a href="#apartments" data-spy="apartments">الشقق</a></li>
+      <li><a href="#direct" data-spy="direct">الحجز المباشر</a></li>
+      <li><a href="#faq" data-spy="faq">الأسئلة</a></li>
+    </ul>
+    <a class="btn btn-primary nav-cta" href="#book" data-cta>اختر تواريخك</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="فتح القائمة"><span></span><span></span></button>
+  </nav>
+  <div class="menu" id="menu" inert>
+    <ul>
+      <li><a class="m-link" href="#night" data-spy="night">الليلة <svg class="i" aria-hidden="true"><use href="#i-arrow-left"/></svg></a></li>
+      <li><a class="m-link" href="#apartments" data-spy="apartments">الشقق <svg class="i" aria-hidden="true"><use href="#i-arrow-left"/></svg></a></li>
+      <li><a class="m-link" href="#direct" data-spy="direct">الحجز المباشر <svg class="i" aria-hidden="true"><use href="#i-arrow-left"/></svg></a></li>
+      <li><a class="m-link" href="#faq" data-spy="faq">الأسئلة <svg class="i" aria-hidden="true"><use href="#i-arrow-left"/></svg></a></li>
+      <li class="m-foot"><a class="btn btn-primary btn-lg" href="#book" data-cta>اختر تواريخك</a><span class="muted t-sm">واتساب المضيف: <span class="mono" dir="ltr">+966 50 489 5569</span></span></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Hero -->
+  <section class="hero" id="top" aria-labelledby="hero-h">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow"><svg class="i" aria-hidden="true"><use href="#i-moon"/></svg> جدة · سبع شقق بدخول ذاتي</span>
+        <h1 id="hero-h"><span class="ln">شقق فاخرة في جدة،</span><span class="ln">بلا مكتب استقبال</span><span class="ln">ولا رسوم منصات</span></h1>
+        <p class="sub">استديو وأجنحة ومنازل للعائلات في النهضة وطريق المدينة والأجاويد والأمير فواز. اختر تواريخك، ووقّع العقد على جوالك، ويصلك رمز الباب على واتساب.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#book" data-cta><svg class="i" aria-hidden="true"><use href="#i-calendar-blank"/></svg> اختر تواريخك</a>
+        </div>
+        <p class="proof">
+          <span class="stars" aria-hidden="true"><svg class="i"><use href="#i-star-fill"/></svg><svg class="i"><use href="#i-star-fill"/></svg><svg class="i"><use href="#i-star-fill"/></svg><svg class="i"><use href="#i-star-fill"/></svg><svg class="i"><use href="#i-star-fill"/></svg></span>
+          <span><b class="mono">4.83</b> من <b class="mono">517</b> تقييماً على Airbnb</span>
+          <span class="sep" aria-hidden="true"></span>
+          <span>سلطان <b>مضيف مميز</b></span>
+        </p>
+      </div>
+      <div class="hero-media">
+        <figure class="shot">
+          <img src="../photos/midcentury-3-neon-night.jpg" alt="سرير علوي تحت إضاءة نيون وردية في استديو ميد سنشري" width="787" height="1400" fetchpriority="high">
+          <figcaption><span>استديو ميد سنشري</span><time class="mono">22:15</time></figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../photos/cozy-1-neon-cinema.jpg" alt="صالة بإضاءة زرقاء وشاشة كبيرة تحت السرير العلوي في كوزي هوم" width="1050" height="1400" fetchpriority="high">
+          <figcaption><span>كوزي هوم</span><time class="mono">22:40</time></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story timeline -->
+  <section class="band alt" id="night" aria-labelledby="night-h">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg> الليلة</span>
+        <h2 id="night-h">ليلة في جدة، ساعة بساعة</h2>
+        <p>وصلت متأخراً بعد رحلة طويلة؟ هكذا تمضي أول ليلة في شققنا، من المطار حتى المغادرة، بلا موظف استقبال وبلا مفاتيح.</p>
+      </div>
+
+      <ol class="timeline" style="list-style:none;margin:0;padding:0">
+        <li class="step" data-reveal>
+          <time class="mono" datetime="21:40">21:40<small>مساءً</small></time>
+          <div class="step-body">
+            <h3>تهبط في مطار الملك عبدالعزيز</h3>
+            <p>شقق طريق الملك على بعد حوالي عشرين دقيقة بالسيارة. لا تحتاج أن تتصل بأحد ولا أن تنتظر موظفاً.</p>
+            <span class="tag"><svg class="i" aria-hidden="true"><use href="#i-airplane-tilt"/></svg> مبنى النهضة على طريق الملك</span>
+          </div>
+          <div class="step-media one">
+            <figure class="shot"><img src="../photos/midcentury-7-building.jpg" alt="واجهة مبنى شقق النهضة على طريق الملك" width="1400" height="933" loading="lazy"></figure>
+          </div>
+        </li>
+
+        <li class="step" data-reveal>
+          <time class="mono" datetime="22:05">22:05<small>مساءً</small></time>
+          <div class="step-body">
+            <h3>رمز الباب على واتساب</h3>
+            <p>كل الشقق بقفل ذكي. يصلك الرمز من المضيف قبل وصولك، فتفتح الباب بنفسك في أي ساعة.</p>
+            <span class="tag"><svg class="i" aria-hidden="true"><use href="#i-lock-key"/></svg> دخول ذاتي في الشقق السبع</span>
+          </div>
+          <div class="step-media">
+            <figure class="shot"><img src="../photos/orange-7-smart-lock.jpg" alt="قفل ذكي مضاء على باب أورنج سويت" width="798" height="1400" loading="lazy"></figure>
+            <figure class="shot"><img src="../photos/cozy-6-lobby.jpg" alt="مدخل مبنى النهضة بجدران خشبية" width="1400" height="931" loading="lazy"></figure>
+          </div>
+        </li>
+
+        <li class="step" data-reveal>
+          <time class="mono" datetime="22:15">22:15<small>مساءً</small></time>
+          <div class="step-body">
+            <h3>النيون يضيء</h3>
+            <p>في استديو ميد سنشري سرير علوي تحت ضوء وردي، وفي كوزي هوم سرير علوي بضوء أزرق فوق شاشة السينما. اختر لون ليلتك.</p>
+            <span class="tag"><svg class="i" aria-hidden="true"><use href="#i-lightning"/></svg> ميد سنشري وكوزي هوم</span>
+          </div>
+          <div class="step-media">
+            <figure class="shot"><img src="../photos/midcentury-1-living.jpg" alt="صالة استديو ميد سنشري بسجادة مربعات وسرير علوي" width="1400" height="931" loading="lazy"></figure>
+            <figure class="shot"><img src="../photos/cozy-4-bedroom.jpg" alt="سرير كوزي هوم بإضاءة نيون زرقاء على الجدار" width="787" height="1400" loading="lazy"></figure>
+          </div>
+        </li>
+
+        <li class="step" data-reveal>
+          <time class="mono" datetime="22:40">22:40<small>مساءً</small></time>
+          <div class="step-body">
+            <h3>الكنبة تصبح مقعد سينما</h3>
+            <p>شاشة 75 بوصة أمامك، والكنبة تنفرد لتصبح مقعداً سينمائياً. في أورنج سويت كنبة سينمائية أمام شاشة 65 بوصة.</p>
+            <span class="tag"><svg class="i" aria-hidden="true"><use href="#i-television"/></svg> شاشات 65 و75 بوصة</span>
+          </div>
+          <div class="step-media one">
+            <figure class="shot"><img src="../photos/midcentury-2-living-art.jpg" alt="ركن التلفزيون في استديو ميد سنشري بلوحات جدة" width="1400" height="931" loading="lazy"></figure>
+          </div>
+        </li>
+
+        <li class="step" data-reveal>
+          <time class="mono" datetime="23:30">23:30<small>مساءً</small></time>
+          <div class="step-body">
+            <h3>الكورنيش ونافورة الملك فهد</h3>
+            <p>الكورنيش قريب من طريق الملك، وأطول نافورة في العالم على بعد ربع ساعة تقريباً بالسيارة. هواء البحر بعد منتصف الليل جزء من جدة.</p>
+            <span class="tag"><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg> شمال جدة</span>
+          </div>
+          <div class="step-media one">
+            <div class="fountain" role="img" aria-label="رسم توضيحي لنافورة الملك فهد فوق البحر ليلاً">
+              <svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="640" height="400" fill="#000000"/>
+                <circle cx="520" cy="80" r="26" fill="#F3F0EA" opacity="0.9"/>
+                <circle cx="530" cy="74" r="24" fill="#000000"/>
+                <g fill="#F3F0EA" opacity="0.5"><circle cx="80" cy="60" r="1.6"/><circle cx="150" cy="110" r="1.2"/><circle cx="230" cy="48" r="1.4"/><circle cx="410" cy="130" r="1.2"/><circle cx="600" cy="160" r="1.4"/><circle cx="40" cy="170" r="1.2"/></g>
+                <path d="M0 300 H640 V400 H0 Z" fill="#131209"/>
+                <g stroke="#313131" stroke-width="2" fill="none"><path d="M20 324 q20 -6 40 0 t40 0"/><path d="M420 340 q20 -6 40 0 t40 0"/><path d="M200 360 q20 -6 40 0 t40 0"/><path d="M500 372 q20 -6 40 0 t40 0"/></g>
+                <g fill="#F59A1E"><circle cx="30" cy="292" r="2"/><circle cx="62" cy="290" r="2"/><circle cx="96" cy="293" r="2"/><circle cx="560" cy="291" r="2"/><circle cx="596" cy="293" r="2"/><circle cx="628" cy="290" r="2"/></g>
+                <path d="M318 300 C 318 220, 316 150, 320 70 C 324 150, 322 220, 322 300 Z" fill="#F3F0EA" opacity="0.92"/>
+                <g fill="#F3F0EA"><circle cx="312" cy="64" r="5" opacity="0.7"/><circle cx="330" cy="58" r="6" opacity="0.6"/><circle cx="300" cy="80" r="4" opacity="0.5"/><circle cx="342" cy="76" r="4" opacity="0.5"/><circle cx="320" cy="48" r="4" opacity="0.4"/><circle cx="290" cy="100" r="3" opacity="0.35"/><circle cx="352" cy="98" r="3" opacity="0.35"/><circle cx="284" cy="124" r="2.4" opacity="0.25"/><circle cx="358" cy="122" r="2.4" opacity="0.25"/></g>
+                <ellipse cx="320" cy="302" rx="46" ry="6" fill="#F3F0EA" opacity="0.25"/>
+                <path d="M320 304 V 392" stroke="#F59A1E" stroke-width="2" opacity="0.5"/>
+              </svg>
+            </div>
+          </div>
+        </li>
+
+        <li class="step" data-reveal>
+          <time class="mono" datetime="00:30">00:30<small>بعد منتصف الليل</small></time>
+          <div class="step-body">
+            <h3>جاكوزي دافئ</h3>
+            <p>في استديو ميد سنشري جاكوزي دافئ ينهي اليوم. وفي منزل الأجاويد حوض استحمام أسود قائم بذاته.</p>
+            <span class="tag"><svg class="i" aria-hidden="true"><use href="#i-bathtub"/></svg> ميد سنشري والأجاويد</span>
+          </div>
+          <div class="step-media">
+            <figure class="shot"><img src="../photos/midcentury-5-bath-jacuzzi.jpg" alt="حمام استديو ميد سنشري مع جاكوزي" width="1400" height="931" loading="lazy"></figure>
+            <figure class="shot"><img src="../photos/ajawid-6-bathtub.jpg" alt="حوض استحمام أسود قائم في منزل الأجاويد" width="787" height="1400" loading="lazy"></figure>
+          </div>
+        </li>
+
+        <li class="step" data-reveal>
+          <time class="mono" datetime="09:00">09:00<small>صباحاً</small></time>
+          <div class="step-body">
+            <h3>قهوة الصباح جاهزة</h3>
+            <p>كبسولات القهوة وأكياس الشاي في انتظارك في شقق النهضة. وإن كان عندك اجتماع، ففي الجناح الفاخر مكتب أعمال وكرسي مساج.</p>
+            <span class="tag"><svg class="i" aria-hidden="true"><use href="#i-coffee"/></svg> شقق النهضة</span>
+          </div>
+          <div class="step-media">
+            <figure class="shot"><img src="../photos/midcentury-6-coffee.jpg" alt="صينية قهوة بكبسولات وفناجين في استديو ميد سنشري" width="1050" height="1400" loading="lazy"></figure>
+            <figure class="shot"><img src="../photos/suite-4-workspace.jpg" alt="مكتب العمل في الجناح الفاخر" width="1400" height="931" loading="lazy"></figure>
+          </div>
+        </li>
+
+        <li class="step no-media end" data-reveal>
+          <time class="mono" datetime="12:00">12:00<small>ظهراً</small></time>
+          <div class="step-body">
+            <h3>المغادرة</h3>
+            <p>أغلق الباب خلفك وانطلق. لا مفتاح تسلّمه ولا طابور عند مكتب. الدخول من الرابعة عصراً والمغادرة حتى الثانية عشرة ظهراً.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Apartments -->
+  <section class="band" id="apartments" aria-labelledby="apt-h">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow"><svg class="i" aria-hidden="true"><use href="#i-buildings"/></svg> الشقق</span>
+        <h2 id="apt-h">سبع شقق في أربعة أحياء</h2>
+        <p>كل شقة منشورة على Airbnb بتقييماتها الحقيقية. اخترها هنا واحجزها من المضيف مباشرة.</p>
+      </div>
+      <div class="cluster" data-reveal>
+        <div class="cluster-head">
+          <h3>شمال جدة</h3>
+          <p>طريق الملك وطريق المدينة · قرب الكورنيش والمطار</p>
+        </div>
+        <div class="cards n4" id="cards-north"></div>
+      </div>
+      <div class="cluster" data-reveal>
+        <div class="cluster-head">
+          <h3>جنوب شرق جدة</h3>
+          <p>الأجاويد والأمير فواز · قرب بارك سكوير ومستشفى الحرس الوطني</p>
+        </div>
+        <div class="cards n3" id="cards-south"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof -->
+  <section class="band alt" id="proof" aria-labelledby="proof-h">
+    <div class="wrap proof-grid">
+      <div class="sec-head" style="margin-bottom:0" data-reveal>
+        <span class="eyebrow"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg> التقييمات</span>
+        <h2 id="proof-h">517 تقييماً على Airbnb بمتوسط 4.83</h2>
+        <p>هذه أرقام الضيوف الحقيقية من صفحات الشقق على Airbnb. اقرأ تقييمات أي شقة قبل أن تحجزها هنا.</p>
+        <div class="stats">
+          <div class="stat"><span class="num acc">4.83</span><p>متوسط التقييم الموزون للشقق السبع</p></div>
+          <div class="stat"><span class="num">517</span><p>تقييماً على Airbnb</p></div>
+          <div class="stat"><span class="num">4.93</span><p>أعلى تقييم: الجناح الفاخر</p></div>
+          <div class="stat"><span class="num" style="font-size:30px;line-height:36px;font-family:var(--font)">مضيف مميز</span><p>سلطان على Airbnb، يستضيف أربعاً من الشقق السبع</p></div>
+        </div>
+      </div>
+      <div data-reveal>
+        <div class="table-wrap">
+          <table>
+            <caption class="sr-only">تقييم كل شقة على Airbnb</caption>
+            <thead><tr><th scope="col">الشقة</th><th scope="col">التقييم</th><th scope="col">التقييمات</th><th scope="col"><span class="sr-only">رابط</span></th></tr></thead>
+            <tbody id="rating-rows"></tbody>
+          </table>
+        </div>
+        <p class="note">الأرقام من صفحات الشقق على Airbnb، أكتوبر 2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="band" id="direct" aria-labelledby="direct-h">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow"><svg class="i" aria-hidden="true"><use href="#i-hand-coins"/></svg> الحجز المباشر</span>
+        <h2 id="direct-h">لماذا تحجز من هنا وليس من التطبيق</h2>
+        <p>الشقة نفسها والمضيف نفسه والتقويم نفسه. الفرق أنك تتعامل مع المضيف مباشرة.</p>
+      </div>
+      <div class="benefits">
+        <article class="benefit" data-reveal>
+          <span class="ic"><svg class="i" aria-hidden="true"><use href="#i-receipt"/></svg></span>
+          <h3>المجموع كاملاً من البداية</h3>
+          <p>ترى سعر كل ليلة والمجموع قبل أن تراسلنا، بلا رسوم خدمة تُضاف في آخر خطوة.</p>
+        </article>
+        <article class="benefit" data-reveal>
+          <span class="ic"><svg class="i" aria-hidden="true"><use href="#i-chat-circle-dots"/></svg></span>
+          <h3>تتحدث مع المضيف نفسه</h3>
+          <p>سلطان وحسام يردان عليك على واتساب. لا مركز اتصال ولا رسائل آلية.</p>
+        </article>
+        <article class="benefit" data-reveal>
+          <span class="ic"><svg class="i" aria-hidden="true"><use href="#i-seal-check"/></svg></span>
+          <h3>عقد واضح على جوالك</h3>
+          <p>توقّع بإصبعك وتحصل على رقم عقد فوري. البنود مكتوبة قبل الدفع، فتعرف ما لك وما عليك.</p>
+        </article>
+        <article class="benefit" data-reveal>
+          <span class="ic"><svg class="i" aria-hidden="true"><use href="#i-calendar-check"/></svg></span>
+          <h3>تقويم متزامن مع Airbnb</h3>
+          <p>الليلة المحجوزة على Airbnb محجوزة هنا أيضاً، فلا تُحجز الشقة نفسها لضيفين.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tagline reveal -->
+  <section class="tagline band alt" aria-label="وعدنا">
+    <div class="wrap">
+      <p id="tagline" data-acc="جدة">تحجز من المضيف مباشرة، وتدخل برمز على جوالك، وتنام في شقة تشبه جدة في الليل.</p>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="band" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow"><svg class="i" aria-hidden="true"><use href="#i-list-bullets"/></svg> الخطوات</span>
+        <h2 id="how-h">ثلاث خطوات من التاريخ إلى الباب</h2>
+      </div>
+      <ol class="steps">
+        <li data-reveal><span class="k">1</span><h3>اختر الشقة والتواريخ</h3><p>ترى الليالي المحجوزة والمجموع فوراً، لأن التقويم متزامن مع Airbnb.</p></li>
+        <li data-reveal><span class="k">2</span><h3>وقّع العقد على جوالك</h3><p>اسمك وهويتك وعدد المرافقين، ثم توقيعك بإصبعك. يصدر رقم العقد مباشرة.</p></li>
+        <li data-reveal><span class="k">3</span><h3>أكّد على واتساب</h3><p>ترسل العقد للمالك، فيؤكد التواريخ، ويصلك رمز الباب قبل وصولك.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Booking calculator -->
+  <section class="band alt" id="book" aria-labelledby="book-h">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow"><svg class="i" aria-hidden="true"><use href="#i-calendar-blank"/></svg> احسبها</span>
+        <h2 id="book-h">اختر تواريخك واعرف المجموع الآن</h2>
+        <p><span class="sync"><span class="dot" aria-hidden="true"></span> التقويم متزامن مع Airbnb · آخر تحديث قبل 6 دقائق</span></p>
+      </div>
+      <div class="book-grid">
+        <form class="book panel" id="book-form" novalidate>
+          <div class="field">
+            <label for="b-apt">الشقة</label>
+            <div class="select-wrap">
+              <select class="control" id="b-apt" name="apt"></select>
+              <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="b-ci">تاريخ الدخول</label>
+              <input class="control" type="date" id="b-ci" name="ci" required aria-describedby="e-ci">
+              <p class="err" id="e-ci" hidden></p>
+            </div>
+            <div class="field">
+              <label for="b-co">تاريخ المغادرة</label>
+              <input class="control" type="date" id="b-co" name="co" required aria-describedby="e-co">
+              <p class="err" id="e-co" hidden></p>
+            </div>
+          </div>
+          <div class="field">
+            <span class="lbl" id="g-lbl">عدد الضيوف</span>
+            <div class="stepper" role="group" aria-labelledby="g-lbl">
+              <button type="button" id="g-minus" aria-label="ضيف أقل"><svg class="i" aria-hidden="true"><use href="#i-minus"/></svg></button>
+              <output id="g-out" aria-live="polite">2</output>
+              <button type="button" id="g-plus" aria-label="ضيف أكثر"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            </div>
+            <p class="hint" id="g-hint">الحد الأقصى 3 ضيوف</p>
+          </div>
+          <button class="btn btn-primary btn-lg" type="submit"><svg class="i" aria-hidden="true"><use href="#i-calendar-check"/></svg> احسب المجموع</button>
+          <p class="hint">ليالي الخميس والجمعة بسعر نهاية الأسبوع. الدخول من 4:00 مساءً والمغادرة حتى 12:00 ظهراً.</p>
+        </form>
+        <div class="panel" id="result" aria-live="polite" aria-busy="false"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg> الأسئلة</span>
+        <h2 id="faq-h">أسئلة قبل الحجز</h2>
+      </div>
+      <div class="faq" data-reveal>
+        <details><summary>متى الدخول والمغادرة؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><div class="ans">الدخول من الساعة 4:00 مساءً، والمغادرة حتى الساعة 12:00 ظهراً. التأخير يكون بموافقة المالك، وقد تترتب عليه رسوم إضافية.</div></details>
+        <details><summary>كيف أدخل الشقة؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><div class="ans">كل الشقق بدخول ذاتي بقفل ذكي. يرسل لك المضيف رمز الدخول على واتساب قبل وصولك، فتدخل في أي ساعة دون انتظار.</div></details>
+        <details><summary>هل الحجز المباشر هو نفس الشقة على Airbnb؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><div class="ans">نعم. الشقة نفسها والمضيف نفسه، والتقويم متزامن مع Airbnb حتى لا تُحجز الليلة نفسها مرتين.</div></details>
+        <details><summary>متى يتأكد حجزي؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><div class="ans">بعد توقيع العقد تُحجز التواريخ مبدئياً باسمك. يراجعها المالك ويؤكدها، ويتأكد الحجز بعد سداد قيمة الإيجار المتفق عليها معه.</div></details>
+        <details><summary>ما البيانات المطلوبة في العقد؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><div class="ans">الاسم الكامل كما في الهوية، والجنسية، ورقم الهوية أو الإقامة أو الجواز، ورقم الجوال، وعدد المرافقين وأسماؤهم إن رغبت. بياناتك لا تُحفظ في الموقع، وتُستخدم فقط لإنشاء ملف العقد على جهازك.</div></details>
+        <details><summary>هل التدخين مسموح داخل الشقة؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><div class="ans">لا. يُمنع التدخين بجميع أنواعه داخل الوحدة، بما في ذلك السجائر الإلكترونية والشيشة، ويُمنع إشعال الفحم.</div></details>
+        <details><summary>هل تناسب الشقق العائلات؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><div class="ans">منزل الأمير فواز فيه غرفة أطفال بسرير علوي، وكرسي طعام وسرير للأطفال، ويتسع لستة ضيوف. ومنزل الأجاويد فيه ثلاث غرف نوم وطاولة طعام لستة ضيوف.</div></details>
+        <details><summary>هل يُسمح بالحيوانات الأليفة؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><div class="ans">فقط بإذن مسبق من المالك. اسأله على واتساب قبل الحجز.</div></details>
+        <details><summary>كم تبعد الشقق عن المطار؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><div class="ans">شقق طريق الملك وطريق المدينة في شمال جدة، على بعد حوالي عشرين دقيقة من مطار الملك عبدالعزيز. شقتا الأجاويد ومنزل الأمير فواز في جنوب شرق جدة، أبعد عن المطار وأقرب إلى مستشفى الحرس الوطني.</div></details>
+        <details><summary>ما سياسة الإلغاء في الحجز المباشر؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><div class="ans">يتفق عليها الطرفان قبل الدفع وتُكتب في العقد، فتعرفها قبل أن تدفع أي مبلغ. أما حجوزات Airbnb فتخضع لسياسة الإلغاء المكتوبة في صفحة الشقة هناك.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Risk reversal -->
+  <section class="band alt" aria-labelledby="assure-h">
+    <div class="wrap">
+      <div class="assure" data-reveal>
+        <div style="display:grid;gap:var(--s200);align-content:start">
+          <span class="eyebrow"><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg> بلا مخاطرة</span>
+          <h2 id="assure-h">لا تدفع شيئاً قبل أن يؤكد المالك</h2>
+          <p class="fg2 t-lg">بعد توقيع العقد تُحجز التواريخ مبدئياً باسمك. يؤكدها المالك على واتساب، وبعدها فقط تدفع قيمة الإيجار المتفق عليها.</p>
+        </div>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check-circle"/></svg><span>التواريخ محجوزة لك مبدئياً منذ لحظة التوقيع، ولا يستطيع أحد حجزها من Airbnb.</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check-circle"/></svg><span>بياناتك لا تُحفظ في الموقع، وتُستخدم فقط لإنشاء ملف العقد على جهازك.</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check-circle"/></svg><span>إن لم تناسبك التواريخ، تكتب للمالك قبل الدفع ويفتحها من جديد.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="band" aria-labelledby="final-h">
+    <div class="wrap final" data-reveal>
+      <h2 id="final-h">اختر الشقة، واختر الليلة</h2>
+      <p>سبع شقق في جدة بدخول ذاتي وتقويم متزامن مع Airbnb. المجموع أمامك قبل أن تراسلنا.</p>
+      <a class="btn btn-primary btn-lg" href="#book" data-cta><svg class="i" aria-hidden="true"><use href="#i-calendar-blank"/></svg> اختر تواريخك</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div style="display:grid;gap:var(--s200);align-content:start">
+        <a class="brand" href="#top" aria-label="sh.apartment، أعلى الصفحة">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12.5 12 4.5l9 8" fill="none" stroke="#F59A1E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="9.6" y="12.6" width="4.8" height="4.8" rx="1" fill="#F59A1E"/></svg>
+          <span><b>sh.</b>apartment</span>
+        </a>
+        <p class="muted t-sm">راحتك أولويتنا. سبع شقق مفروشة بدخول ذاتي في جدة.</p>
+        <div class="wa">
+          <svg class="i" aria-hidden="true" style="color:var(--ok);font-size:20px"><use href="#i-whatsapp-logo"/></svg>
+          <span class="numtxt" id="wa-num">+966 50 489 5569</span>
+          <button class="copy" type="button" id="copy-num"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg> <span>نسخ الرقم</span></button>
+        </div>
+        <a class="btn btn-ghost btn-sm" style="justify-self:start" href="https://wa.me/966504895569" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg> راسل المضيف على واتساب</a>
+      </div>
+      <div>
+        <h4>الصفحة</h4>
+        <ul>
+          <li><a href="#night">الليلة</a></li>
+          <li><a href="#apartments">الشقق</a></li>
+          <li><a href="#direct">الحجز المباشر</a></li>
+          <li><a href="#book">احسب المجموع</a></li>
+          <li><a href="#faq">الأسئلة</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>معلومات</h4>
+        <ul>
+          <li><button class="linkbtn" type="button" data-open="dlg-terms">شروط الإقامة</button></li>
+          <li><button class="linkbtn" type="button" data-open="dlg-privacy">الخصوصية</button></li>
+          <li><a href="https://gathern.co/" target="_blank" rel="noopener">جاذر إن</a></li>
+          <li><a href="https://hello-jed.sh-apartment.workers.dev/" target="_blank" rel="noopener">دخول المالك</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 sh.apartment · جدة، المملكة العربية السعودية</span>
+      <span>الأسعار في هذه الصفحة للعرض فقط</span>
+    </div>
+  </div>
+</footer>
+
+<dialog id="dlg-terms" aria-labelledby="dlg-terms-h">
+  <div class="dlg">
+    <header><h2 id="dlg-terms-h">شروط الإقامة</h2><button class="icon-btn" type="button" data-close aria-label="إغلاق"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></header>
+    <ul>
+      <li>الدخول من الساعة 4:00 مساءً، والمغادرة حتى الساعة 12:00 ظهراً.</li>
+      <li>يُمنع التدخين بجميع أنواعه داخل الوحدة، بما في ذلك السجائر الإلكترونية والشيشة، ويُمنع إشعال الفحم.</li>
+      <li>لا يُسمح بالحيوانات الأليفة إلا بإذن مسبق.</li>
+      <li>الالتزام بالهدوء واحترام خصوصية الجيران.</li>
+      <li>يُؤكَّد الحجز بعد سداد قيمة الإيجار المتفق عليها مع المالك.</li>
+      <li>المالك غير مسؤول عن فقدان المقتنيات الشخصية أو الأموال داخل الوحدة.</li>
+      <li>مخالفة أي بند تتيح للمالك إنهاء الإقامة دون استرداد.</li>
+    </ul>
+  </div>
+</dialog>
+<dialog id="dlg-privacy" aria-labelledby="dlg-privacy-h">
+  <div class="dlg">
+    <header><h2 id="dlg-privacy-h">الخصوصية</h2><button class="icon-btn" type="button" data-close aria-label="إغلاق"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></header>
+    <ul>
+      <li>بياناتك في نموذج الحجز لا تُحفظ في الموقع، وتُستخدم فقط لإنشاء ملف العقد على جهازك.</li>
+      <li>يُحفظ في الموقع رقم العقد والتواريخ فقط، حتى لا تُحجز الليلة لضيف آخر.</li>
+      <li>نتواصل معك على واتساب عبر الرقم الذي تكتبه في العقد، ولا نشاركه مع أي جهة.</li>
+    </ul>
+  </div>
+</dialog>
+
+<a class="back" href="../index.html"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg> كل التصاميم</a>
+
+<script>
+(() => {
+  const APTS = [
+    { id: 'suite', name: 'الجناح الفاخر', district: 'حي النهضة', street: 'طريق الملك', cluster: 'north', type: 'غرفة وصالة', beds: 1, baths: 1, guests: 4, rating: 4.93, reviews: 69, price: 379, weekend: 449, photo: '../photos/suite-1-living.jpg', hl: 'كرسي مساج فاخر ومكتب أعمال وشاشة 75 بوصة', airbnb: 'https://ar.airbnb.com/rooms/1545416629708956462', booked: [[5, 8], [15, 17], [29, 31]] },
+    { id: 'midcentury', name: 'استديو ميد سنشري', district: 'حي النهضة', street: 'طريق الملك', cluster: 'north', type: 'استديو', beds: 1, baths: 1, guests: 3, rating: 4.90, reviews: 105, price: 349, weekend: 419, photo: '../photos/midcentury-1-living.jpg', hl: 'جاكوزي دافئ وكنبة تتحول إلى مقعد سينمائي', airbnb: 'https://ar.airbnb.com/rooms/1548537821036118490', booked: [[3, 5], [11, 14], [24, 27]] },
+    { id: 'cozy', name: 'كوزي هوم', district: 'حي النهضة', street: 'طريق الملك', cluster: 'north', type: 'غرفة وصالة', beds: 1, baths: 1, guests: 3, rating: 4.90, reviews: 86, price: 329, weekend: 399, photo: '../photos/cozy-1-neon-cinema.jpg', hl: 'كنبة تتحول إلى سرير سينمائي ومطبخ متكامل', airbnb: 'https://ar.airbnb.com/rooms/1545433977273675752', booked: [[1, 3], [8, 10], [17, 21]] },
+    { id: 'madinah', name: 'شقة طريق المدينة', district: 'طريق المدينة', street: 'خلف الجفالي مرسيدس', cluster: 'north', type: 'غرفتا نوم', beds: 3, baths: 2, guests: 4, rating: 4.69, reviews: 144, price: 429, weekend: 499, photo: '../photos/madinah-1-living.jpg', hl: 'على شريان جدة، قرب المطار والمولات', airbnb: 'https://ar.airbnb.com/rooms/1308042141503902547', booked: [[0, 2], [6, 9], [13, 16]] },
+    { id: 'ajawid', name: 'منزل الأجاويد', district: 'حي الأجاويد', street: 'جنوب شرق جدة', cluster: 'south', type: '3 غرف نوم', beds: 5, baths: 2, guests: 6, rating: 4.85, reviews: 26, price: 649, weekend: 749, photo: '../photos/ajawid-1-living.jpg', hl: 'ثلاث غرف نوم وطاولة طعام ودخول ذاتي', airbnb: 'https://ar.airbnb.com/rooms/1548398523561225848', booked: [[9, 13], [26, 28]] },
+    { id: 'orange', name: 'أورنج سويت', district: 'حي الأجاويد', street: 'جنوب شرق جدة', cluster: 'south', type: 'غرفة وصالة', beds: 1, baths: 1, guests: 3, rating: 4.87, reviews: 68, price: 319, weekend: 389, photo: '../photos/orange-1-living.jpg', hl: 'كنبة سينمائية أمام شاشة 65 بوصة', airbnb: 'https://ar.airbnb.com/rooms/1557132730241179243', booked: [[4, 6], [12, 15], [21, 23]] },
+    { id: 'fawaz', name: 'منزل الأمير فواز', district: 'حي الأمير فواز', street: 'جنوب شرق جدة', cluster: 'south', type: 'غرفتا نوم', beds: 6, baths: 2, guests: 6, rating: 4.63, reviews: 19, price: 489, weekend: 569, photo: '../photos/fawaz-1-living.jpg', hl: 'غرفة أطفال بسرير علوي وكرسي طعام للصغار', airbnb: 'https://ar.airbnb.com/rooms/1664751285940407075', booked: [[2, 6], [19, 22]] }
+  ];
+  const WA = '966504895569';
+  const PLATFORM_EXAMPLE = 0.14;
+
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const icon = (n, extra = '') => `<svg class="i" aria-hidden="true"${extra}><use href="#i-${n}"/></svg>`;
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  /* Dates */
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+  const iso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const parse = s => { if (!s) return null; const [y, m, dd] = s.split('-').map(Number); return new Date(y, m - 1, dd); };
+  const idx = d => Math.round((d - today) / 864e5);
+  const fmt = new Intl.DateTimeFormat('ar-SA-u-ca-gregory-nu-latn', { weekday: 'long', day: 'numeric', month: 'long' });
+  const fmtShort = new Intl.DateTimeFormat('ar-SA-u-ca-gregory-nu-latn', { day: 'numeric', month: 'long' });
+  const money = n => n.toLocaleString('en-US');
+  const amt = n => `<span class="amt"><span class="mono">${money(n)}</span> ر.س</span>`;
+  const nightsWord = n => n === 1 ? 'ليلة واحدة' : n === 2 ? 'ليلتان' : n <= 10 ? `${n} ليالٍ` : `${n} ليلة`;
+  const guestsWord = n => n === 1 ? 'ضيف واحد' : n === 2 ? 'ضيفان' : n <= 10 ? `${n} ضيوف` : `${n} ضيفاً`;
+  const reviewsWord = n => n <= 10 ? `${n} تقييمات` : `${n} تقييماً`;
+
+  /* Cards */
+  const card = a => `
+    <article class="card">
+      <div class="card-img">
+        <img src="${a.photo}" alt="صالة ${esc(a.name)}" width="1400" height="1050">
+        <span class="badge">${icon('lock-key')} دخول ذاتي</span>
+      </div>
+      <div class="card-body">
+        <h4>${esc(a.name)}</h4>
+        <div class="card-meta"><span>${esc(a.district)} · ${esc(a.street)}</span></div>
+        <div class="card-meta"><span class="rate">${icon('star-fill')} <span class="mono">${a.rating.toFixed(2)}</span></span><span>${reviewsWord(a.reviews)} على Airbnb</span></div>
+        <div class="facts">
+          <span>${icon('users')} حتى ${a.guests}</span>
+          <span>${icon('bed')} ${esc(a.type)}</span>
+          <span>${icon('bathtub')} ${a.baths === 1 ? 'دورة مياه' : 'دورتا مياه'}</span>
+        </div>
+        <p class="hl">${esc(a.hl)}</p>
+        <div class="card-foot">
+          <span class="price">من <b>${a.price}</b> ر.س / ليلة</span>
+          <div class="card-actions">
+            <button class="btn btn-primary btn-sm" type="button" data-book="${a.id}">احجز مباشرة</button>
+            <a class="btn btn-ghost btn-sm" href="${a.airbnb}" target="_blank" rel="noopener" aria-label="افتح ${esc(a.name)} على Airbnb">Airbnb ${icon('arrow-up-right')}</a>
+          </div>
+        </div>
+      </div>
+    </article>`;
+  $('#cards-north').innerHTML = APTS.filter(a => a.cluster === 'north').map(card).join('');
+  $('#cards-south').innerHTML = APTS.filter(a => a.cluster === 'south').map(card).join('');
+
+  $('#rating-rows').innerHTML = [...APTS].sort((a, b) => b.reviews - a.reviews).map(a => `
+    <tr><td>${esc(a.name)}<br><span class="muted t-xs">${esc(a.district)}</span></td>
+    <td class="n"><span class="rate">${icon('star-fill')} ${a.rating.toFixed(2)}</span></td>
+    <td class="n">${a.reviews}</td>
+    <td><a href="${a.airbnb}" target="_blank" rel="noopener">اقرأها ${icon('arrow-up-right')}</a></td></tr>`).join('');
+
+  /* Booking form */
+  const sel = $('#b-apt'), ci = $('#b-ci'), co = $('#b-co'), out = $('#g-out'), res = $('#result');
+  sel.innerHTML = `<optgroup label="شمال جدة">${APTS.filter(a => a.cluster === 'north').map(a => `<option value="${a.id}">${a.name} · من ${a.price} ر.س</option>`).join('')}</optgroup>
+    <optgroup label="جنوب شرق جدة">${APTS.filter(a => a.cluster === 'south').map(a => `<option value="${a.id}">${a.name} · من ${a.price} ر.س</option>`).join('')}</optgroup>`;
+  sel.value = 'midcentury';
+  ci.min = iso(today); co.min = iso(addDays(today, 1));
+  ci.value = iso(addDays(today, 6)); co.value = iso(addDays(today, 9));
+  let guests = 2;
+  const apt = () => APTS.find(a => a.id === sel.value);
+
+  function syncGuests() {
+    const max = apt().guests;
+    guests = Math.min(Math.max(guests, 1), max);
+    out.textContent = guests;
+    $('#g-minus').disabled = guests <= 1;
+    $('#g-plus').disabled = guests >= max;
+    $('#g-hint').textContent = `الحد الأقصى ${guestsWord(max)}`;
+  }
+  $('#g-minus').addEventListener('click', () => { guests--; syncGuests(); });
+  $('#g-plus').addEventListener('click', () => { guests++; syncGuests(); });
+  sel.addEventListener('change', () => { syncGuests(); run(false); });
+  ci.addEventListener('change', () => {
+    const d = parse(ci.value);
+    if (d) { co.min = iso(addDays(d, 1)); if (!parse(co.value) || parse(co.value) <= d) co.value = iso(addDays(d, 3)); }
+  });
+
+  function setErr(input, el, msg) {
+    if (msg) { el.innerHTML = icon('warning-circle') + `<span>${msg}</span>`; el.hidden = false; input.setAttribute('aria-invalid', 'true'); }
+    else { el.hidden = true; el.textContent = ''; input.removeAttribute('aria-invalid'); }
+  }
+  function validate() {
+    const a = parse(ci.value), b = parse(co.value);
+    let ok = true;
+    setErr(ci, $('#e-ci'), ''); setErr(co, $('#e-co'), '');
+    if (!a) { setErr(ci, $('#e-ci'), 'اختر تاريخ الدخول.'); ok = false; }
+    else if (a < today) { setErr(ci, $('#e-ci'), 'تاريخ الدخول مضى. اختر اليوم أو بعده.'); ok = false; }
+    if (!b) { setErr(co, $('#e-co'), 'اختر تاريخ المغادرة.'); ok = false; }
+    else if (a && b <= a) { setErr(co, $('#e-co'), 'تاريخ المغادرة يجب أن يكون بعد تاريخ الدخول.'); ok = false; }
+    else if (a && idx(b) - idx(a) > 28) { setErr(co, $('#e-co'), 'للإقامة أطول من 28 ليلة راسل المالك على واتساب.'); ok = false; }
+    return ok;
+  }
+
+  function quote(a, d1, d2) {
+    const n = idx(d2) - idx(d1); let wk = 0, we = 0;
+    for (let i = 0; i < n; i++) { const g = addDays(d1, i).getDay(); if (g === 4 || g === 5) we++; else wk++; }
+    const s = idx(d1), e = idx(d2);
+    const clash = a.booked.find(([bs, be]) => s < be && e > bs);
+    return { n, wk, we, total: wk * a.price + we * a.weekend, clash };
+  }
+  function nextFree(a, from, n) {
+    for (let s = Math.max(from, 0); s < from + 90; s++) if (!a.booked.some(([bs, be]) => s < be && s + n > bs)) return s;
+    return null;
+  }
+
+  function renderEmpty() {
+    res.innerHTML = `<div class="empty">
+      <span class="ic">${icon('calendar-blank')}</span>
+      <h3 class="t-xl">اختر تاريخ الدخول والمغادرة</h3>
+      <p class="muted">سترى هنا الليالي المتاحة، وسعر كل ليلة، والمجموع، ورابط واتساب جاهزاً للمالك.</p>
+    </div>`;
+  }
+  function renderSkeleton() {
+    res.setAttribute('aria-busy', 'true');
+    res.innerHTML = `<div class="sk" aria-label="جارٍ التحقق من التوفر">
+      <div style="display:flex;gap:16px;background:none;animation:none"><div style="width:64px;height:64px"></div><div style="flex:1;display:grid;gap:8px;background:none;animation:none"><div style="height:20px;width:60%"></div><div style="height:14px;width:40%"></div></div></div>
+      <div style="height:24px;width:30%"></div>
+      <div style="height:16px"></div><div style="height:16px"></div><div style="height:16px;width:80%"></div>
+      <div style="height:96px"></div>
+      <div style="height:48px;width:55%"></div></div>`;
+  }
+  function render() {
+    res.setAttribute('aria-busy', 'false');
+    const a = apt(), d1 = parse(ci.value), d2 = parse(co.value);
+    if (!d1 || !d2) return renderEmpty();
+    const q = quote(a, d1, d2);
+    const head = `<div class="res-head"><img src="${a.photo}" alt="" width="64" height="64"><div><h3>${esc(a.name)}</h3><p>${fmt.format(d1)} إلى ${fmt.format(d2)} · ${nightsWord(q.n)} · ${guestsWord(guests)}</p></div></div>`;
+    if (q.clash) {
+      const s = nextFree(a, idx(d1), q.n);
+      const alt = s === null ? '' : `<button class="btn btn-ghost" type="button" id="use-alt" data-s="${s}" data-n="${q.n}">${icon('calendar-check')} استخدم ${nightsWord(q.n)} من ${fmtShort.format(addDays(today, s))}</button>`;
+      res.innerHTML = `<div class="result">${head}
+        <span class="chip bad">${icon('x')} محجوزة في جزء من هذه التواريخ</span>
+        <div class="alt-dates"><p>${fmtShort.format(addDays(today, q.clash[0]))} إلى ${fmtShort.format(addDays(today, q.clash[1]))} محجوزة لضيف آخر عبر Airbnb أو الحجز المباشر.</p>${alt}</div>
+        <p class="res-note">${icon('info')} أو جرّب شقة أخرى في الحي نفسه من القائمة.</p></div>`;
+      const b = $('#use-alt');
+      if (b) b.addEventListener('click', () => { const st = +b.dataset.s; ci.value = iso(addDays(today, st)); co.value = iso(addDays(today, st + +b.dataset.n)); run(true); });
+      return;
+    }
+    const plat = Math.round(q.total * (1 + PLATFORM_EXAMPLE));
+    const pct = Math.round(q.total / plat * 1000) / 10;
+    const msg = `السلام عليكم، أرغب بحجز مباشر عبر sh.apartment\nالشقة: ${a.name}\nمن ${fmtShort.format(d1)} إلى ${fmtShort.format(d2)} (${nightsWord(q.n)})\nعدد الضيوف: ${guests}\nالمجموع المعروض: ${money(q.total)} ر.س`;
+    res.innerHTML = `<div class="result">${head}
+      <span class="chip ok">${icon('check-circle')} متاحة في هذه التواريخ</span>
+      <ul class="lines">
+        ${q.wk ? `<li><span>ليالٍ عادية <span class="mono">(${q.wk})</span> × ${a.price} ر.س</span>${amt(q.wk * a.price)}</li>` : ''}
+        ${q.we ? `<li><span>خميس وجمعة <span class="mono">(${q.we})</span> × ${a.weekend} ر.س</span>${amt(q.we * a.weekend)}</li>` : ''}
+        <li><span>رسوم الخدمة</span><span class="amt zero"><span class="mono">0</span> ر.س</span></li>
+        <li class="total"><span>المجموع</span>${amt(q.total)}</li>
+      </ul>
+      <div class="compare">
+        <div class="ttl"><span>الإقامة نفسها</span><span class="ex">مثال تقريبي</span></div>
+        <div class="bar direct"><div class="lab"><span>حجز مباشر</span>${amt(q.total)}</div><div class="track"><div class="fill" style="transform:scaleX(${pct / 100})"></div></div></div>
+        <div class="bar"><div class="lab"><span>عبر منصة حجز برسوم خدمة 14%</span>${amt(plat)}</div><div class="track"><div class="fill"></div></div></div>
+        <p class="hint">رسوم المنصات تختلف حسب المنصة والحجز. الرقم للمقارنة فقط.</p>
+      </div>
+      <div class="res-actions">
+        <a class="btn btn-primary btn-lg" href="https://wa.me/${WA}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">${icon('whatsapp-logo')} أرسل الطلب للمالك</a>
+        <a class="btn btn-ghost btn-lg" href="${a.airbnb}" target="_blank" rel="noopener">افتحها على Airbnb ${icon('arrow-up-right')}</a>
+      </div>
+      <p class="res-note">${icon('shield-check')} لا تدفع شيئاً قبل أن يؤكد المالك التواريخ. بعد التأكيد توقّع العقد ويصلك رمز الباب.</p>
+    </div>`;
+  }
+  let timer;
+  function run(withSkeleton) {
+    if (!validate()) { res.setAttribute('aria-busy', 'false'); return; }
+    clearTimeout(timer);
+    if (!withSkeleton) return render();
+    renderSkeleton();
+    timer = setTimeout(render, reduce ? 150 : 650);
+  }
+  $('#book-form').addEventListener('submit', e => { e.preventDefault(); run(true); });
+  syncGuests(); render();
+
+  /* "Book direct" on a card */
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-book]');
+    if (!b) return;
+    sel.value = b.dataset.book; syncGuests();
+    $('#book').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    run(true);
+    setTimeout(() => ci.focus({ preventScroll: true }), reduce ? 0 : 600);
+  });
+  /* CTAs focus the first date field after jumping */
+  $$('[data-cta]').forEach(a => a.addEventListener('click', () => { closeMenu(); setTimeout(() => ci.focus({ preventScroll: true }), reduce ? 0 : 700); }));
+
+  /* Mobile menu */
+  const mb = $('.menu-btn'), menu = $('#menu');
+  function openMenu() {
+    menu.removeAttribute('inert'); menu.classList.add('open');
+    mb.setAttribute('aria-expanded', 'true'); mb.setAttribute('aria-label', 'إغلاق القائمة');
+    const items = $$('li', menu);
+    items.forEach((li, i) => { li.style.transitionDelay = reduce ? '0ms' : Math.min(i * 60, 400) + 'ms'; });
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    if (!menu.classList.contains('open')) return;
+    menu.classList.remove('open'); menu.setAttribute('inert', '');
+    $$('li', menu).forEach(li => { li.style.transitionDelay = '0ms'; });
+    mb.setAttribute('aria-expanded', 'false'); mb.setAttribute('aria-label', 'فتح القائمة');
+    document.body.style.overflow = '';
+  }
+  mb.addEventListener('click', () => menu.classList.contains('open') ? closeMenu() : openMenu());
+  $$('.m-link', menu).forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+  /* Current section in the nav */
+  const links = $$('[data-spy]');
+  const spy = new IntersectionObserver(es => es.forEach(en => {
+    if (!en.isIntersecting) return;
+    links.forEach(l => l.setAttribute('aria-current', l.dataset.spy === en.target.id ? 'true' : 'false'));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  ['night', 'apartments', 'direct', 'faq'].forEach(id => spy.observe(document.getElementById(id)));
+
+  /* Scroll reveal: armed only for content below the fold, after the first scroll */
+  addEventListener('scroll', () => {
+    const vh = innerHeight;
+    const io = new IntersectionObserver(es => es.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    }), { rootMargin: '0px 0px -8% 0px' });
+    $$('[data-reveal]').forEach(el => { if (el.getBoundingClientRect().top > vh) { el.classList.add('pre'); io.observe(el); } });
+  }, { passive: true, once: true });
+
+  /* Tagline: each word lights up as it crosses the trigger line */
+  const tag = $('#tagline');
+  const accent = tag.dataset.acc;
+  tag.innerHTML = tag.textContent.trim().split(/\s+/).map(w => `<span class="w${w.replace(/[،.]/g, '') === accent ? ' acc' : ''}">${esc(w)}</span>`).join(' ');
+  const words = $$('.w', tag);
+  let ticking = false;
+  function lightWords() {
+    ticking = false;
+    const line = innerHeight * 0.72;
+    words.forEach(w => { if (w.getBoundingClientRect().top < line) w.classList.add('on'); });
+  }
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(lightWords); } }, { passive: true });
+  lightWords();
+
+  /* Dialogs */
+  $$('[data-open]').forEach(b => b.addEventListener('click', () => $('#' + b.dataset.open).showModal()));
+  $$('dialog').forEach(d => {
+    d.addEventListener('click', e => { if (e.target === d || e.target.closest('[data-close]')) d.close(); });
+  });
+
+  /* Copy WhatsApp number */
+  $('#copy-num').addEventListener('click', async e => {
+    const btn = e.currentTarget, label = $('span', btn), txt = $('#wa-num').textContent;
+    try { await navigator.clipboard.writeText(txt); label.textContent = 'نُسخ الرقم'; }
+    catch { const r = document.createRange(); r.selectNodeContents($('#wa-num')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); label.textContent = 'الرقم محدد، انسخه'; }
+    setTimeout(() => { label.textContent = 'نسخ الرقم'; }, 2400);
+  });
+})();
+</script>
+</body>
+</html>
