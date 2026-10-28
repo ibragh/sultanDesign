@@ -1,0 +1,1497 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>sh.apartment · شقق مفروشة في جدة</title>
+<meta name="description" content="سبع شقق مفروشة في جدة بدخول ذاتي، من النهضة على طريق الملك إلى الأجاويد. تقييم 4.83 من 517 تقييماً على Airbnb. احجز مباشرة من المضيف بعقد توقّعه من جوالك.">
+<meta property="og:title" content="sh.apartment · شقق مفروشة في جدة">
+<meta property="og:description" content="احجز مباشرة من المضيف: نفس شقق Airbnb، بعقد واضح وبلا رسوم خدمة.">
+<meta property="og:image" content="../photos/midcentury-1-living.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FAF8F5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2318120E'/%3E%3Cpath d='M14 34 32 18l18 16' fill='none' stroke='%23F59A1E' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='27' y='34' width='10' height='10' rx='2' fill='%23F59A1E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout A, classic hero + sections. Light, flat surfaces, one accent (sh.apartment orange). Latin in Manrope, Arabic glyphs in IBM Plex Sans Arabic. */
+:root {
+  color-scheme: light;
+  --bg: #FAF8F5;
+  --surface: #FFFFFF;
+  --ink: #18120E;
+  --ink-2: #3E342D;
+  --muted: #6C6259;
+  --line: #E7E1D9;
+  --line-2: #D9D1C6;
+  --field: #F4F1EC;
+  --accent: #F59A1E;
+  --accent-hover: #E68A0B;
+  --accent-ink: #8F4C00;
+  --accent-wash: #FDF1E1;
+  --ok: #1D7347;
+  --ok-wash: #E6F3EB;
+  --bad: #A8372B;
+  --bad-wash: #FBEBE8;
+  --skeleton: #ECE7E0;
+  --nav-bg: rgba(255, 255, 255, 0.74);
+  --menu-bg: rgba(250, 248, 245, 0.95);
+  --scrim: rgba(24, 18, 14, 0.52);
+  --on-ink: #F5F0EA;
+  --on-ink-muted: #B8ADA2;
+  --on-ink-line: rgba(245, 240, 234, 0.14);
+
+  --font: "Manrope", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+
+  --s-25: 2px; --s-50: 4px; --s-75: 8px; --s-100: 12px; --s-200: 16px; --s-300: 24px;
+  --s-400: 32px; --s-500: 40px; --s-600: 48px; --s-700: 64px; --s-800: 80px; --s-900: 96px;
+
+  --r-sm: 2px; --r: 4px; --r-md: 6px; --r-lg: 8px; --r-xl: 12px; --r-2xl: 16px; --r-3xl: 24px; --r-full: 9999px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --gut: 16px;
+}
+@media (min-width: 768px) { :root { --gut: 32px; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 96px); -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 16px; line-height: 24px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+body.locked { overflow: hidden; }
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4, p { margin: 0; }
+h1, h2, h3, h4 { text-wrap: balance; font-weight: 700; }
+p, li, dd { text-wrap: pretty; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+.num, .price, time, .tabular { font-variant-numeric: tabular-nums; }
+.ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
+
+/* Type scale (Tailwind steps only) */
+.text-xs { font-size: 12px; line-height: 16px; }
+.text-sm { font-size: 14px; line-height: 20px; }
+.text-base { font-size: 16px; line-height: 24px; }
+.text-lg { font-size: 18px; line-height: 28px; }
+.text-xl { font-size: 20px; line-height: 28px; }
+.text-2xl { font-size: 24px; line-height: 32px; }
+.text-3xl { font-size: 30px; line-height: 36px; }
+.text-4xl { font-size: 36px; line-height: 40px; }
+.muted { color: var(--muted); }
+
+:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
+
+.skip {
+  position: fixed; top: calc(env(safe-area-inset-top, 0px) + var(--s-75)); inset-inline-start: var(--s-75);
+  z-index: 100; background: var(--ink); color: var(--on-ink);
+  padding: var(--s-75) var(--s-100); border-radius: var(--r-lg);
+  font-size: 14px; line-height: 20px; font-weight: 600; text-decoration: none;
+  transform: translateY(-160%); transition: transform 500ms var(--ease);
+}
+.skip:focus { transform: none; }
+
+.wrap {
+  max-width: 1280px; margin-inline: auto;
+  padding-left: max(var(--gut), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gut), env(safe-area-inset-right, 0px));
+}
+.band { padding-block: var(--s-700); }
+@media (min-width: 1024px) { .band { padding-block: var(--s-900); } }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s-75);
+  padding: var(--s-75) var(--s-100);
+  font-size: 16px; line-height: 24px; font-weight: 600;
+  border-radius: var(--r-xl); border: 1px solid transparent;
+  text-decoration: none; white-space: nowrap;
+  transition: background-color 300ms var(--ease), border-color 300ms var(--ease), color 300ms var(--ease), transform 500ms var(--ease);
+}
+.btn:active { transform: scale(0.98); }
+.btn .i { width: 20px; height: 20px; flex: none; }
+.btn-primary { background: var(--accent); color: var(--ink); }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-ink { background: var(--ink); color: var(--on-ink); }
+.btn-ink:hover { background: #2E241D; }
+.btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--line-2); }
+.btn-ghost:hover { background: var(--accent-wash); border-color: var(--accent); }
+.btn-text { background: transparent; color: var(--accent-ink); padding-inline: var(--s-50); }
+.btn-text:hover { background: var(--accent-wash); }
+.btn-sm { font-size: 14px; line-height: 20px; }
+.btn[disabled], .btn[aria-disabled="true"] { opacity: 0.5; cursor: not-allowed; transform: none; }
+.btn-block { width: 100%; }
+.i { width: 1em; height: 1em; flex: none; vertical-align: -0.125em; }
+.i-dir { transform: scaleX(-1); }
+
+/* Nav */
+.nav {
+  position: fixed; z-index: 40;
+  top: calc(env(safe-area-inset-top, 0px) + var(--s-100));
+  inset-inline: 0; margin-inline: auto;
+  width: max-content; max-width: calc(100% - 32px);
+  display: flex; align-items: center; gap: var(--s-75);
+  padding-block: var(--s-50); padding-inline-start: var(--s-200); padding-inline-end: var(--s-50);
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4); backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(24, 18, 14, 0.08);
+  border-radius: var(--r-full);
+  box-shadow: 0 8px 24px rgba(24, 18, 14, 0.06);
+}
+.logo { display: inline-flex; align-items: center; gap: var(--s-75); text-decoration: none; font-weight: 700; font-size: 18px; line-height: 28px; direction: ltr; }
+.logo .mark { width: 24px; height: 24px; color: var(--accent); }
+.logo b { color: var(--accent-ink); font-weight: 700; }
+.logo span { color: var(--ink); }
+.nav-links { display: none; align-items: center; gap: var(--s-50); }
+.nav-links a {
+  font-size: 14px; line-height: 20px; font-weight: 600; text-decoration: none; color: var(--ink-2);
+  padding: var(--s-75) var(--s-100); border-radius: var(--r-full);
+  transition: background-color 300ms var(--ease), color 300ms var(--ease);
+}
+.nav-links a:hover { background: rgba(24, 18, 14, 0.06); }
+.nav-links a[aria-current="true"] { background: var(--ink); color: var(--on-ink); }
+.nav .btn { border-radius: var(--r-full); }
+.toggle {
+  width: 40px; height: 40px; border-radius: var(--r-full); border: 0; background: rgba(24, 18, 14, 0.06);
+  display: inline-grid; place-items: center; padding: 0;
+  transition: background-color 300ms var(--ease);
+}
+.toggle:hover { background: rgba(24, 18, 14, 0.1); }
+.toggle span { grid-area: 1 / 1; width: 16px; height: 2px; border-radius: var(--r-full); background: var(--ink); transition: transform 500ms var(--ease); }
+.toggle span:first-child { transform: translateY(-4px); }
+.toggle span:last-child { transform: translateY(4px); }
+.toggle[aria-expanded="true"] span:first-child { transform: rotate(45deg); }
+.toggle[aria-expanded="true"] span:last-child { transform: rotate(-45deg); }
+@media (min-width: 960px) { .nav-links { display: flex; } .toggle { display: none; } }
+@media (max-width: 380px) { .nav .btn-cta-label-long { display: none; } }
+
+.menu {
+  position: fixed; inset: 0; z-index: 35;
+  background: var(--menu-bg);
+  -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px);
+  padding-top: calc(env(safe-area-inset-top, 0px) + var(--s-900));
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--s-400));
+  padding-left: max(var(--s-300), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--s-300), env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: var(--s-400);
+  opacity: 0; visibility: hidden;
+  transition: opacity 300ms var(--ease), visibility 0s linear 300ms;
+}
+.menu.open { opacity: 1; visibility: visible; transition: opacity 300ms var(--ease), visibility 0s; }
+.menu ul { display: grid; gap: var(--s-50); }
+.menu li { opacity: 0; transform: translateY(24px); transition: opacity 500ms var(--ease), transform 500ms var(--ease); transition-delay: calc(var(--n) * 60ms); }
+.menu.open li { opacity: 1; transform: none; }
+.menu ul a { display: block; padding-block: var(--s-75); font-size: 30px; line-height: 36px; font-weight: 700; text-decoration: none; }
+.menu ul a[aria-current="true"] { color: var(--accent-ink); }
+.menu .menu-foot { margin-top: auto; display: grid; gap: var(--s-200); }
+
+/* Hero */
+.hero { padding-top: calc(env(safe-area-inset-top, 0px) + var(--s-900)); padding-bottom: var(--s-200); }
+@media (min-width: 1024px) { .hero { padding-top: calc(env(safe-area-inset-top, 0px) + var(--s-900) + var(--s-300)); padding-bottom: var(--s-200); } }
+.hero-grid { display: grid; gap: var(--s-500); align-items: center; }
+@media (min-width: 1024px) { .hero-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--s-600); } }
+.hero-copy { display: grid; gap: var(--s-300); min-width: 0; }
+.eyebrow {
+  justify-self: start; display: inline-flex; align-items: center; gap: var(--s-75);
+  font-size: 14px; line-height: 20px; font-weight: 600; color: var(--ink-2);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-full);
+  padding: var(--s-50) var(--s-100);
+}
+.eyebrow .dot { width: 8px; height: 8px; border-radius: var(--r-full); background: var(--accent); }
+.h1 {
+  max-width: 680px;
+  font-size: 36px; line-height: 40px; font-weight: 700;
+  padding-block: var(--s-75);
+  background: linear-gradient(to left, #000000, #666666);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+}
+@media (min-width: 1280px) { .h1 { font-size: 48px; line-height: 1; } }
+.h1 .br { display: none; }
+@media (min-width: 640px) { .h1 .br { display: inline; } }
+.sub { max-width: 680px; font-size: 18px; line-height: 28px; color: var(--ink-2); }
+
+.search {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-2xl);
+  padding: var(--s-75);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-75);
+  box-shadow: 0 12px 32px rgba(24, 18, 14, 0.06);
+}
+.field {
+  display: grid; gap: var(--s-25); min-width: 0;
+  background: var(--field); border: 1px solid transparent; border-radius: var(--r-lg);
+  padding: var(--s-75) var(--s-100);
+  transition: border-color 300ms var(--ease), background-color 300ms var(--ease);
+  cursor: text;
+}
+.field:hover { border-color: var(--line-2); }
+.field:focus-within { border-color: var(--accent-ink); background: var(--surface); }
+.field[data-invalid="true"] { border-color: var(--bad); background: var(--bad-wash); }
+.field .lbl { display: flex; align-items: center; gap: var(--s-50); font-size: 12px; line-height: 16px; font-weight: 600; color: var(--muted); }
+.field input, .field select {
+  border: 0; background: transparent; padding: 0; min-width: 0; width: 100%;
+  font-size: 16px; line-height: 24px; font-weight: 600; color: var(--ink);
+  outline: none; appearance: none; -webkit-appearance: none;
+}
+.field input[type="date"] { direction: ltr; text-align: right; min-height: 24px; }
+.field select { cursor: pointer; }
+.search .btn { border-radius: var(--r-lg); min-height: 100%; }
+.form-error { display: flex; gap: var(--s-75); align-items: flex-start; color: var(--bad); font-size: 14px; line-height: 20px; font-weight: 500; }
+.form-error[hidden] { display: none; }
+.form-error .i { width: 20px; height: 20px; }
+.proof-line { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-75) var(--s-200); font-size: 14px; line-height: 20px; color: var(--ink-2); }
+.proof-line span { display: inline-flex; align-items: center; gap: var(--s-50); }
+.proof-line .star { color: var(--accent); width: 16px; height: 16px; }
+.proof-line b { font-weight: 700; color: var(--ink); }
+
+.mosaic {
+  display: grid; gap: var(--s-75);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: 300px 200px;
+  min-width: 0;
+}
+.tile { position: relative; overflow: hidden; border-radius: var(--r-2xl); background: var(--skeleton); margin: 0; }
+.tile img { width: 100%; height: 100%; object-fit: cover; }
+.tile-a { grid-column: 1 / span 4; }
+.tile-b { grid-column: 5 / span 2; }
+.tile-c { grid-column: 1 / span 2; }
+.tile-d { grid-column: 3 / span 2; }
+.tile-e { grid-column: 5 / span 2; }
+.tile .chip { position: absolute; inset-block-end: var(--s-100); inset-inline-start: var(--s-100); }
+.chip {
+  display: inline-flex; align-items: center; gap: var(--s-50);
+  font-size: 12px; line-height: 16px; font-weight: 600;
+  background: rgba(255, 255, 255, 0.86);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  color: var(--ink); border-radius: var(--r-full);
+  padding: var(--s-50) var(--s-100);
+}
+.chip .i { width: 16px; height: 16px; color: var(--accent-ink); }
+@media (max-width: 1023px) {
+  .mosaic { grid-template-rows: 240px 160px; }
+}
+@media (max-width: 639px) {
+  .mosaic { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 220px 160px; }
+  .tile-a { grid-column: 1 / span 2; }
+  .tile-b { grid-column: 1 / span 1; }
+  .tile-c { grid-column: 2 / span 1; }
+  .tile-d, .tile-e { display: none; }
+}
+
+/* Section heads */
+.head { display: grid; gap: var(--s-200); max-width: 680px; }
+.kicker { font-size: 14px; line-height: 20px; font-weight: 600; color: var(--accent-ink); }
+.h2 { font-size: 30px; line-height: 36px; }
+@media (min-width: 1024px) { .h2 { font-size: 36px; line-height: 40px; } }
+.lead { font-size: 18px; line-height: 28px; color: var(--ink-2); }
+
+/* Apartments */
+.apts-top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--s-300); }
+.sync {
+  display: inline-flex; align-items: center; gap: var(--s-75);
+  font-size: 14px; line-height: 20px; font-weight: 600; color: var(--ok);
+  background: var(--ok-wash); border-radius: var(--r-full); padding: var(--s-50) var(--s-100);
+}
+.sync .pulse { width: 8px; height: 8px; border-radius: var(--r-full); background: var(--ok); }
+.filters { display: grid; gap: var(--s-100); margin-top: var(--s-400); }
+.filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-75); }
+.filter-row .flabel { font-size: 14px; line-height: 20px; font-weight: 600; color: var(--muted); min-width: 64px; }
+.fchip {
+  font-size: 14px; line-height: 20px; font-weight: 600;
+  padding: var(--s-75) var(--s-100); border-radius: var(--r-full);
+  border: 1px solid var(--line-2); background: var(--surface); color: var(--ink-2);
+  transition: background-color 300ms var(--ease), border-color 300ms var(--ease), color 300ms var(--ease), transform 500ms var(--ease);
+}
+.fchip:hover { border-color: var(--ink-2); }
+.fchip:active { transform: scale(0.98); }
+.fchip[aria-pressed="true"] { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
+.fchip .count { color: inherit; opacity: 0.6; font-weight: 500; }
+
+.summary {
+  margin-top: var(--s-300);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-100);
+  background: var(--accent-wash); border: 1px solid #F4D9B4; border-radius: var(--r-xl);
+  padding: var(--s-100) var(--s-200);
+}
+.summary[hidden] { display: none; }
+.summary p { font-size: 14px; line-height: 20px; color: var(--ink-2); }
+.summary b { color: var(--ink); }
+.summary .acts { display: flex; gap: var(--s-75); }
+
+.grid {
+  margin-top: var(--s-300);
+  display: grid; gap: var(--s-300);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 272px), 1fr));
+}
+@media (min-width: 1200px) { .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.card {
+  position: relative; display: flex; flex-direction: column; gap: var(--s-100);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-2xl);
+  padding: var(--s-75);
+  min-width: 0;
+  transition: transform 500ms var(--ease), border-color 300ms var(--ease);
+}
+.card:hover { transform: translateY(-4px); border-color: var(--line-2); }
+.card-media { position: relative; overflow: hidden; border-radius: var(--r-lg); aspect-ratio: 4 / 3; background: var(--skeleton); max-width: 100%; }
+.card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--ease); }
+.card:hover .card-media img { transform: scale(1.03); }
+.card-media .chip { position: absolute; inset-block-start: var(--s-75); inset-inline-start: var(--s-75); }
+.card-media .host { position: absolute; inset-block-start: var(--s-75); inset-inline-end: var(--s-75); }
+.card-body { display: flex; flex-direction: column; gap: var(--s-100); padding: var(--s-50) var(--s-75) var(--s-75); flex: 1; min-width: 0; }
+.card-title { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s-75); }
+.card-title h3 { font-size: 18px; line-height: 28px; font-weight: 700; }
+.card-title .en { display: block; font-size: 12px; line-height: 16px; font-weight: 500; color: var(--muted); direction: ltr; text-align: right; }
+.rating { display: inline-flex; align-items: center; gap: var(--s-25); font-size: 14px; line-height: 20px; font-weight: 700; white-space: nowrap; padding-top: var(--s-50); }
+.rating .i { width: 16px; height: 16px; color: var(--accent); }
+.rating .muted { font-weight: 500; }
+.facts { display: flex; flex-wrap: wrap; gap: var(--s-50) var(--s-100); font-size: 14px; line-height: 20px; color: var(--ink-2); }
+.facts li { display: inline-flex; align-items: center; gap: var(--s-50); }
+.facts .i { width: 16px; height: 16px; color: var(--muted); }
+.hl { font-size: 14px; line-height: 20px; color: var(--muted); }
+.card-foot { margin-top: auto; display: grid; gap: var(--s-100); padding-top: var(--s-100); border-top: 1px solid var(--line); }
+.price-row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-75); flex-wrap: wrap; }
+.price { font-size: 20px; line-height: 28px; font-weight: 700; }
+.price small { font-size: 14px; line-height: 20px; font-weight: 500; color: var(--muted); }
+.status { display: inline-flex; align-items: center; gap: var(--s-50); font-size: 12px; line-height: 16px; font-weight: 700; border-radius: var(--r-full); padding: var(--s-25) var(--s-75); }
+.status .i { width: 16px; height: 16px; }
+.status.ok { color: var(--ok); background: var(--ok-wash); }
+.status.no { color: var(--bad); background: var(--bad-wash); }
+.status.cap { color: var(--ink-2); background: var(--field); }
+.alt-date { font-size: 14px; line-height: 20px; color: var(--ink-2); }
+.card-acts { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-75); }
+.card.is-off .card-media img { opacity: 0.72; }
+
+.help-card {
+  display: flex; flex-direction: column; justify-content: space-between; gap: var(--s-300);
+  background: var(--ink); color: var(--on-ink); border-radius: var(--r-2xl); padding: var(--s-300);
+  min-width: 0;
+}
+.help-card h3 { font-size: 24px; line-height: 32px; }
+.help-card p { color: var(--on-ink-muted); font-size: 16px; line-height: 24px; }
+.help-card .num { color: var(--on-ink); font-weight: 600; }
+.help-card .wa { width: 48px; height: 48px; border-radius: var(--r-full); background: var(--accent); color: var(--ink); display: grid; place-items: center; }
+.help-card .wa .i { width: 24px; height: 24px; }
+
+.sk { background: var(--skeleton); border-radius: var(--r-lg); animation: pulse 1200ms var(--ease) infinite alternate; }
+@keyframes pulse { from { opacity: 1; } to { opacity: 0.45; } }
+.sk-card { border: 1px solid var(--line); border-radius: var(--r-2xl); padding: var(--s-75); display: grid; gap: var(--s-100); background: var(--surface); }
+.sk-media { aspect-ratio: 4 / 3; }
+.sk-line { height: 16px; }
+.sk-line.w60 { width: 60%; } .sk-line.w40 { width: 40%; } .sk-line.w80 { width: 80%; }
+.sk-btn { height: 40px; border-radius: var(--r-xl); }
+
+.empty {
+  margin-top: var(--s-300);
+  display: grid; justify-items: start; gap: var(--s-200);
+  background: var(--surface); border: 1px dashed var(--line-2); border-radius: var(--r-2xl);
+  padding: var(--s-600) var(--s-400);
+}
+.empty[hidden] { display: none; }
+.empty .ico { width: 48px; height: 48px; border-radius: var(--r-full); background: var(--accent-wash); color: var(--accent-ink); display: grid; place-items: center; }
+.empty .ico .i { width: 24px; height: 24px; }
+.empty h3 { font-size: 24px; line-height: 32px; }
+.empty p { color: var(--ink-2); max-width: 560px; }
+.empty .acts { display: flex; flex-wrap: wrap; gap: var(--s-75); }
+
+/* Direct vs platform */
+.compare { display: grid; gap: var(--s-300); margin-top: var(--s-500); }
+@media (min-width: 900px) { .compare { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.cmp {
+  border: 1px solid var(--line); border-radius: var(--r-2xl); background: var(--surface);
+  padding: var(--s-400) var(--s-300); display: grid; gap: var(--s-300); align-content: start;
+}
+.cmp.direct { border: 2px solid var(--ink); }
+.cmp header { display: flex; align-items: center; justify-content: space-between; gap: var(--s-100); }
+.cmp h3 { font-size: 20px; line-height: 28px; }
+.badge { font-size: 12px; line-height: 16px; font-weight: 700; padding: var(--s-25) var(--s-75); border-radius: var(--r-full); background: var(--accent); color: var(--ink); }
+.cmp ul { display: grid; gap: var(--s-100); }
+.cmp li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: var(--s-75); align-items: start; color: var(--ink-2); }
+.cmp li .i { width: 20px; height: 20px; margin-top: var(--s-25); }
+.cmp li .yes { color: var(--ok); }
+.cmp li .neutral { color: var(--muted); }
+.cmp-note { margin-top: var(--s-300); display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-75); color: var(--ink-2); }
+
+/* Benefits */
+.benefits { margin-top: var(--s-600); display: grid; gap: var(--s-300); grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+.benefit { display: grid; gap: var(--s-100); align-content: start; }
+.benefit .ico { width: 48px; height: 48px; border-radius: var(--r-xl); background: var(--surface); border: 1px solid var(--line); display: grid; place-items: center; color: var(--accent-ink); }
+.benefit .ico .i { width: 24px; height: 24px; }
+.benefit h3 { font-size: 20px; line-height: 28px; }
+.benefit p { color: var(--ink-2); }
+
+/* Tagline reveal */
+.tagline-band { padding-block: var(--s-900); }
+@media (min-width: 1024px) { .tagline-band { padding-block: calc(var(--s-900) + var(--s-400)); } }
+.tagline { max-width: 680px; font-size: 36px; line-height: 40px; font-weight: 700; }
+@media (min-width: 768px) { .tagline { font-size: 48px; line-height: 1; } }
+.tagline .w { opacity: 0.3; transition: opacity 500ms var(--ease); }
+.tagline .w.on { opacity: 1; }
+.tagline-wrap { display: grid; gap: var(--s-300); }
+.tagline-wrap .sig { display: flex; align-items: center; gap: var(--s-100); color: var(--muted); font-size: 14px; line-height: 20px; }
+.tagline-wrap .sig .i { color: var(--accent); width: 20px; height: 20px; }
+
+/* Steps */
+.steps { margin-top: var(--s-600); display: grid; gap: var(--s-300); }
+@media (min-width: 900px) { .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.step { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-2xl); padding: var(--s-300); display: grid; gap: var(--s-200); align-content: start; }
+.step .n { width: 40px; height: 40px; border-radius: var(--r-full); background: var(--ink); color: var(--on-ink); display: grid; place-items: center; font-weight: 700; font-size: 18px; line-height: 28px; }
+.step h3 { font-size: 20px; line-height: 28px; }
+.step p { color: var(--ink-2); }
+.step .meta { display: flex; align-items: center; gap: var(--s-50); font-size: 14px; line-height: 20px; color: var(--muted); }
+.step .meta .i { width: 16px; height: 16px; }
+
+/* Proof */
+.proof { display: grid; gap: var(--s-500); }
+@media (min-width: 1024px) { .proof { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: var(--s-700); align-items: start; } }
+.score { display: grid; gap: var(--s-200); align-content: start; }
+.score .big { font-size: 72px; line-height: 1; font-weight: 700; letter-spacing: -0.02em; }
+.stars { display: flex; gap: var(--s-25); color: var(--accent); }
+.stars .i { width: 24px; height: 24px; }
+.score p { color: var(--ink-2); }
+.seal { display: flex; gap: var(--s-100); align-items: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); padding: var(--s-200); }
+.seal .i { width: 24px; height: 24px; color: var(--accent-ink); }
+.seal b { display: block; }
+.seal span { color: var(--muted); font-size: 14px; line-height: 20px; }
+.rows { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-2xl); padding: var(--s-75) var(--s-300); }
+.rows li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-75) var(--s-200); align-items: center; padding-block: var(--s-200); border-bottom: 1px solid var(--line); }
+.rows li:last-child { border-bottom: 0; }
+.rows .nm { font-weight: 600; min-width: 0; }
+.rows .nm small { display: block; font-size: 12px; line-height: 16px; color: var(--muted); font-weight: 500; }
+.rows .val { display: inline-flex; align-items: center; gap: var(--s-50); font-weight: 700; }
+.rows .val .i { width: 16px; height: 16px; color: var(--accent); }
+.bar { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-100); align-items: center; }
+.bar .track { display: block; height: 8px; border-radius: var(--r-full); background: var(--field); overflow: hidden; }
+.bar .fill { display: block; height: 100%; border-radius: var(--r-full); background: var(--accent); transform-origin: right; }
+.bar a { font-size: 14px; line-height: 20px; font-weight: 600; color: var(--accent-ink); text-decoration: none; display: inline-flex; align-items: center; gap: var(--s-50); white-space: nowrap; }
+.bar a:hover { text-decoration: underline; }
+.rows-legend { display: flex; justify-content: space-between; gap: var(--s-100); font-size: 12px; line-height: 16px; color: var(--muted); padding-block: var(--s-100) 0; }
+
+/* FAQ */
+.faq-grid { display: grid; gap: var(--s-500); }
+@media (min-width: 1024px) { .faq-grid { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: var(--s-700); } }
+.faq-aside { display: grid; gap: var(--s-200); align-content: start; }
+.faq { border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s-200);
+  padding-block: var(--s-300); font-size: 18px; line-height: 28px; font-weight: 600;
+  border-radius: var(--r-lg);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary .pm { width: 32px; height: 32px; flex: none; border-radius: var(--r-full); border: 1px solid var(--line-2); display: grid; place-items: center; transition: transform 500ms var(--ease), background-color 300ms var(--ease); }
+.faq summary:hover .pm { background: var(--accent-wash); }
+.faq details[open] summary .pm { transform: rotate(45deg); }
+.faq details p { padding-bottom: var(--s-300); color: var(--ink-2); max-width: 640px; }
+
+/* Risk reversal */
+.risk { background: var(--accent-wash); border-radius: var(--r-3xl); padding: var(--s-500) var(--s-300); display: grid; gap: var(--s-400); }
+@media (min-width: 900px) { .risk { padding: var(--s-600); grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; } }
+.risk h2 { font-size: 30px; line-height: 36px; }
+.risk ul { display: grid; gap: var(--s-200); }
+.risk li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: var(--s-100); align-items: start; }
+.risk li .ico { width: 40px; height: 40px; border-radius: var(--r-full); background: var(--surface); display: grid; place-items: center; color: var(--accent-ink); }
+.risk li .ico .i { width: 20px; height: 20px; }
+.risk li b { display: block; }
+.risk li span { color: var(--ink-2); }
+
+/* Final CTA */
+.final { display: grid; gap: var(--s-400); }
+@media (min-width: 1024px) { .final { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); align-items: end; gap: var(--s-600); } }
+.final .search { box-shadow: none; }
+
+/* Footer */
+footer { background: var(--ink); color: var(--on-ink); padding-block: var(--s-700) calc(var(--s-700) + env(safe-area-inset-bottom, 0px)); }
+.foot { display: grid; gap: var(--s-500); }
+@media (min-width: 900px) { .foot { grid-template-columns: minmax(0, 4fr) repeat(3, minmax(0, 2fr)); } }
+.foot .logo span { color: var(--on-ink); }
+.foot .logo b { color: var(--accent); }
+.foot h4 { font-size: 14px; line-height: 20px; color: var(--on-ink-muted); font-weight: 600; margin-bottom: var(--s-100); }
+.foot ul { display: grid; gap: var(--s-75); }
+.foot a, .foot button.link { color: var(--on-ink); text-decoration: none; font-size: 14px; line-height: 20px; background: none; border: 0; padding: 0; text-align: start; }
+.foot a:hover, .foot button.link:hover { text-decoration: underline; }
+.foot p { color: var(--on-ink-muted); font-size: 14px; line-height: 20px; }
+.copyline { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-75); }
+.copyline .num { font-size: 18px; line-height: 28px; font-weight: 700; color: var(--on-ink); direction: ltr; unicode-bidi: isolate; user-select: all; }
+.copy-btn { border: 1px solid var(--on-ink-line); background: transparent; color: var(--on-ink); border-radius: var(--r-full); padding: var(--s-50) var(--s-100); font-size: 12px; line-height: 16px; font-weight: 600; display: inline-flex; align-items: center; gap: var(--s-50); transition: background-color 300ms var(--ease); }
+.copy-btn:hover { background: rgba(245, 240, 234, 0.08); }
+.legal { margin-top: var(--s-500); padding-top: var(--s-300); border-top: 1px solid var(--on-ink-line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-200); }
+
+/* Back pill */
+.back {
+  position: fixed; z-index: 30;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + var(--s-200));
+  left: calc(env(safe-area-inset-left, 0px) + var(--s-200));
+  display: inline-flex; align-items: center; gap: var(--s-50);
+  font-size: 12px; line-height: 16px; font-weight: 600; text-decoration: none;
+  color: var(--ink-2); background: rgba(255, 255, 255, 0.86);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border: 1px solid var(--line); border-radius: var(--r-full);
+  padding: var(--s-75) var(--s-100);
+  transition: background-color 300ms var(--ease);
+}
+.back:hover { background: var(--surface); }
+.back .i { width: 16px; height: 16px; }
+
+/* Toast */
+.toast {
+  position: fixed; z-index: 60; inset-inline: 0; margin-inline: auto; width: max-content; max-width: calc(100% - 32px);
+  bottom: calc(env(safe-area-inset-bottom, 0px) + var(--s-700));
+  background: var(--ink); color: var(--on-ink); border-radius: var(--r-full);
+  padding: var(--s-75) var(--s-200); font-size: 14px; line-height: 20px; font-weight: 600;
+  opacity: 0; transform: translateY(8px); pointer-events: none;
+  transition: opacity 300ms var(--ease), transform 500ms var(--ease);
+}
+.toast.show { opacity: 1; transform: none; }
+
+/* Dialogs */
+dialog {
+  border: 0; padding: 0; color: var(--ink); background: var(--surface);
+  border-radius: var(--r-3xl); width: min(560px, calc(100% - 32px)); max-height: calc(100% - 32px);
+  box-shadow: 0 24px 64px rgba(24, 18, 14, 0.24);
+}
+dialog::backdrop { background: var(--scrim); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+dialog[open] { animation: rise 500ms var(--ease); }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.dlg { display: grid; gap: var(--s-300); padding: var(--s-300); }
+.dlg-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s-200); }
+.dlg-head h2 { font-size: 24px; line-height: 32px; }
+.x { width: 40px; height: 40px; flex: none; border-radius: var(--r-full); border: 1px solid var(--line); background: var(--surface); display: grid; place-items: center; transition: background-color 300ms var(--ease); }
+.x:hover { background: var(--field); }
+.x .i { width: 20px; height: 20px; }
+@media (max-width: 639px) {
+  dialog.sheet { width: 100%; max-width: 100%; height: 100%; max-height: 100%; margin: 0; border-radius: 0; }
+  dialog.sheet .dlg { padding-top: calc(env(safe-area-inset-top, 0px) + var(--s-300)); padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--s-300)); padding-left: max(var(--s-200), env(safe-area-inset-left, 0px)); padding-right: max(var(--s-200), env(safe-area-inset-right, 0px)); }
+}
+.unit { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: var(--s-100); align-items: center; }
+.unit img { width: 72px; height: 72px; object-fit: cover; border-radius: var(--r-xl); }
+.unit b { display: block; font-size: 18px; line-height: 28px; }
+.unit span { color: var(--muted); font-size: 14px; line-height: 20px; }
+.stepper { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-75); }
+.stepper li { display: grid; gap: var(--s-75); font-size: 12px; line-height: 16px; font-weight: 600; color: var(--muted); }
+.stepper li::before { content: ""; height: 4px; border-radius: var(--r-full); background: var(--line); }
+.stepper li[data-state="done"]::before, .stepper li[data-state="now"]::before { background: var(--accent); }
+.stepper li[data-state="now"] { color: var(--ink); }
+.pane { display: grid; gap: var(--s-200); }
+.pane[hidden] { display: none; }
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-75); }
+.guests { display: flex; align-items: center; justify-content: space-between; gap: var(--s-100); background: var(--field); border-radius: var(--r-lg); padding: var(--s-75) var(--s-100); }
+.guests .lbl { font-size: 14px; line-height: 20px; font-weight: 600; }
+.guests .ctl { display: flex; align-items: center; gap: var(--s-100); }
+.guests button { width: 32px; height: 32px; border-radius: var(--r-full); border: 1px solid var(--line-2); background: var(--surface); display: grid; place-items: center; transition: background-color 300ms var(--ease), transform 500ms var(--ease); }
+.guests button:hover { background: var(--accent-wash); }
+.guests button:active { transform: scale(0.98); }
+.guests button[disabled] { opacity: 0.4; cursor: not-allowed; }
+.guests output { min-width: 24px; text-align: center; font-weight: 700; }
+.avail { display: flex; align-items: flex-start; gap: var(--s-75); font-size: 14px; line-height: 20px; font-weight: 600; border-radius: var(--r-lg); padding: var(--s-75) var(--s-100); }
+.avail .i { width: 20px; height: 20px; }
+.avail.ok { background: var(--ok-wash); color: var(--ok); }
+.avail.no { background: var(--bad-wash); color: var(--bad); }
+.breakdown { display: grid; gap: var(--s-75); border-top: 1px solid var(--line); padding-top: var(--s-200); }
+.breakdown div { display: flex; justify-content: space-between; gap: var(--s-200); color: var(--ink-2); }
+.breakdown .total { color: var(--ink); font-weight: 700; font-size: 18px; line-height: 28px; border-top: 1px solid var(--line); padding-top: var(--s-75); }
+.breakdown .free { color: var(--ok); font-weight: 600; }
+.dlg-acts { display: flex; gap: var(--s-75); }
+.dlg-acts .btn-primary { flex: 1; }
+.tf { display: grid; gap: var(--s-50); }
+.tf label { font-size: 14px; line-height: 20px; font-weight: 600; }
+.tf .hint { font-size: 12px; line-height: 16px; color: var(--muted); }
+.tf input, .tf textarea {
+  width: 100%; border: 1px solid var(--line-2); background: var(--surface); border-radius: var(--r-lg);
+  padding: var(--s-75) var(--s-100); font-size: 16px; line-height: 24px;
+  transition: border-color 300ms var(--ease);
+}
+.tf textarea { resize: vertical; min-height: 64px; }
+.tf input:hover, .tf textarea:hover { border-color: var(--muted); }
+.tf input:focus, .tf textarea:focus { outline: 2px solid var(--accent-ink); outline-offset: 0; border-color: var(--accent-ink); }
+.tf input[aria-invalid="true"] { border-color: var(--bad); background: var(--bad-wash); }
+.tf .err { color: var(--bad); font-size: 12px; line-height: 16px; font-weight: 600; }
+.tf .err[hidden] { display: none; }
+.sum { background: var(--field); border-radius: var(--r-xl); padding: var(--s-200); display: grid; gap: var(--s-50); font-size: 14px; line-height: 20px; color: var(--ink-2); }
+.sum b { color: var(--ink); }
+.terms { border: 1px solid var(--line); border-radius: var(--r-xl); }
+.terms summary { cursor: pointer; padding: var(--s-100) var(--s-200); font-weight: 600; font-size: 14px; line-height: 20px; display: flex; justify-content: space-between; align-items: center; gap: var(--s-75); }
+.terms summary::-webkit-details-marker { display: none; }
+.terms ol { padding: 0 var(--s-200) var(--s-200); display: grid; gap: var(--s-75); font-size: 14px; line-height: 20px; color: var(--ink-2); list-style: decimal; padding-inline-start: var(--s-500); }
+.sig-box { display: grid; gap: var(--s-75); }
+.sig-pad { position: relative; border: 1px dashed var(--line-2); border-radius: var(--r-xl); background: var(--field); height: 160px; overflow: hidden; }
+.sig-pad[data-invalid="true"] { border-color: var(--bad); background: var(--bad-wash); }
+.sig-pad canvas { width: 100%; height: 100%; display: block; touch-action: none; cursor: crosshair; }
+.sig-pad .ph { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 14px; line-height: 20px; pointer-events: none; }
+.sig-row { display: flex; justify-content: space-between; align-items: center; gap: var(--s-75); }
+.check { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: var(--s-75); align-items: start; font-size: 14px; line-height: 20px; }
+.check input { width: 20px; height: 20px; margin: var(--s-25) 0 0; accent-color: var(--ink); }
+.privacy { display: flex; gap: var(--s-75); align-items: flex-start; font-size: 12px; line-height: 16px; color: var(--muted); }
+.privacy .i { width: 16px; height: 16px; }
+.done { display: grid; gap: var(--s-200); justify-items: start; }
+.done .ico { width: 56px; height: 56px; border-radius: var(--r-full); background: var(--ok-wash); color: var(--ok); display: grid; place-items: center; }
+.done .ico .i { width: 32px; height: 32px; }
+.done .ref { font-size: 14px; line-height: 20px; color: var(--muted); }
+.done .ref b { color: var(--ink); font-size: 18px; line-height: 28px; direction: ltr; unicode-bidi: isolate; letter-spacing: 0.04em; }
+.done .acts { display: grid; gap: var(--s-75); width: 100%; }
+.loading-bar { height: 4px; border-radius: var(--r-full); background: var(--skeleton); overflow: hidden; }
+.loading-bar span { display: block; height: 100%; width: 40%; background: var(--accent); border-radius: var(--r-full); animation: slide 900ms var(--ease) infinite; }
+@keyframes slide { from { transform: translateX(150%); } to { transform: translateX(-250%); } }
+.legal-dlg ol, .legal-dlg ul { display: grid; gap: var(--s-75); color: var(--ink-2); list-style: decimal; padding-inline-start: var(--s-300); }
+.legal-dlg p { color: var(--ink-2); }
+
+/* Scroll reveals (page stays complete at rest; only elements below the fold get armed after the first scroll) */
+[data-reveal] { transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
+[data-reveal].pre { opacity: 0; transform: translateY(32px); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 1ms !important; animation: none !important; }
+  [data-reveal].pre { transform: none; }
+  .menu li { transform: none; }
+  .tagline .w { transition-duration: 300ms !important; }
+}
+</style>
+</head>
+<body>
+<!--ICONS--><svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="i-arrow-left" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-arrow-up-right" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></symbol><symbol id="i-bathtub" viewBox="0 0 256 256" fill="currentColor"><path d="M240,96H208a8,8,0,0,0-8-8H136a8,8,0,0,0-8,8H64V52A12,12,0,0,1,76,40a12.44,12.44,0,0,1,12.16,9.59,8,8,0,0,0,15.68-3.18A28.32,28.32,0,0,0,76,24,28,28,0,0,0,48,52V96H16a8,8,0,0,0-8,8v40a56.06,56.06,0,0,0,56,56v16a8,8,0,0,0,16,0V200h96v16a8,8,0,0,0,16,0V200a56.06,56.06,0,0,0,56-56V104A8,8,0,0,0,240,96Zm-48,8v32H144V104Zm40,40a40,40,0,0,1-40,40H64a40,40,0,0,1-40-40V112H128v32a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V112h24Z"/></symbol><symbol id="i-bed" viewBox="0 0 256 256" fill="currentColor"><path d="M216,72H32V48a8,8,0,0,0-16,0V208a8,8,0,0,0,16,0V176H240v32a8,8,0,0,0,16,0V112A40,40,0,0,0,216,72ZM32,88h72v72H32Zm88,72V88h96a24,24,0,0,1,24,24v48Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-calendar-check" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-38.34-85.66a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L116,164.69l42.34-42.35A8,8,0,0,1,169.66,122.34Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-check-circle" viewBox="0 0 256 256" fill="currentColor"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></symbol><symbol id="i-check-circle-fill" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-copy" viewBox="0 0 256 256" fill="currentColor"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></symbol><symbol id="i-funnel" viewBox="0 0 256 256" fill="currentColor"><path d="M230.6,49.53A15.81,15.81,0,0,0,216,40H40A16,16,0,0,0,28.19,66.76l.08.09L96,139.17V216a16,16,0,0,0,24.87,13.32l32-21.34A16,16,0,0,0,160,194.66V139.17l67.74-72.32.08-.09A15.8,15.8,0,0,0,230.6,49.53ZM40,56h0Zm106.18,74.58A8,8,0,0,0,144,136v58.66L112,216V136a8,8,0,0,0-2.16-5.47L40,56H216Z"/></symbol><symbol id="i-hand-coins" viewBox="0 0 256 256" fill="currentColor"><path d="M230.33,141.06a24.43,24.43,0,0,0-21.24-4.23l-41.84,9.62A28,28,0,0,0,140,112H89.94a31.82,31.82,0,0,0-22.63,9.37L44.69,144H16A16,16,0,0,0,0,160v40a16,16,0,0,0,16,16H120a7.93,7.93,0,0,0,1.94-.24l64-16a6.94,6.94,0,0,0,1.19-.4L226,182.82l.44-.2a24.6,24.6,0,0,0,3.93-41.56ZM16,160H40v40H16Zm203.43,8.21-38,16.18L119,200H56V155.31l22.63-22.62A15.86,15.86,0,0,1,89.94,128H140a12,12,0,0,1,0,24H112a8,8,0,0,0,0,16h32a8.32,8.32,0,0,0,1.79-.2l67-15.41.31-.08a8.6,8.6,0,0,1,6.3,15.9ZM164,96a36,36,0,0,0,5.9-.48,36,36,0,1,0,28.22-47A36,36,0,1,0,164,96Zm60-12a20,20,0,1,1-20-20A20,20,0,0,1,224,84ZM164,40a20,20,0,0,1,19.25,14.61,36,36,0,0,0-15,24.93A20.42,20.42,0,0,1,164,80a20,20,0,0,1,0-40Z"/></symbol><symbol id="i-heart-fill" viewBox="0 0 256 256" fill="currentColor"><path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"/></symbol><symbol id="i-house-line" viewBox="0 0 256 256" fill="currentColor"><path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-key" viewBox="0 0 256 256" fill="currentColor"><path d="M216.57,39.43A80,80,0,0,0,83.91,120.78L28.69,176A15.86,15.86,0,0,0,24,187.31V216a16,16,0,0,0,16,16H72a8,8,0,0,0,8-8V208H96a8,8,0,0,0,8-8V184h16a8,8,0,0,0,5.66-2.34l9.56-9.57A79.73,79.73,0,0,0,160,176h.1A80,80,0,0,0,216.57,39.43ZM224,98.1c-1.09,34.09-29.75,61.86-63.89,61.9H160a63.7,63.7,0,0,1-23.65-4.51,8,8,0,0,0-8.84,1.68L116.69,168H96a8,8,0,0,0-8,8v16H72a8,8,0,0,0-8,8v16H40V187.31l58.83-58.82a8,8,0,0,0,1.68-8.84A63.72,63.72,0,0,1,96,95.92c0-34.14,27.81-62.8,61.9-63.89A64,64,0,0,1,224,98.1ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></symbol><symbol id="i-lock-key" viewBox="0 0 256 256" fill="currentColor"><path d="M128,112a28,28,0,0,0-8,54.83V184a8,8,0,0,0,16,0V166.83A28,28,0,0,0,128,112Zm0,40a12,12,0,1,1,12-12A12,12,0,0,1,128,152Zm80-72H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-magnifying-glass" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></symbol><symbol id="i-map-pin" viewBox="0 0 256 256" fill="currentColor"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></symbol><symbol id="i-minus" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-seal-check" viewBox="0 0 256 256" fill="currentColor"><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"/></symbol><symbol id="i-seal-check-fill" viewBox="0 0 256 256" fill="currentColor"><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-52.2,6.84-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-shield-check" viewBox="0 0 256 256" fill="currentColor"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></symbol><symbol id="i-star-fill" viewBox="0 0 256 256" fill="currentColor"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></symbol><symbol id="i-users" viewBox="0 0 256 256" fill="currentColor"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"/></symbol><symbol id="i-warning-circle" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z"/></symbol><symbol id="i-whatsapp-logo" viewBox="0 0 256 256" fill="currentColor"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol></svg><!--/ICONS-->
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+
+<nav class="nav" aria-label="القائمة الرئيسية">
+  <a class="logo" href="#top" aria-label="sh.apartment، العودة إلى الأعلى">
+    <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12.5 12 4.5l9 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="9.5" y="12.5" width="5" height="5" rx="1" fill="currentColor"/></svg>
+    <span><b>sh.</b><span>apartment</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="#apartments" data-nav="apartments">الشقق</a>
+    <a href="#direct" data-nav="direct">لماذا مباشرة</a>
+    <a href="#how" data-nav="how">كيف تحجز</a>
+    <a href="#proof" data-nav="proof">التقييمات</a>
+    <a href="#faq" data-nav="faq">الأسئلة</a>
+  </div>
+  <a class="btn btn-ink btn-sm" href="#check-in" data-focus="check-in">تحقق من التوفر</a>
+  <button class="toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="فتح القائمة"><span></span><span></span></button>
+</nav>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <ul>
+    <li style="--n:0"><a href="#apartments" data-nav="apartments">الشقق</a></li>
+    <li style="--n:1"><a href="#direct" data-nav="direct">لماذا مباشرة</a></li>
+    <li style="--n:2"><a href="#how" data-nav="how">كيف تحجز</a></li>
+    <li style="--n:3"><a href="#proof" data-nav="proof">التقييمات</a></li>
+    <li style="--n:4"><a href="#faq" data-nav="faq">الأسئلة</a></li>
+  </ul>
+  <div class="menu-foot">
+    <a class="btn btn-primary" href="#check-in" data-focus="check-in">تحقق من التوفر</a>
+    <p class="muted text-sm">واتساب المضيف <span class="ltr num">+966 50 489 5569</span></p>
+  </div>
+</div>
+
+<main id="main">
+  <header class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span>جدة · سبع شقق مفروشة بدخول ذاتي</span>
+        <h1 class="h1">سبع شقق مفروشة في جدة،<span class="br"><br></span> احجزها مباشرة من المضيف</h1>
+        <p class="sub">نفس الشقق التي يحجزها ضيوفنا على Airbnb، من النهضة على طريق الملك إلى الأجاويد. اختر تواريخك، ووقّع العقد من جوالك، بلا رسوم خدمة.</p>
+
+        <form class="search" id="search-top" novalidate aria-label="تحقق من التوفر">
+          <label class="field" for="check-in">
+            <span class="lbl"><svg class="i" aria-hidden="true"><use href="#i-calendar-blank"/></svg>تاريخ الدخول</span>
+            <input type="date" id="check-in" name="ci" required>
+          </label>
+          <label class="field" for="check-out">
+            <span class="lbl"><svg class="i" aria-hidden="true"><use href="#i-calendar-blank"/></svg>تاريخ المغادرة</span>
+            <input type="date" id="check-out" name="co" required>
+          </label>
+          <label class="field" for="guests-top">
+            <span class="lbl"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>الضيوف</span>
+            <select id="guests-top" name="g"></select>
+          </label>
+          <button class="btn btn-primary" type="submit"><svg class="i" aria-hidden="true"><use href="#i-magnifying-glass"/></svg>تحقق من التوفر</button>
+        </form>
+        <p class="form-error" id="search-top-err" role="alert" hidden><svg class="i" aria-hidden="true"><use href="#i-warning-circle"/></svg><span></span></p>
+
+        <p class="proof-line">
+          <span><svg class="i star" aria-hidden="true"><use href="#i-star-fill"/></svg><b class="num">4.83</b> من <span class="num">517</span> تقييماً على Airbnb</span>
+          <span><svg class="i" aria-hidden="true"><use href="#i-seal-check"/></svg>مضيف متميز</span>
+          <span><svg class="i" aria-hidden="true"><use href="#i-lock-key"/></svg>دخول ذاتي في كل الشقق</span>
+        </p>
+      </div>
+
+      <div class="mosaic" aria-label="صور من الشقق">
+        <figure class="tile tile-a"><img src="../photos/midcentury-1-living.jpg" alt="صالة استديو ميد سنشري بسجادة مربعات وإضاءة دافئة" width="1400" height="931" fetchpriority="high"><span class="chip"><svg class="i" aria-hidden="true"><use href="#i-calendar-check"/></svg>التقويم متزامن مع Airbnb</span></figure>
+        <figure class="tile tile-b"><img src="../photos/orange-1-living.jpg" alt="صالة أورنج سويت بكنبة بيضاء ولمسات برتقالية" width="1050" height="1400"><span class="chip"><svg class="i" aria-hidden="true"><use href="#i-lock-key"/></svg>دخول ذاتي بقفل ذكي</span></figure>
+        <figure class="tile tile-c"><img src="../photos/cozy-1-neon-cinema.jpg" alt="ركن السينما في كوزي هوم بإضاءة نيون زرقاء" width="1050" height="1400"></figure>
+        <figure class="tile tile-d"><img src="../photos/suite-3-bedroom-massage.jpg" alt="غرفة نوم الجناح الفاخر مع كرسي المساج" width="1400" height="931"></figure>
+        <figure class="tile tile-e"><img src="../photos/fawaz-1-living.jpg" alt="صالة منزل الأمير فواز بكنب خردلي" width="1400" height="931"></figure>
+      </div>
+    </div>
+  </header>
+
+  <section class="band" id="apartments" aria-labelledby="apts-h">
+    <div class="wrap">
+      <div class="apts-top">
+        <div class="head" data-reveal>
+          <p class="kicker">الشقق</p>
+          <h2 class="h2" id="apts-h">سبع شقق في أربعة أحياء</h2>
+          <p class="lead">ثلاث في النهضة على طريق الملك قرب الكورنيش، وواحدة على طريق المدينة، واثنتان في الأجاويد، وواحدة في الأمير فواز.</p>
+        </div>
+        <span class="sync"><span class="pulse" aria-hidden="true"></span>التقويم متزامن مع Airbnb</span>
+      </div>
+
+      <div class="filters" role="group" aria-label="تصفية الشقق">
+        <div class="filter-row" role="group" aria-label="المنطقة" id="f-area">
+          <span class="flabel">المنطقة</span>
+          <button class="fchip" type="button" data-area="all" aria-pressed="true">الكل <span class="count num">7</span></button>
+          <button class="fchip" type="button" data-area="king" aria-pressed="false">طريق الملك <span class="count num">3</span></button>
+          <button class="fchip" type="button" data-area="madinah" aria-pressed="false">طريق المدينة <span class="count num">1</span></button>
+          <button class="fchip" type="button" data-area="fawaz" aria-pressed="false">الأمير فواز <span class="count num">1</span></button>
+          <button class="fchip" type="button" data-area="ajawid" aria-pressed="false">الأجاويد <span class="count num">2</span></button>
+        </div>
+        <div class="filter-row" role="group" aria-label="عدد الغرف" id="f-size">
+          <span class="flabel">الغرف</span>
+          <button class="fchip" type="button" data-size="all" aria-pressed="true">الكل</button>
+          <button class="fchip" type="button" data-size="1" aria-pressed="false">استديو أو غرفة</button>
+          <button class="fchip" type="button" data-size="2" aria-pressed="false">غرفتا نوم</button>
+          <button class="fchip" type="button" data-size="3" aria-pressed="false">3 غرف نوم</button>
+        </div>
+      </div>
+
+      <div class="summary" id="summary" hidden>
+        <p id="summary-text"></p>
+        <div class="acts">
+          <a class="btn btn-ghost btn-sm" href="#check-in" data-focus="check-in">تعديل التواريخ</a>
+          <button class="btn btn-text btn-sm" type="button" id="clear-search">إلغاء البحث</button>
+        </div>
+      </div>
+
+      <p class="sr-only" id="results-live" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"></p>
+      <div class="grid" id="grid" aria-busy="false"></div>
+      <div class="empty" id="empty" hidden>
+        <span class="ico" aria-hidden="true"><svg class="i"><use href="#i-funnel"/></svg></span>
+        <h3>لا توجد شقة بهذه المواصفات هنا</h3>
+        <p>منزل الأجاويد هو الوحيد بثلاث غرف نوم، ومنزل الأمير فواز وشقة طريق المدينة بغرفتين. جرّب منطقة أخرى أو امسح الفلاتر.</p>
+        <div class="acts">
+          <button class="btn btn-ink" type="button" id="clear-filters">مسح الفلاتر</button>
+          <a class="btn btn-ghost" href="https://wa.me/966504895569?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D8%AD%D8%AB%20%D8%B9%D9%86%20%D8%B4%D9%82%D8%A9%20%D9%81%D9%8A%20%D8%AC%D8%AF%D8%A9" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg>اسألنا على واتساب</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="direct" aria-labelledby="direct-h" style="background: var(--surface); border-block: 1px solid var(--line);">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <p class="kicker">حجزت عندنا عبر Airbnb من قبل؟</p>
+        <h2 class="h2" id="direct-h">نفس الشقة ونفس التقويم، بحجز مباشر أبسط</h2>
+        <p class="lead">كل شقة هنا هي نفسها المعروضة على Airbnb، بتقييماتها الحقيقية. الفرق في طريقة الحجز ومن تتعامل معه.</p>
+      </div>
+      <div class="compare" data-reveal>
+        <article class="cmp">
+          <header><h3>عبر Airbnb</h3></header>
+          <ul>
+            <li><svg class="i neutral" aria-hidden="true"><use href="#i-check"/></svg><span>الحجز والدفع داخل التطبيق</span></li>
+            <li><svg class="i neutral" aria-hidden="true"><use href="#i-check"/></svg><span>رسوم خدمة حسب سياسة المنصة</span></li>
+            <li><svg class="i neutral" aria-hidden="true"><use href="#i-check"/></svg><span>التواصل عبر رسائل التطبيق</span></li>
+            <li><svg class="i neutral" aria-hidden="true"><use href="#i-check"/></svg><span>نفس الشقة ونفس التقويم</span></li>
+          </ul>
+        </article>
+        <article class="cmp direct">
+          <header><h3>مباشرة مع sh.apartment</h3><span class="badge">الأوفر</span></header>
+          <ul>
+            <li><svg class="i yes" aria-hidden="true"><use href="#i-check-circle-fill"/></svg><span><b>بلا رسوم خدمة.</b> تدفع سعر الليالي فقط.</span></li>
+            <li><svg class="i yes" aria-hidden="true"><use href="#i-check-circle-fill"/></svg><span><b>عقد باسمك</b> توقّعه بإصبعك من جوالك في دقيقتين.</span></li>
+            <li><svg class="i yes" aria-hidden="true"><use href="#i-check-circle-fill"/></svg><span><b>تواصل مباشر</b> مع المضيف على واتساب.</span></li>
+            <li><svg class="i yes" aria-hidden="true"><use href="#i-check-circle-fill"/></svg><span><b>نفس الشقة ونفس التقويم</b>، فما تراه متاحاً هنا متاح فعلاً.</span></li>
+          </ul>
+        </article>
+      </div>
+      <p class="cmp-note text-sm"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg>تفضّل Airbnb؟ كل شقة لها زر يفتحها هناك مباشرة، والقرار لك.</p>
+
+      <div class="benefits">
+        <div class="benefit" data-reveal>
+          <span class="ico" aria-hidden="true"><svg class="i"><use href="#i-hand-coins"/></svg></span>
+          <h3>تدفع سعر الليالي فقط</h3>
+          <p>لا رسوم خدمة على الحجز المباشر، والإجمالي يظهر لك قبل أن تكتب اسمك.</p>
+        </div>
+        <div class="benefit" data-reveal>
+          <span class="ico" aria-hidden="true"><svg class="i"><use href="#i-lock-key"/></svg></span>
+          <h3>تدخل بنفسك في أي وقت بعد 4 العصر</h3>
+          <p>كل الشقق بقفل ذكي، يصلك رمزه على واتساب بعد تأكيد الحجز. لا انتظار ولا تسليم مفاتيح.</p>
+        </div>
+        <div class="benefit" data-reveal>
+          <span class="ico" aria-hidden="true"><svg class="i"><use href="#i-calendar-check"/></svg></span>
+          <h3>لا حجز مزدوج</h3>
+          <p>تقويم كل شقة متزامن مع Airbnb، والأيام المحجوزة هناك لا تظهر لك هنا.</p>
+        </div>
+        <div class="benefit" data-reveal>
+          <span class="ico" aria-hidden="true"><svg class="i"><use href="#i-whatsapp-logo"/></svg></span>
+          <h3>رقم واحد لكل سؤال</h3>
+          <p>قبل الوصول أو أثناء الإقامة، تكلّم المضيف مباشرة على <span class="ltr num">+966 50 489 5569</span>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tagline-band" aria-label="راحتك أولويتنا">
+    <div class="wrap tagline-wrap">
+      <p class="tagline" id="tagline">مرحباً بك في بيتك الثاني في جدة. تدخل بنفسك، وتجد كل شيء جاهزاً قبل أن تضع حقيبتك.</p>
+      <p class="sig"><svg class="i" aria-hidden="true"><use href="#i-heart-fill"/></svg>sh.apartment · راحتك أولويتنا</p>
+    </div>
+  </section>
+
+  <section class="band" id="how" aria-labelledby="how-h" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <p class="kicker">كيف تحجز</p>
+        <h2 class="h2" id="how-h">ثلاث خطوات، كلها من جوالك</h2>
+      </div>
+      <ol class="steps">
+        <li class="step" data-reveal>
+          <span class="n num" aria-hidden="true">1</span>
+          <h3>اختر الشقة والتواريخ</h3>
+          <p>التقويم متزامن مع Airbnb والأيام المحجوزة مشطوبة، فلن تختار ليلة غير متاحة.</p>
+          <span class="meta"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>أقل من دقيقة</span>
+        </li>
+        <li class="step" data-reveal>
+          <span class="n num" aria-hidden="true">2</span>
+          <h3>وقّع العقد بإصبعك</h3>
+          <p>اكتب اسمك ورقم هويتك وجوالك ووقّع. نحجز لك التواريخ مبدئياً فوراً حتى يؤكدها المالك.</p>
+          <span class="meta"><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg>بياناتك لا تُحفظ في الموقع</span>
+        </li>
+        <li class="step" data-reveal>
+          <span class="n num" aria-hidden="true">3</span>
+          <h3>أكّد على واتساب وادخل بنفسك</h3>
+          <p>ترسل العقد للمالك على واتساب، وبعد السداد يصلك رمز القفل الذكي. الدخول من الساعة 4:00 مساءً.</p>
+          <span class="meta"><svg class="i" aria-hidden="true"><use href="#i-key"/></svg>رمز القفل على واتساب</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" id="proof" aria-labelledby="proof-h" style="background: var(--surface); border-block: 1px solid var(--line);">
+    <div class="wrap proof">
+      <div class="score" data-reveal>
+        <p class="kicker">التقييمات</p>
+        <h2 class="h2" id="proof-h">517 ضيفاً قيّمونا على Airbnb</h2>
+        <p class="big num" aria-label="متوسط التقييم 4.83 من 5">4.83</p>
+        <div class="stars" aria-hidden="true">
+          <svg class="i"><use href="#i-star-fill"/></svg><svg class="i"><use href="#i-star-fill"/></svg><svg class="i"><use href="#i-star-fill"/></svg><svg class="i"><use href="#i-star-fill"/></svg><svg class="i"><use href="#i-star-fill"/></svg>
+        </div>
+        <p>متوسط مرجّح لتقييمات الشقق السبع، كما تظهر على Airbnb اليوم.</p>
+        <div class="seal">
+          <svg class="i" aria-hidden="true"><use href="#i-seal-check-fill"/></svg>
+          <div><b>سلطان مضيف متميز على Airbnb</b><span>يستضيف في أربع من الشقق السبع، وحسام في الثلاث الأخرى.</span></div>
+        </div>
+      </div>
+      <div data-reveal>
+        <ul class="rows" id="rating-rows"></ul>
+        <p class="rows-legend"><span>الشريط يمثل عدد التقييمات لكل شقة</span><span>اقرأ نصوص التقييمات على Airbnb</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="faq" aria-labelledby="faq-h">
+    <div class="wrap faq-grid">
+      <div class="faq-aside" data-reveal>
+        <p class="kicker">الأسئلة الشائعة</p>
+        <h2 class="h2" id="faq-h">قبل أن تحجز</h2>
+        <p class="lead">ما لم تجد جوابه هنا، اسأل المضيف مباشرة.</p>
+        <a class="btn btn-ghost" style="justify-self:start" href="https://wa.me/966504895569" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg>اسأل على واتساب</a>
+      </div>
+      <div class="faq" data-reveal>
+        <details><summary>متى يبدأ الدخول ومتى المغادرة؟<span class="pm" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary><p>الدخول من الساعة 4:00 مساءً، والمغادرة حتى الساعة 12:00 ظهراً. التأخير يكون بموافقة المالك وقد تترتب عليه رسوم إضافية.</p></details>
+        <details><summary>كيف أدخل الشقة؟<span class="pm" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary><p>كل الشقق بدخول ذاتي بقفل ذكي. يصلك الرمز على واتساب بعد تأكيد الحجز، فتدخل بنفسك دون انتظار أحد.</p></details>
+        <details><summary>هل هي نفس الشقق المعروضة على Airbnb؟<span class="pm" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary><p>نعم. نفس الشقق ونفس التقويم المتزامن. الفرق أنك تتعامل مع المضيف مباشرة بعقد باسمك، وبلا رسوم خدمة.</p></details>
+        <details><summary>متى يتأكد الحجز؟<span class="pm" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary><p>بعد توقيع العقد نحجز التواريخ لك مبدئياً. يتأكد الحجز بعد سداد قيمة الإيجار المتفق عليها مع المالك على واتساب.</p></details>
+        <details><summary>ما البيانات المطلوبة للعقد؟<span class="pm" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary><p>الاسم الكامل كما في الهوية، والجنسية، ورقم الهوية أو الإقامة أو الجواز، ورقم الجوال، وعدد المرافقين. بياناتك لا تُحفظ في الموقع، وتُستخدم فقط لإنشاء ملف العقد.</p></details>
+        <details><summary>هل التدخين مسموح داخل الشقق؟<span class="pm" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary><p>لا. يُمنع التدخين بجميع أنواعه داخل الشقق، بما في ذلك السجائر الإلكترونية والشيشة، ويُمنع إشعال الفحم.</p></details>
+        <details><summary>هل يُسمح بالحيوانات الأليفة؟<span class="pm" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary><p>فقط بإذن مسبق من المالك. اسأل على واتساب قبل الحجز.</p></details>
+        <details><summary>أي الشقق تناسب العائلات؟<span class="pm" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary><p>منزل الأمير فواز بغرفتين وستة أسرّة، وفيه كرسي طعام وسرير للأطفال وغرفة بسرير علوي. ومنزل الأجاويد بثلاث غرف نوم وطاولة طعام، ويتسع كل منهما لستة ضيوف.</p></details>
+        <details><summary>ما سياسة الإلغاء؟<span class="pm" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary><p>يتفق عليها الطرفان عند الحجز. اسأل المالك عنها على واتساب قبل توقيع العقد، وستجدها مكتوبة في عقدك.</p></details>
+        <details><summary>ما الأقرب إلى الكورنيش والمطار؟<span class="pm" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary><p>شقق النهضة الثلاث على طريق الملك قريبة من الكورنيش والردسي مول والمطار. وشقة طريق المدينة قريبة من المطار والمولات والواجهة البحرية.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="risk-h" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="risk" data-reveal>
+        <div class="head">
+          <p class="kicker">بلا مخاطرة</p>
+          <h2 id="risk-h">لا تدفع شيئاً قبل أن يؤكد المالك تواريخك</h2>
+        </div>
+        <ul>
+          <li><span class="ico" aria-hidden="true"><svg class="i"><use href="#i-calendar-check"/></svg></span><div><b>التواريخ محجوزة لك مبدئياً</b><span>بمجرد توقيع العقد، ولا يأخذها غيرك أثناء التأكيد.</span></div></li>
+          <li><span class="ico" aria-hidden="true"><svg class="i"><use href="#i-hand-coins"/></svg></span><div><b>الدفع بعد التأكيد</b><span>بالاتفاق مع المالك على واتساب، لا بطاقة مطلوبة في الموقع.</span></div></li>
+          <li><span class="ico" aria-hidden="true"><svg class="i"><use href="#i-star-fill"/></svg></span><div><b>نفس شقق الـ 517 تقييماً</b><span>وإن فضّلت Airbnb، كل شقة لها رابطها هناك.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="book" aria-labelledby="final-h" style="padding-top: 0;">
+    <div class="wrap final">
+      <div class="head" data-reveal>
+        <p class="kicker">جاهز؟</p>
+        <h2 class="h2" id="final-h">اختر تواريخك، ونريك الشقق المتاحة فوراً</h2>
+        <p class="proof-line">
+          <span><svg class="i star" aria-hidden="true"><use href="#i-star-fill"/></svg><b class="num">4.83</b> من <span class="num">517</span> تقييماً على Airbnb</span>
+          <span><svg class="i" aria-hidden="true"><use href="#i-lock-key"/></svg>دخول ذاتي في كل الشقق</span>
+        </p>
+      </div>
+      <div style="display:grid; gap: var(--s-100); min-width: 0;" data-reveal>
+        <form class="search" id="search-bottom" novalidate aria-label="تحقق من التوفر">
+          <label class="field" for="check-in-2">
+            <span class="lbl"><svg class="i" aria-hidden="true"><use href="#i-calendar-blank"/></svg>تاريخ الدخول</span>
+            <input type="date" id="check-in-2" name="ci" required>
+          </label>
+          <label class="field" for="check-out-2">
+            <span class="lbl"><svg class="i" aria-hidden="true"><use href="#i-calendar-blank"/></svg>تاريخ المغادرة</span>
+            <input type="date" id="check-out-2" name="co" required>
+          </label>
+          <label class="field" for="guests-bottom">
+            <span class="lbl"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>الضيوف</span>
+            <select id="guests-bottom" name="g"></select>
+          </label>
+          <button class="btn btn-primary" type="submit"><svg class="i" aria-hidden="true"><use href="#i-magnifying-glass"/></svg>تحقق من التوفر</button>
+        </form>
+        <p class="form-error" id="search-bottom-err" role="alert" hidden><svg class="i" aria-hidden="true"><use href="#i-warning-circle"/></svg><span></span></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div style="display:grid; gap: var(--s-200); align-content: start;">
+        <a class="logo" href="#top" aria-label="sh.apartment، العودة إلى الأعلى">
+          <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12.5 12 4.5l9 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="9.5" y="12.5" width="5" height="5" rx="1" fill="currentColor"/></svg>
+          <span><b>sh.</b><span>apartment</span></span>
+        </a>
+        <p>راحتك أولويتنا. سبع شقق مفروشة في جدة بدخول ذاتي، يديرها سلطان وحسام.</p>
+        <div class="copyline">
+          <span class="num" id="wa-num">+966 50 489 5569</span>
+          <button class="copy-btn" type="button" id="copy-wa"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg>نسخ الرقم</button>
+        </div>
+      </div>
+      <div>
+        <h4>الشقق</h4>
+        <ul id="foot-apts"></ul>
+      </div>
+      <div>
+        <h4>الحجز</h4>
+        <ul>
+          <li><a href="#check-in" data-focus="check-in">تحقق من التوفر</a></li>
+          <li><a href="#how">كيف تحجز</a></li>
+          <li><a href="#faq">الأسئلة الشائعة</a></li>
+          <li><a href="https://wa.me/966504895569" target="_blank" rel="noopener">واتساب المضيف</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>معلومات</h4>
+        <ul>
+          <li><button class="link" type="button" data-legal="privacy">سياسة الخصوصية</button></li>
+          <li><button class="link" type="button" data-legal="terms">الشروط والأحكام</button></li>
+          <li><a href="https://ar.airbnb.com/rooms/1548537821036118490" target="_blank" rel="noopener">صفحتنا على Airbnb</a></li>
+          <li><a href="https://hello-jed.sh-apartment.workers.dev/" target="_blank" rel="noopener">دخول المالك</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <p>© 2026 sh.apartment · جدة، المملكة العربية السعودية</p>
+      <p>الأسعار المعروضة لليلة الواحدة، وليالي الخميس والجمعة بسعر نهاية الأسبوع.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="back" href="../index.html"><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg>كل التصاميم</a>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<dialog class="sheet" id="book-dlg" aria-labelledby="book-title">
+  <div class="dlg">
+    <div class="dlg-head">
+      <div class="unit" id="book-unit"></div>
+      <button class="x" type="button" data-close aria-label="إغلاق"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <h2 class="sr-only" id="book-title" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">حجز مباشر</h2>
+    <ol class="stepper" id="stepper" aria-label="خطوات الحجز">
+      <li data-state="now">1 التواريخ</li>
+      <li data-state="todo">2 بياناتك</li>
+      <li data-state="todo">3 التوقيع</li>
+    </ol>
+
+    <form class="pane" id="pane-1" novalidate>
+      <div class="two">
+        <label class="field" for="b-ci"><span class="lbl">تاريخ الدخول</span><input type="date" id="b-ci" required></label>
+        <label class="field" for="b-co"><span class="lbl">تاريخ المغادرة</span><input type="date" id="b-co" required></label>
+      </div>
+      <div class="guests">
+        <span class="lbl" id="b-g-lbl">الضيوف</span>
+        <div class="ctl">
+          <button type="button" id="b-g-minus" aria-label="ضيف أقل"><svg class="i" aria-hidden="true"><use href="#i-minus"/></svg></button>
+          <output id="b-g" aria-labelledby="b-g-lbl" class="num">2</output>
+          <button type="button" id="b-g-plus" aria-label="ضيف أكثر"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></button>
+        </div>
+      </div>
+      <p class="avail" id="b-avail" role="status"></p>
+      <div class="breakdown" id="b-breakdown"></div>
+      <div class="dlg-acts"><button class="btn btn-primary" type="submit">التالي: بياناتك<svg class="i" aria-hidden="true"><use href="#i-arrow-left"/></svg></button></div>
+    </form>
+
+    <form class="pane" id="pane-2" novalidate hidden>
+      <div class="tf"><label for="g-name">الاسم الكامل</label><span class="hint">كما في الهوية</span><input id="g-name" autocomplete="name" aria-describedby="g-name-err"><p class="err" id="g-name-err" hidden>اكتب الاسم الكامل كما في الهوية.</p></div>
+      <div class="two">
+        <div class="tf"><label for="g-nat">الجنسية</label><input id="g-nat" placeholder="سعودي" aria-describedby="g-nat-err"><p class="err" id="g-nat-err" hidden>اكتب الجنسية.</p></div>
+        <div class="tf"><label for="g-phone">رقم الجوال</label><input id="g-phone" inputmode="tel" autocomplete="tel" placeholder="05xxxxxxxx" dir="ltr" style="text-align:right" aria-describedby="g-phone-err"><p class="err" id="g-phone-err" hidden>رقم الجوال غير صحيح. مثال: 0501234567</p></div>
+      </div>
+      <div class="tf"><label for="g-id">رقم الهوية أو الإقامة أو الجواز</label><input id="g-id" inputmode="text" dir="ltr" style="text-align:right" aria-describedby="g-id-err"><p class="err" id="g-id-err" hidden>رقم الهوية غير صحيح. اكتبه بالأرقام أو الحروف اللاتينية بدون مسافات.</p></div>
+      <div class="tf"><label for="g-comp">أسماء المرافقين</label><span class="hint" id="g-comp-hint">اختياري</span><textarea id="g-comp" placeholder="مثال: محمد أحمد، سارة أحمد"></textarea></div>
+      <p class="privacy"><svg class="i" aria-hidden="true"><use href="#i-lock-key"/></svg>بياناتك لا تُحفظ في الموقع، وتُستخدم فقط لإنشاء ملف العقد على جهازك.</p>
+      <div class="dlg-acts"><button class="btn btn-ghost" type="button" data-back="1">رجوع</button><button class="btn btn-primary" type="submit">التالي: التوقيع<svg class="i" aria-hidden="true"><use href="#i-arrow-left"/></svg></button></div>
+    </form>
+
+    <form class="pane" id="pane-3" novalidate hidden>
+      <div class="sum" id="b-sum"></div>
+      <details class="terms">
+        <summary>بنود العقد<svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary>
+        <ol>
+          <li>الدخول من الساعة 4:00 مساءً، والمغادرة حتى الساعة 12:00 ظهراً، والتأخير بموافقة المالك وقد تترتب عليه رسوم.</li>
+          <li>يُمنع التدخين بجميع أنواعه داخل الوحدة، بما في ذلك السجائر الإلكترونية والشيشة، ويُمنع إشعال الفحم.</li>
+          <li>لا يُسمح بالحيوانات الأليفة إلا بإذن مسبق.</li>
+          <li>الالتزام بالهدوء واحترام خصوصية الجيران والأنظمة العامة.</li>
+          <li>المحافظة على الوحدة ومحتوياتها وتسليمها بالحالة التي استُلمت بها.</li>
+          <li>يُؤكَّد الحجز بعد سداد قيمة الإيجار المتفق عليها مع المالك، وتخضع سياسة الإلغاء لما يتفق عليه الطرفان.</li>
+          <li>المالك غير مسؤول عن فقدان المقتنيات الشخصية أو الأموال داخل الوحدة.</li>
+          <li>يحق للمالك إنهاء الإقامة دون استرداد عند مخالفة أي بند.</li>
+        </ol>
+      </details>
+      <div class="sig-box">
+        <div class="sig-row"><span class="tf"><label id="sig-lbl">توقيعك</label></span><button class="btn btn-text btn-sm" type="button" id="sig-clear">مسح التوقيع</button></div>
+        <div class="sig-pad" id="sig-pad"><canvas id="sig" aria-labelledby="sig-lbl" role="img"></canvas><span class="ph" id="sig-ph">وقّع بإصبعك داخل المربع</span></div>
+        <p class="tf"><span class="err" id="sig-err" hidden>وقّع داخل مربع التوقيع.</span></p>
+      </div>
+      <label class="check" for="agree"><input type="checkbox" id="agree"><span>قرأت بنود العقد وأوافق عليها، وأقرّ بصحة بياناتي.</span></label>
+      <p class="tf"><span class="err" id="agree-err" hidden>وافق على بنود العقد للمتابعة.</span></p>
+      <div class="loading-bar" id="b-loading" hidden><span></span></div>
+      <div class="dlg-acts"><button class="btn btn-ghost" type="button" data-back="2">رجوع</button><button class="btn btn-primary" type="submit" id="b-confirm">تأكيد وإنشاء العقد</button></div>
+    </form>
+
+    <div class="pane done" id="pane-done" hidden tabindex="-1">
+      <span class="ico" aria-hidden="true"><svg class="i"><use href="#i-check-circle-fill"/></svg></span>
+      <h2 class="text-2xl">العقد جاهز</h2>
+      <p class="ref">رقم العقد <b id="done-ref"></b></p>
+      <p id="done-text"></p>
+      <div class="acts">
+        <a class="btn btn-primary btn-block" id="done-wa" href="https://wa.me/966504895569" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg>أرسل العقد للمالك على واتساب</a>
+        <button class="btn btn-ghost btn-block" type="button" data-close>تم</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="legal-dlg" aria-labelledby="legal-title">
+  <div class="dlg legal-dlg">
+    <div class="dlg-head"><h2 id="legal-title"></h2><button class="x" type="button" data-close aria-label="إغلاق"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+    <div id="legal-body" style="display:grid; gap: var(--s-200);"></div>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  const DATA = {"apartments":[{"id":"midcentury","airbnb":"https://ar.airbnb.com/rooms/1548537821036118490","name_ar":"استديو ميد سنشري","name_en":"Mid century Studio","district_ar":"حي النهضة","street_ar":"طريق الملك","type_ar":"استديو","bedrooms":1,"beds":1,"baths":1,"guests":3,"rating":4.9,"reviews":105,"host":"Sultan","superhost":true,"price":349,"weekend":419,"highlights_ar":["جاكوزي دافئ","كنبة تتحول إلى مقعد سينمائي","شاشة 75 بوصة","قرب الكورنيش والمطار"],"photos":["../photos/midcentury-1-living.jpg","../photos/midcentury-2-living-art.jpg","../photos/midcentury-3-neon-night.jpg","../photos/midcentury-4-kitchen.jpg","../photos/midcentury-5-bath-jacuzzi.jpg","../photos/midcentury-6-coffee.jpg","../photos/midcentury-7-building.jpg"]},{"id":"cozy","airbnb":"https://ar.airbnb.com/rooms/1545433977273675752","name_ar":"كوزي هوم","name_en":"Cozy Home","district_ar":"حي النهضة","street_ar":"طريق الملك","type_ar":"غرفة وصالة","bedrooms":1,"beds":1,"baths":1,"guests":3,"rating":4.9,"reviews":86,"host":"Sultan","superhost":true,"price":329,"weekend":399,"highlights_ar":["كنبة تتحول إلى سرير سينمائي","شاشة 75 بوصة","مطبخ متكامل وغسالة ملابس","قرب الردسي مول وبنش مارك"],"photos":["../photos/cozy-1-neon-cinema.jpg","../photos/cozy-2-loft-day.jpg","../photos/cozy-3-kitchen.jpg","../photos/cozy-4-bedroom.jpg","../photos/cozy-5-coffee.jpg","../photos/cozy-6-lobby.jpg"]},{"id":"suite","airbnb":"https://ar.airbnb.com/rooms/1545416629708956462","name_ar":"الجناح الفاخر","name_en":"Luxury Suite","district_ar":"حي النهضة","street_ar":"طريق الملك","type_ar":"غرفة وصالة","bedrooms":1,"beds":1,"baths":1,"guests":4,"rating":4.93,"reviews":69,"host":"Sultan","superhost":true,"price":379,"weekend":449,"highlights_ar":["كرسي مساج فاخر","مكتب أعمال","شاشة 75 بوصة","أعلى تقييم بين الشقق"],"photos":["../photos/suite-1-living.jpg","../photos/suite-2-living-2.jpg","../photos/suite-3-bedroom-massage.jpg","../photos/suite-4-workspace.jpg","../photos/suite-5-bath.jpg","../photos/suite-6-kitchenette.jpg","../photos/suite-7-door.jpg"]},{"id":"fawaz","airbnb":"https://ar.airbnb.com/rooms/1664751285940407075","name_ar":"منزل الأمير فواز","name_en":"Prince Fawaz Home","district_ar":"حي الأمير فواز","street_ar":"جنوب شرق جدة","type_ar":"غرفتا نوم","bedrooms":2,"beds":6,"baths":2,"guests":6,"rating":4.63,"reviews":19,"host":"Hussam","superhost":false,"price":489,"weekend":569,"highlights_ar":["دخول ذاتي","غرفة أطفال بسرير علوي","كرسي طعام وسرير للأطفال","غسالة صحون ومكينة قهوة"],"photos":["../photos/fawaz-1-living.jpg","../photos/fawaz-2-living-2.jpg","../photos/fawaz-3-kitchen.jpg","../photos/fawaz-4-bedroom.jpg","../photos/fawaz-5-kids-loft.jpg","../photos/fawaz-6-bath.jpg","../photos/fawaz-7-hall.jpg"]},{"id":"ajawid","airbnb":"https://ar.airbnb.com/rooms/1548398523561225848","name_ar":"منزل الأجاويد","name_en":"Al Ajawid House","district_ar":"حي الأجاويد","street_ar":"جنوب شرق جدة","type_ar":"3 غرف نوم","bedrooms":3,"beds":5,"baths":2,"guests":6,"rating":4.85,"reviews":26,"host":"Hussam","superhost":false,"price":649,"weekend":749,"highlights_ar":["ثلاث غرف نوم واسعة","دخول ذاتي","طاولة طعام ومطبخ متكامل","مشياً إلى الجامع وبارك سكوير"],"photos":["../photos/ajawid-1-living.jpg","../photos/ajawid-2-living-2.jpg","../photos/ajawid-3-kitchen.jpg","../photos/ajawid-4-bedroom.jpg","../photos/ajawid-5-twin.jpg","../photos/ajawid-6-bathtub.jpg","../photos/ajawid-7-dining.jpg"]},{"id":"madinah","airbnb":"https://ar.airbnb.com/rooms/1308042141503902547","name_ar":"شقة طريق المدينة","name_en":"Madinah Road Apartment","district_ar":"طريق المدينة","street_ar":"خلف الجفالي مرسيدس","type_ar":"غرفتا نوم","bedrooms":2,"beds":3,"baths":2,"guests":4,"rating":4.69,"reviews":144,"host":"Sultan","superhost":true,"price":429,"weekend":499,"highlights_ar":["على طريق المدينة شريان جدة","قرب المطار والمولات والواجهة البحرية","غرفتان ودورتا مياه","أكثر الشقق تقييماً: 144 تقييماً"],"photos":["../photos/madinah-1-living.jpg","../photos/madinah-2-living-2.jpg","../photos/madinah-3-kitchen.jpg","../photos/madinah-4-bedroom.jpg","../photos/madinah-5-twin.jpg","../photos/madinah-6-bath.jpg"]},{"id":"orange","airbnb":"https://ar.airbnb.com/rooms/1557132730241179243","name_ar":"أورنج سويت","name_en":"Orange Suite","district_ar":"حي الأجاويد","street_ar":"جنوب شرق جدة","type_ar":"غرفة وصالة","bedrooms":1,"beds":1,"baths":1,"guests":3,"rating":4.87,"reviews":68,"host":"Hussam","superhost":false,"price":319,"weekend":389,"highlights_ar":["كنبة سينمائية أمام شاشة 65 بوصة","دخول ذاتي بقفل ذكي","مشياً إلى الجامع وبارك سكوير","ديكور هادئ بلمسات برتقالية"],"photos":["../photos/orange-1-living.jpg","../photos/orange-2-living-2.jpg","../photos/orange-3-kitchen.jpg","../photos/orange-4-bedroom.jpg","../photos/orange-5-bath.jpg","../photos/orange-6-detail.jpg","../photos/orange-7-smart-lock.jpg"]}]};
+  const WA = '966504895569';
+  const AREA = { midcentury: 'king', cozy: 'king', suite: 'king', madinah: 'madinah', fawaz: 'fawaz', ajawid: 'ajawid', orange: 'ajawid' };
+  const ROOM_AR = { living: 'صالة', 'neon-cinema': 'ركن السينما' };
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const fmtN = new Intl.NumberFormat('en-US');
+  const fmtDay = new Intl.DateTimeFormat('ar-SA-u-ca-gregory-nu-latn', { day: 'numeric', month: 'long' });
+  const DAY = 864e5;
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const iso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const parse = v => { if (!v) return null; const [y, m, d] = v.split('-').map(Number); return y ? new Date(y, m - 1, d) : null; };
+  const addDays = (d, n) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
+  const off = d => Math.round((d - today) / DAY);
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  const nightsTxt = n => n === 1 ? 'ليلة واحدة' : n === 2 ? 'ليلتان' : n <= 10 ? `${n} ليالٍ` : `${n} ليلة`;
+  const guestsTxt = n => n === 1 ? 'ضيف واحد' : n === 2 ? 'ضيفان' : n <= 10 ? `${n} ضيوف` : `${n} ضيفاً`;
+  const reviewsTxt = n => { const r = n % 100; return r === 0 || r === 1 ? `${n} تقييم` : r === 2 && n < 100 ? 'تقييمان' : r >= 3 && r <= 10 ? `${n} تقييمات` : `${n} تقييماً`; };
+  const bedsTxt = n => n === 1 ? 'سرير' : n === 2 ? 'سريران' : `${n} أسرّة`;
+  const bathsTxt = n => n === 1 ? 'حمام' : n === 2 ? 'حمامان' : `${n} حمامات`;
+  const sar = n => `${fmtN.format(n)} ر.س`;
+
+  const apts = DATA.apartments.map((a, i) => ({ ...a, area: AREA[a.id], idx: i }));
+
+  // Simulated booked nights per apartment (stand in for the Airbnb calendar sync)
+  const hash = (a, b) => { const x = Math.sin(a * 127.1 + b * 311.7) * 43758.5453; return x - Math.floor(x); };
+  apts.forEach((a, i) => {
+    let c = 0; const r = () => hash(i + 1, ++c); const set = new Set();
+    let d = Math.floor(r() * 6) + 1;
+    while (d < 150) { const len = 1 + Math.floor(r() * 3); for (let k = 0; k < len; k++) set.add(d + k); d += len + 4 + Math.floor(r() * 9); }
+    a.booked = set;
+  });
+  const isFree = (a, s, n) => { for (let k = 0; k < n; k++) if (a.booked.has(s + k)) return false; return true; };
+  const nextFree = (a, s, n) => { for (let t = s + 1; t < s + 90; t++) if (isFree(a, t, n)) return t; return null; };
+  function quote(a, ci, co) {
+    let wk = 0, we = 0;
+    for (let d = new Date(ci); d < co; d = addDays(d, 1)) { const g = d.getDay(); if (g === 4 || g === 5) we++; else wk++; }
+    return { wk, we, total: wk * a.price + we * a.weekend, n: wk + we };
+  }
+
+  // Guests selects
+  $$('#guests-top, #guests-bottom').forEach(sel => {
+    for (let i = 1; i <= 6; i++) sel.add(new Option(guestsTxt(i), i, i === 2, i === 2));
+  });
+  // Default dates: two weeks out, 3 nights
+  const dCi = addDays(today, 14), dCo = addDays(today, 17);
+  [['#check-in', dCi], ['#check-out', dCo], ['#check-in-2', dCi], ['#check-out-2', dCo]].forEach(([s, d]) => { const el = $(s); el.value = iso(d); el.min = iso(today); });
+
+  // State
+  const state = { area: 'all', size: 'all', search: null };
+
+  // Cards
+  const grid = $('#grid');
+  function factsHTML(a) {
+    return `<ul class="facts">
+      <li><svg class="i" aria-hidden="true"><use href="#i-house-line"/></svg>${esc(a.type_ar)}</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-bed"/></svg>${bedsTxt(a.beds)}</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-bathtub"/></svg>${bathsTxt(a.baths)}</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>حتى ${guestsTxt(a.guests)}</li>
+    </ul>`;
+  }
+  function cardHTML(a, st) {
+    const cover = a.photos[0];
+    const room = cover.includes('neon') ? 'ركن السينما في' : 'صالة';
+    let statusHTML = '', priceHTML = `<p class="price num">${sar(a.price)} <small>/ ليلة</small></p>`;
+    let primary = `<button class="btn btn-primary" type="button" data-book="${a.id}">احجز مباشرة</button>`;
+    if (st) {
+      if (st.kind === 'ok') {
+        statusHTML = `<span class="status ok"><svg class="i" aria-hidden="true"><use href="#i-check-circle"/></svg>متاحة في تواريخك</span>`;
+        priceHTML = `<p class="price num">${sar(st.q.total)} <small>· ${nightsTxt(st.q.n)}</small></p>`;
+      } else if (st.kind === 'booked') {
+        statusHTML = `<span class="status no"><svg class="i" aria-hidden="true"><use href="#i-calendar-blank"/></svg>محجوزة في تواريخك</span>`;
+        if (st.alt != null) {
+          const ad = addDays(today, st.alt);
+          statusHTML += `<p class="alt-date">أقرب موعد متاح لـ ${nightsTxt(st.n)}: <b>${fmtDay.format(ad)}</b></p>`;
+          primary = `<button class="btn btn-primary" type="button" data-use="${a.id}" data-start="${st.alt}">استخدم هذا الموعد</button>`;
+        }
+      } else {
+        statusHTML = `<span class="status cap"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>تتسع لـ ${guestsTxt(a.guests)} كحد أقصى</span>`;
+        primary = `<button class="btn btn-primary" type="button" data-book="${a.id}" aria-disabled="true" disabled>لا تتسع لعددكم</button>`;
+      }
+    }
+    return `<article class="card${st && st.kind !== 'ok' ? ' is-off' : ''}" id="apt-${a.id}">
+      <div class="card-media">
+        <img src="${cover}" alt="${room} ${esc(a.name_ar)} في ${esc(a.district_ar)}" width="1400" height="1050">
+        <span class="chip"><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg>${esc(a.district_ar)}${a.area === 'king' ? ' · طريق الملك' : ''}</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">
+          <div><h3>${esc(a.name_ar)}</h3><span class="en">${esc(a.name_en)}</span></div>
+          <span class="rating" aria-label="تقييم ${a.rating.toFixed(2)} من 5، ${reviewsTxt(a.reviews)}"><svg class="i" aria-hidden="true"><use href="#i-star-fill"/></svg><span class="num">${a.rating.toFixed(2)}</span> <span class="muted num">(${a.reviews})</span></span>
+        </div>
+        ${factsHTML(a)}
+        <p class="hl">${a.highlights_ar.slice(0, 2).map(esc).join(' · ')}</p>
+        <div class="card-foot">
+          ${statusHTML}
+          <div class="price-row">${priceHTML}${!st ? '<span class="text-xs muted">الخميس والجمعة ' + sar(a.weekend) + '</span>' : ''}</div>
+          <div class="card-acts">
+            ${primary}
+            <a class="btn btn-ghost" href="${a.airbnb}" target="_blank" rel="noopener" aria-label="افتح ${esc(a.name_ar)} على Airbnb">Airbnb<svg class="i i-dir" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </article>`;
+  }
+  const helpHTML = `<aside class="help-card">
+      <span class="wa" aria-hidden="true"><svg class="i"><use href="#i-whatsapp-logo"/></svg></span>
+      <div style="display:grid; gap: var(--s-75);">
+        <h3>محتار بين شقتين؟</h3>
+        <p>اكتب لنا عدد الضيوف والمنطقة التي تفضّلها، ونقترح عليك الأنسب. <span class="num ltr">+966 50 489 5569</span></p>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/${WA}?text=${encodeURIComponent('السلام عليكم، أحتاج مساعدة في اختيار شقة في جدة')}" target="_blank" rel="noopener">اسألنا على واتساب</a>
+    </aside>`;
+
+  function visible() {
+    return apts.filter(a => (state.area === 'all' || a.area === state.area) && (state.size === 'all' || String(a.bedrooms) === state.size));
+  }
+  function statusFor(a) {
+    const s = state.search; if (!s) return null;
+    if (s.g > a.guests) return { kind: 'cap' };
+    const so = off(s.ci), n = Math.round((s.co - s.ci) / DAY);
+    if (isFree(a, so, n)) return { kind: 'ok', q: quote(a, s.ci, s.co) };
+    return { kind: 'booked', alt: nextFree(a, so, n), n };
+  }
+  function render() {
+    const list = visible();
+    const empty = list.length === 0;
+    $('#empty').hidden = !empty;
+    grid.hidden = empty;
+    if (empty) { $('#summary').hidden = true; $('#results-live').textContent = 'لا توجد شقق مطابقة'; return; }
+    let rows = list.map(a => ({ a, st: statusFor(a) }));
+    if (state.search) { const rank = { ok: 0, booked: 1, cap: 2 }; rows.sort((x, y) => rank[x.st.kind] - rank[y.st.kind] || x.a.idx - y.a.idx); }
+    grid.innerHTML = rows.map(r => cardHTML(r.a, r.st)).join('') + helpHTML;
+    if (state.search) {
+      const okN = rows.filter(r => r.st.kind === 'ok').length;
+      const s = state.search, n = Math.round((s.co - s.ci) / DAY);
+      const msg = `من <b>${fmtDay.format(s.ci)}</b> إلى <b>${fmtDay.format(s.co)}</b> · ${nightsTxt(n)} · ${guestsTxt(s.g)}: <b>${okN === 0 ? 'لا توجد شقة متاحة' : okN === 1 ? 'شقة واحدة متاحة' : okN === 2 ? 'شقتان متاحتان' : okN + ' شقق متاحة'}</b>`;
+      $('#summary-text').innerHTML = msg;
+      $('#summary').hidden = false;
+      $('#results-live').textContent = $('#summary-text').textContent;
+    } else {
+      $('#summary').hidden = true;
+      $('#results-live').textContent = `${list.length} من 7 شقق`;
+    }
+  }
+  function renderSkeleton() {
+    const n = Math.max(visible().length, 1) + 1;
+    grid.hidden = false; $('#empty').hidden = true;
+    grid.setAttribute('aria-busy', 'true');
+    grid.innerHTML = Array.from({ length: n }, () => `<div class="sk-card" aria-hidden="true"><div class="sk sk-media"></div><div class="sk sk-line w60"></div><div class="sk sk-line w80"></div><div class="sk sk-line w40"></div><div class="sk sk-btn"></div></div>`).join('');
+  }
+
+  // Filters
+  function setPressed(groupSel, attr, val) { $$(`${groupSel} .fchip`).forEach(b => b.setAttribute('aria-pressed', String(b.dataset[attr] === val))); }
+  $('#f-area').addEventListener('click', e => { const b = e.target.closest('.fchip'); if (!b) return; state.area = b.dataset.area; setPressed('#f-area', 'area', state.area); render(); });
+  $('#f-size').addEventListener('click', e => { const b = e.target.closest('.fchip'); if (!b) return; state.size = b.dataset.size; setPressed('#f-size', 'size', state.size); render(); });
+  $('#clear-filters').addEventListener('click', () => { state.area = 'all'; state.size = 'all'; setPressed('#f-area', 'area', 'all'); setPressed('#f-size', 'size', 'all'); render(); $('#f-area .fchip').focus(); });
+  $('#clear-search').addEventListener('click', () => { state.search = null; render(); });
+
+  // Search forms (hero + final, kept in sync)
+  const forms = [
+    { f: $('#search-top'), ci: $('#check-in'), co: $('#check-out'), g: $('#guests-top'), err: $('#search-top-err') },
+    { f: $('#search-bottom'), ci: $('#check-in-2'), co: $('#check-out-2'), g: $('#guests-bottom'), err: $('#search-bottom-err') },
+  ];
+  function showErr(fm, msg, field) {
+    fm.err.hidden = !msg; fm.err.querySelector('span').textContent = msg || '';
+    [fm.ci, fm.co].forEach(i => i.closest('.field').dataset.invalid = String(!!msg && (field === 'both' || i === field)));
+  }
+  forms.forEach(fm => {
+    fm.ci.addEventListener('change', () => {
+      const ci = parse(fm.ci.value), co = parse(fm.co.value);
+      if (ci) { fm.co.min = iso(addDays(ci, 1)); if (!co || co <= ci) fm.co.value = iso(addDays(ci, 3)); }
+      showErr(fm, '');
+    });
+    fm.co.addEventListener('change', () => showErr(fm, ''));
+    fm.f.addEventListener('submit', e => {
+      e.preventDefault();
+      const ci = parse(fm.ci.value), co = parse(fm.co.value), g = Number(fm.g.value);
+      if (!ci || !co) return showErr(fm, 'اختر تاريخ الدخول ثم تاريخ المغادرة.', !ci ? fm.ci : fm.co), (!ci ? fm.ci : fm.co).focus();
+      if (ci < today) return showErr(fm, 'تاريخ الدخول مضى. اختر تاريخاً من اليوم فصاعداً.', fm.ci), fm.ci.focus();
+      if (co <= ci) return showErr(fm, 'اختر تاريخ المغادرة بعد تاريخ الدخول.', fm.co), fm.co.focus();
+      if ((co - ci) / DAY > 60) return showErr(fm, 'أقصى مدة للحجز المباشر 60 ليلة. للإقامات الأطول تواصل معنا على واتساب.', fm.co), fm.co.focus();
+      showErr(fm, '');
+      forms.forEach(o => { if (o !== fm) { o.ci.value = fm.ci.value; o.co.value = fm.co.value; o.g.value = fm.g.value; showErr(o, ''); } });
+      state.search = { ci, co, g };
+      renderSkeleton();
+      $('#apartments').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      setTimeout(() => { grid.setAttribute('aria-busy', 'false'); render(); }, 700);
+    });
+  });
+
+  // Card actions
+  grid.addEventListener('click', e => {
+    const use = e.target.closest('[data-use]');
+    if (use) {
+      const a = apts.find(x => x.id === use.dataset.use), s = state.search, n = Math.round((s.co - s.ci) / DAY);
+      const ci = addDays(today, Number(use.dataset.start)), co = addDays(ci, n);
+      forms.forEach(o => { o.ci.value = iso(ci); o.co.value = iso(co); });
+      state.search = { ...s, ci, co };
+      render();
+      openBook(a);
+      return;
+    }
+    const b = e.target.closest('[data-book]');
+    if (b && !b.disabled) openBook(apts.find(x => x.id === b.dataset.book));
+  });
+
+  // Rating rows + footer list
+  const maxRev = Math.max(...apts.map(a => a.reviews));
+  $('#rating-rows').innerHTML = [...apts].sort((a, b) => b.reviews - a.reviews).map(a => `<li>
+      <span class="nm">${esc(a.name_ar)}<small>${esc(a.district_ar)}</small></span>
+      <span class="val num"><svg class="i" aria-hidden="true"><use href="#i-star-fill"/></svg>${a.rating.toFixed(2)}</span>
+      <span class="bar"><span class="track" aria-hidden="true"><span class="fill" style="width:${(a.reviews / maxRev * 100).toFixed(1)}%"></span></span><a href="${a.airbnb}" target="_blank" rel="noopener"><span class="num">${reviewsTxt(a.reviews)}</span><svg class="i i-dir" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></span>
+    </li>`).join('');
+  $('#foot-apts').innerHTML = apts.map(a => `<li><a href="#apt-${a.id}">${esc(a.name_ar)}</a></li>`).join('');
+
+  // Booking dialog
+  const dlg = $('#book-dlg');
+  const B = { a: null, g: 2, step: 1 };
+  const panes = { 1: $('#pane-1'), 2: $('#pane-2'), 3: $('#pane-3'), done: $('#pane-done') };
+  function goto(step) {
+    B.step = step;
+    Object.entries(panes).forEach(([k, p]) => p.hidden = String(k) !== String(step));
+    $$('#stepper li').forEach((li, i) => li.dataset.state = step === 'done' || i + 1 < step ? 'done' : i + 1 === step ? 'now' : 'todo');
+    $('#stepper').hidden = step === 'done';
+    if (step === 3) sizeSig();
+    const first = panes[step].querySelector('input, button, [tabindex]');
+    if (first) setTimeout(() => first.focus(), 30);
+  }
+  function openBook(a) {
+    B.a = a;
+    const s = state.search;
+    const ci = s ? s.ci : parse($('#check-in').value) || dCi;
+    const co = s ? s.co : parse($('#check-out').value) || dCo;
+    $('#b-ci').value = iso(ci); $('#b-co').value = iso(co); $('#b-ci').min = iso(today);
+    B.g = Math.min(s ? s.g : Number($('#guests-top').value) || 2, a.guests);
+    $('#book-unit').innerHTML = `<img src="${a.photos[0]}" alt="" width="72" height="72"><div><b>${esc(a.name_ar)}</b><span>${esc(a.district_ar)} · <span class="num">${a.rating.toFixed(2)}</span> ★ · ${esc(a.type_ar)}</span></div>`;
+    ['g-name', 'g-nat', 'g-phone', 'g-id', 'g-comp'].forEach(id => { const el = $('#' + id); el.removeAttribute('aria-invalid'); });
+    $$('#book-dlg .err').forEach(x => x.hidden = true);
+    $('#agree').checked = false; clearSig();
+    goto(1); updateQuote();
+    dlg.showModal(); document.body.classList.add('locked');
+  }
+  dlg.addEventListener('close', () => document.body.classList.remove('locked'));
+  $$('[data-close]').forEach(b => b.addEventListener('click', () => b.closest('dialog').close()));
+  $$('dialog').forEach(d => d.addEventListener('click', e => { if (e.target === d) d.close(); }));
+  $$('[data-back]').forEach(b => b.addEventListener('click', () => goto(Number(b.dataset.back))));
+
+  function updateQuote() {
+    const a = B.a, ci = parse($('#b-ci').value), co = parse($('#b-co').value);
+    $('#b-g').textContent = B.g;
+    $('#b-g-minus').disabled = B.g <= 1; $('#b-g-plus').disabled = B.g >= a.guests;
+    const av = $('#b-avail'), bd = $('#b-breakdown');
+    B.ok = false;
+    if (!ci || !co || co <= ci) { av.className = 'avail no'; av.innerHTML = `<svg class="i" aria-hidden="true"><use href="#i-warning-circle"/></svg>اختر تاريخ الدخول ثم تاريخ المغادرة.`; bd.innerHTML = ''; return; }
+    if (ci < today) { av.className = 'avail no'; av.innerHTML = `<svg class="i" aria-hidden="true"><use href="#i-warning-circle"/></svg>تاريخ الدخول مضى. اختر تاريخاً من اليوم فصاعداً.`; bd.innerHTML = ''; return; }
+    const n = Math.round((co - ci) / DAY);
+    if (!isFree(a, off(ci), n)) {
+      const alt = nextFree(a, off(ci), n);
+      av.className = 'avail no';
+      av.innerHTML = `<svg class="i" aria-hidden="true"><use href="#i-warning-circle"/></svg><span>يوجد حجز بين التاريخين، اختر مدة أخرى.${alt != null ? ` أقرب موعد متاح: <b>${fmtDay.format(addDays(today, alt))}</b>.` : ''}</span>`;
+      bd.innerHTML = ''; return;
+    }
+    const q = quote(a, ci, co); B.q = q; B.ok = true; B.ci = ci; B.co = co;
+    av.className = 'avail ok';
+    av.innerHTML = `<svg class="i" aria-hidden="true"><use href="#i-check-circle"/></svg>متاحة من ${fmtDay.format(ci)} إلى ${fmtDay.format(co)}`;
+    bd.innerHTML = `${q.wk ? `<div><span><span class="num">${sar(a.price)}</span> × ${nightsTxt(q.wk)} وسط الأسبوع</span><span class="num">${sar(q.wk * a.price)}</span></div>` : ''}
+      ${q.we ? `<div><span><span class="num">${sar(a.weekend)}</span> × ${nightsTxt(q.we)} خميس وجمعة</span><span class="num">${sar(q.we * a.weekend)}</span></div>` : ''}
+      <div><span>رسوم الخدمة</span><span class="free num">0 ر.س</span></div>
+      <div class="total"><span>الإجمالي · ${nightsTxt(q.n)}</span><span class="num">${sar(q.total)}</span></div>`;
+  }
+  $('#b-ci').addEventListener('change', () => { const ci = parse($('#b-ci').value), co = parse($('#b-co').value); if (ci && (!co || co <= ci)) $('#b-co').value = iso(addDays(ci, 3)); updateQuote(); });
+  $('#b-co').addEventListener('change', updateQuote);
+  $('#b-g-minus').addEventListener('click', () => { B.g = Math.max(1, B.g - 1); updateQuote(); });
+  $('#b-g-plus').addEventListener('click', () => { B.g = Math.min(B.a.guests, B.g + 1); updateQuote(); });
+  $('#pane-1').addEventListener('submit', e => { e.preventDefault(); updateQuote(); if (!B.ok) { $('#b-avail').focus?.(); return; } $('#g-comp-hint').textContent = B.g > 1 ? `اختياري · ${B.g - 1 === 1 ? 'مرافق واحد' : B.g - 1 === 2 ? 'مرافقان' : (B.g - 1) + ' مرافقين'}` : 'اختياري'; goto(2); });
+
+  const normDigits = s => s.replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d));
+  function check(id, ok) { const el = $('#' + id); el.setAttribute('aria-invalid', String(!ok)); $('#' + id + '-err').hidden = ok; return ok; }
+  $('#pane-2').addEventListener('submit', e => {
+    e.preventDefault();
+    const name = $('#g-name').value.trim(), nat = $('#g-nat').value.trim();
+    const phone = normDigits($('#g-phone').value).replace(/\s+/g, ''), idn = normDigits($('#g-id').value).trim();
+    const r = [check('g-name', name.split(/\s+/).length >= 2), check('g-nat', nat.length >= 2), check('g-phone', /^05\d{8}$/.test(phone)), check('g-id', /^[A-Za-z0-9]{6,15}$/.test(idn))];
+    if (r.includes(false)) { $('#pane-2 [aria-invalid="true"]').focus(); return; }
+    B.guest = { name, nat, phone, idn, comp: $('#g-comp').value.trim() };
+    $('#b-sum').innerHTML = `<span><b>${esc(B.a.name_ar)}</b> · ${esc(B.a.district_ar)}</span>
+      <span>من <b>${fmtDay.format(B.ci)}</b> إلى <b>${fmtDay.format(B.co)}</b> · ${nightsTxt(B.q.n)} · ${guestsTxt(B.g)}</span>
+      <span>النزيل: <b>${esc(name)}</b> · <span class="num ltr">${esc(phone)}</span></span>
+      <span>الإجمالي: <b class="num">${sar(B.q.total)}</b> بلا رسوم خدمة</span>`;
+    goto(3);
+  });
+  ['g-name', 'g-nat', 'g-phone', 'g-id'].forEach(id => $('#' + id).addEventListener('input', () => { if ($('#' + id).getAttribute('aria-invalid') === 'true') { $('#' + id).setAttribute('aria-invalid', 'false'); $('#' + id + '-err').hidden = true; } }));
+
+  // Signature pad
+  const cv = $('#sig'), ctx = cv.getContext('2d'); let drawing = false, inked = false, last = null;
+  function sizeSig() { const r = cv.getBoundingClientRect(); if (!r.width) return; const dpr = devicePixelRatio || 1; cv.width = r.width * dpr; cv.height = r.height * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.lineWidth = 2.5; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#18120E'; inked = false; $('#sig-ph').hidden = false; }
+  function clearSig() { ctx.clearRect(0, 0, cv.width, cv.height); inked = false; $('#sig-ph').hidden = false; }
+  const pt = e => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
+  cv.addEventListener('pointerdown', e => { drawing = true; last = pt(e); cv.setPointerCapture(e.pointerId); });
+  cv.addEventListener('pointermove', e => { if (!drawing) return; const p = pt(e); ctx.beginPath(); ctx.moveTo(last.x, last.y); ctx.lineTo(p.x, p.y); ctx.stroke(); last = p; if (!inked) { inked = true; $('#sig-ph').hidden = true; $('#sig-pad').dataset.invalid = 'false'; $('#sig-err').hidden = true; } });
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(t => cv.addEventListener(t, () => drawing = false));
+  $('#sig-clear').addEventListener('click', clearSig);
+  $('#agree').addEventListener('change', () => { if ($('#agree').checked) $('#agree-err').hidden = true; });
+
+  $('#pane-3').addEventListener('submit', e => {
+    e.preventDefault();
+    const okSig = inked, okAg = $('#agree').checked;
+    $('#sig-pad').dataset.invalid = String(!okSig); $('#sig-err').hidden = okSig; $('#agree-err').hidden = okAg;
+    if (!okSig || !okAg) return;
+    const btn = $('#b-confirm'); btn.disabled = true; btn.textContent = 'جارٍ إنشاء العقد…'; $('#b-loading').hidden = false;
+    setTimeout(() => {
+      btn.disabled = false; btn.textContent = 'تأكيد وإنشاء العقد'; $('#b-loading').hidden = true;
+      const ref = `SH ${String(today.getFullYear()).slice(2)}${String(today.getMonth() + 1).padStart(2, '0')} ${String(1000 + Math.floor(Math.random() * 9000))}`;
+      $('#done-ref').textContent = ref;
+      $('#done-text').textContent = `حجزنا ${B.a.name_ar} مبدئياً من ${fmtDay.format(B.ci)} إلى ${fmtDay.format(B.co)} حتى يؤكد المالك. أرسل العقد له على واتساب لإتمام الحجز.`;
+      const msg = `السلام عليكم، هذا عقد حجز مباشر عبر sh.apartment\nرقم العقد: ${ref}\nالشقة: ${B.a.name_ar}\nالنزيل: ${B.guest.name}\nالجوال: ${B.guest.phone}\nمن ${iso(B.ci)} إلى ${iso(B.co)} (${B.q.n} ليلة)\nالمرافقون: ${B.g - 1}${B.guest.comp ? ' (' + B.guest.comp + ')' : ''}\nالإجمالي: ${fmtN.format(B.q.total)} ر.س`;
+      $('#done-wa').href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+      goto('done'); $('#pane-done').focus();
+    }, 900);
+  });
+
+  // Legal dialogs
+  const LEGAL = {
+    privacy: ['سياسة الخصوصية', `<p>لا يحفظ هذا الموقع بيانات هويتك. تُستخدم بياناتك فقط لإنشاء ملف العقد على جهازك، ثم ترسله أنت للمالك على واتساب.</p><p>نحتفظ بتواريخ الحجز ورقم العقد فقط، لمنع الحجز المزدوج مع تقويم Airbnb.</p><p>لأي طلب يخص بياناتك تواصل معنا على <span class="ltr num">+966 50 489 5569</span>.</p>`],
+    terms: ['الشروط والأحكام', `<ol><li>الدخول من الساعة 4:00 مساءً، والمغادرة حتى الساعة 12:00 ظهراً.</li><li>يُمنع التدخين بجميع أنواعه داخل الوحدة، بما في ذلك السجائر الإلكترونية والشيشة، ويُمنع إشعال الفحم.</li><li>لا يُسمح بالحيوانات الأليفة إلا بإذن مسبق.</li><li>الالتزام بالهدوء واحترام خصوصية الجيران.</li><li>يُؤكَّد الحجز بعد سداد قيمة الإيجار المتفق عليها مع المالك، وتخضع سياسة الإلغاء لما يتفق عليه الطرفان.</li><li>المالك غير مسؤول عن فقدان المقتنيات الشخصية داخل الوحدة.</li></ol>`],
+  };
+  $$('[data-legal]').forEach(b => b.addEventListener('click', () => { const [t, h] = LEGAL[b.dataset.legal]; $('#legal-title').textContent = t; $('#legal-body').innerHTML = h; $('#legal-dlg').showModal(); }));
+
+  // Copy WhatsApp number
+  const toast = $('#toast'); let tt;
+  const say = m => { toast.textContent = m; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => toast.classList.remove('show'), 2400); };
+  $('#copy-wa').addEventListener('click', () => {
+    const t = '+966504895569';
+    const sel = () => { const r = document.createRange(); r.selectNodeContents($('#wa-num')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); say('حدّدنا الرقم، انسخه من القائمة'); };
+    try { navigator.clipboard.writeText(t).then(() => say('نسخنا رقم الواتساب'), sel); } catch (e) { sel(); }
+  });
+
+  // Focus targets for "check availability" links
+  $$('[data-focus]').forEach(a => a.addEventListener('click', () => { closeMenu(); setTimeout(() => $('#' + a.dataset.focus).focus({ preventScroll: true }), reduce ? 0 : 450); }));
+
+  // Mobile menu
+  const tog = $('.toggle'), menu = $('#menu');
+  function closeMenu() { menu.classList.remove('open'); menu.setAttribute('aria-hidden', 'true'); tog.setAttribute('aria-expanded', 'false'); tog.setAttribute('aria-label', 'فتح القائمة'); document.body.classList.remove('locked'); }
+  tog.addEventListener('click', () => {
+    const open = tog.getAttribute('aria-expanded') !== 'true';
+    if (!open) return closeMenu();
+    menu.classList.add('open'); menu.setAttribute('aria-hidden', 'false'); tog.setAttribute('aria-expanded', 'true'); tog.setAttribute('aria-label', 'إغلاق القائمة'); document.body.classList.add('locked');
+    setTimeout(() => $('#menu a').focus(), 60);
+  });
+  $$('#menu a').forEach(a => a.addEventListener('click', closeMenu));
+  addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('open')) { closeMenu(); tog.focus(); } });
+
+  // Current section in nav
+  const navLinks = $$('[data-nav]');
+  const io = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) navLinks.forEach(l => l.setAttribute('aria-current', String(l.dataset.nav === en.target.id))); }), { rootMargin: '-45% 0px -50% 0px' });
+  ['apartments', 'direct', 'how', 'proof', 'faq'].forEach(id => io.observe($('#' + id)));
+  new IntersectionObserver(([en]) => { if (en.isIntersecting) navLinks.forEach(l => l.setAttribute('aria-current', 'false')); }, { rootMargin: '-45% 0px -50% 0px' }).observe($('#top'));
+
+  // Scroll reveals: armed only after the first scroll, only for elements still below the fold
+  addEventListener('scroll', () => {
+    const vh = innerHeight;
+    const rio = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.remove('pre'); rio.unobserve(en.target); } }), { rootMargin: '0px 0px -10% 0px' });
+    $$('[data-reveal]').forEach(el => { if (el.getBoundingClientRect().top > vh) { el.classList.add('pre'); rio.observe(el); } });
+  }, { passive: true, once: true });
+
+  // Tagline: words light up one at a time as the section passes a trigger line
+  const tg = $('#tagline');
+  tg.innerHTML = tg.textContent.trim().split(/\s+/).map(w => `<span class="w">${esc(w)}</span>`).join(' ');
+  const words = $$('.w', tg); let ticking = false;
+  function lightWords() {
+    ticking = false;
+    const r = tg.getBoundingClientRect(), line = innerHeight * 0.7;
+    const p = Math.min(1, Math.max(0, (line - r.top) / (r.height + innerHeight * 0.25)));
+    const on = Math.round(p * words.length);
+    words.forEach((w, i) => w.classList.toggle('on', i < on));
+  }
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(lightWords); } }, { passive: true });
+  addEventListener('resize', () => { if (!ticking) { ticking = true; requestAnimationFrame(lightWords); } });
+
+  render();
+  lightWords();
+})();
+</script>
+</body>
+</html>
