@@ -401,7 +401,7 @@ section.band { padding-block: 64px; }
 /* Apartment picker */
 .apt-field { border: 0; padding: 0; margin: 0; min-width: 0; }
 .apt-field legend { padding: 0; margin-bottom: 8px; }
-.apt-pick { display: flex; gap: 8px; overflow-x: auto; padding: 2px; scrollbar-width: thin; }
+.apt-pick { position: relative; display: flex; gap: 8px; overflow-x: auto; padding: 2px; scrollbar-width: thin; }
 .opt { position: relative; flex: none; display: grid; grid-template-columns: 40px auto; gap: 8px; align-items: center; padding: 4px 12px 4px 4px; border-radius: 12px; background: #fff; box-shadow: 0 0 0 1px var(--line); cursor: pointer; transition: background-color 300ms var(--curve), box-shadow 300ms var(--curve), transform 300ms var(--curve); }
 .opt:hover { transform: translateY(-2px); }
 .opt:active { transform: scale(0.98); }
@@ -1274,6 +1274,7 @@ document.querySelectorAll('.dlg').forEach(d => {
     try { h = decodeURIComponent(location.hash.slice(1)); } catch (e) { h = '404'; }
     if (h === 'privacy' || h === 'terms') { nf.hidden = true; openDlg(document.getElementById(h)); return; }
     if (known.has(h)) { nf.hidden = true; return; }
+    document.querySelectorAll('dialog[open]').forEach(d => { d.classList.remove('shown'); d.close(); });
     nf.hidden = false;
     nf.querySelector('a').focus();
   };
@@ -1308,7 +1309,7 @@ document.getElementById('copy-num').addEventListener('click', () => {
 
   const sel = $('bk-apt');
   sel.innerHTML = APTS.map(a => `<label class="opt"><input type="radio" name="apt" value="${a.id}"><img src="../photos/${a.photo}.jpg" alt="" width="40" height="40" loading="lazy"><span>${a.name}<small>${a.where}</small></span></label>`).join('');
-  const setPicked = () => { const r = sel.querySelector(`input[value="${B.apt}"]`); r.checked = true; };
+  const setPicked = () => { const r = sel.querySelector(`input[value="${B.apt}"]`); r.checked = true; requestAnimationFrame(() => { sel.scrollLeft = Math.max(0, r.closest('.opt').offsetLeft - 8); }); };
   const apt = () => byId[B.apt];
   const nights = () => { const out = []; for (let d = fromKey(B.ci); key(d) < B.co; d = addDays(d, 1)) out.push(d); return out; };
   const free = (ci, co) => { for (let d = fromKey(ci); key(d) < co; d = addDays(d, 1)) if (booked[B.apt].has(key(d))) return false; return true; };
@@ -1466,14 +1467,14 @@ document.getElementById('copy-num').addEventListener('click', () => {
   const cv = $('sig'), ctx = cv.getContext('2d');
   let ink = false, drawing = false;
   function sizeSig() {
-    const r = cv.getBoundingClientRect(), dpr = devicePixelRatio || 1;
-    if (!r.width) return;
-    cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr);
+    const w = cv.clientWidth, h = cv.clientHeight, dpr = devicePixelRatio || 1;
+    if (!w) return;
+    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.lineWidth = 2.5; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#16120F';
     ink = false;
   }
-  const pt = e => { const r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+  const pt = e => { const r = cv.getBoundingClientRect(); return [e.clientX - r.left - cv.clientLeft, e.clientY - r.top - cv.clientTop]; };
   cv.addEventListener('pointerdown', e => { drawing = true; cv.setPointerCapture(e.pointerId); const [x, y] = pt(e); ctx.beginPath(); ctx.moveTo(x, y); });
   cv.addEventListener('pointermove', e => { if (!drawing) return; const [x, y] = pt(e); ctx.lineTo(x, y); ctx.stroke(); ink = true; cv.setAttribute('aria-invalid', 'false'); err('e-sig'); });
   const stop = () => { drawing = false; };
@@ -1497,7 +1498,7 @@ document.getElementById('copy-num').addEventListener('click', () => {
     const a = apt(), q = quote();
     const no = `SH ${String(today.getFullYear()).slice(2)}${String(today.getMonth() + 1).padStart(2, '0')} ${1000 + Math.floor(Math.random() * 9000)}`;
     $('done-no').textContent = `Contract ${no}`;
-    $('done-held').textContent = `Your ${q.n} ${q.n > 1 ? 'nights' : 'night'} at the ${a.name}, ${short(fromKey(B.ci))} to ${short(fromKey(B.co))}, are held until the host confirms.`;
+    $('done-held').textContent = `Your ${q.n} ${q.n > 1 ? 'nights' : 'night'} at the ${a.name}, ${short(fromKey(B.ci))} to ${short(fromKey(B.co))}, ${q.n > 1 ? 'are' : 'is'} held until the host confirms.`;
     const msg = [
       'Hello, this is a direct booking request from the sh.apartment site.',
       `Contract: ${no}`,
