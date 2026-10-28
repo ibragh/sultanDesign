@@ -1,0 +1,412 @@
+{
+ "brand": {
+  "name": "sh.apartment",
+  "tagline_en": "Your stay, our priority",
+  "tagline_ar": "راحتك أولويتنا",
+  "city_ar": "جدة",
+  "city_en": "Jeddah",
+  "whatsapp_display": "+966 50 489 5569",
+  "whatsapp_link": "https://wa.me/966504895569",
+  "colors_from_original_site": {
+   "orange": "#F59A1E",
+   "brown_text": "#5A3A28 (approx)",
+   "cream_bg": "#FBF3E8 (approx)"
+  },
+  "hosts": {
+   "Sultan": "Airbnb Superhost, hosting for about 2 years (4 units)",
+   "Hussam": "hosting for about 1 year (3 units)"
+  },
+  "totals": {
+   "apartments": 7,
+   "reviews": 517,
+   "weighted_rating": 4.83
+  }
+ },
+ "policies": {
+  "check_in_ar": "الدخول من الساعة 4:00 مساءً",
+  "check_out_ar": "المغادرة حتى الساعة 12:00 ظهراً",
+  "check_in_en": "Check in from 4:00 pm",
+  "check_out_en": "Check out by 12:00 pm",
+  "rules_ar": [
+   "يُمنع التدخين بجميع أنواعه داخل الوحدة، بما في ذلك السجائر الإلكترونية والشيشة، ويُمنع إشعال الفحم",
+   "لا يُسمح بالحيوانات الأليفة إلا بإذن مسبق",
+   "الالتزام بالهدوء واحترام خصوصية الجيران",
+   "يُؤكَّد الحجز بعد سداد قيمة الإيجار المتفق عليها مع المالك"
+  ],
+  "rules_en": [
+   "No smoking of any kind inside, including e-cigarettes and shisha, and no charcoal",
+   "No pets without prior approval",
+   "Keep it quiet and respect the neighbours",
+   "A booking is confirmed once the agreed rent is paid to the owner"
+  ]
+ },
+ "landmarks_approx": {
+  "King Abdulaziz International Airport": [
+   21.6796,
+   39.1565
+  ],
+  "Red Sea Mall": [
+   21.6283,
+   39.1107
+  ],
+  "King Fahd's Fountain": [
+   21.515,
+   39.1466
+  ],
+  "Al Balad (historic Jeddah)": [
+   21.4858,
+   39.1869
+  ]
+ },
+ "prices_note": "Nightly prices are PLACEHOLDERS (SAR). Weekend = Thursday and Friday nights.",
+ "apartments": [
+  {
+   "id": "midcentury",
+   "airbnb": "https://ar.airbnb.com/rooms/1548537821036118490",
+   "name_ar": "استديو ميد سنشري",
+   "name_en": "Mid century Studio",
+   "listing_title_ar": "استديو على طراز - mid century - طريق الملك",
+   "listing_title_en": "Mid-century style studio - King Road",
+   "district_ar": "حي النهضة",
+   "district_en": "Al Nahda",
+   "street_ar": "طريق الملك",
+   "street_en": "King Road",
+   "building": "nahda",
+   "lat": 21.61392,
+   "lng": 39.12803,
+   "type_ar": "استديو",
+   "type_en": "Studio",
+   "bedrooms": 1,
+   "beds": 1,
+   "baths": 1,
+   "guests": 3,
+   "rating": 4.9,
+   "reviews": 105,
+   "host": "Sultan",
+   "superhost": true,
+   "price": 349,
+   "weekend": 419,
+   "highlights_ar": [
+    "جاكوزي دافئ",
+    "كنبة تتحول إلى مقعد سينمائي",
+    "شاشة 75 بوصة",
+    "قرب الكورنيش والمطار"
+   ],
+   "highlights_en": [
+    "Warm jacuzzi",
+    "Sofa that turns into a cinema seat",
+    "75 inch screen",
+    "Near the Corniche and the airport"
+   ],
+   "description_ar": "استديو دافئ بتصميم استثنائي فريد، مزود بأحدث التقنيات والأجهزة. كنبة تتحول إلى مقعد سينمائي أمام شاشة 75 بوصة، وجاكوزي دافئ، في حي النهضة على طريق الملك، بجانب الكورنيش وأفخم المولات والمطاعم والمطار.",
+   "description_en": "A warm studio with a one of a kind design and the latest appliances. A sofa that turns into a cinema seat faces a 75 inch screen, and there is a warm jacuzzi. In Al Nahda on King Road, next to the Corniche, the best malls, restaurants and the airport.",
+   "photos": [
+    "../photos/midcentury-1-living.jpg",
+    "../photos/midcentury-2-living-art.jpg",
+    "../photos/midcentury-3-neon-night.jpg",
+    "../photos/midcentury-4-kitchen.jpg",
+    "../photos/midcentury-5-bath-jacuzzi.jpg",
+    "../photos/midcentury-6-coffee.jpg",
+    "../photos/midcentury-7-building.jpg"
+   ]
+  },
+  {
+   "id": "cozy",
+   "airbnb": "https://ar.airbnb.com/rooms/1545433977273675752",
+   "name_ar": "كوزي هوم",
+   "name_en": "Cozy Home",
+   "listing_title_ar": "Cozy home by - طريق الملك",
+   "listing_title_en": "Cozy home by - King's Road",
+   "district_ar": "حي النهضة",
+   "district_en": "Al Nahda",
+   "street_ar": "طريق الملك",
+   "street_en": "King Road",
+   "building": "nahda",
+   "lat": 21.61257,
+   "lng": 39.12966,
+   "type_ar": "غرفة وصالة",
+   "type_en": "1 bedroom",
+   "bedrooms": 1,
+   "beds": 1,
+   "baths": 1,
+   "guests": 3,
+   "rating": 4.9,
+   "reviews": 86,
+   "host": "Sultan",
+   "superhost": true,
+   "price": 329,
+   "weekend": 399,
+   "highlights_ar": [
+    "كنبة تتحول إلى سرير سينمائي",
+    "شاشة 75 بوصة",
+    "مطبخ متكامل وغسالة ملابس",
+    "قرب الردسي مول وبنش مارك"
+   ],
+   "highlights_en": [
+    "Sofa that turns into a cinema bed",
+    "75 inch screen",
+    "Full kitchen and washing machine",
+    "Near Red Sea Mall and Benchmark"
+   ],
+   "description_ar": "إقامة فندقية بتصميم عصري يجمع الفخامة والدفء: مطبخ متكامل، غسالة ملابس، حمام بتجهيزات فاخرة، وشاشة 75 بوصة مقابل كنبة تتحول إلى سرير سينمائي. في حي النهضة قرب البحر والمطار وطريق الملك والردسي مول وبنش مارك.",
+   "description_en": "A hotel style stay with a modern design that is both refined and warm: full kitchen, washing machine, a bathroom with premium fittings, and a 75 inch screen facing a sofa that turns into a cinema bed. In Al Nahda near the sea, the airport, King Road, Red Sea Mall and Benchmark.",
+   "photos": [
+    "../photos/cozy-1-neon-cinema.jpg",
+    "../photos/cozy-2-loft-day.jpg",
+    "../photos/cozy-3-kitchen.jpg",
+    "../photos/cozy-4-bedroom.jpg",
+    "../photos/cozy-5-coffee.jpg",
+    "../photos/cozy-6-lobby.jpg"
+   ]
+  },
+  {
+   "id": "suite",
+   "airbnb": "https://ar.airbnb.com/rooms/1545416629708956462",
+   "name_ar": "الجناح الفاخر",
+   "name_en": "Luxury Suite",
+   "listing_title_ar": "طريق الملك - جناح فاخر",
+   "listing_title_en": "King Road - Luxury Suite",
+   "district_ar": "حي النهضة",
+   "district_en": "Al Nahda",
+   "street_ar": "طريق الملك",
+   "street_en": "King Road",
+   "building": "nahda",
+   "lat": 21.61401,
+   "lng": 39.12797,
+   "type_ar": "غرفة وصالة",
+   "type_en": "1 bedroom",
+   "bedrooms": 1,
+   "beds": 1,
+   "baths": 1,
+   "guests": 4,
+   "rating": 4.93,
+   "reviews": 69,
+   "host": "Sultan",
+   "superhost": true,
+   "price": 379,
+   "weekend": 449,
+   "highlights_ar": [
+    "كرسي مساج فاخر",
+    "مكتب أعمال",
+    "شاشة 75 بوصة",
+    "أعلى تقييم بين الشقق"
+   ],
+   "highlights_en": [
+    "Premium massage chair",
+    "Work desk",
+    "75 inch screen",
+    "Highest rated of the seven"
+   ],
+   "description_ar": "إقامة فندقية فاخرة في قلب حي النهضة. شقة أنيقة من غرفة وصالة بتصميم عصري، فيها كرسي مساج فاخر ومكتب أعمال مريح وشاشة 75 بوصة، قرب البحر والمطار وطريق الملك.",
+   "description_en": "A hotel style stay in the heart of Al Nahda. An elegant one bedroom apartment with a living room, a premium massage chair, a comfortable work desk and a 75 inch screen, near the sea, the airport and King Road.",
+   "photos": [
+    "../photos/suite-1-living.jpg",
+    "../photos/suite-2-living-2.jpg",
+    "../photos/suite-3-bedroom-massage.jpg",
+    "../photos/suite-4-workspace.jpg",
+    "../photos/suite-5-bath.jpg",
+    "../photos/suite-6-kitchenette.jpg",
+    "../photos/suite-7-door.jpg"
+   ]
+  },
+  {
+   "id": "fawaz",
+   "airbnb": "https://ar.airbnb.com/rooms/1664751285940407075",
+   "name_ar": "منزل الأمير فواز",
+   "name_en": "Prince Fawaz Home",
+   "listing_title_ar": "منزل هادئ متكامل | دخول ذاتي | Prince Fawaz",
+   "listing_title_en": "Peaceful, Fully Equipped Home | Self Check-in | Prince Fawaz",
+   "district_ar": "حي الأمير فواز",
+   "district_en": "Prince Fawaz",
+   "street_ar": "جنوب شرق جدة",
+   "street_en": "South east Jeddah",
+   "building": "fawaz",
+   "lat": 21.43715,
+   "lng": 39.28596,
+   "type_ar": "غرفتا نوم",
+   "type_en": "2 bedrooms",
+   "bedrooms": 2,
+   "beds": 6,
+   "baths": 2,
+   "guests": 6,
+   "rating": 4.63,
+   "reviews": 19,
+   "host": "Hussam",
+   "superhost": false,
+   "price": 489,
+   "weekend": 569,
+   "highlights_ar": [
+    "دخول ذاتي",
+    "غرفة أطفال بسرير علوي",
+    "كرسي طعام وسرير للأطفال",
+    "غسالة صحون ومكينة قهوة"
+   ],
+   "highlights_en": [
+    "Self check in",
+    "Kids room with a loft bed",
+    "High chair and baby cot",
+    "Dishwasher and coffee machine"
+   ],
+   "description_ar": "مسكن هادئ للعائلة: كرسي مساج، شاشة ذكية 75 بوصة، كرسي طعام وسرير للأطفال، مكتبة صغيرة، غسالة ملابس وصحون، مكينة قهوة، إنترنت سريع، غرفة ماستر بحمامها، غرفة للأطفال، ودورتا مياه. قريب من مستشفى الحرس الوطني.",
+   "description_en": "A calm home for families: massage chair, 75 inch smart TV, high chair and baby cot, a small library, washing machine and dishwasher, coffee machine, fast wifi, a master bedroom with its own bathroom, a kids room and two bathrooms. Close to the National Guard Hospital.",
+   "photos": [
+    "../photos/fawaz-1-living.jpg",
+    "../photos/fawaz-2-living-2.jpg",
+    "../photos/fawaz-3-kitchen.jpg",
+    "../photos/fawaz-4-bedroom.jpg",
+    "../photos/fawaz-5-kids-loft.jpg",
+    "../photos/fawaz-6-bath.jpg",
+    "../photos/fawaz-7-hall.jpg"
+   ]
+  },
+  {
+   "id": "ajawid",
+   "airbnb": "https://ar.airbnb.com/rooms/1548398523561225848",
+   "name_ar": "منزل الأجاويد",
+   "name_en": "Al Ajawid House",
+   "listing_title_ar": "منزل فاخر استثنائي | 3 غرف نوم | الأجاويد",
+   "listing_title_en": "Exceptional Luxury House | 3 Bedrooms | Al-Ajwaid",
+   "district_ar": "حي الأجاويد",
+   "district_en": "Al Ajawid",
+   "street_ar": "جنوب شرق جدة",
+   "street_en": "South east Jeddah",
+   "building": "ajawid",
+   "lat": 21.40531,
+   "lng": 39.29911,
+   "type_ar": "3 غرف نوم",
+   "type_en": "3 bedrooms",
+   "bedrooms": 3,
+   "beds": 5,
+   "baths": 2,
+   "guests": 6,
+   "rating": 4.85,
+   "reviews": 26,
+   "host": "Hussam",
+   "superhost": false,
+   "price": 649,
+   "weekend": 749,
+   "highlights_ar": [
+    "ثلاث غرف نوم واسعة",
+    "دخول ذاتي",
+    "طاولة طعام ومطبخ متكامل",
+    "مشياً إلى الجامع وبارك سكوير"
+   ],
+   "highlights_en": [
+    "Three large bedrooms",
+    "Self check in",
+    "Dining table and full kitchen",
+    "Walk to the mosque and Park Square"
+   ],
+   "description_ar": "شقة فاخرة بطابع عصري: شاشة 75 بوصة، ثلاث غرف نوم واسعة، صالة مريحة، طاولة طعام، ومطبخ متكامل بغسالة ملابس. دخول ذاتي بخصوصية تامة، ومشياً إلى الجامع وحديقة الحي (بارك سكوير) والشارع التجاري. قريبة من مستشفى الحرس الوطني.",
+   "description_en": "A modern, refined apartment: 75 inch screen, three large bedrooms, a comfortable living room, a dining table and a full kitchen with a washing machine. Private self check in, and a short walk to the mosque, Park Square and the shopping street. Close to the National Guard Hospital.",
+   "photos": [
+    "../photos/ajawid-1-living.jpg",
+    "../photos/ajawid-2-living-2.jpg",
+    "../photos/ajawid-3-kitchen.jpg",
+    "../photos/ajawid-4-bedroom.jpg",
+    "../photos/ajawid-5-twin.jpg",
+    "../photos/ajawid-6-bathtub.jpg",
+    "../photos/ajawid-7-dining.jpg"
+   ]
+  },
+  {
+   "id": "madinah",
+   "airbnb": "https://ar.airbnb.com/rooms/1308042141503902547",
+   "name_ar": "شقة طريق المدينة",
+   "name_en": "Madinah Road Apartment",
+   "listing_title_ar": "خلف الجفالي مرسيدس طريق المدينة",
+   "listing_title_en": "Behind Al-Jafali, Mercedes, Al-Madina Road",
+   "district_ar": "طريق المدينة",
+   "district_en": "Madinah Road",
+   "street_ar": "خلف الجفالي مرسيدس",
+   "street_en": "Behind Al Juffali Mercedes",
+   "building": "madinah",
+   "lat": 21.60276,
+   "lng": 39.1577,
+   "type_ar": "غرفتا نوم",
+   "type_en": "2 bedrooms",
+   "bedrooms": 2,
+   "beds": 3,
+   "baths": 2,
+   "guests": 4,
+   "rating": 4.69,
+   "reviews": 144,
+   "host": "Sultan",
+   "superhost": true,
+   "price": 429,
+   "weekend": 499,
+   "highlights_ar": [
+    "على طريق المدينة شريان جدة",
+    "قرب المطار والمولات والواجهة البحرية",
+    "غرفتان ودورتا مياه",
+    "أكثر الشقق تقييماً: 144 تقييماً"
+   ],
+   "highlights_en": [
+    "On Madinah Road, the city artery",
+    "Near the airport, malls and waterfront",
+    "Two bedrooms, two bathrooms",
+    "Most reviewed: 144 reviews"
+   ],
+   "description_ar": "موقع على طريق المدينة شريان جدة، قرب المطار والمجمعات التجارية والواجهات البحرية. الحي مليء بالخدمات: مغاسل ومطاعم وتموينات وكل ما تحتاجه أثناء إقامتك.",
+   "description_en": "Right on Madinah Road, the main artery of Jeddah, near the airport, malls and the waterfront. The neighbourhood has everything: laundries, restaurants and groceries.",
+   "photos": [
+    "../photos/madinah-1-living.jpg",
+    "../photos/madinah-2-living-2.jpg",
+    "../photos/madinah-3-kitchen.jpg",
+    "../photos/madinah-4-bedroom.jpg",
+    "../photos/madinah-5-twin.jpg",
+    "../photos/madinah-6-bath.jpg"
+   ]
+  },
+  {
+   "id": "orange",
+   "airbnb": "https://ar.airbnb.com/rooms/1557132730241179243",
+   "name_ar": "أورنج سويت",
+   "name_en": "Orange Suite",
+   "listing_title_ar": "اورنج سويت | الاجاويد | تسجيل دخول ذاتي",
+   "listing_title_en": "Orange Suite | Al Ajaweed | Self Check-in",
+   "district_ar": "حي الأجاويد",
+   "district_en": "Al Ajawid",
+   "street_ar": "جنوب شرق جدة",
+   "street_en": "South east Jeddah",
+   "building": "ajawid",
+   "lat": 21.40548,
+   "lng": 39.29831,
+   "type_ar": "غرفة وصالة",
+   "type_en": "1 bedroom",
+   "bedrooms": 1,
+   "beds": 1,
+   "baths": 1,
+   "guests": 3,
+   "rating": 4.87,
+   "reviews": 68,
+   "host": "Hussam",
+   "superhost": false,
+   "price": 319,
+   "weekend": 389,
+   "highlights_ar": [
+    "كنبة سينمائية أمام شاشة 65 بوصة",
+    "دخول ذاتي بقفل ذكي",
+    "مشياً إلى الجامع وبارك سكوير",
+    "ديكور هادئ بلمسات برتقالية"
+   ],
+   "highlights_en": [
+    "Cinema sofa facing a 65 inch screen",
+    "Self check in with a smart lock",
+    "Walk to the mosque and Park Square",
+    "Calm decor with orange touches"
+   ],
+   "description_ar": "وجهتك الهادئة وسط تفاصيل أنيقة: كنبة سينمائية فاخرة أمام شاشة 65 بوصة، وتجهيز كامل لإقامة مريحة، مع دخول ذاتي يمنحك الخصوصية والمرونة. مشياً إلى الجامع وحديقة الحي بارك سكوير والشارع التجاري.",
+   "description_en": "A quiet place full of thoughtful details: a cinema sofa facing a 65 inch screen and everything you need for an easy stay, with self check in for privacy and flexibility. A short walk to the mosque, Park Square and the shopping street.",
+   "photos": [
+    "../photos/orange-1-living.jpg",
+    "../photos/orange-2-living-2.jpg",
+    "../photos/orange-3-kitchen.jpg",
+    "../photos/orange-4-bedroom.jpg",
+    "../photos/orange-5-bath.jpg",
+    "../photos/orange-6-detail.jpg",
+    "../photos/orange-7-smart-lock.jpg"
+   ]
+  }
+ ]
+}
