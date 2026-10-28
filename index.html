@@ -76,6 +76,7 @@ section.block > .wrap { display: grid; gap: 28px; }
 .shots img.desk { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform .5s cubic-bezier(.22, 1, .36, 1); }
 .shots:hover img.desk { transform: scale(1.01); }
 .shots img.phone { position: absolute; left: 14px; bottom: 14px; width: 21%; aspect-ratio: 390 / 844; height: auto; object-fit: cover; object-position: top; border-radius: 12px; border: 3px solid var(--fg); box-shadow: var(--shadow); background: var(--surface); }
+.shots.ltr img.phone { left: auto; right: 14px; }
 .meta { display: grid; gap: 14px; padding: 4px; min-width: 0; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag { font-size: .8rem; font-weight: 600; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
@@ -140,8 +141,8 @@ footer ul { margin: 0; padding-inline-start: 1.2rem; display: grid; gap: 4px; }
 
 <header class="top wrap">
   <p class="eyebrow">تصاميم مقترحة · <span class="wordmark"><b>sh.</b>apartment</span> · جدة</p>
-  <h1>خمسة اتجاهات لموقع <span class="wordmark"><b>sh.</b>apartment</span></h1>
-  <p class="lede">كل تصميم مبني على الشقق السبع الحقيقية، بصورها من إعلانات Airbnb، وبتقييماتها الفعلية: 4.83 من 517 تقييماً. ثلاثة تصاميم تتبع <a href="https://github.com/elayadesign/ai-design-skills" target="_blank" rel="noopener">مهارة landing-page-design</a> بحذافيرها، واثنان فكرتان أصليتان. كلها بالعربية أولاً، وكلها تعمل بالنقر.</p>
+  <h1>ثمانية تصاميم لموقع <span class="wordmark"><b>sh.</b>apartment</span></h1>
+  <p class="lede">كل تصميم مبني على الشقق السبع الحقيقية، بصورها من إعلانات Airbnb، وبتقييماتها الفعلية: 4.83 من 517 تقييماً. التصاميم 1 إلى 5 بالعربية، والتصاميم 6 إلى 8 بُنيت بـ<a href="https://github.com/elayadesign/ai-design-skills" target="_blank" rel="noopener">مهارة landing-page-design</a> وحدها، دون أي استثناء. كلها تعمل بالنقر.</p>
   <p class="note"><b>للتنبيه:</b> أسعار الليالي أمثلة إلى أن يحددها المُلّاك. لم نخترع أي تقييمات للضيوف، وحيث يظهر في تصميم ما مكان لاقتباس، فهو معلَّم بأنه نموذج يُستبدل بتقييم حقيقي من Airbnb.</p>
 </header>
 
@@ -178,7 +179,7 @@ footer ul { margin: 0; padding-inline-start: 1.2rem; display: grid; gap: 4px; }
 <section class="block" aria-labelledby="concepts-h">
   <div class="wrap">
     <div class="prose" style="display:grid;gap:10px">
-      <h2 id="concepts-h">التصاميم</h2>
+      <h2 id="concepts-h">التصاميم 1 إلى 5</h2>
       <p>جرّب كل تصميم على الجوال أيضاً، فمعظم الضيوف سيحجزون منه.</p>
     </div>
     <div class="concepts">
@@ -191,7 +192,7 @@ footer ul { margin: 0; padding-inline-start: 1.2rem; display: grid; gap: 4px; }
         <div class="meta">
           <span class="num">التصميم 1</span>
           <h3>الكورنيش</h3>
-          <div class="tags"><span class="tag skill">المهارة · تخطيط A</span><span class="tag">فاتح</span><span class="tag">عربي</span></div>
+          <div class="tags"><span class="tag skill">المهارة مع خط عربي · تخطيط A</span><span class="tag">فاتح</span><span class="tag">عربي</span></div>
           <p>الصفحة الرئيسية التي تطمح إليها القائمة الحالية: يُدخل الضيف تواريخه مرة واحدة، فيرى أيّ الشقق السبع متاحة وكم تكلّف الإقامة.</p>
           <ul>
             <li>بحث واحد عن التوفر في الشقق السبع كلها</li>
@@ -211,7 +212,7 @@ footer ul { margin: 0; padding-inline-start: 1.2rem; display: grid; gap: 4px; }
         <div class="meta">
           <span class="num">التصميم 2</span>
           <h3>نيون</h3>
-          <div class="tags"><span class="tag skill">المهارة · تخطيط B</span><span class="tag">داكن</span><span class="tag">عربي</span></div>
+          <div class="tags"><span class="tag skill">المهارة مع خط عربي · تخطيط B</span><span class="tag">داكن</span><span class="tag">عربي</span></div>
           <p>ليلة واحدة في جدة تُروى كخط زمني، تضيئها أنوار النيون في الشقق نفسها: الأسرّة العلوية، والكنب السينمائية، والجاكوزي.</p>
           <ul>
             <li>مبني من الصور الحقيقية، لا من صور جاهزة</li>
@@ -231,7 +232,7 @@ footer ul { margin: 0; padding-inline-start: 1.2rem; display: grid; gap: 4px; }
         <div class="meta">
           <span class="num">التصميم 3</span>
           <h3>الاستديو</h3>
-          <div class="tags"><span class="tag skill">المهارة · تخطيط C</span><span class="tag">فاتح</span><span class="tag">عربي</span></div>
+          <div class="tags"><span class="tag skill">المهارة مع خط عربي · تخطيط C</span><span class="tag">فاتح</span><span class="tag">عربي</span></div>
           <p>صفحة شقة واحدة، استديو ميد سنشري، مع إعادة بناء الحجز المباشر بالعقد في ثلاث خطوات واضحة.</p>
           <ul>
             <li>تقويم متزامن يحجب الليالي المحجوزة على Airbnb</li>
@@ -287,6 +288,97 @@ footer ul { margin: 0; padding-inline-start: 1.2rem; display: grid; gap: 4px; }
   </div>
 </section>
 
+<section class="block" aria-labelledby="strict-h">
+  <div class="wrap">
+    <div class="prose" style="display:grid;gap:12px">
+      <h2 id="strict-h">التصاميم 6 إلى 8: بالمهارة وحدها</h2>
+      <p>هذه المرة ثُبّتت المهارة في المستودع وشُغّلت خطوة بخطوة: أسئلة الاستلام (A1)، ثم الخطة المكتوبة قبل أي كود، ثم البناء قسماً قسماً بالترتيب الذي تحدده (A6)، ثم فحص آلي لكل قواعد الجزء B في متصفح حقيقي.</p>
+      <p class="note"><b>لماذا بالإنجليزية:</b> خطوط المهارة الثلاثة (Geist وManrope وPoppins) لا تحتوي حروفاً عربية، فالإنجليزية هي الطريقة الوحيدة لتطبيق كل قواعدها حرفياً. وهي موجهة للضيوف الأجانب: زوار العمرة ورجال الأعمال والمقيمين.</p>
+    </div>
+    <div class="concepts">
+
+      <article class="concept">
+        <a class="shots ltr" href="designs/06-editorial.html" aria-label="افتح التصميم 6، تحريري">
+          <img class="desk" src="previews/06-editorial.jpg" alt="التصميم التحريري على الكمبيوتر" width="1200" height="750">
+          <img class="phone" src="previews/06-editorial-m.jpg" alt="" width="390" height="844">
+        </a>
+        <div class="meta">
+          <span class="num">التصميم 6</span>
+          <h3>تحريري</h3>
+          <div class="tags"><span class="tag own">المهارة فقط · تخطيط A</span><span class="tag">تحريري بسيط</span><span class="tag latin">Geist</span><span class="tag">إنجليزي</span></div>
+          <p>صفحة رئيسية هادئة تقودها الصور، لزوار إنستغرام وتيك توك وسناب: رأوا الشقق في منشور، فالصفحة تأخذهم إليها مباشرة.</p>
+          <ul>
+            <li>عنوان يخاطب من رأى الشقق في منشور</li>
+            <li>الشقق السبع بتقييماتها الحقيقية، مع فلاتر حسب المنطقة والحجم</li>
+            <li>الحجز المباشر بالعقد في ثلاث خطوات</li>
+          </ul>
+          <p class="best">الفحص الآلي: 0 مخالفات في 36 فحصاً.</p>
+          <a class="btn" href="designs/06-editorial.html">افتح التحريري <span aria-hidden="true">←</span></a>
+        </div>
+      </article>
+
+      <article class="concept">
+        <a class="shots ltr" href="designs/07-playful.html" aria-label="افتح التصميم 7، مرِح ثلاثي الأبعاد">
+          <img class="desk" src="previews/07-playful.jpg" alt="التصميم المرح ثلاثي الأبعاد على الكمبيوتر" width="1200" height="750">
+          <img class="phone" src="previews/07-playful-m.jpg" alt="" width="390" height="844">
+        </a>
+        <div class="meta">
+          <span class="num">التصميم 7</span>
+          <h3>مرِح ثلاثي الأبعاد</h3>
+          <div class="tags"><span class="tag own">المهارة فقط · تخطيط B</span><span class="tag">مرح ثلاثي الأبعاد</span><span class="tag latin">Poppins</span><span class="tag">إنجليزي</span></div>
+          <p>قصة تجيب عن شكوك من يحجز خارج Airbnb لأول مرة، بمجسمات ثلاثية الأبعاد بألوان مسطحة.</p>
+          <ul>
+            <li>مبنى ثلاثي الأبعاد للشقق السبع، لكل حيّ لون</li>
+            <li>أربعة شكوك، لكل منها مجسم: بطاقة تنقلب، وطبقات تقويم، ودرجات، وقفل ذكي</li>
+            <li>بطاقات شقق تميل مع المؤشر</li>
+          </ul>
+          <p class="best">الفحص الآلي: 0 مخالفات في 36 فحصاً.</p>
+          <a class="btn" href="designs/07-playful.html">افتح المرِح <span aria-hidden="true">←</span></a>
+        </div>
+      </article>
+
+      <article class="concept">
+        <a class="shots ltr" href="designs/08-glass.html" aria-label="افتح التصميم 8، زجاجي">
+          <img class="desk" src="previews/08-glass.jpg" alt="التصميم الزجاجي على الكمبيوتر" width="1200" height="750">
+          <img class="phone" src="previews/08-glass-m.jpg" alt="" width="390" height="844">
+        </a>
+        <div class="meta">
+          <span class="num">التصميم 8</span>
+          <h3>زجاجي</h3>
+          <div class="tags"><span class="tag own">المهارة فقط · تخطيط C</span><span class="tag">واجهة زجاجية</span><span class="tag latin">Manrope</span><span class="tag">داكن</span><span class="tag">إنجليزي</span></div>
+          <p>صفحة قصيرة لضيوف Airbnb السابقين: نموذج حجز واحد على لوح زجاجي فوق صورة الشقة الحقيقية.</p>
+          <ul>
+            <li>عنوان مباشر: <span class="latin">“Stayed with us on Airbnb? Book your next stay direct”</span></li>
+            <li>نموذج واحد فوق الصورة، ولا شيء ينافسه</li>
+            <li>تقييم كل شقة على Airbnb في جدول واحد</li>
+          </ul>
+          <p class="best">الأنسب: رابط يُرسل لضيوفكم السابقين على واتساب، أو بطاقة QR تُترك في الشقة. الفحص الآلي: 0 مخالفات في 37 فحصاً.</p>
+          <a class="btn" href="designs/08-glass.html">افتح الزجاجي <span aria-hidden="true">←</span></a>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="display:grid;gap:14px">
+      <h3>نتيجة الفحص الآلي للمهارة</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">التصميم</th><th scope="col">طريقة البناء</th><th scope="col">مخالفات</th><th scope="col">أبرزها</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">1 الكورنيش</th><td>المهارة مع خط عربي</td><td>12</td><td>الخط العربي، مسافات خارج الجدول، اتجاه تدرّج العنوان، روابط الخصوصية</td></tr>
+            <tr><th scope="row">2 نيون</th><td>المهارة مع خط عربي</td><td>15</td><td>الخط العربي، الأزرار، المسافات، أنصاف الأقطار المتداخلة، قسم الشعار</td></tr>
+            <tr><th scope="row">3 الاستديو</th><td>المهارة مع خط عربي</td><td>18</td><td>الخط العربي، الحدود، المسافات، حالات العناصر، قسم الشعار</td></tr>
+            <tr><th scope="row">6 تحريري</th><td>المهارة فقط</td><td>0</td><td>لا شيء</td></tr>
+            <tr><th scope="row">7 مرِح ثلاثي الأبعاد</th><td>المهارة فقط</td><td>0</td><td>لا شيء</td></tr>
+            <tr><th scope="row">8 زجاجي</th><td>المهارة فقط</td><td>0</td><td>لا شيء</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="prose" style="color:var(--muted)">الفحص (<span class="latin">shared/skill-audit.js</span>) يقيس كل صفحة في متصفح Chromium بعرضَي 1440 و390 بكسل، ويتحقق من الخطوط وسلّم الأحجام والمسافات وأنصاف الأقطار والحدود والتدرجات والحركة والقائمة والحالات وقائمة الإطلاق وقسم الشعار.</p>
+    </div>
+  </div>
+</section>
+
 <section class="block" aria-labelledby="compare-h">
   <div class="wrap">
     <h2 id="compare-h">مقارنة سريعة</h2>
@@ -294,15 +386,18 @@ footer ul { margin: 0; padding-inline-start: 1.2rem; display: grid; gap: 4px; }
       <table>
         <thead><tr><th scope="col">التصميم</th><th scope="col">المصدر</th><th scope="col">الإجراء الرئيسي</th><th scope="col">اللغة</th><th scope="col">الفكرة الأبرز</th><th scope="col">الجهد على نظامهم الحالي</th></tr></thead>
         <tbody>
-          <tr><th scope="row">1 الكورنيش</th><td>المهارة</td><td>«تحقق من التوفر»</td><td>عربي</td><td>بحث واحد في الشقق السبع</td><td>متوسط: يحتاج أسعاراً لكل شقة</td></tr>
-          <tr><th scope="row">2 نيون</th><td>المهارة</td><td>«اختر تواريخك»</td><td>عربي</td><td>قصة بصور النيون الداخلية</td><td>منخفض</td></tr>
-          <tr><th scope="row">3 الاستديو</th><td>المهارة</td><td>«احجز هذه التواريخ»</td><td>عربي</td><td>حجز بالعقد في ثلاث خطوات</td><td>منخفض: نظامهم يدعم ذلك أصلاً</td></tr>
+          <tr><th scope="row">1 الكورنيش</th><td>المهارة مع خط عربي</td><td>«تحقق من التوفر»</td><td>عربي</td><td>بحث واحد في الشقق السبع</td><td>متوسط: يحتاج أسعاراً لكل شقة</td></tr>
+          <tr><th scope="row">2 نيون</th><td>المهارة مع خط عربي</td><td>«اختر تواريخك»</td><td>عربي</td><td>قصة بصور النيون الداخلية</td><td>منخفض</td></tr>
+          <tr><th scope="row">3 الاستديو</th><td>المهارة مع خط عربي</td><td>«احجز هذه التواريخ»</td><td>عربي</td><td>حجز بالعقد في ثلاث خطوات</td><td>منخفض: نظامهم يدعم ذلك أصلاً</td></tr>
           <tr><th scope="row">4 روشن</th><td>Claude</td><td>«احجز عبر واتساب»</td><td>عربي وإنجليزي</td><td>رسمتهم، منفّذة بإتقان</td><td>منخفض إلى متوسط</td></tr>
           <tr><th scope="row">5 الباحث</th><td>Claude</td><td>«احجز مباشرة»</td><td>عربي</td><td>خريطة وفلاتر ومقارنة</td><td>متوسط</td></tr>
+          <tr><th scope="row">6 تحريري</th><td>المهارة فقط</td><td class="latin">“Check dates and book direct”</td><td>إنجليزي</td><td>صفحة تقودها الصور لزوار السوشال</td><td>منخفض</td></tr>
+          <tr><th scope="row">7 مرِح</th><td>المهارة فقط</td><td class="latin">“Check dates and book direct”</td><td>إنجليزي</td><td>مجسمات ثلاثية الأبعاد تجيب عن الشكوك</td><td>متوسط</td></tr>
+          <tr><th scope="row">8 زجاجي</th><td>المهارة فقط</td><td class="latin">“Book my next stay”</td><td>إنجليزي</td><td>نموذج واحد لضيوف Airbnb السابقين</td><td>منخفض</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="prose" style="color:var(--muted)">يمكن الجمع بينها. موقع نهائي قوي: هوية روشن ومشهده في الأعلى، ثم بحث الكورنيش وبطاقاته، وصفحة الاستديو لكل شقة.</p>
+    <p class="prose" style="color:var(--muted)">يمكن الجمع بينها. موقع نهائي قوي: هوية روشن ومشهده في الأعلى، ثم بحث الكورنيش وبطاقاته، وصفحة الاستديو لكل شقة، مع نسخة إنجليزية مبنية على التحريري للضيوف الأجانب.</p>
   </div>
 </section>
 
@@ -395,7 +490,7 @@ footer ul { margin: 0; padding-inline-start: 1.2rem; display: grid; gap: 4px; }
       <li><a href="https://www.hostfully.com/blog/airbnb-host-fees/" target="_blank" rel="noopener">Hostfully: رسوم Airbnb على المضيف بنسبة 15.5%</a></li>
       <li><a href="https://www.airbnb.com/help/article/3833" target="_blank" rel="noopener">مساعدة Airbnb: تصاريح الاستضافة في السعودية</a></li>
     </ul>
-    <p>الصور للمُلّاك أنفسهم من إعلاناتهم على Airbnb. الأيقونات من Phosphor. التصاميم 1 إلى 3 تتبع <a class="latin" href="https://github.com/elayadesign/ai-design-skills" target="_blank" rel="noopener">elayadesign/ai-design-skills</a>.</p>
+    <p>الصور للمُلّاك أنفسهم من إعلاناتهم على Airbnb. الأيقونات من Phosphor. التصاميم 1 إلى 3 و6 إلى 8 تتبع <a class="latin" href="https://github.com/elayadesign/ai-design-skills" target="_blank" rel="noopener">elayadesign/ai-design-skills</a>.</p>
   </div>
 </footer>
 
