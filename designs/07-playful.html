@@ -46,6 +46,7 @@ a { color: inherit; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; padding: 0; }
 i { font-style: normal; }
+[hidden] { display: none !important; }
 b, strong { font-weight: 600; }
 input[type="checkbox"], input[type="radio"] { margin: 0; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
@@ -379,9 +380,9 @@ section.band { padding-block: 64px; }
 .live-dot { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 9999px; background: var(--good); }
 .progress { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 0 24px 16px; }
 .progress li { display: flex; align-items: center; gap: 8px; padding: 4px 12px 4px 4px; border-radius: 9999px; box-shadow: 0 0 0 1px var(--line); color: var(--muted); font-weight: 600; }
-.progress span { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 9999px; background: var(--soft); }
+.progress span { width: 24px; height: 24px; flex: none; display: grid; place-items: center; border-radius: 9999px; background: var(--soft); }
 .progress li[aria-current="step"] { box-shadow: 0 0 0 1px var(--ink); color: var(--ink); }
-.progress li[aria-current="step"] span, .progress li.done span { background: var(--orange); color: var(--ink); }
+.progress li[aria-current="step"] span, .progress li.complete span { background: var(--orange); color: var(--ink); }
 .pane { display: grid; gap: 24px; }
 .field { display: grid; gap: 8px; }
 .field label, .lbl { font-size: 14px; line-height: 20px; font-weight: 600; }
@@ -1404,7 +1405,7 @@ document.getElementById('copy-num').addEventListener('click', () => {
     ['p1', 'p2', 'p3', 'p4'].forEach((id, i) => { $(id).hidden = i + 1 !== n; });
     document.querySelectorAll('.progress li').forEach(li => {
       const p = +li.dataset.p;
-      li.classList.toggle('done', p < n);
+      li.classList.toggle('complete', p < n);
       if (p === n) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
     });
     dlg.querySelector('.dlg-body').scrollTop = 0;
