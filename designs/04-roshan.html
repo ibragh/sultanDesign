@@ -1,0 +1,1604 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>sh.apartment · شقق مفروشة في جدة</title>
+<meta name="description" content="سبع شقق مفروشة بدخول ذاتي في جدة، بين طريق الملك والأجاويد. تقييم 4.83 من 517 ضيفاً على Airbnb. احجز مباشرة عبر واتساب.">
+<meta name="theme-color" content="#F4F1EB">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
+<style>
+/* Layout: plaster page, the live Jeddah panorama framed like a roshan window beside the promise; then where (two sides of the city on a schematic map), what (seven photo cards), how (calendar with Hijri dates that writes the WhatsApp message), rules, questions. */
+:root{
+  --plaster:#F4F1EB;      /* coral stone lime plaster */
+  --plaster-2:#EAE3D6;
+  --card:#FFFDF8;
+  --ink:#2A1B12;          /* coffee */
+  --ink-2:#6A5545;
+  --line:#DCD2C2;
+  --orange:#F59A1E;       /* sh.apartment orange */
+  --orange-ink:#9A4F05;   /* orange for text on plaster */
+  --orange-soft:#FDE7C8;
+  --teal:#0F6C74;         /* Red Sea */
+  --teal-soft:#DCEDEC;
+  --wood:#6B3F22;         /* roshan wood */
+  --night:#121A35;
+  --bubble:#DDF5D2;
+  --error:#A3271B;
+  --ok:#1E6B3A;
+  --display:"Reem Kufi","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;
+  --mark:"Fraunces",Georgia,serif;
+  --r-card:20px;
+  --r-ctl:12px;
+  --shadow:0 1px 2px rgb(42 27 18 / .06),0 10px 30px rgb(42 27 18 / .08);
+  --ease:cubic-bezier(.22,1,.36,1);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(84px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--plaster);color:var(--ink);font:400 1.03rem/1.8 var(--body);text-rendering:optimizeLegibility}
+:lang(en) body,html:lang(en) body{line-height:1.6}
+img{max-width:100%;display:block}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--teal);text-underline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.25;margin:0;text-wrap:balance;letter-spacing:0}
+p{margin:0;text-wrap:pretty}
+.i{width:1.15em;height:1.15em;flex:none;vertical-align:-.2em}
+[dir=rtl] .i-dir{transform:scaleX(-1)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px;border-radius:8px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.num{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+.skip{position:absolute;inset-inline-start:16px;top:-60px;z-index:100;background:var(--ink);color:var(--plaster);padding:8px 14px;border-radius:10px;text-decoration:none}
+.skip:focus{top:calc(10px + env(safe-area-inset-top,0px))}
+.wrap{max-width:1200px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:var(--r-ctl);padding:12px 18px;font-weight:600;font-size:1rem;line-height:1.3;text-decoration:none;cursor:pointer;transition:transform .3s var(--ease),background-color .3s var(--ease),box-shadow .3s var(--ease)}
+.btn:active{transform:translateY(1px) scale(.99)}
+.btn-primary{background:var(--orange);color:var(--ink);box-shadow:0 1px 0 rgb(0 0 0 / .08) inset,0 6px 18px rgb(245 154 30 / .28)}
+.btn-primary:hover{background:#F8A836;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink-2);background:rgb(255 255 255 / .5)}
+.btn-dark{background:var(--ink);color:var(--plaster)}
+.btn-dark:hover{background:#3A281D}
+.btn-sm{padding:8px 12px;font-size:.92rem;border-radius:10px}
+.linkbtn{background:none;border:0;padding:0;color:var(--teal);font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:41;background:var(--plaster)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgb(244 241 235 / .86);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid rgb(220 210 194 / .7)}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);direction:ltr}
+.brand svg{width:34px;height:30px}
+.wordmark{font-family:var(--mark);font-weight:700;font-size:1.45rem;letter-spacing:-.01em;line-height:1}
+.wordmark b{color:var(--orange);font-weight:700}
+.top nav{display:flex;gap:4px;margin-inline-start:auto}
+.top nav a{color:var(--ink-2);text-decoration:none;font-weight:500;padding:8px 12px;border-radius:10px;font-size:.98rem}
+.top nav a:hover{color:var(--ink);background:var(--plaster-2)}
+.top .acts{display:flex;align-items:center;gap:8px}
+.langbtn{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-weight:600;font-size:.92rem;cursor:pointer}
+.langbtn:hover{border-color:var(--ink-2)}
+.langbtn .lbl-en{font-family:var(--body)}
+
+/* hero */
+.hero{padding-block:40px 64px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:52px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;font-weight:600;color:var(--orange-ink);letter-spacing:0}
+:lang(en) .eyebrow{letter-spacing:.04em;text-transform:uppercase;font-size:.8rem}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--orange);border-radius:2px}
+.hero h1{font-size:clamp(2.2rem,4.3vw,3.55rem);margin-top:14px;font-weight:600}
+.hero .lede{margin-top:18px;color:var(--ink-2);font-size:1.12rem;max-width:34rem}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.proof{display:flex;flex-wrap:wrap;gap:8px 18px;margin:28px 0 0;padding:0;list-style:none;font-size:.93rem;color:var(--ink-2)}
+.proof li{display:inline-flex;align-items:center;gap:7px}
+.proof .i{color:var(--orange-ink)}
+.proof strong{color:var(--ink);font-weight:600}
+
+/* the scene */
+.scene{position:relative;margin:0;border-radius:30px;overflow:hidden;aspect-ratio:1/.93;max-width:100%;background:var(--night);box-shadow:0 30px 60px -30px rgb(42 27 18 / .45),0 0 0 1px rgb(107 63 34 / .18);isolation:isolate;touch-action:pan-y}
+.scene::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 6px rgb(255 253 248 / .55),inset 0 0 0 7px rgb(107 63 34 / .25);pointer-events:none}
+.scene svg.pano{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab}
+.scene svg.pano:active{cursor:grabbing}
+.scene-chip{position:absolute;top:16px;inset-inline-start:16px;z-index:2;display:flex;flex-direction:column;gap:0;background:rgb(255 253 248 / .9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:16px;padding:8px 14px;box-shadow:var(--shadow)}
+.scene-chip .t1{font-weight:600;font-size:.98rem;display:flex;align-items:center;gap:7px}
+.scene-chip .t1 .dot{width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 3px rgb(245 154 30 / .25)}
+.scene-chip .t2{font-size:.8rem;color:var(--ink-2)}
+.scene-bar{position:absolute;inset-inline:16px;bottom:16px;z-index:2;display:flex;align-items:center;gap:10px;background:rgb(255 253 248 / .92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:999px;padding:7px 8px 7px 14px;box-shadow:var(--shadow)}
+[dir=rtl] .scene-bar{padding:7px 14px 7px 8px}
+.scene-bar .i{color:var(--ink-2)}
+.scene-bar input[type=range]{flex:1;min-width:0;accent-color:var(--orange);direction:ltr;height:28px;cursor:pointer}
+.chipbtn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 11px;font-size:.88rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:background-color .3s var(--ease),border-color .3s var(--ease)}
+.chipbtn:hover{border-color:var(--ink-2)}
+.chipbtn[aria-pressed=true]{background:var(--orange-soft);border-color:var(--orange)}
+.scene-hint{margin-top:10px;font-size:.85rem;color:var(--ink-2);display:flex;gap:6px;align-items:center}
+@keyframes sway{0%,100%{transform:rotate(-1.4deg)}50%{transform:rotate(1.6deg)}}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-40px)}}
+@keyframes walkR{from{transform:translateX(-60px)}to{transform:translateX(860px)}}
+@keyframes walkL{from{transform:translateX(860px)}to{transform:translateX(-60px)}}
+@keyframes bird{from{transform:translate(-80px,0)}to{transform:translate(880px,-30px)}}
+@keyframes mist{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:.8;transform:scale(1.06)}}
+@keyframes twinkle{0%,100%{opacity:1}50%{opacity:.35}}
+.pano .frond{transform-box:fill-box;transform-origin:50% 100%;animation:sway 7s ease-in-out infinite}
+.pano .wave{animation:drift 9s linear infinite alternate}
+.pano .walker{animation:walkR var(--d,60s) linear infinite;animation-delay:var(--dl,0s)}
+.pano .walker.l{animation-name:walkL}
+.pano .bird{animation:bird 46s linear infinite}
+.pano .plume{transform-box:fill-box;transform-origin:50% 100%;animation:mist 5s ease-in-out infinite}
+.pano .star{animation:twinkle 3.6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.pano *{animation:none!important}}
+
+/* lattice divider */
+.lattice{height:16px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath d='M0 8L8 0L16 8L8 16Z' fill='none' stroke='%236B3F22' stroke-width='1.2' opacity='.35'/%3E%3Ccircle cx='8' cy='8' r='1.4' fill='%23F59A1E' opacity='.7'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:center}
+
+/* sections */
+.sec{padding-block:80px}
+.sec-alt{background:var(--plaster-2)}
+.sec-head{display:grid;gap:12px;max-width:44rem;margin-bottom:36px}
+.sec-head h2{font-size:clamp(1.7rem,3vw,2.4rem)}
+.sec-head p{color:var(--ink-2);font-size:1.06rem}
+
+/* where */
+.where{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.86fr);gap:32px;align-items:stretch}
+.clusters{display:grid;gap:18px}
+.cluster{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:24px;display:grid;gap:10px;align-content:start}
+.cluster header{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.cluster h3{font-size:1.45rem}
+.cluster .sub{color:var(--teal);font-weight:600;font-size:.95rem}
+.cluster .count{font-size:.85rem;color:var(--ink-2);background:var(--plaster);border-radius:999px;padding:2px 10px}
+.cluster p{color:var(--ink-2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--plaster);border:1px solid var(--line);border-radius:999px;padding:4px 6px 4px 12px;font-size:.93rem;font-weight:500;cursor:pointer;transition:border-color .3s var(--ease),background-color .3s var(--ease)}
+[dir=rtl] .chip{padding:4px 12px 4px 6px}
+.chip img{width:28px;height:28px;border-radius:50%;object-fit:cover}
+.chip:hover{border-color:var(--orange);background:var(--card)}
+.map{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:14px;display:grid;gap:8px}
+.map svg{width:100%;height:auto;display:block;border-radius:12px}
+.map figcaption{font-size:.84rem;color:var(--ink-2);display:flex;gap:6px;align-items:center}
+.map .lbl{font:600 11px var(--body);fill:var(--ink-2)}
+.map .lbl-road{font:500 10px var(--body);fill:#8C7A69}
+.map .lbl-sea{font:600 13px var(--display);fill:#5E9EA5;letter-spacing:.02em}
+.map .pin text{font:700 11px var(--body);fill:#fff}
+.map .pin-l{font:700 12px var(--body);fill:var(--ink)}
+.map .pin{cursor:pointer}
+.map .pin:hover circle.halo,.map .pin:focus-visible circle.halo{opacity:.5}
+
+/* apartments */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filter{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 16px;font-weight:600;font-size:.95rem;cursor:pointer;display:inline-flex;gap:8px;align-items:center;transition:all .3s var(--ease)}
+.filter:hover{border-color:var(--ink-2)}
+.filter[aria-pressed=true]{background:var(--ink);color:var(--plaster);border-color:var(--ink)}
+.filter .n{font-size:.8rem;opacity:.7}
+.grid{display:grid;grid-template-columns:repeat(var(--cols,4),minmax(0,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.card.feat{grid-column:span 2}
+.media{position:relative;height:330px;background:var(--plaster-2);overflow:hidden}
+.media img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.card:hover .media img{transform:scale(1.03)}
+.badges{position:absolute;top:12px;inset-inline-start:12px;display:flex;gap:6px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgb(255 253 248 / .92);color:var(--ink);border-radius:999px;padding:3px 10px;font-size:.8rem;font-weight:600;backdrop-filter:blur(6px)}
+.badge .i{color:var(--orange-ink)}
+.photos-btn{position:absolute;bottom:12px;inset-inline-end:12px;display:inline-flex;align-items:center;gap:6px;background:rgb(42 27 18 / .78);color:#fff;border:0;border-radius:999px;padding:6px 12px;font-size:.85rem;font-weight:600;cursor:pointer;backdrop-filter:blur(6px)}
+.photos-btn:hover{background:rgb(42 27 18 / .92)}
+.body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.body h3{font-size:1.3rem}
+.feat .body h3{font-size:1.6rem}
+.area{display:flex;align-items:center;gap:6px;color:var(--ink-2);font-size:.93rem}
+.rating{display:inline-flex;align-items:center;gap:5px;font-weight:600;font-size:.93rem}
+.rating .i{color:var(--orange)}
+.rating .rc{color:var(--ink-2);font-weight:400}
+.facts{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.9rem;color:var(--ink-2)}
+.facts span{display:inline-flex;align-items:center;gap:5px}
+.hl{font-size:.93rem;color:var(--ink)}
+.desc{color:var(--ink-2);font-size:.98rem}
+.price-row{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.price{display:grid;line-height:1.3}
+.price b{font-size:1.2rem;font-weight:700}
+.price small{color:var(--ink-2);font-size:.82rem}
+.card-acts{display:flex;gap:6px;align-items:center}
+.air{display:inline-flex;align-items:center;gap:4px;font-size:.88rem;font-weight:600;color:var(--teal);text-decoration:none;padding:8px 6px;border-radius:8px}
+.air:hover{text-decoration:underline}
+.empty{display:none}
+
+/* booking */
+.book{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:28px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;display:grid;gap:26px}
+.step{display:grid;gap:12px}
+.step-h{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.2rem;font-weight:600}
+.step-h .n{width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--plaster);display:grid;place-items:center;font:600 .9rem var(--body)}
+.aptpick{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.aptopt{position:relative;display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:14px;padding:6px;padding-inline-end:10px;background:var(--plaster);cursor:pointer;text-align:start;transition:border-color .3s var(--ease),background-color .3s var(--ease)}
+.aptopt img{width:44px;height:44px;border-radius:10px;object-fit:cover;flex:none}
+.aptopt span{display:grid;line-height:1.3;min-width:0}
+.aptopt b{font-size:.92rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aptopt small{font-size:.78rem;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aptopt:hover{border-color:var(--ink-2)}
+.aptopt[aria-checked=true]{border-color:var(--orange);background:var(--orange-soft)}
+.cal{border:1px solid var(--line);border-radius:18px;padding:14px;background:var(--plaster)}
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.cal-title{display:grid;text-align:center;line-height:1.35}
+.cal-title b{font-family:var(--display);font-size:1.1rem;font-weight:600}
+.cal-title small{color:var(--teal);font-size:.83rem;font-weight:600}
+.iconbtn{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer}
+.iconbtn:hover{border-color:var(--ink-2)}
+.iconbtn:disabled{opacity:.35;cursor:not-allowed}
+.dows,.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.dows span{text-align:center;font-size:.78rem;color:var(--ink-2);font-weight:600;padding-block:4px}
+.day{position:relative;aspect-ratio:1/1;min-height:44px;border:0;border-radius:12px;background:var(--card);cursor:pointer;display:grid;place-items:center;align-content:center;gap:0;line-height:1.1;padding:2px;transition:background-color .2s var(--ease),transform .2s var(--ease)}
+.day .g{font-weight:600;font-size:1rem;font-variant-numeric:tabular-nums}
+.day .h{font-size:.68rem;color:var(--teal);font-variant-numeric:tabular-nums;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.day:hover{background:var(--orange-soft)}
+.day.blank{visibility:hidden}
+.day.past{opacity:.35;cursor:not-allowed;background:transparent}
+.day.booked{background:transparent;cursor:not-allowed;color:var(--ink-2)}
+.day.booked .g{text-decoration:line-through;text-decoration-thickness:1.5px;opacity:.6}
+.day.booked .h{opacity:.5}
+.day.booked.co-ok{cursor:pointer}
+.day.today{box-shadow:inset 0 0 0 1.5px var(--ink-2)}
+.day.inrange{background:var(--orange-soft);border-radius:6px}
+.day.start,.day.end{background:var(--orange);color:var(--ink)}
+.day.start .h,.day.end .h{color:var(--ink)}
+.cal-legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:.8rem;color:var(--ink-2)}
+.cal-legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:12px;height:12px;border-radius:4px;display:inline-block}
+.sync{display:flex;align-items:center;gap:7px;font-size:.85rem;color:var(--teal);font-weight:500}
+.sync .pulse{width:8px;height:8px;border-radius:50%;background:#2E9E5B;box-shadow:0 0 0 3px rgb(46 158 91 / .18)}
+.dates{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dbox{border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:var(--card);display:grid;line-height:1.35;min-width:0}
+.dbox small{color:var(--ink-2);font-size:.8rem}
+.dbox b{font-weight:600;font-size:.98rem}
+.dbox em{font-style:normal;color:var(--teal);font-size:.82rem}
+.dbox.empty-d b{color:var(--ink-2);font-weight:400}
+.err{display:flex;align-items:flex-start;gap:6px;color:var(--error);font-size:.9rem;font-weight:500}
+.err[hidden]{display:none}
+.row2{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:end}
+.field{display:grid;gap:6px;min-width:0}
+.field label,.field .lab{font-weight:600;font-size:.93rem}
+.field small{color:var(--ink-2);font-size:.8rem}
+.input{width:100%;border:1.5px solid var(--line);background:var(--card);border-radius:12px;padding:11px 14px;font-size:1rem;transition:border-color .3s var(--ease),box-shadow .3s var(--ease)}
+.input:focus{outline:0;border-color:var(--teal);box-shadow:0 0 0 3px rgb(15 108 116 / .18)}
+.input[aria-invalid=true]{border-color:var(--error)}
+textarea.input{resize:vertical;min-height:72px}
+.stepper{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+.stepper button{width:44px;height:46px;border:0;background:transparent;cursor:pointer;display:grid;place-items:center}
+.stepper button:hover:not(:disabled){background:var(--plaster)}
+.stepper button:disabled{opacity:.3;cursor:not-allowed}
+.stepper output{min-width:42px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.total{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--teal-soft);border-radius:14px;padding:12px 14px;font-size:.95rem}
+.total b{font-size:1.1rem}
+.total small{color:var(--teal);font-weight:600}
+
+.phone{position:sticky;top:96px;background:var(--ink);border-radius:34px;padding:10px;box-shadow:var(--shadow)}
+.screen{background:#EFE7DC;border-radius:26px;overflow:hidden;display:flex;flex-direction:column}
+.chat-top{display:flex;align-items:center;gap:10px;background:#1F5E54;color:#fff;padding:12px 14px}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--plaster);display:grid;place-items:center;flex:none}
+.avatar span{font:700 .95rem var(--mark);color:var(--ink);direction:ltr}
+.avatar span b{color:var(--orange)}
+.chat-top .who{display:grid;line-height:1.3;min-width:0}
+.chat-top .who b{font-family:var(--mark);font-weight:600;direction:ltr;text-align:start}
+.chat-top .who small{opacity:.8;font-size:.8rem}
+.chat-body{padding:18px 14px 14px;min-height:300px;display:flex;flex-direction:column;gap:10px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Cpath d='M0 11L11 0L22 11L11 22Z' fill='none' stroke='%236B3F22' stroke-width='.8' opacity='.08'/%3E%3C/svg%3E")}
+.day-sep{align-self:center;background:rgb(255 255 255 / .8);border-radius:8px;padding:2px 10px;font-size:.75rem;color:var(--ink-2)}
+.bubble{align-self:flex-end;max-width:92%;background:var(--bubble);border-radius:14px;border-start-end-radius:4px;padding:10px 12px 6px;box-shadow:0 1px 1px rgb(0 0 0 / .08);white-space:pre-wrap;font-size:.93rem;line-height:1.65;word-break:break-word}
+[dir=rtl] .bubble{align-self:flex-start;border-start-end-radius:14px;border-start-start-radius:4px}
+.bubble .meta{display:flex;justify-content:flex-end;gap:4px;align-items:center;font-size:.72rem;color:#5E7A64;margin-top:4px}
+.bubble .ph{color:#8A9A8C}
+.chat-acts{padding:12px;display:grid;gap:8px;background:#E6DDD0}
+.chat-acts .btn{width:100%}
+.chat-acts .row{display:flex;gap:8px}
+.chat-acts .row .btn{flex:1}
+.wa-num{font-size:.85rem;color:var(--ink-2);text-align:center}
+.wa-num .num{color:var(--ink);font-weight:600;user-select:all}
+.status{min-height:1.4em;font-size:.88rem;color:var(--ok);text-align:center}
+.alt-path{margin-top:14px;text-align:center;font-size:.95rem}
+
+/* channels */
+.channels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.chan{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:24px;display:grid;gap:10px;align-content:start}
+.chan.main{background:var(--ink);color:var(--plaster);border-color:var(--ink)}
+.chan.main p{color:#D9CBBB}
+.chan .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--plaster)}
+.chan.main .ic{background:var(--orange);color:var(--ink)}
+.chan h3{font-size:1.25rem}
+.chan p{color:var(--ink-2)}
+.chan .tag{justify-self:start;font-size:.78rem;font-weight:600;border-radius:999px;padding:2px 10px;background:var(--plaster-2);color:var(--ink-2)}
+.chan.main .tag{background:var(--orange);color:var(--ink)}
+.sync-note{margin-top:20px;display:flex;align-items:center;gap:8px;color:var(--teal);font-weight:600}
+
+/* rules */
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden}
+.rule{background:var(--card);padding:22px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;align-content:start}
+.rule .ic{grid-row:span 2;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--plaster);color:var(--wood)}
+.rule .ic .i{width:22px;height:22px}
+.rule h3{font-family:var(--body);font-weight:600;font-size:1.05rem;line-height:1.5}
+.rule p{color:var(--ink-2);font-size:.93rem}
+
+/* faq */
+.faq{display:grid;gap:10px;max-width:820px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0 20px;transition:border-color .3s var(--ease)}
+.faq details[open]{border-color:var(--ink-2)}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;font-weight:600;font-size:1.05rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .i{transition:transform .4s var(--ease);flex:none}
+.faq details[open] summary .i{transform:rotate(180deg)}
+.faq details p{padding-bottom:18px;color:var(--ink-2)}
+
+/* footer */
+footer{background:var(--ink);color:#E9DED0;padding-block:56px calc(40px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(2,minmax(0,1fr));gap:32px}
+footer .brand{color:#fff}
+footer .wordmark{color:#fff}
+footer p,footer li{color:#CDBFAE;font-size:.95rem}
+footer h3{font-family:var(--body);font-size:.95rem;font-weight:600;color:#fff;margin-bottom:8px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer a{color:#F6C27A}
+footer .tag{margin-top:10px;font-family:var(--mark);font-weight:600;letter-spacing:.14em;font-size:.78rem;color:#CDBFAE;direction:ltr;text-align:start}
+.legal{grid-column:1/-1;border-top:1px solid rgb(255 255 255 / .12);padding-top:18px;font-size:.85rem;color:#A8988A;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+
+/* sticky mobile bar + back pill */
+.mbar{position:fixed;inset-inline:0;bottom:0;z-index:45;display:none;gap:8px;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgb(255 253 248 / .94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .5s var(--ease)}
+.mbar.on{transform:none}
+.mbar .btn{flex:1}
+.back{position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:46;display:inline-flex;align-items:center;gap:6px;background:rgb(42 27 18 / .82);color:#fff;text-decoration:none;font-size:.85rem;font-weight:600;padding:8px 14px;border-radius:999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:bottom .5s var(--ease)}
+.back:hover{background:var(--ink)}
+
+/* dialogs */
+dialog{border:0;padding:0;background:transparent;color:inherit;max-width:100vw;max-height:100dvh}
+dialog::backdrop{background:rgb(20 12 8 / .62);backdrop-filter:blur(3px)}
+.lb{width:min(1100px,100vw);height:100dvh;margin:auto}
+.lb-in{position:relative;height:100%;display:grid;grid-template-rows:auto minmax(0,1fr) auto;color:#fff;padding:calc(12px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+.lb-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.lb-top b{font-family:var(--display);font-weight:600;font-size:1.1rem}
+.lb-fig{margin:0;display:grid;place-items:center;min-height:0;position:relative}
+.lb-fig img{max-height:100%;max-width:100%;object-fit:contain;border-radius:12px}
+.lb-cap{text-align:center;font-size:.92rem;color:#E6DACB;padding-top:8px}
+.lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgb(255 253 248 / .92);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.lb .nav.prev{inset-inline-start:4px}
+.lb .nav.next{inset-inline-end:4px}
+.lb .x{background:rgb(255 253 248 / .14);color:#fff;border:0}
+.cd{width:min(620px,calc(100vw - 24px));margin:auto}
+.cd-in{background:var(--card);border-radius:24px;max-height:calc(100dvh - 24px);overflow:auto;display:grid}
+.cd-head{position:sticky;top:0;background:var(--card);z-index:1;padding:20px 22px 12px;border-bottom:1px solid var(--line);display:grid;gap:12px}
+.cd-head .row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.cd-head h2{font-size:1.35rem}
+.progress{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;list-style:none;margin:0;padding:0}
+.progress li{display:grid;gap:4px;font-size:.8rem;color:var(--ink-2);font-weight:600}
+.progress li::before{content:"";height:4px;border-radius:4px;background:var(--line)}
+.progress li.on::before{background:var(--orange)}
+.progress li.on{color:var(--ink)}
+.cd-body{padding:18px 22px 22px;display:grid;gap:14px}
+.sumbox{background:var(--plaster);border-radius:14px;padding:12px 14px;display:grid;gap:2px;font-size:.93rem}
+.sumbox b{font-family:var(--display);font-weight:600;font-size:1.05rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.terms{border:1px solid var(--line);border-radius:14px;padding:0 14px}
+.terms summary{cursor:pointer;padding:12px 0;font-weight:600}
+.terms ol{margin:0;padding-inline-start:20px;padding-bottom:12px;display:grid;gap:6px;color:var(--ink-2);font-size:.92rem}
+.sigwrap{display:grid;gap:8px}
+.sig{position:relative;border:1.5px dashed var(--ink-2);border-radius:14px;background:#fff;height:170px;touch-action:none}
+.sig canvas{width:100%;height:100%;display:block;border-radius:14px;cursor:crosshair}
+.sig .ph{position:absolute;inset:0;display:grid;place-items:center;color:#B7A999;pointer-events:none;font-size:.95rem}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.95rem}
+.check input{width:20px;height:20px;margin-top:4px;accent-color:var(--orange);flex:none}
+.privacy{display:flex;gap:8px;align-items:flex-start;font-size:.85rem;color:var(--ink-2)}
+.cd-foot{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.done{display:grid;gap:12px;text-align:center;justify-items:center}
+.done .seal{width:64px;height:64px;border-radius:50%;background:var(--orange-soft);display:grid;place-items:center;color:var(--orange-ink)}
+.done .seal .i{width:34px;height:34px}
+.cno{font:700 1.15rem var(--body);direction:ltr;background:var(--plaster);padding:6px 14px;border-radius:10px;letter-spacing:.04em}
+.note{background:var(--teal-soft);color:var(--teal);border-radius:12px;padding:10px 12px;font-size:.9rem}
+
+/* reveal */
+.pre{opacity:0;transform:translateY(24px)}
+.rev{transition:opacity .8s var(--ease),transform .8s var(--ease)}
+@media (prefers-reduced-motion:reduce){.pre{transform:none}.card,.media img,.btn{transition:none}}
+
+/* responsive */
+@media (max-width:1100px){
+  .grid{--cols:2!important}
+  .card.feat{grid-column:span 2}
+  .channels{grid-template-columns:minmax(0,1fr)}
+  .rules{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:960px){
+  .top nav{display:none}
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .where{grid-template-columns:minmax(0,1fr)}
+  .book{grid-template-columns:minmax(0,1fr)}
+  .phone{position:static}
+  footer .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  footer .wrap > div:first-child{grid-column:1/-1}
+}
+@media (max-width:640px){
+  .hero{padding-block:24px 40px}
+  .hero .lede{font-size:1.04rem}
+  .scene{aspect-ratio:1/1.02;border-radius:24px}
+  .scene-chip{top:12px;inset-inline-start:12px;padding:6px 12px}
+  .scene-bar{inset-inline:10px;bottom:10px;gap:6px}
+  .scene-bar .hide-sm{display:none}
+  .sec{padding-block:56px}
+  .grid{--cols:1!important}
+  .card.feat{grid-column:auto}
+  .media{height:auto;aspect-ratio:4/3.3}
+  .rules{grid-template-columns:minmax(0,1fr)}
+  .grid2{grid-template-columns:minmax(0,1fr)}
+  .panel{padding:16px;border-radius:20px}
+  .cal{padding:10px}
+  .day{min-height:40px;border-radius:10px}
+  .day .h{font-size:.62rem}
+  .mbar{display:flex}
+  .back{bottom:calc(78px + env(safe-area-inset-bottom,0px))}
+  footer .wrap{grid-template-columns:minmax(0,1fr)}
+  .top .wa-top{display:none}
+}
+</style>
+</head>
+<body>
+<!--ICONS-->
+<!--XICONS-->
+<a class="skip" href="#main" data-i18n="skip">تخطَّ إلى المحتوى</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="sh.apartment">
+      <svg viewBox="0 0 68 60" aria-hidden="true"><path d="M6 30L34 8l28 22" fill="none" stroke="#F59A1E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><rect x="27" y="30" width="6" height="6" rx="1.2" fill="#F59A1E"/><rect x="35" y="30" width="6" height="6" rx="1.2" fill="#F59A1E"/><rect x="27" y="38" width="6" height="6" rx="1.2" fill="#F59A1E"/><rect x="35" y="38" width="6" height="6" rx="1.2" fill="#F59A1E"/></svg>
+      <span class="wordmark"><b>sh.</b>apartment</span>
+    </a>
+    <nav aria-label="الأقسام" data-i18n-attr="aria-label:nav_label">
+      <a href="#apartments" data-i18n="nav_apts">الشقق</a>
+      <a href="#book" data-i18n="nav_book">الحجز</a>
+      <a href="#rules" data-i18n="nav_rules">قواعد الإقامة</a>
+      <a href="#faq" data-i18n="nav_faq">الأسئلة</a>
+    </nav>
+    <div class="acts">
+      <button class="langbtn" id="langBtn" type="button" aria-label="Switch to English"><svg class="i" aria-hidden="true"><use href="#i-translate"/></svg><span id="langLbl" class="lbl-en">English</span></button>
+      <a class="btn btn-primary btn-sm wa-top" href="#book"><svg class="i" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg><span data-i18n="wa_btn">احجز عبر واتساب</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" data-i18n="hero_eyebrow">جدة · سبع شقق بدخول ذاتي</span>
+      <h1 id="h1" data-i18n="hero_h1">سبع شقق في جدة، لكل واحدة حكاية</h1>
+      <p class="lede" data-i18n="hero_lede">جاكوزي في النهضة، وكنبة سينمائية في الأجاويد، وغرفة أطفال بسرير علوي في الأمير فواز. تدخل بقفل ذكي، وتحجز مباشرة عبر واتساب بلا رسوم منصات.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#book"><svg class="i" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg><span data-i18n="wa_btn">احجز عبر واتساب</span></a>
+        <a class="btn btn-ghost" href="#apartments"><span data-i18n="hero_cta2">تصفّح الشقق</span><svg class="i i-dir" aria-hidden="true"><use href="#i-arrow-left"/></svg></a>
+      </div>
+      <ul class="proof">
+        <li><svg class="i" aria-hidden="true"><use href="#i-star-fill"/></svg><span><strong class="num">4.83</strong> <span data-i18n="proof_rating">من 517 تقييماً على Airbnb</span></span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-seal-check"/></svg><span data-i18n="proof_super">سلطان مضيف مميز على Airbnb</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-key"/></svg><span data-i18n="proof_checkin">دخول ذاتي من 4 مساءً</span></li>
+      </ul>
+    </div>
+    <div>
+      <figure class="scene" id="scene">
+        <div class="scene-chip" aria-live="polite">
+          <span class="t1"><span class="dot" aria-hidden="true"></span><span id="sceneNow">جدة الآن</span></span>
+          <span class="t2 num" id="sceneSun"></span>
+        </div>
+        <div class="scene-bar">
+          <svg class="i hide-sm" aria-hidden="true"><use href="#i-sun"/></svg>
+          <label class="sr" for="timeRange" data-i18n="time_range_label">وقت المشهد</label>
+          <input type="range" id="timeRange" min="0" max="1435" step="5" value="720">
+          <svg class="i hide-sm" aria-hidden="true"><use href="#i-moon"/></svg>
+          <button class="chipbtn" id="lightsBtn" type="button" aria-pressed="false"><svg class="i" aria-hidden="true"><use href="#i-lightning"/></svg><span data-i18n="scene_lights">الأنوار</span></button>
+          <button class="chipbtn" id="nowBtn" type="button" aria-pressed="true"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="scene_now">الآن</span></button>
+        </div>
+      </figure>
+      <p class="scene-hint"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><span data-i18n="scene_hint">اسحب على المشهد لتغيير الوقت، والمسه لإضاءة الرواشين</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="lattice" aria-hidden="true"></div>
+
+<section class="sec" id="where" aria-labelledby="where-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="where_eyebrow">أين تقيم</span>
+      <h2 id="where-h" data-i18n="where_h2">جهتان في جدة، اختر الأقرب لمشوارك</h2>
+    </div>
+    <div class="where">
+      <div class="clusters">
+        <article class="cluster">
+          <header><h3 data-i18n="north_h">شمال جدة</h3><span class="count" id="northCount"></span></header>
+          <span class="sub" data-i18n="north_sub">طريق الملك وطريق المدينة</span>
+          <p data-i18n="north_p">قريبة من الكورنيش والمطار والردسي مول. مناسبة للزيارات القصيرة ورحلات العمل والتسوق.</p>
+          <div class="chips" id="northChips"></div>
+        </article>
+        <article class="cluster">
+          <header><h3 data-i18n="south_h">جنوب شرق جدة</h3><span class="count" id="southCount"></span></header>
+          <span class="sub" data-i18n="south_sub">حي الأجاويد وحي الأمير فواز</span>
+          <p data-i18n="south_p">أحياء سكنية هادئة، مشياً إلى الجامع وحديقة بارك سكوير، وقريبة من مستشفى الحرس الوطني. مناسبة للعائلات والإقامات الأطول.</p>
+          <div class="chips" id="southChips"></div>
+        </article>
+      </div>
+      <figure class="map">
+        <svg viewBox="0 0 380 500" role="img" aria-labelledby="mapT" id="mapSvg">
+          <title id="mapT" data-i18n="map_title">خريطة توضيحية لجدة تُظهر مواقع الشقق السبع في النهضة وطريق المدينة والأمير فواز والأجاويد</title>
+          <rect width="380" height="500" fill="#F7F3EC"/>
+          <path d="M0 0H47.5L51.6 88.2L57 132.4L70.6 191.2L88.2 235.3L101.8 264.7L124.9 286.8L133 308.8L143.9 330.9L149.3 367.6L157.4 411.8L162.9 455.9L168.3 500H0Z" fill="#D7EBEA"/>
+          <path d="M47.5 0L51.6 88.2L57 132.4L70.6 191.2L88.2 235.3L101.8 264.7L124.9 286.8L133 308.8L143.9 330.9L149.3 367.6L157.4 411.8L162.9 455.9L168.3 500" fill="none" stroke="#A9CFCE" stroke-width="2"/>
+          <g fill="none" stroke-linecap="round">
+            <path d="M70.6 0L89.6 142.6L108.6 235.3L128.9 279.4" stroke="#E2D7C6" stroke-width="5"/>
+            <path d="M152 0L142.5 161.8L160.1 279.4L176.4 352.9L190 500" stroke="#E2D7C6" stroke-width="5"/>
+            <path d="M233.4 0L237.5 235.3L251 382.4L264.6 500" stroke="#E2D7C6" stroke-width="6"/>
+          </g>
+          <text class="lbl-road" x="84" y="200" transform="rotate(64 84 200)" data-i18n="m_king">طريق الملك</text>
+          <text class="lbl-road" x="158" y="236" transform="rotate(82 158 236)" data-i18n="m_madinah">طريق المدينة</text>
+          <text class="lbl-road" x="246" y="300" transform="rotate(84 246 300)" data-i18n="m_haramain">طريق الحرمين</text>
+          <text class="lbl-sea" x="18" y="390" data-i18n="m_sea">البحر الأحمر</text>
+          <g>
+            <circle cx="131" cy="44.7" r="4" fill="#6A5545"/><text class="lbl" x="139" y="48" text-anchor="start" data-i18n="m_airport">المطار</text>
+            <circle cx="68.8" cy="120" r="4" fill="#6A5545"/><text class="lbl" x="76" y="116" text-anchor="start" data-i18n="m_mall">الردسي مول</text>
+            <circle cx="117.6" cy="286.8" r="4" fill="#3E8F98"/><text class="lbl" x="110" y="276" text-anchor="end" data-i18n="m_fountain">نافورة الملك فهد</text>
+            <circle cx="172.4" cy="329.7" r="4" fill="#6A5545"/><text class="lbl" x="180" y="333" text-anchor="start" data-i18n="m_balad">البلد</text>
+          </g>
+          <g id="mapPins"></g>
+        </svg>
+        <figcaption><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><span data-i18n="map_caption">خريطة توضيحية، المواقع تقريبية</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt" id="apartments" aria-labelledby="apts-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="apts_eyebrow">الشقق</span>
+      <h2 id="apts-h" data-i18n="apts_h2">سبع شقق، وكل التفاصيل قبل أن تحجز</h2>
+      <p data-i18n="apts_p">صور حقيقية من داخل كل شقة، وعدد الغرف والضيوف، وتقييمها على Airbnb، وسعر الليلة.</p>
+    </div>
+    <div class="filters" role="group" aria-label="تصفية الشقق" data-i18n-attr="aria-label:filters_label" id="filters"></div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="sec" id="book" aria-labelledby="book-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="book_eyebrow">الحجز</span>
+      <h2 id="book-h" data-i18n="book_h2">احجز في دقيقة عبر واتساب</h2>
+      <p data-i18n="book_p">اختر الشقة والتواريخ، ونكتب لك الرسالة جاهزة. يرد المالك بتأكيد التوفر والسعر النهائي.</p>
+    </div>
+    <div class="book">
+      <form class="panel" id="bookForm" novalidate>
+        <div class="step">
+          <div class="step-h"><span class="n">1</span><span data-i18n="step1">الشقة</span></div>
+          <div class="aptpick" id="aptPick" role="radiogroup" aria-label="الشقة" data-i18n-attr="aria-label:step1"></div>
+        </div>
+        <div class="step">
+          <div class="step-h"><span class="n">2</span><span data-i18n="step2">التواريخ</span></div>
+          <div class="sync"><span class="pulse" aria-hidden="true"></span><span data-i18n="cal_sync">التقويم متزامن مع Airbnb، والليالي المشطوبة محجوزة</span></div>
+          <div class="cal" id="cal">
+            <div class="cal-head">
+              <button class="iconbtn" type="button" id="calPrev" aria-label="الشهر السابق" data-i18n-attr="aria-label:prev_month"><svg class="i i-dir" aria-hidden="true"><use href="#i-caret-left"/></svg></button>
+              <div class="cal-title" aria-live="polite"><b id="calG"></b><small id="calH"></small></div>
+              <button class="iconbtn" type="button" id="calNext" aria-label="الشهر التالي" data-i18n-attr="aria-label:next_month"><svg class="i i-dir" aria-hidden="true"><use href="#i-caret-right"/></svg></button>
+            </div>
+            <div class="dows" id="dows" aria-hidden="true"></div>
+            <div class="days" id="days"></div>
+            <div class="cal-legend">
+              <span><i class="sw" style="background:var(--orange)"></i><span data-i18n="lg_sel">اختيارك</span></span>
+              <span><i class="sw" style="background:transparent;box-shadow:inset 0 0 0 1px var(--ink-2)"></i><span data-i18n="lg_today">اليوم</span></span>
+              <span><i class="sw" style="background:linear-gradient(transparent 45%,var(--ink-2) 45%,var(--ink-2) 58%,transparent 58%)"></i><span data-i18n="lg_booked">محجوز</span></span>
+              <span><span class="num" style="color:var(--teal)">17</span><span data-i18n="lg_hijri">اليوم الهجري</span></span>
+            </div>
+          </div>
+          <div class="dates">
+            <div class="dbox" id="dIn"><small data-i18n="checkin">الدخول</small><b></b><em></em></div>
+            <div class="dbox" id="dOut"><small data-i18n="checkout">المغادرة</small><b></b><em></em></div>
+          </div>
+          <p class="err" id="errDates" hidden><svg class="i" aria-hidden="true"><use href="#i-warning-circle"/></svg><span></span></p>
+        </div>
+        <div class="step">
+          <div class="step-h"><span class="n">3</span><span data-i18n="step3">الضيوف والاسم</span></div>
+          <div class="row2">
+            <div class="field">
+              <span class="lab" id="gLab" data-i18n="guests_label">عدد الضيوف</span>
+              <div class="stepper" role="group" aria-labelledby="gLab">
+                <button type="button" id="gMinus" aria-label="أقل" data-i18n-attr="aria-label:less"><svg class="i" aria-hidden="true"><use href="#i-minus"/></svg></button>
+                <output id="gOut" aria-live="polite">2</output>
+                <button type="button" id="gPlus" aria-label="أكثر" data-i18n-attr="aria-label:more"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></button>
+              </div>
+              <small id="gMax"></small>
+            </div>
+            <div class="field">
+              <label for="fName" data-i18n="name_label">الاسم</label>
+              <input class="input" id="fName" name="name" autocomplete="name" placeholder="مثال: سارة أحمد" data-i18n-attr="placeholder:name_ph" aria-describedby="errName">
+              <p class="err" id="errName" hidden><svg class="i" aria-hidden="true"><use href="#i-warning-circle"/></svg><span></span></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="fNote" data-i18n="note_label">ملاحظة (اختياري)</label>
+            <textarea class="input" id="fNote" name="note" rows="2" placeholder="مثال: نصل بعد العاشرة مساءً" data-i18n-attr="placeholder:note_ph"></textarea>
+          </div>
+          <div class="total" id="total"></div>
+        </div>
+      </form>
+
+      <div>
+        <div class="phone">
+          <div class="screen">
+            <div class="chat-top">
+              <div class="avatar" aria-hidden="true"><span><b>sh.</b></span></div>
+              <div class="who"><b>sh.apartment</b><small class="num">+966 50 489 5569</small></div>
+            </div>
+            <div class="chat-body">
+              <span class="day-sep" data-i18n="preview_h">رسالتك قبل الإرسال</span>
+              <div class="bubble" id="bubble" aria-live="polite"></div>
+            </div>
+            <div class="chat-acts">
+              <a class="btn btn-primary" id="sendWa" href="https://wa.me/966504895569" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg><span data-i18n="send">افتح واتساب وأرسل</span></a>
+              <div class="row">
+                <button class="btn btn-ghost btn-sm" type="button" id="copyMsg"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg><span data-i18n="copy">انسخ الرسالة</span></button>
+                <button class="btn btn-ghost btn-sm" type="button" id="copyNum"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span data-i18n="copy_num">انسخ الرقم</span></button>
+              </div>
+              <p class="wa-num"><span data-i18n="wa_num">رقم واتساب</span>: <span class="num">+966 50 489 5569</span></p>
+              <p class="status" id="status" role="status"></p>
+            </div>
+          </div>
+        </div>
+        <p class="alt-path"><button class="linkbtn" type="button" id="openContract" data-i18n="or_contract">أو احجز مباشرة بعقد إلكتروني</button></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt" id="channels" aria-labelledby="ch-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="ch_eyebrow">طرق الحجز</span>
+      <h2 id="ch-h" data-i18n="ch_h2">الشقة نفسها، مباشرة أو عبر Airbnb</h2>
+    </div>
+    <div class="channels">
+      <article class="chan main">
+        <span class="ic"><svg class="i" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg></span>
+        <span class="tag" data-i18n="ch_direct_tag">الأوفر</span>
+        <h3 data-i18n="ch_direct_h">مباشرة عبر واتساب</h3>
+        <p data-i18n="ch_direct_p">بلا رسوم منصة، وتتواصل مع المالك مباشرة، وتوقّع عقد الإقامة من جوالك.</p>
+      </article>
+      <article class="chan">
+        <span class="ic"><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg></span>
+        <span class="tag" data-i18n="ch_airbnb_tag">517 تقييماً</span>
+        <h3 data-i18n="ch_airbnb_h">عبر Airbnb</h3>
+        <p data-i18n="ch_airbnb_p">احجز بحماية Airbnb واقرأ تقييمات الضيوف كاملة. رابط كل شقة في بطاقتها.</p>
+      </article>
+      <article class="chan">
+        <span class="ic"><svg class="i" aria-hidden="true"><use href="#i-storefront"/></svg></span>
+        <span class="tag" data-i18n="ch_gathern_tag">قريباً</span>
+        <h3 data-i18n="ch_gathern_h">عبر جاذر إن</h3>
+        <p data-i18n="ch_gathern_p">ستظهر روابط جاذر إن هنا وفي بطاقات الشقق عند إدراجها هناك، وبالتقويم نفسه.</p>
+      </article>
+    </div>
+    <p class="sync-note"><svg class="i" aria-hidden="true"><use href="#i-calendar-check"/></svg><span data-i18n="ch_sync">تقويم واحد متزامن مع Airbnb، فلا تُحجز الليلة نفسها مرتين.</span></p>
+  </div>
+</section>
+
+<section class="sec" id="rules" aria-labelledby="rules-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="rules_eyebrow">قبل وصولك</span>
+      <h2 id="rules-h" data-i18n="rules_h2">قواعد الإقامة</h2>
+      <p data-i18n="rules_p">هي نفسها بنود عقد الإقامة، فلا مفاجآت بعد الحجز.</p>
+    </div>
+    <div class="rules">
+      <div class="rule"><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-key"/></svg></span><h3 data-i18n="r_in">الدخول من 4:00 مساءً</h3><p data-i18n="r_in_p">دخول ذاتي بقفل ذكي في كل الشقق.</p></div>
+      <div class="rule"><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg></span><h3 data-i18n="r_out">المغادرة حتى 12:00 ظهراً</h3><p data-i18n="r_out_p">التأخير بموافقة المالك، وقد تترتب عليه رسوم.</p></div>
+      <div class="rule"><span class="ic"><svg class="i" aria-hidden="true"><use href="#x-cigarette-slash"/></svg></span><h3 data-i18n="r_smoke">لا تدخين بأي نوع</h3><p data-i18n="r_smoke_p">يشمل السجائر الإلكترونية والشيشة، ويُمنع إشعال الفحم.</p></div>
+      <div class="rule"><span class="ic"><svg class="i" aria-hidden="true"><use href="#x-paw-print"/></svg></span><h3 data-i18n="r_pets">لا حيوانات أليفة</h3><p data-i18n="r_pets_p">إلا بإذن مسبق من المالك.</p></div>
+      <div class="rule"><span class="ic"><svg class="i" aria-hidden="true"><use href="#x-speaker-simple-slash"/></svg></span><h3 data-i18n="r_quiet">الهدوء واحترام الجيران</h3><p data-i18n="r_quiet_p">الشقق في مبانٍ وأحياء سكنية.</p></div>
+      <div class="rule"><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-hand-coins"/></svg></span><h3 data-i18n="r_pay">يُثبَّت الحجز بعد الدفع</h3><p data-i18n="r_pay_p">بعد سداد المبلغ المتفق عليه مع المالك.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="lattice" aria-hidden="true"></div>
+
+<section class="sec" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="faq_eyebrow">قبل أن تسأل</span>
+      <h2 id="faq-h" data-i18n="faq_h2">أسئلة شائعة</h2>
+    </div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#top" aria-label="sh.apartment"><svg viewBox="0 0 68 60" aria-hidden="true" style="width:34px;height:30px"><path d="M6 30L34 8l28 22" fill="none" stroke="#F59A1E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><rect x="27" y="30" width="6" height="6" rx="1.2" fill="#F59A1E"/><rect x="35" y="30" width="6" height="6" rx="1.2" fill="#F59A1E"/><rect x="27" y="38" width="6" height="6" rx="1.2" fill="#F59A1E"/><rect x="35" y="38" width="6" height="6" rx="1.2" fill="#F59A1E"/></svg><span class="wordmark"><b>sh.</b>apartment</span></a>
+      <p class="tag">YOUR STAY, OUR PRIORITY</p>
+      <p style="margin-top:12px;max-width:26rem" data-i18n="foot_p">سبع شقق مفروشة بدخول ذاتي في جدة، يديرها سلطان وحسام.</p>
+    </div>
+    <div>
+      <h3 data-i18n="foot_contact">تواصل</h3>
+      <ul>
+        <li><a href="https://wa.me/966504895569" target="_blank" rel="noopener"><span data-i18n="foot_wa">واتساب</span></a> · <span class="num">+966 50 489 5569</span></li>
+        <li><a href="#book" data-i18n="foot_book">نموذج الحجز</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 data-i18n="foot_more">المزيد</h3>
+      <ul>
+        <li><a href="#rules" data-i18n="nav_rules">قواعد الإقامة</a></li>
+        <li><a href="#faq" data-i18n="nav_faq">الأسئلة</a></li>
+        <li><a href="https://hello-jed.sh-apartment.workers.dev/" target="_blank" rel="noopener" data-i18n="foot_owner">دخول المالك</a></li>
+      </ul>
+    </div>
+    <div class="legal">
+      <span>© 2026 sh.apartment · <span data-i18n="city">جدة</span></span>
+      <span data-i18n="foot_note">الأسعار المعروضة تقديرية، والسعر النهائي يؤكده المالك.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <a class="btn btn-primary" href="#book"><svg class="i" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg><span data-i18n="wa_btn">احجز عبر واتساب</span></a>
+  <a class="btn btn-ghost" href="#apartments" data-i18n="nav_apts" style="flex:0 0 auto">الشقق</a>
+</div>
+<a class="back" href="../index.html"><svg class="i i-dir" aria-hidden="true"><use href="#i-arrow-right"/></svg><span data-i18n="back">كل التصاميم</span></a>
+
+<dialog class="lb" id="lb" aria-labelledby="lbTitle">
+  <div class="lb-in">
+    <div class="lb-top"><b id="lbTitle"></b><button class="iconbtn x" type="button" id="lbClose" aria-label="إغلاق" data-i18n-attr="aria-label:close"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+    <figure class="lb-fig">
+      <img id="lbImg" alt="">
+      <button class="nav prev" type="button" id="lbPrev" aria-label="الصورة السابقة" data-i18n-attr="aria-label:prev_photo"><svg class="i i-dir" aria-hidden="true"><use href="#i-caret-left"/></svg></button>
+      <button class="nav next" type="button" id="lbNext" aria-label="الصورة التالية" data-i18n-attr="aria-label:next_photo"><svg class="i i-dir" aria-hidden="true"><use href="#i-caret-right"/></svg></button>
+    </figure>
+    <p class="lb-cap" id="lbCap" aria-live="polite"></p>
+  </div>
+</dialog>
+
+<dialog class="cd" id="cd" aria-labelledby="cdTitle">
+  <div class="cd-in">
+    <div class="cd-head">
+      <div class="row"><h2 id="cdTitle" data-i18n="cd_title">حجز مباشر بعقد إلكتروني</h2><button class="iconbtn" type="button" id="cdClose" aria-label="إغلاق" data-i18n-attr="aria-label:close"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+      <ol class="progress" id="cdProg"><li data-i18n="cd_s1">البيانات</li><li data-i18n="cd_s2">التوقيع</li><li data-i18n="cd_s3">تم</li></ol>
+    </div>
+    <div class="cd-body" id="cdBody"></div>
+  </div>
+</dialog>
+
+<script>
+(() => {
+'use strict';
+const WA = '966504895569';
+const PHOTO = '../photos/';
+const APTS = [
+  {id:'midcentury',c:'north',air:'https://ar.airbnb.com/rooms/1548537821036118490',ar:'استديو ميد سنشري',en:'Mid century Studio',dAr:'حي النهضة · طريق الملك',dEn:'Al Nahda · King Road',typeAr:'استديو',typeEn:'Studio',br:1,beds:1,baths:1,g:3,r:4.90,n:105,host:'Sultan',sh:true,p:349,w:419,
+   hAr:['جاكوزي دافئ','كنبة تتحول إلى مقعد سينمائي أمام شاشة 75 بوصة'],hEn:['Warm jacuzzi','Sofa that turns into a cinema seat facing a 75 inch screen'],
+   deAr:'استديو دافئ بتصميم فريد وأجهزة حديثة: كنبة تتحول إلى مقعد سينمائي أمام شاشة 75 بوصة، وجاكوزي دافئ، وسرير علوي بإضاءة نيون. في حي النهضة على طريق الملك، بجانب الكورنيش والمولات والمطاعم والمطار.',
+   deEn:'A warm studio with a one of a kind design and modern appliances: a sofa that becomes a cinema seat facing a 75 inch screen, a warm jacuzzi and a neon lit loft bed. In Al Nahda on King Road, next to the Corniche, malls, restaurants and the airport.',
+   ph:['midcentury-1-living','midcentury-2-living-art','midcentury-3-neon-night','midcentury-4-kitchen','midcentury-5-bath-jacuzzi','midcentury-6-coffee','midcentury-7-building'],pin:'nahda'},
+  {id:'cozy',c:'north',air:'https://ar.airbnb.com/rooms/1545433977273675752',ar:'كوزي هوم',en:'Cozy Home',dAr:'حي النهضة · طريق الملك',dEn:'Al Nahda · King Road',typeAr:'غرفة وصالة',typeEn:'1 bedroom',br:1,beds:1,baths:1,g:3,r:4.90,n:86,host:'Sultan',sh:true,p:329,w:399,
+   hAr:['كنبة تتحول إلى سرير سينمائي','مطبخ متكامل وغسالة ملابس'],hEn:['Sofa that turns into a cinema bed','Full kitchen and washing machine'],
+   ph:['cozy-1-neon-cinema','cozy-2-loft-day','cozy-3-kitchen','cozy-4-bedroom','cozy-5-coffee','cozy-6-lobby'],pin:'nahda'},
+  {id:'suite',c:'north',air:'https://ar.airbnb.com/rooms/1545416629708956462',ar:'الجناح الفاخر',en:'Luxury Suite',dAr:'حي النهضة · طريق الملك',dEn:'Al Nahda · King Road',typeAr:'غرفة وصالة',typeEn:'1 bedroom',br:1,beds:1,baths:1,g:4,r:4.93,n:69,host:'Sultan',sh:true,p:379,w:449,
+   hAr:['كرسي مساج فاخر ومكتب أعمال','الأعلى تقييماً بين الشقق'],hEn:['Massage chair and a work desk','Highest rated of the seven'],
+   ph:['suite-1-living','suite-2-living-2','suite-3-bedroom-massage','suite-4-workspace','suite-5-bath','suite-6-kitchenette','suite-7-door'],pin:'nahda'},
+  {id:'madinah',c:'north',air:'https://ar.airbnb.com/rooms/1308042141503902547',ar:'شقة طريق المدينة',en:'Madinah Road Apartment',dAr:'طريق المدينة · خلف الجفالي مرسيدس',dEn:'Madinah Road · behind Al Juffali Mercedes',typeAr:'غرفتا نوم',typeEn:'2 bedrooms',br:2,beds:3,baths:2,g:4,r:4.69,n:144,host:'Sultan',sh:true,p:429,w:499,
+   hAr:['على طريق المدينة شريان جدة','الأكثر تقييماً: 144 ضيفاً'],hEn:['On Madinah Road, the city artery','Most reviewed: 144 guests'],
+   ph:['madinah-1-living','madinah-2-living-2','madinah-3-kitchen','madinah-4-bedroom','madinah-5-twin','madinah-6-bath'],pin:'madinah'},
+  {id:'orange',c:'south',air:'https://ar.airbnb.com/rooms/1557132730241179243',ar:'أورنج سويت',en:'Orange Suite',dAr:'حي الأجاويد',dEn:'Al Ajawid',typeAr:'غرفة وصالة',typeEn:'1 bedroom',br:1,beds:1,baths:1,g:3,r:4.87,n:68,host:'Hussam',sh:false,p:319,w:389,
+   hAr:['كنبة سينمائية أمام شاشة 65 بوصة','مشياً إلى الجامع وبارك سكوير'],hEn:['Cinema sofa facing a 65 inch screen','Walk to the mosque and Park Square'],
+   ph:['orange-1-living','orange-2-living-2','orange-3-kitchen','orange-4-bedroom','orange-5-bath','orange-6-detail','orange-7-smart-lock'],pin:'ajawid'},
+  {id:'ajawid',c:'south',air:'https://ar.airbnb.com/rooms/1548398523561225848',ar:'منزل الأجاويد',en:'Al Ajawid House',dAr:'حي الأجاويد',dEn:'Al Ajawid',typeAr:'3 غرف نوم',typeEn:'3 bedrooms',br:3,beds:5,baths:2,g:6,r:4.85,n:26,host:'Hussam',sh:false,p:649,w:749,
+   hAr:['ثلاث غرف نوم واسعة وطاولة طعام','حوض استحمام وشاشة 75 بوصة'],hEn:['Three large bedrooms and a dining table','Freestanding bathtub and a 75 inch screen'],
+   ph:['ajawid-1-living','ajawid-2-living-2','ajawid-3-kitchen','ajawid-4-bedroom','ajawid-5-twin','ajawid-6-bathtub','ajawid-7-dining'],pin:'ajawid'},
+  {id:'fawaz',c:'south',air:'https://ar.airbnb.com/rooms/1664751285940407075',ar:'منزل الأمير فواز',en:'Prince Fawaz Home',dAr:'حي الأمير فواز',dEn:'Prince Fawaz',typeAr:'غرفتا نوم',typeEn:'2 bedrooms',br:2,beds:6,baths:2,g:6,r:4.63,n:19,host:'Hussam',sh:false,p:489,w:569,
+   hAr:['غرفة أطفال بسرير علوي','كرسي طعام وسرير للأطفال وغسالة صحون'],hEn:['Kids room with a loft bed','High chair, baby cot and dishwasher'],
+   ph:['fawaz-1-living','fawaz-2-living-2','fawaz-3-kitchen','fawaz-4-bedroom','fawaz-5-kids-loft','fawaz-6-bath','fawaz-7-hall'],pin:'fawaz'}
+];
+const ROOM = {
+  'living':['الصالة','Living room'],'living-2':['الصالة','Living room'],'living-art':['الصالة ولوحاتها','Living room and art'],'neon-night':['السرير العلوي بإضاءة الليل','Loft bed at night'],
+  'kitchen':['المطبخ','Kitchen'],'kitchenette':['ركن المطبخ','Kitchenette'],'bath':['دورة المياه','Bathroom'],'bath-jacuzzi':['الجاكوزي','Jacuzzi'],'bathtub':['حوض الاستحمام','Bathtub'],
+  'coffee':['ركن القهوة','Coffee corner'],'building':['واجهة المبنى','The building'],'neon-cinema':['ركن السينما بإضاءة النيون','Neon cinema corner'],'loft-day':['السرير العلوي','Loft bed'],
+  'lobby':['مدخل المبنى','Building lobby'],'bedroom':['غرفة النوم','Bedroom'],'bedroom-massage':['غرفة النوم وكرسي المساج','Bedroom and massage chair'],'workspace':['ركن العمل','Workspace'],
+  'door':['باب الشقة','Front door'],'kids-loft':['غرفة الأطفال','Kids room'],'hall':['الممر','Hallway'],'twin':['غرفة السريرين','Twin bedroom'],'dining':['طاولة الطعام','Dining table'],
+  'detail':['تفاصيل الديكور','Decor detail'],'smart-lock':['القفل الذكي','Smart lock']
+};
+const PINS = {nahda:{x:93,y:141.9,ar:'النهضة',en:'Al Nahda'},madinah:{x:132.6,y:157.7,ar:'طريق المدينة',en:'Madinah Rd'},fawaz:{x:306.4,y:401.3,ar:'الأمير فواز',en:'Prince Fawaz'},ajawid:{x:323.8,y:447.9,ar:'الأجاويد',en:'Al Ajawid'}};
+
+const T = {
+ar:{
+  title:'sh.apartment · شقق مفروشة في جدة',desc:'سبع شقق مفروشة بدخول ذاتي في جدة، بين طريق الملك والأجاويد. تقييم 4.83 من 517 ضيفاً على Airbnb. احجز مباشرة عبر واتساب.',
+  skip:'تخطَّ إلى المحتوى',nav_label:'الأقسام',nav_apts:'الشقق',nav_book:'الحجز',nav_rules:'قواعد الإقامة',nav_faq:'الأسئلة',lang_aria:'Switch to English',lang_lbl:'English',
+  wa_btn:'احجز عبر واتساب',hero_eyebrow:'جدة · سبع شقق بدخول ذاتي',hero_h1:'سبع شقق في جدة، لكل واحدة حكاية',
+  hero_lede:'جاكوزي في النهضة، وكنبة سينمائية في الأجاويد، وغرفة أطفال بسرير علوي في الأمير فواز. تدخل بقفل ذكي، وتحجز مباشرة عبر واتساب بلا رسوم منصات.',
+  hero_cta2:'تصفّح الشقق',proof_rating:'من 517 تقييماً على Airbnb',proof_super:'سلطان مضيف مميز على Airbnb',proof_checkin:'دخول ذاتي من 4 مساءً',
+  scene_now:'الآن',scene_lights:'الأنوار',scene_hint:'اسحب على المشهد لتغيير الوقت، والمسه لإضاءة الرواشين',time_range_label:'وقت المشهد',
+  scene_aria:'مشهد مرسوم لجدة: بيوت البلد التاريخية برواشينها، وكورنيش البحر الأحمر ونخيله، ونافورة الملك فهد، تحت سماء تتبع توقيت جدة',
+  jeddah_now:'جدة الآن',jeddah_at:'جدة في',sun_line:'الشروق {a} · الغروب {b}',am:'ص',pm:'م',kiosk:'مقهى',
+  p_night:'ليل',p_dawn:'فجر',p_sunrise:'شروق',p_morning:'ضحى',p_noon:'ظهيرة',p_asr:'عصر',p_sunset:'غروب',
+  where_eyebrow:'أين تقيم',where_h2:'جهتان في جدة، اختر الأقرب لمشوارك',
+  north_h:'شمال جدة',north_sub:'طريق الملك وطريق المدينة',north_p:'قريبة من الكورنيش والمطار والردسي مول. مناسبة للزيارات القصيرة ورحلات العمل والتسوق.',
+  south_h:'جنوب شرق جدة',south_sub:'حي الأجاويد وحي الأمير فواز',south_p:'أحياء سكنية هادئة، مشياً إلى الجامع وحديقة بارك سكوير، وقريبة من مستشفى الحرس الوطني. مناسبة للعائلات والإقامات الأطول.',
+  map_title:'خريطة توضيحية لجدة تُظهر مواقع الشقق السبع في النهضة وطريق المدينة والأمير فواز والأجاويد',map_caption:'خريطة توضيحية، المواقع تقريبية',
+  m_king:'طريق الملك',m_madinah:'طريق المدينة',m_haramain:'طريق الحرمين',m_sea:'البحر الأحمر',m_airport:'المطار',m_mall:'الردسي مول',m_fountain:'نافورة الملك فهد',m_balad:'البلد',
+  apts_eyebrow:'الشقق',apts_h2:'سبع شقق، وكل التفاصيل قبل أن تحجز',apts_p:'صور حقيقية من داخل كل شقة، وعدد الغرف والضيوف، وتقييمها على Airbnb، وسعر الليلة.',
+  filters_label:'تصفية الشقق',f_all:'الكل',f_north:'شمال جدة',f_south:'جنوب شرق جدة',f_family:'للعائلات',
+  photos:'{n} صور',superhost:'مضيف مميز',self:'دخول ذاتي',per_night:'/ ليلة',weekend:'الخميس والجمعة {p}',book:'احجز',on_airbnb:'Airbnb',
+  airbnb_aria:'افتح {a} على Airbnb',photos_aria:'اعرض صور {a}',
+  empty:'لا توجد شقق بهذا التصنيف.',clear:'اعرض الكل',
+  book_eyebrow:'الحجز',book_h2:'احجز في دقيقة عبر واتساب',book_p:'اختر الشقة والتواريخ، ونكتب لك الرسالة جاهزة. يرد المالك بتأكيد التوفر والسعر النهائي.',
+  step1:'الشقة',step2:'التواريخ',step3:'الضيوف والاسم',cal_sync:'التقويم متزامن مع Airbnb، والليالي المشطوبة محجوزة',
+  prev_month:'الشهر السابق',next_month:'الشهر التالي',lg_sel:'اختيارك',lg_today:'اليوم',lg_booked:'محجوز',lg_hijri:'اليوم الهجري',
+  checkin:'الدخول',checkout:'المغادرة',pick_in:'اختر من التقويم',pick_out:'اختر يوم المغادرة',
+  err_booked:'هذه الليلة محجوزة، اختر يوماً آخر.',err_cross:'يوجد حجز بين التاريخين، اختر مدة أخرى.',err_dates:'اختر يوم الدخول ويوم المغادرة من التقويم.',err_name:'اكتب اسمك ليعرف المالك من يراسله.',
+  guests_label:'عدد الضيوف',less:'أقل',more:'أكثر',max_guests:'الحد الأقصى في هذه الشقة {n}',name_label:'الاسم',name_ph:'مثال: سارة أحمد',note_label:'ملاحظة (اختياري)',note_ph:'مثال: نصل بعد العاشرة مساءً',
+  total_line:'{t} تقديرياً لـ{n}',total_none:'اختر التواريخ لترى الإجمالي التقديري',no_fee:'بلا رسوم منصة',sar:'ر.س',
+  preview_h:'رسالتك قبل الإرسال',send:'افتح واتساب وأرسل',copy:'انسخ الرسالة',copy_num:'انسخ الرقم',copied:'نُسخت الرسالة.',copied_num:'نُسخ الرقم.',copy_fail:'لم يُنسخ تلقائياً. حدّد النص وانسخه يدوياً.',
+  wa_num:'رقم واتساب',or_contract:'أو احجز مباشرة بعقد إلكتروني',
+  msg:'السلام عليكم،\nأرغب بحجز «{apt}» في {area}.\nالدخول: {in}\nالمغادرة: {out}\nالمدة: {nights}، {guests}\nالاسم: {name}{note}\nهل التواريخ متاحة؟ شكراً لكم',
+  msg_note:'\nملاحظة: {t}',ph_date:'(اختر التاريخ)',ph_name:'(اكتب اسمك)',ph_n:'(عدد الليالي)',
+  ch_eyebrow:'طرق الحجز',ch_h2:'الشقة نفسها، مباشرة أو عبر Airbnb',ch_direct_tag:'الأوفر',ch_direct_h:'مباشرة عبر واتساب',ch_direct_p:'بلا رسوم منصة، وتتواصل مع المالك مباشرة، وتوقّع عقد الإقامة من جوالك.',
+  ch_airbnb_tag:'517 تقييماً',ch_airbnb_h:'عبر Airbnb',ch_airbnb_p:'احجز بحماية Airbnb واقرأ تقييمات الضيوف كاملة. رابط كل شقة في بطاقتها.',
+  ch_gathern_tag:'قريباً',ch_gathern_h:'عبر جاذر إن',ch_gathern_p:'ستظهر روابط جاذر إن هنا وفي بطاقات الشقق عند إدراجها هناك، وبالتقويم نفسه.',ch_sync:'تقويم واحد متزامن مع Airbnb، فلا تُحجز الليلة نفسها مرتين.',
+  rules_eyebrow:'قبل وصولك',rules_h2:'قواعد الإقامة',rules_p:'هي نفسها بنود عقد الإقامة، فلا مفاجآت بعد الحجز.',
+  r_in:'الدخول من 4:00 مساءً',r_in_p:'دخول ذاتي بقفل ذكي في كل الشقق.',r_out:'المغادرة حتى 12:00 ظهراً',r_out_p:'التأخير بموافقة المالك، وقد تترتب عليه رسوم.',
+  r_smoke:'لا تدخين بأي نوع',r_smoke_p:'يشمل السجائر الإلكترونية والشيشة، ويُمنع إشعال الفحم.',r_pets:'لا حيوانات أليفة',r_pets_p:'إلا بإذن مسبق من المالك.',
+  r_quiet:'الهدوء واحترام الجيران',r_quiet_p:'الشقق في مبانٍ وأحياء سكنية.',r_pay:'يُثبَّت الحجز بعد الدفع',r_pay_p:'بعد سداد المبلغ المتفق عليه مع المالك.',
+  faq_eyebrow:'قبل أن تسأل',faq_h2:'أسئلة شائعة',
+  faq:[
+   ['كيف يتم الحجز المباشر؟','اختر الشقة والتواريخ وأرسل الرسالة عبر واتساب، أو وقّع عقداً إلكترونياً من جوالك. يؤكد المالك التوفر والسعر، ويُثبَّت الحجز بعد الدفع.'],
+   ['هل الحجز المباشر أوفر من Airbnb؟','الشقة والتقويم نفسهما، ولا توجد رسوم منصة على الحجز المباشر. السعر النهائي يؤكده المالك في رده.'],
+   ['كيف أدخل الشقة؟','كل الشقق بدخول ذاتي بقفل ذكي، ويرسل لك المالك طريقة الدخول على واتساب قبل وصولك. الدخول من 4 مساءً والمغادرة حتى 12 ظهراً.'],
+   ['ما المستندات المطلوبة؟','هوية وطنية أو إقامة أو جواز للنزيل، ورقم جوال، وعدد المرافقين وأسماؤهم، لإصدار عقد الإقامة.'],
+   ['أي الشقق تناسب العائلات؟','منزل الأمير فواز: غرفتا نوم، وغرفة أطفال بسرير علوي، وكرسي طعام وسرير للأطفال. ومنزل الأجاويد: ثلاث غرف نوم وطاولة طعام. وشقة طريق المدينة بغرفتين.'],
+   ['ما سياسة الإلغاء؟','في الحجز المباشر يُتفق على الإلغاء والاسترداد مع المالك قبل الدفع، ويُكتب في العقد. وفي Airbnb تسري سياسة الإعلان نفسه.'],
+   ['هل يمكن الدخول مبكراً أو المغادرة متأخراً؟','حسب التقويم وبموافقة المالك، وقد تترتب على التأخير رسوم. اسأل في رسالة الحجز.']
+  ],
+  foot_p:'سبع شقق مفروشة بدخول ذاتي في جدة، يديرها سلطان وحسام.',foot_contact:'تواصل',foot_wa:'واتساب',foot_book:'نموذج الحجز',foot_more:'المزيد',foot_owner:'دخول المالك',city:'جدة',foot_note:'الأسعار المعروضة تقديرية، والسعر النهائي يؤكده المالك.',
+  back:'كل التصاميم',close:'إغلاق',prev_photo:'الصورة السابقة',next_photo:'الصورة التالية',photo_of:'صورة {i} من {n}',
+  cd_title:'حجز مباشر بعقد إلكتروني',cd_s1:'البيانات',cd_s2:'التوقيع',cd_s3:'تم',
+  cd_need:'اختر الشقة والتواريخ أولاً من نموذج الحجز، ثم عد إلى هنا.',cd_pick:'اختيار التواريخ',
+  f_name:'الاسم الكامل كما في الهوية',f_nat:'الجنسية',f_nat_ph:'سعودي',f_id:'رقم الهوية أو الإقامة أو الجواز',f_phone:'رقم الجوال',f_comp:'عدد المرافقين',f_compn:'أسماء المرافقين (اختياري)',f_compn_ph:'مثال: محمد أحمد، سارة أحمد',
+  e_name:'اكتب الاسم الكامل كما في الهوية.',e_nat:'اكتب الجنسية.',e_id:'رقم الهوية غير صحيح. اكتبه بالأرقام أو الحروف اللاتينية بلا مسافات.',e_phone:'رقم الجوال غير صحيح. مثال: 0501234567',
+  next:'التالي',backb:'رجوع',terms_h:'بنود العقد',
+  terms:['يلتزم المستأجر بالمحافظة على الوحدة ومحتوياتها وتسليمها بالحالة التي استلمها بها، ويتحمل قيمة أي تلف أو فقد خلال الإقامة.','يُمنع التدخين بجميع أنواعه داخل الوحدة، بما في ذلك السجائر الإلكترونية والشيشة، ويُمنع إشعال الفحم، ولا يُسمح بالحيوانات الأليفة إلا بإذن مسبق.','يلتزم المستأجر بالهدوء واحترام خصوصية الجيران والأنظمة العامة.','يبدأ الدخول من الساعة 4:00 مساءً، وتكون المغادرة حتى 12:00 ظهراً، ويخضع التأخير لموافقة المؤجر وقد تترتب عليه رسوم.','يُؤكَّد الحجز بعد سداد قيمة الإيجار المتفق عليها، وتخضع سياسة الإلغاء والاسترداد لما يتفق عليه الطرفان.','المؤجر غير مسؤول عن فقدان المقتنيات الشخصية أو الأموال داخل الوحدة.','يحق للمؤجر إنهاء الإقامة دون استرداد عند مخالفة أي بند من بنود العقد.','توقيع المستأجر الإلكتروني إقرار بقراءة البنود وفهمها والموافقة عليها.'],
+  sign_h:'وقّع بإصبعك داخل المربع',sign_ph:'مساحة التوقيع',sign_clear:'مسح التوقيع',agree:'قرأت بنود العقد وأوافق عليها، وأقرّ بصحة بياناتي.',e_sign:'وقّع داخل مربع التوقيع.',e_agree:'وافق على بنود العقد للمتابعة.',
+  confirm:'تأكيد وإنشاء العقد',creating:'جارٍ إنشاء العقد…',done_h:'العقد جاهز',done_p:'حجزنا التواريخ مبدئياً حتى يؤكدها المالك. أرسل العقد له على واتساب لإتمام الحجز.',
+  done_send:'أرسل العقد للمالك على واتساب',done_pdf:'تنزيل العقد PDF',pdf_note:'في الموقع الفعلي يُنشأ ملف PDF ويُحفظ على جهازك. هذه معاينة للتصميم.',
+  privacy:'بياناتك لا تُحفظ في الموقع، وتُستخدم فقط لإنشاء ملف العقد على جهازك.',
+  c_msg:'السلام عليكم، هذا عقد حجز مباشر عبر sh.apartment\nرقم العقد: {no}\nالشقة: {apt}\nالنزيل: {name}\nالجوال: {phone}\nمن {in} إلى {out} ({nights})\nالمرافقون: {comp}\nالتواريخ بانتظار تأكيد المالك.',
+  summary_stay:'{in} إلى {out} · {nights} · {guests}'
+},
+en:{
+  title:'sh.apartment · Furnished apartments in Jeddah',desc:'Seven self check in apartments in Jeddah, from King Road to Al Ajawid. Rated 4.83 from 517 Airbnb guests. Book direct on WhatsApp.',
+  skip:'Skip to content',nav_label:'Sections',nav_apts:'Apartments',nav_book:'Book',nav_rules:'House rules',nav_faq:'Questions',lang_aria:'التبديل إلى العربية',lang_lbl:'العربية',
+  wa_btn:'Book on WhatsApp',hero_eyebrow:'Jeddah · Seven self check in apartments',hero_h1:'Seven apartments in Jeddah, each with its own story',
+  hero_lede:'A jacuzzi in Al Nahda, a cinema sofa in Al Ajawid, a kids’ loft room in Prince Fawaz. Let yourself in with a smart lock, and book direct on WhatsApp with no platform fees.',
+  hero_cta2:'Browse apartments',proof_rating:'from 517 Airbnb reviews',proof_super:'Sultan is an Airbnb Superhost',proof_checkin:'Self check in from 4 pm',
+  scene_now:'Now',scene_lights:'Lights',scene_hint:'Drag across the scene to change the time, tap it to light the roshans',time_range_label:'Scene time',
+  scene_aria:'Illustrated Jeddah: Al Balad’s historic houses with their roshans, the Red Sea Corniche and its palms, and King Fahd’s Fountain, under a sky that follows Jeddah time',
+  jeddah_now:'Jeddah now',jeddah_at:'Jeddah at',sun_line:'Sunrise {a} · Sunset {b}',am:'am',pm:'pm',kiosk:'Café',
+  p_night:'Night',p_dawn:'Dawn',p_sunrise:'Sunrise',p_morning:'Morning',p_noon:'Midday',p_asr:'Afternoon',p_sunset:'Sunset',
+  where_eyebrow:'Where you’ll stay',where_h2:'Two sides of Jeddah. Pick the one closer to your plans',
+  north_h:'North Jeddah',north_sub:'King Road and Madinah Road',north_p:'Close to the Corniche, the airport and Red Sea Mall. Good for short visits, work trips and shopping.',
+  south_h:'South east Jeddah',south_sub:'Al Ajawid and Prince Fawaz',south_p:'Quiet residential streets, a walk from the mosque and Park Square, and close to the National Guard Hospital. Good for families and longer stays.',
+  map_title:'Schematic map of Jeddah showing the seven apartments in Al Nahda, Madinah Road, Prince Fawaz and Al Ajawid',map_caption:'Schematic map, locations are approximate',
+  m_king:'King Road',m_madinah:'Madinah Road',m_haramain:'Haramain Rd',m_sea:'Red Sea',m_airport:'Airport',m_mall:'Red Sea Mall',m_fountain:'King Fahd’s Fountain',m_balad:'Al Balad',
+  apts_eyebrow:'The apartments',apts_h2:'Seven apartments, every detail before you book',apts_p:'Real photos from inside each apartment, rooms and guests, its Airbnb rating and the nightly price.',
+  filters_label:'Filter apartments',f_all:'All',f_north:'North Jeddah',f_south:'South east Jeddah',f_family:'For families',
+  photos:'{n} photos',superhost:'Superhost',self:'Self check in',per_night:'/ night',weekend:'Thu and Fri {p}',book:'Book',on_airbnb:'Airbnb',
+  airbnb_aria:'Open {a} on Airbnb',photos_aria:'View photos of {a}',
+  empty:'No apartments in this group.',clear:'Show all',
+  book_eyebrow:'Booking',book_h2:'Book in a minute on WhatsApp',book_p:'Pick the apartment and dates and we write the message for you. The owner replies to confirm availability and the final price.',
+  step1:'Apartment',step2:'Dates',step3:'Guests and name',cal_sync:'Calendar synced with Airbnb. Struck through nights are booked',
+  prev_month:'Previous month',next_month:'Next month',lg_sel:'Your dates',lg_today:'Today',lg_booked:'Booked',lg_hijri:'Hijri day',
+  checkin:'Check in',checkout:'Check out',pick_in:'Pick on the calendar',pick_out:'Pick a check out day',
+  err_booked:'That night is booked. Choose another day.',err_cross:'There’s a booking between those dates. Choose another range.',err_dates:'Choose a check in day and a check out day.',err_name:'Add your name so the owner knows who’s writing.',
+  guests_label:'Guests',less:'Fewer',more:'More',max_guests:'Up to {n} in this apartment',name_label:'Your name',name_ph:'e.g. Sara Ahmed',note_label:'Note (optional)',note_ph:'e.g. We’ll arrive after 10 pm',
+  total_line:'About {t} for {n}',total_none:'Choose dates to see an estimated total',no_fee:'No platform fee',sar:'SAR',
+  preview_h:'Your message before sending',send:'Open WhatsApp and send',copy:'Copy message',copy_num:'Copy number',copied:'Message copied.',copied_num:'Number copied.',copy_fail:'Couldn’t copy automatically. Select the text and copy it.',
+  wa_num:'WhatsApp',or_contract:'Or book direct with an e-contract',
+  msg:'Hello,\nI’d like to book “{apt}” in {area}.\nCheck in: {in}\nCheck out: {out}\nStay: {nights}, {guests}\nName: {name}{note}\nAre these dates available? Thank you',
+  msg_note:'\nNote: {t}',ph_date:'(choose a date)',ph_name:'(your name)',ph_n:'(nights)',
+  ch_eyebrow:'Ways to book',ch_h2:'The same apartment, direct or on Airbnb',ch_direct_tag:'Best value',ch_direct_h:'Direct on WhatsApp',ch_direct_p:'No platform fee, you talk to the owner directly, and you sign the stay contract on your phone.',
+  ch_airbnb_tag:'517 reviews',ch_airbnb_h:'On Airbnb',ch_airbnb_p:'Book with Airbnb’s protection and read every guest review. Each apartment card links to its listing.',
+  ch_gathern_tag:'Coming soon',ch_gathern_h:'On Gathern',ch_gathern_p:'Gathern links will appear here and on each card once the apartments are listed there, on the same calendar.',ch_sync:'One calendar synced with Airbnb, so a night can’t be booked twice.',
+  rules_eyebrow:'Before you arrive',rules_h2:'House rules',rules_p:'They’re the same as the stay contract, so there are no surprises after booking.',
+  r_in:'Check in from 4:00 pm',r_in_p:'Self check in with a smart lock in every apartment.',r_out:'Check out by 12:00 pm',r_out_p:'Late check out needs the owner’s approval and may cost extra.',
+  r_smoke:'No smoking of any kind',r_smoke_p:'Including e-cigarettes and shisha, and no charcoal.',r_pets:'No pets',r_pets_p:'Unless the owner approves in advance.',
+  r_quiet:'Quiet and respect for neighbours',r_quiet_p:'The apartments are in residential buildings and streets.',r_pay:'Confirmed once paid',r_pay_p:'After paying the amount agreed with the owner.',
+  faq_eyebrow:'Before you ask',faq_h2:'Questions',
+  faq:[
+   ['How does direct booking work?','Pick the apartment and dates and send the message on WhatsApp, or sign an e-contract on your phone. The owner confirms availability and price, and the booking is fixed once paid.'],
+   ['Is booking direct better value than Airbnb?','It’s the same apartment and the same calendar, with no platform fee on direct bookings. The owner confirms the final price in his reply.'],
+   ['How do I get in?','Every apartment has self check in with a smart lock, and the owner sends you the entry details on WhatsApp before you arrive. Check in from 4 pm, check out by 12 pm.'],
+   ['What documents do you need?','A national ID, Iqama or passport for the main guest, a mobile number, and the number and names of companions, to issue the stay contract.'],
+   ['Which apartments suit families?','Prince Fawaz Home: two bedrooms, a kids room with a loft bed, a high chair and a baby cot. Al Ajawid House: three bedrooms and a dining table. The Madinah Road apartment has two bedrooms.'],
+   ['What’s the cancellation policy?','For direct bookings, cancellation and refunds are agreed with the owner before payment and written into the contract. On Airbnb, the listing’s own policy applies.'],
+   ['Can I check in early or leave late?','When the calendar allows and the owner agrees. Late check out may cost extra. Ask in your booking message.']
+  ],
+  foot_p:'Seven self check in apartments in Jeddah, run by Sultan and Hussam.',foot_contact:'Contact',foot_wa:'WhatsApp',foot_book:'Booking form',foot_more:'More',foot_owner:'Owner login',city:'Jeddah',foot_note:'Prices shown are estimates. The owner confirms the final price.',
+  back:'All concepts',close:'Close',prev_photo:'Previous photo',next_photo:'Next photo',photo_of:'Photo {i} of {n}',
+  cd_title:'Direct booking with an e-contract',cd_s1:'Details',cd_s2:'Sign',cd_s3:'Done',
+  cd_need:'Choose the apartment and dates in the booking form first, then come back here.',cd_pick:'Choose dates',
+  f_name:'Full name as on your ID',f_nat:'Nationality',f_nat_ph:'Saudi',f_id:'ID, Iqama or passport number',f_phone:'Mobile number',f_comp:'Companions',f_compn:'Companion names (optional)',f_compn_ph:'e.g. Mohammed Ahmed, Sara Ahmed',
+  e_name:'Write your full name as it appears on your ID.',e_nat:'Add your nationality.',e_id:'That ID number doesn’t look right. Use digits or Latin letters, no spaces.',e_phone:'That mobile number doesn’t look right. Example: 0501234567',
+  next:'Next',backb:'Back',terms_h:'Contract terms',
+  terms:['The guest keeps the unit and its contents in good order and returns them as received, and pays for any damage or loss during the stay.','No smoking of any kind inside, including e-cigarettes and shisha, and no charcoal. No pets without prior approval.','The guest keeps the peace and respects the neighbours’ privacy and public regulations.','Check in from 4:00 pm and check out by 12:00 pm. Late check out needs the owner’s approval and may cost extra.','The booking is confirmed once the agreed rent is paid. Cancellation and refunds follow what both sides agree.','The owner is not responsible for lost personal belongings or money inside the unit.','The owner may end the stay without refund if any term is broken.','The guest’s e-signature confirms they read, understood and agree to these terms.'],
+  sign_h:'Sign inside the box with your finger',sign_ph:'Signature area',sign_clear:'Clear signature',agree:'I’ve read and agree to the contract terms, and my details are correct.',e_sign:'Sign inside the signature box.',e_agree:'Agree to the terms to continue.',
+  confirm:'Confirm and create contract',creating:'Creating your contract…',done_h:'Your contract is ready',done_p:'The dates are on hold until the owner confirms. Send him the contract on WhatsApp to finish booking.',
+  done_send:'Send the contract on WhatsApp',done_pdf:'Download contract PDF',pdf_note:'On the live site this creates a PDF on your device. This is a design preview.',
+  privacy:'Your details aren’t stored on the site. They’re only used to create the contract file on your device.',
+  c_msg:'Hello, this is a direct booking contract from sh.apartment\nContract: {no}\nApartment: {apt}\nGuest: {name}\nMobile: {phone}\nFrom {in} to {out} ({nights})\nCompanions: {comp}\nDates are waiting for the owner’s confirmation.',
+  summary_stay:'{in} to {out} · {nights} · {guests}'
+}};
+
+let lang = 'ar';
+try { const s = localStorage.getItem('sh-lang'); if (s === 'en' || s === 'ar') lang = s; } catch (e) {}
+const t = (k, v) => { let s = (T[lang][k] ?? T.ar[k] ?? k); if (v) for (const [a, b] of Object.entries(v)) s = s.split('{' + a + '}').join(b); return s; };
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const icon = (n, cls = '') => `<svg class="i ${cls}" aria-hidden="true"><use href="#${n}"/></svg>`;
+const nm = a => lang === 'ar' ? a.ar : a.en;
+const area = a => lang === 'ar' ? a.dAr : a.dEn;
+const money = n => n.toLocaleString('en-US') + ' ' + t('sar');
+
+/* Arabic number agreement: forms = [one, two, few(3-10), many(11+)] */
+function plural(n, ar, en) {
+  if (lang === 'en') return n + ' ' + (n === 1 ? en[0] : en[1]);
+  const m = n % 100;
+  if (n === 1) return ar[0];
+  if (n === 2) return ar[1];
+  if (m >= 3 && m <= 10) return n + ' ' + ar[2];
+  return n + ' ' + ar[3];
+}
+const P = {
+  nights: n => plural(n, ['ليلة واحدة', 'ليلتان', 'ليالٍ', 'ليلة'], ['night', 'nights']),
+  guests: n => plural(n, ['ضيف واحد', 'ضيفان', 'ضيوف', 'ضيفاً'], ['guest', 'guests']),
+  beds: n => plural(n, ['سرير واحد', 'سريران', 'أسرّة', 'سريراً'], ['bed', 'beds']),
+  baths: n => plural(n, ['دورة مياه', 'دورتا مياه', 'دورات مياه', 'دورة مياه'], ['bath', 'baths']),
+  reviews: n => lang === 'en' ? n + ' reviews' : n + ' ' + ((n % 100 >= 3 && n % 100 <= 10) ? 'تقييمات' : 'تقييماً'),
+  apts: n => lang === 'en' ? n + ' apartments' : n + ' ' + ((n % 100 >= 3 && n % 100 <= 10) ? 'شقق' : 'شقة')
+};
+
+/* ---------- dates (UTC date-only, Jeddah "today") ---------- */
+const DAY = 86400000;
+const todayISO = new Intl.DateTimeFormat('en-CA', {timeZone: 'Asia/Riyadh'}).format(new Date());
+const TODAY = Date.parse(todayISO + 'T00:00:00Z');
+const iso = ms => new Date(ms).toISOString().slice(0, 10);
+const loc = () => lang === 'ar' ? 'ar-SA-u-ca-gregory-nu-latn' : 'en-GB-u-ca-gregory';
+const hloc = () => lang === 'ar' ? 'ar-SA-u-ca-islamic-umalqura-nu-latn' : 'en-u-ca-islamic-umalqura-nu-latn';
+const fmt = (ms, o) => new Intl.DateTimeFormat(loc(), {timeZone: 'UTC', ...o}).format(ms);
+const hfmt = (ms, o) => new Intl.DateTimeFormat(hloc(), {timeZone: 'UTC', ...o}).format(ms);
+const hijriDay = ms => +new Intl.DateTimeFormat('en-u-ca-islamic-umalqura-nu-latn', {timeZone: 'UTC', day: 'numeric'}).format(ms);
+const longG = ms => fmt(ms, {weekday: 'long', day: 'numeric', month: 'long'});
+const longH = ms => hfmt(ms, {day: 'numeric', month: 'long', year: 'numeric'});
+const isWeekendNight = ms => { const d = new Date(ms).getUTCDay(); return d === 4 || d === 5; };
+
+/* Simulated "synced" bookings: deterministic per apartment */
+function rng(seed) { let s = 0; for (const c of seed) s = (s * 31 + c.charCodeAt(0)) >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let x = s; x = Math.imul(x ^ x >>> 15, x | 1); x ^= x + Math.imul(x ^ x >>> 7, x | 61); return ((x ^ x >>> 14) >>> 0) / 4294967296; }; }
+const BOOKED = {};
+APTS.forEach(a => {
+  const r = rng(a.id), set = new Set();
+  let d = 1 + Math.floor(r() * 2);
+  while (d < 150) {
+    const ms = TODAY + d * DAY, wk = isWeekendNight(ms);
+    if (r() < (wk ? 0.42 : 0.2)) { const len = 1 + Math.floor(r() * 3); for (let k = 0; k < len; k++) set.add(iso(TODAY + (d + k) * DAY)); d += len + 1 + Math.floor(r() * 3); }
+    else d++;
+  }
+  BOOKED[a.id] = set;
+});
+
+/* ---------- i18n apply ---------- */
+function applyStatic() {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.title = t('title');
+  $('meta[name=description]').setAttribute('content', t('desc'));
+  $$('[data-i18n]').forEach(el => { const k = el.dataset.i18n; if (T[lang][k] !== undefined) el.textContent = t(k); });
+  $$('[data-i18n-attr]').forEach(el => el.dataset.i18nAttr.split(';').forEach(p => { const [at, k] = p.split(':'); el.setAttribute(at, t(k)); }));
+  $('#langLbl').textContent = t('lang_lbl');
+  $('#langBtn').setAttribute('aria-label', t('lang_aria'));
+  $('#langLbl').setAttribute('lang', lang === 'ar' ? 'en' : 'ar');
+}
+
+/* ---------- clusters + map ---------- */
+function renderWhere() {
+  const north = APTS.filter(a => a.c === 'north'), south = APTS.filter(a => a.c === 'south');
+  $('#northCount').textContent = P.apts(north.length);
+  $('#southCount').textContent = P.apts(south.length);
+  const chip = a => `<button class="chip" type="button" data-go="${a.id}"><img src="${PHOTO + a.ph[0]}.jpg" alt="" width="28" height="28">${esc(nm(a))}</button>`;
+  $('#northChips').innerHTML = north.map(chip).join('');
+  $('#southChips').innerHTML = south.map(chip).join('');
+  const counts = {}; APTS.forEach(a => counts[a.pin] = (counts[a.pin] || 0) + 1);
+  $('#mapPins').innerHTML = Object.entries(PINS).map(([k, p]) => {
+    const n = counts[k], left = k === 'fawaz' || k === 'ajawid';
+    const label = lang === 'ar' ? p.ar : p.en;
+    const tx = left ? p.x - 16 : p.x + 16, anchor = left ? 'end' : 'start';
+    return `<g class="pin" tabindex="0" role="button" data-pin="${k}" aria-label="${esc(label)}، ${esc(P.apts(n))}">
+      <circle class="halo" cx="${p.x}" cy="${p.y}" r="18" fill="#F59A1E" opacity=".22"/>
+      <circle cx="${p.x}" cy="${p.y}" r="11" fill="#F59A1E" stroke="#fff" stroke-width="2"/>
+      <text x="${p.x}" y="${p.y + 4}" text-anchor="middle">${n}</text>
+      <text class="pin-l" x="${tx}" y="${p.y + 4}" text-anchor="${anchor}">${esc(label)}</text></g>`;
+  }).join('');
+}
+
+/* ---------- apartment cards ---------- */
+let filter = 'all';
+const FILTERS = [['all', 'f_all', () => true], ['north', 'f_north', a => a.c === 'north'], ['south', 'f_south', a => a.c === 'south'], ['family', 'f_family', a => a.br >= 2]];
+function renderFilters() {
+  $('#filters').innerHTML = FILTERS.map(([k, key, fn]) => `<button class="filter" type="button" data-f="${k}" aria-pressed="${filter === k}">${esc(t(key))}<span class="n num">${APTS.filter(fn).length}</span></button>`).join('');
+}
+function renderCards() {
+  const fn = FILTERS.find(f => f[0] === filter)[2];
+  const list = APTS.filter(fn);
+  const grid = $('#grid');
+  const feat = filter === 'all';
+  grid.style.setProperty('--cols', feat ? 4 : Math.min(list.length, 4) === 4 ? 4 : 3);
+  grid.innerHTML = list.map((a, i) => {
+    const isF = feat && i === 0;
+    const facts = [
+      icon('i-house-line') + (lang === 'ar' ? a.typeAr : a.typeEn),
+      icon('i-bed') + P.beds(a.beds),
+      icon('i-bathtub') + P.baths(a.baths),
+      icon('i-users') + P.guests(a.g)
+    ].map(s => `<span>${s}</span>`).join('');
+    const hl = (lang === 'ar' ? a.hAr : a.hEn);
+    return `<article class="card${isF ? ' feat' : ''}" id="apt-${a.id}">
+      <div class="media">
+        <img src="${PHOTO + a.ph[0]}.jpg" alt="${esc(ROOM[a.ph[0].split('-').slice(2).join('-')][lang === 'ar' ? 0 : 1] + ' · ' + nm(a))}" ${i > 1 ? 'loading="lazy"' : ''} width="700" height="525">
+        <div class="badges">${a.sh ? `<span class="badge">${icon('i-seal-check')}${esc(t('superhost'))}</span>` : ''}<span class="badge">${icon('i-key')}${esc(t('self'))}</span></div>
+        <button class="photos-btn" type="button" data-photos="${a.id}" aria-label="${esc(t('photos_aria', {a: nm(a)}))}">${icon('i-images')}<span class="num">${esc(t('photos', {n: a.ph.length}))}</span></button>
+      </div>
+      <div class="body">
+        <h3>${esc(nm(a))}</h3>
+        <div class="area">${icon('i-map-pin')}<span>${esc(area(a))}</span></div>
+        <div class="rating">${icon('i-star-fill')}<span class="num">${a.r.toFixed(2)}</span><span class="rc">· ${esc(P.reviews(a.n))}</span></div>
+        <div class="facts">${facts}</div>
+        ${isF ? `<p class="desc">${esc(lang === 'ar' ? a.deAr : a.deEn)}</p>` : `<p class="hl">${esc(hl.join(' · '))}</p>`}
+        <div class="price-row">
+          <div class="price"><b class="num">${money(a.p)} <span style="font-weight:400;font-size:.85rem;color:var(--ink-2)">${esc(t('per_night'))}</span></b><small>${esc(t('weekend', {p: money(a.w)}))}</small></div>
+          <div class="card-acts">
+            <a class="air" href="${a.air}" target="_blank" rel="noopener" aria-label="${esc(t('airbnb_aria', {a: nm(a)}))}">${esc(t('on_airbnb'))}${icon('i-arrow-up-right', 'i-dir')}</a>
+            <button class="btn btn-dark btn-sm" type="button" data-book="${a.id}">${esc(t('book'))}</button>
+          </div>
+        </div>
+      </div>
+    </article>`;
+  }).join('') || `<p>${esc(t('empty'))} <button class="linkbtn" type="button" data-f="all">${esc(t('clear'))}</button></p>`;
+}
+
+/* ---------- lightbox ---------- */
+const lb = $('#lb'); let lbA = null, lbI = 0;
+function lbShow() {
+  const f = lbA.ph[lbI], room = ROOM[f.split('-').slice(2).join('-')][lang === 'ar' ? 0 : 1];
+  $('#lbImg').src = PHOTO + f + '.jpg';
+  $('#lbImg').alt = room + ' · ' + nm(lbA);
+  $('#lbTitle').textContent = nm(lbA);
+  $('#lbCap').textContent = room + ' · ' + t('photo_of', {i: lbI + 1, n: lbA.ph.length});
+}
+function openLb(id) { lbA = APTS.find(a => a.id === id); lbI = 0; lbShow(); lb.showModal(); }
+const lbStep = d => { lbI = (lbI + d + lbA.ph.length) % lbA.ph.length; lbShow(); };
+$('#lbPrev').addEventListener('click', () => lbStep(-1));
+$('#lbNext').addEventListener('click', () => lbStep(1));
+$('#lbClose').addEventListener('click', () => lb.close());
+lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('lb-fig')) lb.close(); });
+lb.addEventListener('keydown', e => {
+  const rtl = document.documentElement.dir === 'rtl';
+  if (e.key === 'ArrowLeft') lbStep(rtl ? 1 : -1);
+  if (e.key === 'ArrowRight') lbStep(rtl ? -1 : 1);
+});
+let sx = null;
+$('#lbImg').addEventListener('pointerdown', e => { sx = e.clientX; });
+$('#lbImg').addEventListener('pointerup', e => { if (sx === null) return; const dx = e.clientX - sx; sx = null; if (Math.abs(dx) > 40) { const rtl = document.documentElement.dir === 'rtl'; lbStep((dx < 0) !== rtl ? 1 : -1); } });
+
+/* ---------- booking ---------- */
+const S = {apt: APTS[0].id, start: null, end: null, guests: 2, month: Date.UTC(new Date(TODAY).getUTCFullYear(), new Date(TODAY).getUTCMonth(), 1)};
+const curApt = () => APTS.find(a => a.id === S.apt);
+const nightsOf = () => (S.start !== null && S.end !== null) ? Math.round((S.end - S.start) / DAY) : 0;
+function priceOf() { let s = 0; const a = curApt(); for (let d = S.start; d < S.end; d += DAY) s += isWeekendNight(d) ? a.w : a.p; return s; }
+
+function renderAptPick() {
+  $('#aptPick').innerHTML = APTS.map(a => `<button type="button" class="aptopt" role="radio" aria-checked="${a.id === S.apt}" data-apt="${a.id}" tabindex="${a.id === S.apt ? 0 : -1}">
+    <img src="${PHOTO + a.ph[0]}.jpg" alt="" width="44" height="44" loading="lazy"><span><b>${esc(nm(a))}</b><small>${esc(lang === 'ar' ? a.dAr.split(' · ')[0] : a.dEn.split(' · ')[0])}</small></span></button>`).join('');
+}
+function selectApt(id, scroll) {
+  S.apt = id;
+  const a = curApt();
+  if (S.guests > a.g) S.guests = a.g;
+  // keep dates only if still free
+  if (S.start !== null && S.end !== null && !rangeFree(S.start, S.end)) { S.start = S.end = null; }
+  renderAptPick(); renderCal(); updateAll();
+  if (scroll) { $('#book').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); setTimeout(() => $(`.aptopt[data-apt="${id}"]`)?.focus({preventScroll: true}), 450); }
+}
+const isBooked = ms => BOOKED[S.apt].has(iso(ms));
+function rangeFree(a, b) { for (let d = a; d < b; d += DAY) if (isBooked(d)) return false; return true; }
+
+const DOW = {ar: ['أحد', 'إثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة', 'سبت'], en: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']};
+function renderCal() {
+  const m = S.month, first = new Date(m), y = first.getUTCFullYear(), mo = first.getUTCMonth();
+  const daysIn = new Date(Date.UTC(y, mo + 1, 0)).getUTCDate(), lead = first.getUTCDay();
+  $('#calG').textContent = fmt(m, {month: 'long', year: 'numeric'});
+  const hA = hfmt(m, {month: 'long'}), last = Date.UTC(y, mo, daysIn), hB = hfmt(last, {month: 'long', year: 'numeric'});
+  $('#calH').textContent = hA === hfmt(last, {month: 'long'}) ? hB : hA + ' · ' + hB;
+  $('#dows').innerHTML = DOW[lang].map(d => `<span>${d}</span>`).join('');
+  let html = '';
+  for (let i = 0; i < lead; i++) html += '<span class="day blank" aria-hidden="true"></span>';
+  const pickingOut = S.start !== null && S.end === null;
+  for (let d = 1; d <= daysIn; d++) {
+    const ms = Date.UTC(y, mo, d), past = ms < TODAY, booked = !past && isBooked(ms);
+    const hd = hijriDay(ms);
+    const hLabel = hd === 1 ? hfmt(ms, {month: 'short'}) : hd;
+    let cls = 'day';
+    if (past) cls += ' past';
+    if (booked) cls += ' booked';
+    if (pickingOut && booked && ms > S.start && rangeFree(S.start, ms)) cls += ' co-ok';
+    if (ms === TODAY) cls += ' today';
+    if (S.start === ms) cls += ' start';
+    if (S.end === ms) cls += ' end';
+    if (S.start !== null && S.end !== null && ms > S.start && ms < S.end) cls += ' inrange';
+    const label = `${longG(ms)}، ${longH(ms)}${booked ? '، ' + t('lg_booked') : ''}`;
+    html += `<button type="button" class="${cls}" data-d="${ms}" ${past ? 'disabled' : ''} aria-label="${esc(label)}" aria-pressed="${S.start === ms || S.end === ms}"><span class="g">${d}</span><span class="h">${hLabel}</span></button>`;
+  }
+  $('#days').innerHTML = html;
+  $('#calPrev').disabled = m <= Date.UTC(new Date(TODAY).getUTCFullYear(), new Date(TODAY).getUTCMonth(), 1);
+  $('#calNext').disabled = m >= TODAY + 120 * DAY;
+}
+function dateErr(k) { const e = $('#errDates'); if (!k) { e.hidden = true; return; } e.querySelector('span').textContent = t(k); e.hidden = false; }
+$('#days').addEventListener('click', e => {
+  const b = e.target.closest('.day'); if (!b || b.disabled) return;
+  const ms = +b.dataset.d;
+  dateErr(null);
+  if (S.start === null || S.end !== null || ms <= S.start) {
+    if (isBooked(ms)) { dateErr('err_booked'); return; }
+    S.start = ms; S.end = null;
+  } else {
+    if (!rangeFree(S.start, ms)) { dateErr('err_cross'); return; }
+    S.end = ms;
+  }
+  renderCal(); updateAll();
+  $(`.day[data-d="${ms}"]`)?.focus();
+});
+$('#calPrev').addEventListener('click', () => { const d = new Date(S.month); S.month = Date.UTC(d.getUTCFullYear(), d.getUTCMonth() - 1, 1); renderCal(); });
+$('#calNext').addEventListener('click', () => { const d = new Date(S.month); S.month = Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1); renderCal(); });
+
+function setDbox(el, ms, ph) {
+  el.classList.toggle('empty-d', ms === null);
+  el.querySelector('b').textContent = ms === null ? ph : longG(ms);
+  el.querySelector('em').textContent = ms === null ? '' : longH(ms);
+}
+function message() {
+  const a = curApt(), n = nightsOf(), name = $('#fName').value.trim(), note = $('#fNote').value.trim();
+  const d = ms => ms === null ? t('ph_date') : `${longG(ms)} ${fmt(ms, {year: 'numeric'})} (${longH(ms)})`;
+  return t('msg', {apt: nm(a), area: area(a), in: d(S.start), out: d(S.end), nights: n ? P.nights(n) : t('ph_n'), guests: P.guests(S.guests), name: name || t('ph_name'), note: note ? t('msg_note', {t: note}) : ''});
+}
+function updateAll() {
+  const a = curApt(), n = nightsOf();
+  setDbox($('#dIn'), S.start, t('pick_in'));
+  setDbox($('#dOut'), S.end, S.start === null ? t('pick_in') : t('pick_out'));
+  $('#gOut').textContent = S.guests;
+  $('#gMinus').disabled = S.guests <= 1;
+  $('#gPlus').disabled = S.guests >= a.g;
+  $('#gMax').textContent = t('max_guests', {n: a.g});
+  $('#total').innerHTML = n ? `<span>${esc(t('total_line', {t: '', n: P.nights(n)})).replace(/^\s+/, '')}</span><b class="num">${money(priceOf())}</b><small>${esc(t('no_fee'))}</small>` : `<span>${esc(t('total_none'))}</span>`;
+  if (n) $('#total').firstElementChild.textContent = lang === 'ar' ? 'الإجمالي التقديري لـ' + P.nights(n) : 'Estimated total for ' + P.nights(n);
+  const msg = message();
+  const bubble = $('#bubble');
+  bubble.innerHTML = esc(msg).replace(/\((اختر التاريخ|اكتب اسمك|عدد الليالي|choose a date|your name|nights)\)/g, '<span class="ph">($1)</span>') + `<span class="meta"><span class="num">${new Intl.DateTimeFormat('en-GB', {timeZone: 'Asia/Riyadh', hour: '2-digit', minute: '2-digit'}).format(new Date())}</span>${icon('i-check')}</span>`;
+  $('#sendWa').href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+}
+$('#aptPick').addEventListener('click', e => { const b = e.target.closest('.aptopt'); if (b) selectApt(b.dataset.apt); });
+$('#aptPick').addEventListener('keydown', e => {
+  const keys = {ArrowDown: 1, ArrowRight: document.documentElement.dir === 'rtl' ? -1 : 1, ArrowUp: -1, ArrowLeft: document.documentElement.dir === 'rtl' ? 1 : -1};
+  if (!(e.key in keys)) return; e.preventDefault();
+  const i = APTS.findIndex(a => a.id === S.apt), j = (i + keys[e.key] + APTS.length) % APTS.length;
+  selectApt(APTS[j].id); $(`.aptopt[data-apt="${APTS[j].id}"]`).focus();
+});
+$('#gMinus').addEventListener('click', () => { if (S.guests > 1) { S.guests--; updateAll(); } });
+$('#gPlus').addEventListener('click', () => { if (S.guests < curApt().g) { S.guests++; updateAll(); } });
+$('#fName').addEventListener('input', () => { $('#fName').removeAttribute('aria-invalid'); $('#errName').hidden = true; updateAll(); });
+$('#fNote').addEventListener('input', updateAll);
+$('#bookForm').addEventListener('submit', e => e.preventDefault());
+function validBooking(focus) {
+  let ok = true;
+  if (S.start === null || S.end === null) { dateErr('err_dates'); ok = false; if (focus) $('#cal').scrollIntoView({block: 'center'}); }
+  if ($('#fName').value.trim().length < 2) {
+    $('#fName').setAttribute('aria-invalid', 'true'); const e = $('#errName'); e.querySelector('span').textContent = t('err_name'); e.hidden = false;
+    if (ok && focus) $('#fName').focus(); ok = false;
+  }
+  return ok;
+}
+$('#sendWa').addEventListener('click', e => { if (!validBooking(true)) { e.preventDefault(); $('#status').textContent = ''; } });
+async function copyText(txt, okKey) {
+  const st = $('#status');
+  try { await navigator.clipboard.writeText(txt); st.style.color = 'var(--ok)'; st.textContent = t(okKey); }
+  catch (err) {
+    st.style.color = 'var(--error)'; st.textContent = t('copy_fail');
+    const r = document.createRange(); r.selectNodeContents(okKey === 'copied' ? $('#bubble') : $('.wa-num .num')); const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+}
+$('#copyMsg').addEventListener('click', () => copyText(message(), 'copied'));
+$('#copyNum').addEventListener('click', () => copyText('+966504895569', 'copied_num'));
+
+/* ---------- delegated actions ---------- */
+document.addEventListener('click', e => {
+  const f = e.target.closest('[data-f]'); if (f) { filter = f.dataset.f; renderFilters(); renderCards(); return; }
+  const ph = e.target.closest('[data-photos]'); if (ph) { openLb(ph.dataset.photos); return; }
+  const bk = e.target.closest('[data-book]'); if (bk) { selectApt(bk.dataset.book, true); return; }
+  const go = e.target.closest('[data-go]'); if (go) { goApt(go.dataset.go); return; }
+  const pin = e.target.closest('[data-pin]'); if (pin) { pinGo(pin.dataset.pin); }
+});
+$('#mapSvg').addEventListener('keydown', e => { const pin = e.target.closest('[data-pin]'); if (pin && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); pinGo(pin.dataset.pin); } });
+function pinGo(k) { const a = APTS.find(x => x.pin === k); filter = a.c; renderFilters(); renderCards(); $('#apartments').scrollIntoView(); }
+function goApt(id) {
+  filter = 'all'; renderFilters(); renderCards();
+  const el = $('#apt-' + id); el.scrollIntoView({block: 'center'});
+  el.animate?.([{boxShadow: '0 0 0 0 rgb(245 154 30 / 0)'}, {boxShadow: '0 0 0 6px rgb(245 154 30 / .55)'}, {boxShadow: '0 0 0 0 rgb(245 154 30 / 0)'}], {duration: 1400, easing: 'cubic-bezier(.22,1,.36,1)'});
+}
+
+/* ---------- FAQ ---------- */
+function renderFaq() {
+  $('#faqList').innerHTML = T[lang].faq.map(([q, a], i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(q)}${icon('i-caret-down')}</summary><p>${esc(a)}</p></details>`).join('');
+}
+
+/* ---------- contract dialog ---------- */
+const cd = $('#cd');
+const C = {step: 1, name: '', nat: '', id: '', phone: '', comp: 0, compn: '', signed: false, agree: false, no: ''};
+function cdProg() { $$('#cdProg li').forEach((li, i) => li.classList.toggle('on', i < C.step)); }
+function staySummary() {
+  const a = curApt(), n = nightsOf();
+  return `<div class="sumbox"><b>${esc(nm(a))}</b><span>${esc(area(a))}</span><span>${esc(t('summary_stay', {in: longG(S.start), out: longG(S.end), nights: P.nights(n), guests: P.guests(S.guests)}))}</span></div>`;
+}
+function fieldHTML(id, label, val, extra = '') {
+  return `<div class="field"><label for="${id}">${esc(t(label))}</label><input class="input" id="${id}" value="${esc(val)}" ${extra} aria-describedby="${id}-e"><p class="err" id="${id}-e" hidden>${icon('i-warning-circle')}<span></span></p></div>`;
+}
+function cdRender() {
+  cdProg();
+  const body = $('#cdBody');
+  if (S.start === null || S.end === null) {
+    body.innerHTML = `<p>${esc(t('cd_need'))}</p><div class="cd-foot"><button class="btn btn-primary" type="button" id="cdPick">${icon('i-calendar-blank')}${esc(t('cd_pick'))}</button></div>`;
+    $('#cdPick').addEventListener('click', () => { cd.close(); $('#cal').scrollIntoView({block: 'center'}); $('#days .day:not([disabled])')?.focus({preventScroll: true}); });
+    return;
+  }
+  if (C.step === 1) {
+    body.innerHTML = `${staySummary()}
+      <form id="cdF1" novalidate class="cd-body" style="padding:0">
+        ${fieldHTML('cName', 'f_name', C.name || $('#fName').value.trim(), 'autocomplete="name"')}
+        <div class="grid2">${fieldHTML('cNat', 'f_nat', C.nat, `placeholder="${esc(t('f_nat_ph'))}"`)}${fieldHTML('cId', 'f_id', C.id, 'inputmode="text" autocomplete="off" dir="ltr"')}</div>
+        <div class="grid2">${fieldHTML('cPhone', 'f_phone', C.phone, 'inputmode="tel" autocomplete="tel" placeholder="05XXXXXXXX" dir="ltr"')}${fieldHTML('cComp', 'f_comp', String(C.comp), `inputmode="numeric" type="number" min="0" max="${Math.max(0, curApt().g - 1)}" dir="ltr"`)}</div>
+        <div class="field"><label for="cCompn">${esc(t('f_compn'))}</label><textarea class="input" id="cCompn" rows="2" placeholder="${esc(t('f_compn_ph'))}">${esc(C.compn)}</textarea></div>
+        <p class="privacy">${icon('i-lock-key')}<span>${esc(t('privacy'))}</span></p>
+        <div class="cd-foot"><span></span><button class="btn btn-primary" type="submit">${esc(t('next'))}${icon('i-arrow-right', 'i-dir')}</button></div>
+      </form>`;
+    $('#cdF1').addEventListener('submit', e => {
+      e.preventDefault();
+      const v = id => $('#' + id).value.trim();
+      const setE = (id, k) => { const el = $('#' + id), er = $('#' + id + '-e'); if (k) { el.setAttribute('aria-invalid', 'true'); er.querySelector('span').textContent = t(k); er.hidden = false; } else { el.removeAttribute('aria-invalid'); er.hidden = true; } return !k; };
+      const toLat = s => s.replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d));
+      const phone = toLat(v('cPhone')).replace(/[\s-]/g, ''), idn = toLat(v('cId'));
+      const ok = [
+        setE('cName', v('cName').split(/\s+/).length < 2 ? 'e_name' : null),
+        setE('cNat', v('cNat').length < 2 ? 'e_nat' : null),
+        setE('cId', /^[A-Za-z0-9]{6,15}$/.test(idn) ? null : 'e_id'),
+        setE('cPhone', /^(05\d{8}|\+?9665\d{8})$/.test(phone) ? null : 'e_phone')
+      ].every(Boolean);
+      C.name = v('cName'); C.nat = v('cNat'); C.id = idn; C.phone = phone; C.comp = Math.max(0, +toLat(v('cComp')) || 0); C.compn = v('cCompn');
+      if (!ok) { $('#cdBody [aria-invalid=true]')?.focus(); return; }
+      C.step = 2; cdRender(); $('#cdBody').scrollTop = 0;
+    });
+    $('#cName').focus();
+  } else if (C.step === 2) {
+    body.innerHTML = `${staySummary()}
+      <details class="terms" open><summary>${esc(t('terms_h'))}</summary><ol>${T[lang].terms.map(x => `<li>${esc(x)}</li>`).join('')}</ol></details>
+      <div class="sigwrap"><span class="lab" style="font-weight:600">${esc(t('sign_h'))}</span>
+        <div class="sig"><canvas id="sigC" aria-label="${esc(t('sign_ph'))}" role="img"></canvas><span class="ph" id="sigPh">${esc(t('sign_ph'))}</span></div>
+        <div style="display:flex;justify-content:flex-end"><button class="btn btn-ghost btn-sm" type="button" id="sigClear">${esc(t('sign_clear'))}</button></div>
+        <p class="err" id="sigE" hidden>${icon('i-warning-circle')}<span>${esc(t('e_sign'))}</span></p>
+      </div>
+      <label class="check"><input type="checkbox" id="cAgree" ${C.agree ? 'checked' : ''}><span>${esc(t('agree'))}</span></label>
+      <p class="err" id="agE" hidden>${icon('i-warning-circle')}<span>${esc(t('e_agree'))}</span></p>
+      <div class="cd-foot"><button class="btn btn-ghost" type="button" id="cBack">${icon('i-arrow-left', 'i-dir')}${esc(t('backb'))}</button><button class="btn btn-primary" type="button" id="cConfirm">${icon('x-signature')}${esc(t('confirm'))}</button></div>`;
+    setupSig();
+    $('#cBack').addEventListener('click', () => { C.step = 1; cdRender(); });
+    $('#cAgree').addEventListener('change', e => { C.agree = e.target.checked; $('#agE').hidden = true; });
+    $('#cConfirm').addEventListener('click', () => {
+      const s = C.signed, a = $('#cAgree').checked;
+      $('#sigE').hidden = s; $('#agE').hidden = a;
+      if (!s || !a) return;
+      const btn = $('#cConfirm'); btn.disabled = true; btn.textContent = t('creating');
+      setTimeout(() => {
+        const d = new Date(TODAY); C.no = `SH-${String(d.getUTCFullYear()).slice(2)}${String(d.getUTCMonth() + 1).padStart(2, '0')}-${String(1000 + Math.floor(Math.random() * 9000))}`;
+        C.step = 3; cdRender();
+      }, 900);
+    });
+  } else {
+    const a = curApt(), n = nightsOf();
+    const msg = t('c_msg', {no: C.no, apt: nm(a), name: C.name, phone: C.phone, in: longG(S.start), out: longG(S.end), nights: P.nights(n), comp: C.comp + (C.compn ? ' (' + C.compn + ')' : '')});
+    body.innerHTML = `<div class="done"><span class="seal">${icon('i-check-circle')}</span><h3 style="font-size:1.5rem">${esc(t('done_h'))}</h3><span class="cno">${esc(C.no)}</span><p style="color:var(--ink-2);max-width:30rem">${esc(t('done_p'))}</p></div>
+      ${staySummary()}
+      <a class="btn btn-primary" href="https://wa.me/${WA}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">${icon('i-whatsapp-logo')}${esc(t('done_send'))}</a>
+      <button class="btn btn-ghost" type="button" id="cPdf">${icon('i-receipt')}${esc(t('done_pdf'))}</button>
+      <p class="note" id="pdfNote" hidden>${esc(t('pdf_note'))}</p>`;
+    $('#cPdf').addEventListener('click', () => { $('#pdfNote').hidden = false; });
+  }
+}
+function setupSig() {
+  const c = $('#sigC'), ctx = c.getContext('2d'), dpr = Math.max(1, window.devicePixelRatio || 1);
+  const r = c.getBoundingClientRect(); c.width = r.width * dpr; c.height = r.height * dpr; ctx.scale(dpr, dpr);
+  ctx.lineWidth = 2.4; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#2A1B12';
+  C.signed = false; let draw = false, last = null;
+  const pt = e => { const b = c.getBoundingClientRect(); return [e.clientX - b.left, e.clientY - b.top]; };
+  c.addEventListener('pointerdown', e => { draw = true; last = pt(e); c.setPointerCapture(e.pointerId); });
+  c.addEventListener('pointermove', e => { if (!draw) return; const p = pt(e); ctx.beginPath(); ctx.moveTo(...last); ctx.lineTo(...p); ctx.stroke(); last = p; if (!C.signed) { C.signed = true; $('#sigPh').hidden = true; $('#sigE').hidden = true; } });
+  const up = () => { draw = false; };
+  c.addEventListener('pointerup', up); c.addEventListener('pointercancel', up);
+  $('#sigClear').addEventListener('click', () => { ctx.clearRect(0, 0, c.width, c.height); C.signed = false; $('#sigPh').hidden = false; });
+}
+$('#openContract').addEventListener('click', () => { if (C.step === 3) C.step = 1; cdRender(); cd.showModal(); });
+$('#cdClose').addEventListener('click', () => cd.close());
+cd.addEventListener('click', e => { if (e.target === cd) cd.close(); });
+
+/* ---------- the panorama ---------- */
+const LAT = 21.5433, LON = 39.1728;
+function sunTimes(ms) {
+  const d = new Date(ms), start = Date.UTC(d.getUTCFullYear(), 0, 0), doy = Math.floor((ms - start) / DAY);
+  const g = 2 * Math.PI / 365 * (doy - 1);
+  const eq = 229.18 * (0.000075 + 0.001868 * Math.cos(g) - 0.032077 * Math.sin(g) - 0.014615 * Math.cos(2 * g) - 0.040849 * Math.sin(2 * g));
+  const de = 0.006918 - 0.399912 * Math.cos(g) + 0.070257 * Math.sin(g) - 0.006758 * Math.cos(2 * g) + 0.000907 * Math.sin(2 * g) - 0.002697 * Math.cos(3 * g) + 0.00148 * Math.sin(3 * g);
+  const la = LAT * Math.PI / 180;
+  const ha = Math.acos(Math.cos(90.833 * Math.PI / 180) / (Math.cos(la) * Math.cos(de)) - Math.tan(la) * Math.tan(de)) * 180 / Math.PI;
+  const rise = 720 - 4 * (LON + ha) - eq + 180, set = 720 - 4 * (LON - ha) - eq + 180;
+  return [rise / 60, set / 60];
+}
+const [SR, SS] = sunTimes(TODAY);
+const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+const mix = (a, b, k) => { const A = hex(a), B = hex(b); return '#' + A.map((v, i) => Math.round(v + (B[i] - v) * k).toString(16).padStart(2, '0')).join(''); };
+const PAL = {
+  night:  {t: '#0A1230', m: '#13204A', b: '#24345F', s1: '#14284F', s2: '#0A1733', city: '#1B2546', shade: .66, stars: 1, lights: 1, haze: '#24345F'},
+  dawn:   {t: '#26346A', m: '#7A6A96', b: '#EBA27F', s1: '#56709A', s2: '#2B4068', city: '#4A4A6E', shade: .42, stars: .25, lights: .75, haze: '#EBA27F'},
+  rise:   {t: '#6E9FCB', m: '#B7C7D8', b: '#F7CB9C', s1: '#6FA9BA', s2: '#357C93', city: '#8E97AE', shade: .14, stars: 0, lights: .15, haze: '#F7CB9C'},
+  day:    {t: '#6FB6DA', m: '#A9D6E8', b: '#EEF3EC', s1: '#5DB7C2', s2: '#1F8498', city: '#A9B8C4', shade: 0, stars: 0, lights: 0, haze: '#EEF3EC'},
+  golden: {t: '#7FAED2', m: '#BFD3DE', b: '#F6D49E', s1: '#6CAFB5', s2: '#2C7C8C', city: '#A3A7B2', shade: .06, stars: 0, lights: .05, haze: '#F6D49E'},
+  sunset: {t: '#4F5794', m: '#C07A8A', b: '#F48A55', s1: '#8E7C90', s2: '#394B70', city: '#62597A', shade: .32, stars: 0, lights: .55, haze: '#F48A55'},
+  dusk:   {t: '#151D4C', m: '#3D3466', b: '#7E5279', s1: '#2B3460', s2: '#141C3E', city: '#2A2C4E', shade: .55, stars: .6, lights: .95, haze: '#7E5279'}
+};
+const KF = () => [[SR - 1.7, 'night'], [SR - .45, 'dawn'], [SR + .35, 'rise'], [SR + 1.6, 'day'], [SS - 1.5, 'day'], [SS - .55, 'golden'], [SS + .1, 'sunset'], [SS + .85, 'dusk'], [SS + 1.8, 'night']];
+function palette(h) {
+  const kf = KF();
+  if (h <= kf[0][0] || h >= kf[kf.length - 1][0]) return PAL.night;
+  for (let i = 0; i < kf.length - 1; i++) {
+    const [h0, a] = kf[i], [h1, b] = kf[i + 1];
+    if (h >= h0 && h <= h1) {
+      const k = (h - h0) / (h1 - h0), A = PAL[a], B = PAL[b], o = {};
+      for (const key in A) o[key] = typeof A[key] === 'number' ? A[key] + (B[key] - A[key]) * k : mix(A[key], B[key], k);
+      return o;
+    }
+  }
+  return PAL.day;
+}
+const ROSH = ['#5B3820', '#3E6B67', '#5D6E3F', '#4A6481', '#8B5A32'];
+function sceneSVG() {
+  const W = 800, H = 760;
+  let s = `<svg class="pano" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMax slice" role="img" aria-label="${esc(t('scene_aria'))}" xmlns="http://www.w3.org/2000/svg"><defs>
+  <linearGradient id="sky" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="540"><stop id="s0" offset="0"/><stop id="s1" offset=".58"/><stop id="s2" offset="1"/></linearGradient>
+  <linearGradient id="sea" gradientUnits="userSpaceOnUse" x1="0" y1="520" x2="0" y2="660"><stop id="e0" offset="0"/><stop id="e1" offset="1"/></linearGradient>
+  <radialGradient id="sunG"><stop offset="0" stop-color="#FFF1C6" stop-opacity=".95"/><stop offset=".35" stop-color="#FFD98A" stop-opacity=".45"/><stop offset="1" stop-color="#FFD98A" stop-opacity="0"/></radialGradient>
+  <radialGradient id="warm"><stop offset="0" stop-color="#FFD58A" stop-opacity=".95"/><stop offset="1" stop-color="#FFB547" stop-opacity="0"/></radialGradient>
+  <radialGradient id="cool"><stop offset="0" stop-color="#E8F7FF" stop-opacity=".85"/><stop offset="1" stop-color="#A8DCFF" stop-opacity="0"/></radialGradient>
+  <linearGradient id="jet" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".85" stop-color="#fff" stop-opacity=".7"/><stop offset="1" stop-color="#fff" stop-opacity=".2"/></linearGradient>
+  <linearGradient id="refl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE2A8" stop-opacity=".85"/><stop offset="1" stop-color="#FFE2A8" stop-opacity="0"/></linearGradient>
+  <pattern id="pave" width="24" height="12" patternUnits="userSpaceOnUse"><rect width="24" height="12" fill="#E8D7BD"/><path d="M0 12L12 0L24 12" fill="none" stroke="#DCC6A5" stroke-width="1.2"/><circle cx="12" cy="8" r="1.1" fill="#D3BC98"/></pattern>
+  ${ROSH.map((c, i) => `<pattern id="lat${i}" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 4.5L4.5 0L9 4.5L4.5 9Z" fill="none" stroke="${c}" stroke-width="1.9"/><circle cx="4.5" cy="4.5" r="1" fill="${c}"/></pattern>`).join('')}
+  <mask id="moonM"><rect x="-30" y="-30" width="60" height="60" fill="#fff"/><circle cx="7" cy="-5" r="13" fill="#000"/></mask>
+  </defs>
+  <rect width="${W}" height="540" fill="url(#sky)"/>`;
+  // stars
+  s += '<g id="stars">';
+  for (let i = 0; i < 70; i++) { const x = (i * 197.3) % W, y = 10 + ((i * 89) % 380); s += `<circle class="star" cx="${x.toFixed(1)}" cy="${y}" r="${i % 6 ? .9 : 1.6}" fill="#FFF8E6" style="animation-delay:${(i % 9) * .4}s"/>`; }
+  s += '</g>';
+  s += `<g id="moon"><circle r="46" fill="#F4EBD3" opacity=".08"/><circle r="17" fill="#F7EFD9" mask="url(#moonM)"/></g>`;
+  s += `<g id="sun"><circle r="110" fill="url(#sunG)"/><circle id="sunDisk" r="27" fill="#FFE7A8"/></g>`;
+  s += `<g id="birds" fill="none" stroke="#3A3A4A" stroke-width="2" stroke-linecap="round"><g class="bird"><path d="M0 140q7-7 14 0q7-7 14 0"/></g><g class="bird" style="animation-delay:-19s"><path d="M0 190q5-5 10 0q5-5 10 0"/></g><g class="bird" style="animation-delay:-31s"><path d="M0 110q6-6 12 0q6-6 12 0"/></g></g>`;
+  // distant modern Jeddah on the horizon
+  const towers = [[8,22,58],[34,14,40],[52,28,96],[84,18,66],[106,34,132],[144,16,52],[164,26,84],[194,20,62],[218,30,108],[252,18,56],[274,24,74],[302,20,48],[326,16,64],[346,28,40]];
+  s += '<g id="city">' + towers.map(([x, w, h]) => `<rect x="${x}" y="${522 - h}" width="${w}" height="${h}" rx="1.5"/>`).join('') + '<rect x="114" y="378" width="4" height="12"/></g>';
+  s += '<g id="cityLights" fill="#FFD58A">' + towers.flatMap(([x, w, h], i) => { const o = []; for (let yy = 522 - h + 8; yy < 516; yy += 9) for (let xx = x + 4; xx < x + w - 3; xx += 6) if (((xx * 7 + yy * 3 + i) % 5) < 2) o.push(`<rect x="${xx}" y="${yy}" width="2.2" height="3"/>`); return o; }).join('') + '</g>';
+  // sea
+  s += `<rect y="520" width="${W}" height="140" fill="url(#sea)"/>`;
+  s += `<ellipse id="reflect" cx="200" cy="585" rx="26" ry="62" fill="url(#refl)" opacity="0"/>`;
+  s += '<g opacity=".38" fill="none" stroke="#F2FBFC" stroke-width="1.4" stroke-linecap="round">';
+  for (let r = 0; r < 4; r++) { const y = 538 + r * 28; let d = `M-40 ${y}`; for (let x = -40; x < W + 80; x += 32) d += ` q8 -4 16 0 t16 0`; s += `<path class="wave" d="${d}" style="animation-duration:${9 + r * 3}s;animation-delay:-${r * 2}s"/>`; }
+  s += '</g>';
+  // King Fahd's Fountain
+  const fx = 214;
+  s += `<g id="fountain"><ellipse cx="${fx}" cy="604" rx="30" ry="5" fill="#fff" opacity=".55"/>
+    <path d="M${fx - 3.2} 604 L${fx - .8} 112 L${fx + .8} 112 L${fx + 3.2} 604 Z" fill="url(#jet)"/>
+    <g class="plume"><ellipse cx="${fx}" cy="122" rx="16" ry="11" fill="#fff" opacity=".8"/><ellipse cx="${fx + 12}" cy="138" rx="13" ry="9" fill="#fff" opacity=".55"/><ellipse cx="${fx - 11}" cy="136" rx="10" ry="8" fill="#fff" opacity=".5"/></g>
+    <path d="M${fx} 120 C${fx + 30} 150 ${fx + 44} 300 ${fx + 52} 600 M${fx} 120 C${fx - 26} 160 ${fx - 40} 300 ${fx - 46} 600" fill="none" stroke="#fff" stroke-width="1.2" stroke-dasharray="1 7" opacity=".7"/>
+    <ellipse cx="${fx}" cy="596" rx="16" ry="10" fill="#fff" opacity=".6"/></g>`;
+  // sea wall + promenade
+  s += `<rect y="652" width="${W}" height="12" fill="#CDB896"/><rect y="662" width="${W}" height="${H - 662}" fill="url(#pave)"/><rect y="662" width="${W}" height="3" fill="#BFA67F" opacity=".7"/>`;
+  // Al Balad houses
+  const houses = [
+    {x: 444, w: 118, top: 330, f: '#E9DFCC', r: [[464, 384, 76, 118, 0], [474, 532, 56, 82, 1]], w2: [[456, 352], [548, 352]], door: [486, 32]},
+    {x: 560, w: 100, top: 250, f: '#EFE6D5', r: [[576, 290, 68, 160, 2], [582, 482, 56, 74, 3]], w2: [[572, 270], [640, 270]], door: [594, 34]},
+    {x: 658, w: 132, top: 176, f: '#E5D8C1', r: [[678, 214, 92, 112, 1], [670, 356, 50, 104, 4], [728, 356, 50, 104, 4], [690, 494, 70, 96, 0]], w2: [[670, 196], [772, 196]], door: [706, 38]},
+    {x: 788, w: 40, top: 268, f: '#ECE2CF', r: [[792, 312, 30, 96, 2]], w2: [], door: null}
+  ];
+  const base = 684;
+  let hs = '<g id="houses">', lit = '';
+  houses.forEach(hh => {
+    const {x, w, top, f} = hh;
+    hs += `<rect x="${x}" y="${top}" width="${w}" height="${base - top}" fill="${f}"/>`;
+    hs += `<rect x="${x}" y="${top}" width="9" height="${base - top}" fill="#000" opacity=".06"/>`;
+    for (let y = top + 44; y < base - 8; y += 34) hs += `<rect x="${x}" y="${y}" width="${w}" height="2.4" fill="#CDBB9D" opacity=".85"/>`;
+    // pierced parapet
+    hs += `<rect x="${x - 3}" y="${top - 14}" width="${w + 6}" height="14" fill="${f}"/><rect x="${x - 3}" y="${top - 2}" width="${w + 6}" height="3" fill="#CDBB9D"/>`;
+    for (let px = x + 4; px < x + w - 6; px += 12) hs += `<path d="M${px} ${top - 3}l4 -8l4 8z" fill="#B9A585" opacity=".75"/>`;
+    hh.w2.forEach(([wx, wy]) => { hs += `<rect x="${wx}" y="${wy}" width="8" height="13" rx="3.5" fill="#6B4A33" opacity=".85"/>`; lit += `<rect x="${wx}" y="${wy}" width="8" height="13" rx="3.5" fill="#FFCF7A"/>`; });
+    if (hh.door) { const [dx, dw] = hh.door; hs += `<path d="M${dx} ${base}v-40a${dw / 2} ${dw / 2} 0 0 1 ${dw} 0v40z" fill="#7A4A2A"/><path d="M${dx + dw / 2} ${base - 58}v58" stroke="#5B3820" stroke-width="1.5"/>`; lit += `<path d="M${dx} ${base}v-40a${dw / 2} ${dw / 2} 0 0 1 ${dw} 0v40z" fill="#FFC56B" opacity=".45"/>`; }
+    hh.r.forEach(([rx, ry, rw, rh, ci]) => {
+      const c = ROSH[ci], dark = mix(c, '#000000', .3), top2 = rh * .42;
+      // corbels
+      for (let k = 0; k < 3; k++) { const bx = rx + 6 + k * (rw - 12) / 2; hs += `<path d="M${bx - 5} ${ry + rh}h10l-5 9z" fill="${dark}"/>`; }
+      hs += `<rect x="${rx - 4}" y="${ry - 9}" width="${rw + 8}" height="9" fill="${dark}"/>`;
+      for (let k = rx - 2; k < rx + rw; k += 7) hs += `<path d="M${k} ${ry - 9}l3.5 -6l3.5 6z" fill="${dark}"/>`;
+      hs += `<rect x="${rx}" y="${ry}" width="${rw}" height="${rh}" fill="${c}"/>`;
+      hs += `<rect x="${rx + 5}" y="${ry + 5}" width="${rw - 10}" height="${top2}" fill="#2B1C12"/><rect x="${rx + 5}" y="${ry + 5}" width="${rw - 10}" height="${top2}" fill="url(#lat${ci})"/>`;
+      hs += `<rect x="${rx}" y="${ry + 5 + top2}" width="${rw}" height="6" fill="${dark}"/>`;
+      const ly = ry + top2 + 15, lh = rh - top2 - 21;
+      hs += `<rect x="${rx + 5}" y="${ly}" width="${rw - 10}" height="${lh}" fill="#2B1C12"/>`;
+      for (let yy = ly + 2; yy < ly + lh - 2; yy += 5) hs += `<rect x="${rx + 5}" y="${yy}" width="${rw - 10}" height="2.6" fill="${c}"/>`;
+      hs += `<rect x="${rx + rw / 2 - 1.2}" y="${ry + 5}" width="2.4" height="${rh - 10}" fill="${dark}"/>`;
+      // night: warm light behind the same lattice
+      lit += `<rect x="${rx + 5}" y="${ry + 5}" width="${rw - 10}" height="${top2}" fill="#FFC870"/><rect x="${rx + 5}" y="${ry + 5}" width="${rw - 10}" height="${top2}" fill="url(#lat${ci})"/>`;
+      lit += `<rect x="${rx + 5}" y="${ly}" width="${rw - 10}" height="${lh}" fill="#FFB24A" opacity=".55"/>`;
+      for (let yy = ly + 2; yy < ly + lh - 2; yy += 5) lit += `<rect x="${rx + 5}" y="${yy}" width="${rw - 10}" height="2.6" fill="${dark}"/>`;
+      lit += `<rect x="${rx + rw / 2 - 1.2}" y="${ry + 5}" width="2.4" height="${rh - 10}" fill="${dark}"/>`;
+      lit += `<ellipse cx="${rx + rw / 2}" cy="${ry + rh / 2}" rx="${rw}" ry="${rh * .75}" fill="url(#warm)" opacity=".35"/>`;
+    });
+  });
+  hs += '</g>';
+  s += hs;
+  // café kiosk (a nod to the current site)
+  const kx = 300;
+  s += `<g id="kiosk"><rect x="${kx}" y="630" width="104" height="54" fill="#FFF4E2"/><rect x="${kx + 10}" y="642" width="40" height="26" rx="3" fill="#7A4A2A"/><rect x="${kx + 58}" y="640" width="36" height="44" fill="#C08A5C"/>
+    <path d="M${kx - 6} 618h116l-6 14h-104z" fill="#F59A1E"/>${[0, 1, 2, 3, 4, 5, 6].map(i => `<path d="M${kx + 4 + i * 16} 618l-2 14" stroke="#FFF4E2" stroke-width="6"/>`).join('')}
+    <path d="M${kx - 6} 632${[0, 1, 2, 3, 4, 5, 6].map(i => ` q8 8 ${16.57} 0`).join('')}" fill="#F59A1E"/>
+    <text id="kioskT" x="${kx + 52}" y="612" text-anchor="middle" font-family="Reem Kufi, IBM Plex Sans Arabic, sans-serif" font-size="13" font-weight="600" fill="#7A4A2A">${esc(t('kiosk'))}</text></g>`;
+  lit += `<rect x="${kx + 10}" y="642" width="40" height="26" rx="3" fill="#FFC870" opacity=".95"/><circle cx="${kx + 30}" cy="652" r="46" fill="url(#warm)" opacity=".55"/>`;
+  lit += `<path d="M${kx - 4} 616 Q${kx + 26} 628 ${kx + 52} 618 Q${kx + 78} 628 ${kx + 108} 616" fill="none" stroke="#3A2A20" stroke-width=".8"/>` + [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(i => `<circle cx="${kx - 2 + i * 11}" cy="${619 + Math.sin(i / 10 * Math.PI * 2) * 3 + (i % 5 === 2 ? 2 : 0)}" r="2.1" fill="${['#FFD27A', '#FF9E5E', '#FFE9B0', '#F59A1E'][i % 4]}"/>`).join('');
+  // palms + lamps
+  const palm = (x, y, h, s2) => {
+    let p = `<g><path d="M${x - 4} ${y}C${x - 4} ${y - h * .5} ${x + 6 * s2} ${y - h * .8} ${x + 10 * s2} ${y - h}L${x + 16 * s2} ${y - h}C${x + 10 * s2} ${y - h * .78} ${x + 4} ${y - h * .5} ${x + 4} ${y}Z" fill="#7A5A3A"/>`;
+    for (let k = 0; k < h; k += 9) p += `<path d="M${x - 4 + k * .1 * s2} ${y - k}h${8}" stroke="#5E432A" stroke-width="1.4" opacity=".6"/>`;
+    const cx = x + 13 * s2, cy = y - h;
+    p += `<g class="frond" style="animation-delay:-${(x % 7)}s">`;
+    [[-62, 22], [-40, 34], [-16, 40], [12, 38], [36, 30], [60, 18], [-8, -6]].forEach(([dx, dy], i) => {
+      const ex = cx + dx * 1.15, ey = cy + dy * 1.1 - 6;
+      p += `<path d="M${cx} ${cy}Q${(cx + ex) / 2} ${cy - 26 + Math.abs(dx) * .1} ${ex} ${ey}" fill="none" stroke="${i % 2 ? '#56763A' : '#466332'}" stroke-width="${i === 6 ? 5 : 6}" stroke-linecap="round"/>`;
+    });
+    p += `<circle cx="${cx}" cy="${cy + 4}" r="5" fill="#8A5A2B"/></g></g>`;
+    return p;
+  };
+  s += palm(64, 700, 168, 1) + palm(428, 696, 196, -1);
+  const lamp = x => `<g><rect x="${x - 2}" y="606" width="4" height="84" fill="#3E2E24"/><path d="M${x - 9} 606h18l-3 -14h-12z" fill="#3E2E24"/><rect x="${x - 6}" y="594" width="12" height="11" fill="#F6D58C"/></g>`;
+  s += lamp(150) + lamp(262);
+  lit += [150, 262].map(x => `<circle cx="${x}" cy="600" r="34" fill="url(#warm)"/><rect x="${x - 6}" y="594" width="12" height="11" fill="#FFE3A3"/><ellipse cx="${x}" cy="700" rx="30" ry="6" fill="#FFD58A" opacity=".35"/>`).join('');
+  lit += `<ellipse cx="${fx}" cy="360" rx="34" ry="250" fill="url(#cool)" opacity=".55"/><ellipse cx="${fx}" cy="600" rx="40" ry="16" fill="url(#cool)"/>`;
+  lit += '<g fill="#FFD58A">' + houses.flatMap(hh => hh.w2.map(([wx, wy]) => `<circle cx="${wx + 4}" cy="${wy + 6}" r="14" fill="url(#warm)" opacity=".5"/>`)).join('') + '</g>';
+  // people on the Corniche
+  const woman = (x, y) => `<g transform="translate(${x} ${y})"><circle cx="0" cy="-34" r="5" fill="#1F1A1C"/><path d="M-6 -30h12l5 30h-22z" fill="#1F1A1C"/></g>`;
+  const man = (x, y, red) => `<g transform="translate(${x} ${y})"><path d="M-6 -36q6 -6 12 0v4h-12z" fill="${red ? '#C23B2E' : '#F7F3EA'}"/><circle cx="0" cy="-33" r="4.6" fill="#B9835A"/><path d="M-6 -36h12l3 7h-18z" fill="${red ? '#C23B2E' : '#F7F3EA'}" opacity=".9"/><path d="M-6 -28h12l3 28h-18z" fill="#F7F3EA" stroke="#D9D1C2" stroke-width=".8"/></g>`;
+  const kid = (x, y, c) => `<g transform="translate(${x} ${y})"><circle cx="0" cy="-22" r="3.6" fill="#B9835A"/><path d="M-4 -18h8l2 18h-12z" fill="${c}"/></g>`;
+  s += `<g id="people">
+    <g class="walker" style="--d:70s;--dl:-12s">${woman(0, 742)}${kid(14, 742, '#F59A1E')}</g>
+    <g class="walker l" style="--d:84s;--dl:-40s">${man(0, 748, true)}</g>
+    <g class="walker" style="--d:96s;--dl:-60s">${man(0, 752, false)}${woman(16, 752)}</g>
+    <g class="walker l" style="--d:58s;--dl:-22s">${kid(0, 738, '#3E8F98')}${kid(12, 738, '#C23B2E')}</g></g>`;
+  // night tint + lights
+  s += `<rect id="tint" y="300" width="${W}" height="${H - 300}" fill="#0E1733" opacity="0" pointer-events="none"/>`;
+  s += `<g id="lights" opacity="0" pointer-events="none">${lit}</g>`;
+  s += '</svg>';
+  return s;
+}
+const scene = $('#scene');
+scene.insertAdjacentHTML('afterbegin', sceneSVG());
+let live = true, minutes = 720, lightsOn = false;
+const nowJeddah = () => { const p = new Intl.DateTimeFormat('en-GB', {timeZone: 'Asia/Riyadh', hour: '2-digit', minute: '2-digit', hourCycle: 'h23'}).formatToParts(new Date()); return +p.find(x => x.type === 'hour').value * 60 + +p.find(x => x.type === 'minute').value; };
+const clock = m => { const h = Math.floor(m / 60) % 24, mm = String(Math.round(m % 60)).padStart(2, '0'); const h12 = h % 12 || 12; return `${h12}:${mm} ${h < 12 ? t('am') : t('pm')}`; };
+function period(h) {
+  if (h < SR - .5 || h >= SS + .7) return 'p_night';
+  if (h < SR - .1) return 'p_dawn';
+  if (h < SR + .6) return 'p_sunrise';
+  if (h < 11.5) return 'p_morning';
+  if (h < 15.2) return 'p_noon';
+  if (h < SS - .3) return 'p_asr';
+  return 'p_sunset';
+}
+function paint() {
+  const h = minutes / 60, p = palette(h), svg = $('svg.pano', scene);
+  const set = (id, attr, v) => { const el = svg.getElementById ? svg.getElementById(id) : svg.querySelector('#' + id); if (el) el.setAttribute(attr, v); };
+  set('s0', 'stop-color', p.t); set('s1', 'stop-color', p.m); set('s2', 'stop-color', p.b);
+  set('e0', 'stop-color', p.s1); set('e1', 'stop-color', p.s2);
+  set('city', 'fill', p.city);
+  set('stars', 'opacity', p.stars.toFixed(2));
+  set('tint', 'opacity', (p.shade * .78).toFixed(2));
+  const L = Math.max(p.lights, lightsOn ? 1 : 0);
+  set('lights', 'opacity', L.toFixed(2));
+  set('cityLights', 'opacity', Math.max(p.lights, 0).toFixed(2));
+  set('birds', 'opacity', (1 - Math.min(1, p.stars + p.shade * 1.4)).toFixed(2));
+  // sun: rises behind Al Balad (east), sets into the Red Sea (west)
+  const dayK = (h - SR) / (SS - SR);
+  const sun = svg.querySelector('#sun'), moon = svg.querySelector('#moon');
+  if (dayK > -.06 && dayK < 1.06) {
+    const k = Math.min(1, Math.max(0, dayK)), x = 760 - k * 640, y = 528 - Math.sin(Math.PI * k) * 430;
+    sun.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)})`); sun.setAttribute('opacity', '1');
+    const low = 1 - Math.sin(Math.PI * k);
+    set('sunDisk', 'fill', mix('#FFF3CF', '#FF9A4D', Math.min(1, low * 1.3)));
+    const r = svg.querySelector('#reflect'); r.setAttribute('cx', x.toFixed(1)); r.setAttribute('opacity', (x < 440 ? Math.max(0, low - .25) : 0).toFixed(2));
+  } else { sun.setAttribute('opacity', '0'); svg.querySelector('#reflect').setAttribute('opacity', '0'); }
+  let nk = h >= SS ? (h - SS) / (24 - SS + SR) : (h + 24 - SS) / (24 - SS + SR);
+  if (h >= SS + .3 || h <= SR - .3) { const x = 720 - nk * 560, y = 470 - Math.sin(Math.PI * nk) * 360; moon.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)})`); moon.setAttribute('opacity', '1'); }
+  else moon.setAttribute('opacity', '0');
+  $('#sceneNow').textContent = `${live ? t('jeddah_now') : t('jeddah_at')} ${clock(minutes)} · ${t(period(h))}`;
+  $('#sceneSun').textContent = t('sun_line', {a: clock(SR * 60), b: clock(SS * 60)});
+  $('#timeRange').value = Math.round(minutes / 5) * 5;
+  $('#timeRange').setAttribute('aria-valuetext', clock(minutes));
+  $('#nowBtn').setAttribute('aria-pressed', String(live));
+  $('#lightsBtn').setAttribute('aria-pressed', String(lightsOn));
+}
+function tick() { if (live) { minutes = nowJeddah(); paint(); } }
+$('#timeRange').addEventListener('input', e => { live = false; minutes = +e.target.value; paint(); });
+$('#nowBtn').addEventListener('click', () => { live = true; tick(); });
+$('#lightsBtn').addEventListener('click', () => { lightsOn = !lightsOn; paint(); });
+let drag = null;
+scene.addEventListener('pointerdown', e => { if (!e.target.closest('svg.pano')) return; drag = {x: e.clientX, m: minutes, moved: false}; });
+scene.addEventListener('pointermove', e => {
+  if (!drag) return; const dx = e.clientX - drag.x;
+  if (Math.abs(dx) > 6) { drag.moved = true; live = false; minutes = ((drag.m + dx / scene.clientWidth * 1440) % 1440 + 1440) % 1440; paint(); }
+});
+scene.addEventListener('pointerup', e => { if (drag && !drag.moved && e.target.closest('svg.pano')) { lightsOn = !lightsOn; paint(); } drag = null; });
+scene.addEventListener('pointerleave', () => { drag = null; });
+
+/* ---------- language ---------- */
+function renderAll() {
+  applyStatic(); renderWhere(); renderFilters(); renderCards(); renderAptPick(); renderCal(); updateAll(); renderFaq();
+  const svg = $('svg.pano', scene); svg.setAttribute('aria-label', t('scene_aria')); const kt = svg.querySelector('#kioskT'); if (kt) kt.textContent = t('kiosk');
+  paint();
+  if (cd.open) cdRender();
+  if (lb.open && lbA) lbShow();
+}
+$('#langBtn').addEventListener('click', () => { lang = lang === 'ar' ? 'en' : 'ar'; try { localStorage.setItem('sh-lang', lang); } catch (e) {} renderAll(); });
+
+/* ---------- sticky bar + reveal ---------- */
+const mbar = $('#mbar');
+const io = new IntersectionObserver(es => es.forEach(en => {
+  if (en.target.id === 'top') mbar.dataset.hero = en.isIntersecting ? '1' : '';
+  if (en.target.id === 'book') mbar.dataset.book = en.isIntersecting ? '1' : '';
+  const on = !mbar.dataset.hero && !mbar.dataset.book; mbar.classList.toggle('on', on);
+  $('.back').style.bottom = '';
+}), {threshold: 0});
+io.observe($('#top')); io.observe($('#book'));
+addEventListener('scroll', () => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const vh = innerHeight, els = $$('.sec-head, .cluster, .map, .chan, .rule, .faq details').filter(el => el.getBoundingClientRect().top > vh);
+  els.forEach(el => el.classList.add('pre', 'rev'));
+  const ro = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.remove('pre'); ro.unobserve(en.target); } }), {rootMargin: '0px 0px -8% 0px'});
+  els.forEach(el => ro.observe(el));
+}, {passive: true, once: true});
+
+if (lang !== 'ar') { /* restored preference */ }
+renderAll();
+tick();
+setInterval(tick, 30000);
+})();
+</script>
+</body>
+</html>

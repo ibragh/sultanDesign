@@ -1,0 +1,1572 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>استديو ميد سنشري · sh.apartment</title>
+<meta name="description" content="استديو ميد سنشري في حي النهضة على طريق الملك بجدة: جاكوزي، سرير علوي، وكنبة سينمائية أمام شاشة 75 بوصة. احجز مباشرة ووقّع العقد من جوالك.">
+<meta property="og:title" content="استديو ميد سنشري · sh.apartment">
+<meta property="og:description" content="جاكوزي وسينما على طريق الملك في جدة. 4.90 من 105 تقييمات على Airbnb.">
+<meta property="og:image" content="../photos/midcentury-1-living.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23C2410C'/%3E%3Cpath d='M7 16 16 8l9 8' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='13' y='16' width='6' height='6' rx='1' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+/* Layout: one apartment, one action. Title + photo grid, then content beside a sticky booking card (desktop) or a bottom bar + full height sheet (mobile). */
+:root {
+  color-scheme: light;
+  --bg: #FFFFFF;
+  --surface: #F7F5F3;
+  --surface-2: #EEE9E5;
+  --line: #E5DED8;
+  --ink: #17120F;
+  --ink-2: #3D342F;
+  --muted: #6B625C;
+  --accent: #C2410C;
+  --accent-hover: #A3360A;
+  --accent-tint: #FDEEE6;
+  --accent-ink: #9A3412;
+  --on-accent: #FFFFFF;
+  --ok: #157F3C;
+  --ok-tint: #E6F4EA;
+  --err: #B42318;
+  --err-tint: #FDECEA;
+  --held: #8A5A12;
+  --held-tint: #FBF0DC;
+  --sea: #DCEAF0;
+  --sea-ink: #4B7486;
+  --land: #F4F1EE;
+  --road: #FFFFFF;
+  --road-edge: #D9D1CA;
+  --nav-bg: rgba(255, 255, 255, 0.72);
+  --scrim: rgba(23, 18, 15, 0.48);
+  --shadow: 0 1px 2px rgba(23, 18, 15, 0.06), 0 12px 32px rgba(23, 18, 15, 0.08);
+  --font: "Poppins", "Tajawal", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/24px var(--font); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+button, input, textarea, select { font: inherit; color: inherit; }
+h1, h2, h3, h4 { margin: 0; font-weight: 700; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; }
+.num, .price b, time, output { font-variant-numeric: tabular-nums; }
+[dir="ltr"].num { white-space: nowrap; unicode-bidi: isolate; }
+[dir="rtl"] .i-dir { transform: scaleX(-1); }
+.i { width: 20px; height: 20px; flex: none; }
+.i-sm { width: 16px; height: 16px; }
+.i-lg { width: 24px; height: 24px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Type scale (Tailwind steps only) */
+.t-xs { font-size: 12px; line-height: 16px; }
+.t-sm { font-size: 14px; line-height: 20px; }
+.t-base { font-size: 16px; line-height: 24px; }
+.t-lg { font-size: 18px; line-height: 28px; }
+.t-xl { font-size: 20px; line-height: 28px; }
+.t-2xl { font-size: 24px; line-height: 32px; }
+.t-3xl { font-size: 30px; line-height: 36px; }
+.t-4xl { font-size: 36px; line-height: 40px; }
+.muted { color: var(--muted); }
+
+.skip { position: fixed; top: 8px; inset-inline-start: 8px; z-index: 100; background: var(--ink); color: var(--bg); padding: 8px 12px; border-radius: 12px; font: 600 14px/20px var(--font); transform: translateY(-64px); transition: transform .3s var(--ease); text-decoration: none; }
+.skip:focus { transform: none; }
+
+.container { max-width: 1200px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 12px; font: 600 16px/24px var(--font); border-radius: 12px; border: 1px solid transparent; cursor: pointer; text-decoration: none; white-space: nowrap; background: var(--surface); color: var(--ink); transition: background-color .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease), transform .5s var(--ease); }
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-secondary { background: var(--bg); border-color: var(--line); }
+.btn-secondary:hover { background: var(--surface); }
+.btn-sm { font-size: 14px; line-height: 20px; padding: 8px 12px; }
+.btn-block { width: 100%; }
+.btn[aria-busy="true"] { pointer-events: none; opacity: .72; }
+.icon-btn { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 9999px; border: 1px solid var(--line); background: var(--bg); cursor: pointer; transition: background-color .3s var(--ease), transform .5s var(--ease); }
+.icon-btn:hover { background: var(--surface); }
+.icon-btn:active { transform: scale(0.96); }
+.icon-btn[disabled] { opacity: .4; cursor: not-allowed; }
+.link { color: var(--accent-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; transition: color .3s var(--ease); }
+.link:hover { color: var(--accent); }
+
+/* Nav: floating pill */
+.nav-wrap { position: fixed; top: calc(16px + env(safe-area-inset-top, 0px)); inset-inline: 0; z-index: 40; display: flex; justify-content: center; pointer-events: none; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.nav { pointer-events: auto; display: flex; align-items: center; gap: 16px; padding: 8px 8px 8px 8px; padding-inline-start: 16px; border-radius: 9999px; background: var(--nav-bg); -webkit-backdrop-filter: blur(16px) saturate(1.4); backdrop-filter: blur(16px) saturate(1.4); border: 1px solid rgba(23, 18, 15, 0.08); box-shadow: 0 8px 24px rgba(23, 18, 15, 0.06); max-width: 100%; }
+.logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font: 600 18px/28px var(--font); letter-spacing: -0.01em; white-space: nowrap; }
+.logo svg { width: 24px; height: 24px; color: var(--accent); }
+.logo b { color: var(--accent); font-weight: 700; }
+.nav-links { display: flex; gap: 4px; }
+.nav-links a { display: block; padding: 8px 12px; border-radius: 9999px; text-decoration: none; font: 500 14px/20px var(--font); color: var(--ink-2); transition: background-color .3s var(--ease), color .3s var(--ease); }
+.nav-links a:hover { background: rgba(23, 18, 15, 0.05); }
+.nav-links a[aria-current="true"] { background: var(--ink); color: var(--bg); }
+.menu-toggle { display: none; width: 40px; height: 40px; border-radius: 9999px; border: 0; background: var(--ink); color: var(--bg); cursor: pointer; position: relative; }
+.menu-toggle span { position: absolute; inset-inline-start: 12px; width: 16px; height: 2px; border-radius: 2px; background: currentColor; transition: transform .5s var(--ease); }
+.menu-toggle span:first-child { top: 15px; }
+.menu-toggle span:last-child { top: 23px; }
+.menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(4px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-4px) rotate(-45deg); }
+.mmenu { position: fixed; inset: 0; z-index: 35; background: rgba(255, 255, 255, 0.94); -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px); padding-top: calc(96px + env(safe-area-inset-top, 0px)); padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px)); padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 32px; opacity: 0; transition: opacity .3s var(--ease); }
+.mmenu.open { opacity: 1; }
+.mmenu ul { display: grid; gap: 8px; }
+.mmenu li { opacity: 0; transform: translateY(24px); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+.mmenu.open li { opacity: 1; transform: none; }
+.mmenu a.mlink { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; text-decoration: none; font: 700 30px/36px var(--font); border-bottom: 1px solid var(--line); }
+.mmenu a.mlink[aria-current="true"] { color: var(--accent-ink); }
+
+/* Hero */
+.hero { padding-top: calc(96px + env(safe-area-inset-top, 0px)); }
+.crumbs { display: flex; align-items: center; gap: 8px; color: var(--muted); font: 500 14px/20px var(--font); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 32px; margin-top: 16px; }
+.hero-text { display: grid; gap: 16px; max-width: 680px; }
+.grad { background: linear-gradient(to left, #000000, #666666); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hl { display: block; }
+.h1 { font-size: 36px; line-height: 40px; font-weight: 700; letter-spacing: -0.01em; padding-block: 4px; }
+.sub { font-size: 18px; line-height: 28px; color: var(--ink-2); max-width: 680px; }
+.proof { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font: 500 14px/20px var(--font); color: var(--ink-2); }
+.proof .star { color: var(--accent); }
+.proof .sep { width: 4px; height: 4px; border-radius: 9999px; background: var(--muted); opacity: .5; }
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 9999px; background: var(--surface); border: 1px solid var(--line); font: 600 12px/16px var(--font); color: var(--ink-2); }
+.hero-cta { display: grid; gap: 8px; justify-items: start; padding: 24px; border-radius: 16px; background: var(--surface); min-width: 280px; }
+.price { font: 500 14px/20px var(--font); color: var(--muted); }
+.price b { font: 700 30px/36px var(--font); color: var(--ink); }
+.sync { display: inline-flex; align-items: center; gap: 8px; font: 500 12px/16px var(--font); color: var(--muted); }
+.sync .dot { width: 8px; height: 8px; border-radius: 9999px; background: var(--ok); box-shadow: 0 0 0 4px var(--ok-tint); }
+
+/* Gallery */
+.gallery-wrap { position: relative; margin-top: 32px; }
+.gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 232px 232px; gap: 8px; border-radius: 16px; overflow: hidden; }
+.g-item { position: relative; padding: 0; border: 0; cursor: zoom-in; overflow: hidden; background: var(--surface-2); border-radius: 8px; }
+.g-item:first-child { grid-row: span 2; }
+.g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+.g-item:hover img { transform: scale(1.03); }
+.show-all { position: absolute; inset-inline-end: 16px; bottom: 16px; }
+.g-count { display: none; }
+
+/* Main layout */
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 384px; gap: 64px; align-items: start; padding-block: 48px 64px; }
+.content { min-width: 0; display: grid; gap: 0; }
+.block { padding-block: 40px; border-top: 1px solid var(--line); display: grid; gap: 24px; min-width: 0; }
+.block:first-child { border-top: 0; padding-top: 0; }
+.eyebrow { font: 600 12px/16px var(--font); color: var(--accent-ink); letter-spacing: .02em; }
+.h2 { font-size: 24px; line-height: 32px; font-weight: 700; }
+.h3 { font-size: 18px; line-height: 28px; font-weight: 700; }
+.lead { font-size: 18px; line-height: 28px; color: var(--ink-2); max-width: 640px; }
+
+.facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.fact { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 9999px; border: 1px solid var(--line); font: 500 14px/20px var(--font); color: var(--ink-2); }
+.fact .i { color: var(--accent); }
+
+.host { display: flex; align-items: center; gap: 12px; }
+.avatar { width: 48px; height: 48px; border-radius: 9999px; background: var(--ink); color: var(--bg); display: grid; place-items: center; font: 700 18px/28px var(--font); }
+
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.compare > div { padding: 24px; border-radius: 16px; display: grid; gap: 12px; align-content: start; }
+.compare .before { background: var(--surface); }
+.compare .now { background: var(--accent-tint); }
+.compare ul { display: grid; gap: 8px; }
+.compare li { display: flex; gap: 8px; align-items: flex-start; font-size: 16px; line-height: 24px; }
+.compare .before li { color: var(--muted); }
+.compare .now .i { color: var(--accent-ink); margin-top: 2px; }
+.compare .before .i { margin-top: 2px; }
+.tag { display: inline-flex; width: fit-content; padding: 2px 8px; border-radius: 9999px; font: 600 12px/16px var(--font); }
+.before .tag { background: var(--surface-2); color: var(--muted); }
+.now .tag { background: var(--accent); color: var(--on-accent); }
+
+.benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; }
+.benefit { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 16px; align-items: start; }
+.benefit .ico { width: 48px; height: 48px; border-radius: 12px; background: var(--surface); display: grid; place-items: center; color: var(--accent-ink); }
+.benefit h3 { font-size: 16px; line-height: 24px; }
+.benefit p { color: var(--muted); font-size: 14px; line-height: 20px; margin-top: 4px; }
+
+.amen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 24px; }
+.amen li { display: flex; align-items: center; gap: 12px; padding-block: 8px; font-size: 16px; line-height: 24px; }
+.amen .i { color: var(--ink-2); }
+
+/* Calendar */
+.cal-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.cal { display: grid; gap: 16px; }
+.cal-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.cal-top .range-txt { font: 600 14px/20px var(--font); }
+.cal-navs { display: flex; gap: 8px; }
+.cal-months { display: grid; grid-template-columns: repeat(var(--months, 2), minmax(0, 1fr)); gap: 32px; }
+.month h4 { font: 700 16px/24px var(--font); text-align: center; margin-bottom: 12px; }
+.wk, .days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.wk span { text-align: center; font: 500 12px/16px var(--font); color: var(--muted); padding-bottom: 8px; }
+.day { position: relative; height: 40px; border: 0; background: transparent; cursor: pointer; font: 500 14px/20px var(--font); color: var(--ink); font-variant-numeric: tabular-nums; padding: 0; }
+.day span { position: relative; z-index: 1; display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 9999px; transition: background-color .3s var(--ease), color .3s var(--ease); }
+.day:hover:not([aria-disabled="true"]) span { background: var(--surface-2); }
+.day.past { color: var(--muted); opacity: .45; cursor: default; }
+.day.booked span { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 1px; }
+.day.booked { cursor: not-allowed; }
+.day.booked.co-ok { cursor: pointer; }
+.day.held span { color: var(--held); text-decoration: underline dotted; text-underline-offset: 4px; }
+.day.inrange::before { content: ""; position: absolute; inset: 0; background: var(--accent-tint); }
+.day.ci::before, .day.co::before { content: ""; position: absolute; inset-block: 0; background: var(--accent-tint); width: 50%; }
+.day.ci::before { inset-inline-start: 50%; }
+.day.co::before { inset-inline-end: 50%; }
+.day.ci.co::before { display: none; }
+.day.ci:not(.has-co)::before { display: none; }
+.day.ci span, .day.co span { background: var(--ink); color: var(--bg); text-decoration: none; }
+.day.today span { box-shadow: inset 0 0 0 1px var(--ink); }
+.day.blank { cursor: default; }
+.cal-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; font: 500 12px/16px var(--font); color: var(--muted); }
+.cal-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.lg-sel { width: 16px; height: 16px; border-radius: 9999px; background: var(--ink); }
+.lg-range { width: 16px; height: 16px; border-radius: 4px; background: var(--accent-tint); }
+.lg-booked { text-decoration: line-through; color: var(--muted); }
+.cal-msg { min-height: 20px; }
+.cal-msg:empty { min-height: 0; }
+
+.err { display: flex; align-items: flex-start; gap: 8px; color: var(--err); font: 500 14px/20px var(--font); }
+.err .i { margin-top: 0; }
+.err[hidden] { display: none; }
+
+/* Steps (how it works) */
+.how { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; counter-reset: step; }
+.how li { padding: 24px; border-radius: 16px; background: var(--surface); display: grid; gap: 8px; align-content: start; }
+.how .n { width: 32px; height: 32px; border-radius: 9999px; background: var(--ink); color: var(--bg); display: grid; place-items: center; font: 700 14px/20px var(--font); }
+.how h3 { font-size: 16px; line-height: 24px; }
+.how p { color: var(--muted); font-size: 14px; line-height: 20px; }
+
+/* Location */
+.loc { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.map { border-radius: 16px; overflow: hidden; background: var(--land); border: 1px solid var(--line); }
+.map svg { display: block; width: 100%; height: auto; }
+.map svg text { font-family: var(--font); }
+.m-land { fill: var(--land); }
+.m-sea { fill: var(--sea); }
+.m-coast { fill: none; stroke: var(--road-edge); stroke-width: 1.5; }
+.m-corn { fill: none; stroke: var(--road); stroke-width: 6; stroke-linecap: round; }
+.m-edge { fill: none; stroke: var(--road-edge); stroke-width: 12; stroke-linecap: round; }
+.m-road { fill: none; stroke: var(--road); stroke-width: 9; stroke-linecap: round; }
+.m-minor { fill: none; stroke: var(--road); stroke-width: 5; stroke-linecap: round; }
+.m-sea-lbl { fill: var(--sea-ink); font-size: 14px; font-weight: 600; }
+.m-lbl { fill: var(--muted); font-size: 12px; font-weight: 600; }
+.m-poi { fill: var(--bg); stroke: var(--ink-2); stroke-width: 2; }
+.m-poi-lbl { fill: var(--ink-2); font-size: 13px; font-weight: 600; }
+.m-dot { fill: var(--muted); }
+.m-halo { fill: var(--accent); opacity: .16; }
+.m-pin { fill: var(--accent); }
+.m-pin-dot { fill: var(--bg); }
+.m-tag { fill: var(--ink); }
+.m-tag-lbl { fill: var(--bg); font-size: 13px; font-weight: 600; }
+.m-arrow { fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.map-cap { display: flex; justify-content: space-between; gap: 8px; padding: 8px 12px; font: 500 12px/16px var(--font); color: var(--muted); background: var(--bg); border-top: 1px solid var(--line); }
+.dist { display: grid; gap: 4px; }
+.dist li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px; border-bottom: 1px solid var(--line); font-size: 16px; line-height: 24px; }
+.dist li span:first-child { display: inline-flex; align-items: center; gap: 12px; }
+.dist b { font-weight: 600; white-space: nowrap; }
+.same-bld { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; align-items: center; padding: 12px; border-radius: 16px; background: var(--surface); }
+.same-bld img { width: 96px; height: 72px; object-fit: cover; border-radius: 8px; }
+
+.rules { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 32px; }
+.rules li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; line-height: 24px; }
+.rules .i { color: var(--ink-2); margin-top: 2px; }
+
+.proof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.proof-tile { padding: 24px; border-radius: 16px; border: 1px solid var(--line); display: grid; gap: 4px; align-content: start; }
+.proof-tile b { font: 700 30px/36px var(--font); }
+.proof-tile p { color: var(--muted); font-size: 14px; line-height: 20px; }
+
+/* Booking card */
+.aside { position: sticky; top: calc(96px + env(safe-area-inset-top, 0px)); }
+.book-card { position: relative; padding: 24px; border-radius: 16px; border: 1px solid var(--line); background: var(--bg); box-shadow: var(--shadow); display: grid; gap: 16px; }
+.bc-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.bc-rating { display: inline-flex; align-items: center; gap: 4px; font: 500 14px/20px var(--font); color: var(--ink-2); }
+.bc-rating .i { color: var(--accent); width: 16px; height: 16px; }
+.dates { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.date-field { display: grid; gap: 2px; text-align: start; padding: 8px 12px; background: var(--bg); border: 0; cursor: pointer; transition: background-color .3s var(--ease); }
+.date-field + .date-field { border-inline-start: 1px solid var(--line); }
+.date-field:hover { background: var(--surface); }
+.date-field small { font: 600 12px/16px var(--font); color: var(--muted); }
+.date-field b { font: 600 14px/20px var(--font); }
+.date-field[aria-expanded="true"] { background: var(--surface); }
+.guests { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.guests-label { display: grid; }
+.guests-label b { font: 600 14px/20px var(--font); }
+.guests-label small { font: 500 12px/16px var(--font); color: var(--muted); }
+.stepper { display: inline-flex; align-items: center; gap: 12px; }
+.stepper output { min-width: 16px; text-align: center; font: 600 16px/24px var(--font); }
+.stepper .icon-btn { width: 32px; height: 32px; }
+.bc-note { text-align: center; font: 500 12px/16px var(--font); color: var(--muted); }
+.breakdown { display: grid; gap: 8px; padding-top: 16px; border-top: 1px solid var(--line); }
+.row { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; line-height: 20px; color: var(--ink-2); }
+.row .free { color: var(--ok); font-weight: 600; }
+.row.total { padding-top: 12px; border-top: 1px solid var(--line); font: 700 16px/24px var(--font); color: var(--ink); }
+.empty { display: grid; justify-items: center; text-align: center; gap: 8px; padding: 16px; border-radius: 12px; background: var(--surface); color: var(--muted); font-size: 14px; line-height: 20px; }
+.empty .i { color: var(--ink-2); }
+.popover { position: absolute; top: 140px; inset-inline-end: 0; z-index: 30; width: 704px; max-width: calc(100vw - 64px); padding: 24px; border-radius: 16px; background: var(--bg); border: 1px solid var(--line); box-shadow: 0 24px 64px rgba(23, 18, 15, 0.18); display: grid; gap: 16px; transform-origin: top left; animation: pop .5s var(--ease); }
+.pop-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+@keyframes pop { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* Tagline reveal */
+.tagline { padding-block: 96px; background: var(--surface); }
+.tagline p { max-width: 680px; margin-inline: auto; text-align: center; font-size: 36px; line-height: 40px; font-weight: 700; letter-spacing: -0.01em; }
+.tagline .w { opacity: .35; transition: opacity .6s var(--ease); }
+.tagline .w.on { opacity: 1; }
+
+/* Others */
+.others { padding-block: 80px 48px; }
+.others-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.card { display: grid; gap: 12px; text-decoration: none; min-width: 0; }
+.card .ph { position: relative; aspect-ratio: 4 / 3; max-width: 100%; border-radius: 16px; overflow: hidden; background: var(--surface-2); }
+.card .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+.card:hover .ph img { transform: scale(1.03); }
+.card .ph .badge { position: absolute; top: 12px; inset-inline-start: 12px; background: var(--bg); }
+.card-meta { display: grid; gap: 2px; }
+.card-meta .r1 { display: flex; justify-content: space-between; gap: 8px; font: 600 16px/24px var(--font); }
+.card-meta .r1 span { display: inline-flex; align-items: center; gap: 4px; font: 500 14px/20px var(--font); }
+.card-meta .r1 .i { width: 16px; height: 16px; color: var(--accent); }
+.card-meta p { font-size: 14px; line-height: 20px; color: var(--muted); }
+.card-meta .pr { color: var(--ink); font-weight: 600; }
+.card-meta .ext { display: inline-flex; align-items: center; gap: 4px; font: 600 14px/20px var(--font); color: var(--accent-ink); }
+
+.airbnb-band { padding-block: 32px; }
+.band { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 32px; border-radius: 24px; border: 1px solid var(--line); flex-wrap: wrap; }
+.band > div { display: grid; gap: 4px; min-width: 0; }
+
+/* FAQ */
+.faq { padding-block: 80px; }
+.faq-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 48px; }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 16px; cursor: pointer; font: 600 16px/24px var(--font); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary .i { transition: transform .5s var(--ease); flex: none; }
+.faq details[open] summary .i { transform: rotate(180deg); }
+.faq details p { padding-bottom: 16px; color: var(--ink-2); max-width: 640px; }
+
+/* Final CTA */
+.final { padding-block: 32px 96px; }
+.final-box { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: center; padding: 48px; border-radius: 24px; background: var(--ink); color: var(--bg); }
+.final-box h2 { font-size: 30px; line-height: 36px; }
+.final-box p { color: rgba(255, 255, 255, 0.72); font-size: 18px; line-height: 28px; margin-top: 8px; max-width: 560px; }
+.final-box .assure { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 24px; font: 500 14px/20px var(--font); color: rgba(255, 255, 255, 0.84); }
+.final-box .assure span { display: inline-flex; align-items: center; gap: 8px; }
+.final-cta { display: grid; gap: 8px; justify-items: center; }
+.final-cta .price { color: rgba(255, 255, 255, 0.72); }
+.final-cta .price b { color: #FFFFFF; }
+
+/* Footer */
+footer { border-top: 1px solid var(--line); padding-block: 48px calc(48px + env(safe-area-inset-bottom, 0px)); background: var(--bg); }
+.foot { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
+.foot h3 { font: 600 14px/20px var(--font); color: var(--muted); margin-bottom: 12px; }
+.foot ul { display: grid; gap: 8px; }
+.foot a, .foot button.as-link { font: 500 14px/20px var(--font); text-decoration: none; color: var(--ink-2); background: none; border: 0; padding: 0; cursor: pointer; transition: color .3s var(--ease); }
+.foot a:hover, .foot button.as-link:hover { color: var(--accent-ink); }
+.wa-num { display: inline-flex; align-items: center; gap: 8px; }
+.wa-num code { font: 600 16px/24px var(--font); direction: ltr; unicode-bidi: isolate; user-select: all; }
+.copy-msg { font: 500 12px/16px var(--font); color: var(--ok); }
+.checker { display: block; width: 100%; height: 16px; margin-bottom: 32px; color: var(--ink); }
+.legal { margin-top: 32px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font: 500 12px/16px var(--font); color: var(--muted); }
+
+/* Mobile bar */
+.mbar { display: none; position: fixed; inset-inline: 0; bottom: 0; z-index: 30; background: rgba(255, 255, 255, 0.94); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-top: 1px solid var(--line); padding-top: 12px; padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px)); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); align-items: center; justify-content: space-between; gap: 12px; }
+.mbar .mb-txt { display: grid; min-width: 0; }
+.mbar .mb-txt b { font: 700 16px/24px var(--font); }
+.mbar .mb-txt small { font: 500 12px/16px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Back pill */
+.back-pill { position: fixed; z-index: 32; left: max(16px, env(safe-area-inset-left, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 9999px; background: rgba(255, 255, 255, 0.9); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border: 1px solid var(--line); font: 600 12px/16px var(--font); color: var(--ink-2); text-decoration: none; box-shadow: 0 4px 16px rgba(23, 18, 15, 0.08); transition: transform .5s var(--ease), background-color .3s var(--ease); }
+.back-pill:hover { transform: translateY(-2px); background: #FFFFFF; }
+
+/* Dialogs */
+dialog { border: 0; padding: 0; color: var(--ink); background: var(--bg); }
+dialog::backdrop { background: var(--scrim); }
+.sheet { width: min(760px, calc(100vw - 32px)); max-height: calc(100vh - 48px); border-radius: 24px; box-shadow: 0 32px 80px rgba(23, 18, 15, 0.28); overflow: hidden; }
+.sheet[open] { display: flex; flex-direction: column; animation: sheetIn .5s var(--ease); }
+@keyframes sheetIn { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: none; } }
+.sheet-head { display: grid; gap: 16px; padding: 24px 24px 16px; border-bottom: 1px solid var(--line); }
+.sheet-head .row1 { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.sheet-head h2 { font-size: 20px; line-height: 28px; }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.steps li { display: grid; gap: 8px; font: 600 12px/16px var(--font); color: var(--muted); }
+.steps li::before { content: ""; height: 4px; border-radius: 9999px; background: var(--surface-2); transition: background-color .3s var(--ease); }
+.steps li.done::before, .steps li.cur::before { background: var(--accent); }
+.steps li.cur { color: var(--ink); }
+.sheet-body { overflow-y: auto; padding: 24px; flex: 1; min-height: 0; overscroll-behavior: contain; }
+.step { display: grid; gap: 24px; }
+.step[hidden] { display: none; }
+.sheet-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 24px calc(16px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); background: var(--bg); }
+.sheet-foot .mini { display: grid; min-width: 0; }
+.sheet-foot .mini b { font: 700 16px/24px var(--font); }
+.sheet-foot .mini small { font: 500 12px/16px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sheet-foot .acts { display: flex; gap: 8px; }
+
+.form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { display: grid; gap: 8px; align-content: start; min-width: 0; }
+.field.full { grid-column: 1 / -1; }
+.field label { font: 600 14px/20px var(--font); }
+.field .hint { font: 500 12px/16px var(--font); color: var(--muted); }
+.field input, .field textarea { width: 100%; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); font-size: 16px; line-height: 24px; transition: border-color .3s var(--ease), box-shadow .3s var(--ease); }
+.field input:hover, .field textarea:hover { border-color: #CFC6BF; }
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 4px var(--surface-2); }
+.field input[aria-invalid="true"] { border-color: var(--err); box-shadow: 0 0 0 4px var(--err-tint); }
+.field textarea { min-height: 80px; resize: vertical; }
+.ltr { direction: ltr; text-align: right; }
+.info { display: flex; gap: 12px; align-items: flex-start; padding: 12px 16px; border-radius: 12px; background: var(--surface); font-size: 14px; line-height: 20px; color: var(--ink-2); }
+.info .i { margin-top: 0; color: var(--ink-2); }
+
+.summary { display: grid; gap: 0; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.summary .srow { display: flex; justify-content: space-between; gap: 16px; padding: 12px 16px; font-size: 14px; line-height: 20px; }
+.summary .srow + .srow { border-top: 1px solid var(--line); }
+.summary .srow span:first-child { color: var(--muted); }
+.summary .srow b { font-weight: 600; text-align: end; }
+.terms { border: 1px solid var(--line); border-radius: 16px; }
+.terms summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 16px; font: 600 14px/20px var(--font); }
+.terms summary::-webkit-details-marker { display: none; }
+.terms summary .i { transition: transform .5s var(--ease); }
+.terms[open] summary .i { transform: rotate(180deg); }
+.terms ol { padding: 0 16px 16px; display: grid; gap: 8px; counter-reset: t; }
+.terms li { counter-increment: t; display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 8px; font-size: 14px; line-height: 20px; color: var(--ink-2); }
+.terms li::before { content: counter(t); font-weight: 700; color: var(--accent-ink); font-variant-numeric: tabular-nums; }
+.sig-box { display: grid; gap: 8px; }
+.sig-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.sig-pad { position: relative; height: 160px; border-radius: 16px; border: 1px dashed #CFC6BF; background: var(--surface); overflow: hidden; }
+.sig-pad canvas { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; cursor: crosshair; }
+.sig-pad .ph { position: absolute; inset: auto 0 16px; text-align: center; font: 500 14px/20px var(--font); color: var(--muted); pointer-events: none; transition: opacity .3s var(--ease); }
+.sig-pad .line { position: absolute; inset-inline: 24px; bottom: 48px; height: 1px; background: #CFC6BF; pointer-events: none; }
+.sig-pad.inked .ph { opacity: 0; }
+.sig-pad.invalid { border-color: var(--err); }
+.sig-tools { display: flex; gap: 8px; flex-wrap: wrap; }
+.check { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; font-size: 14px; line-height: 20px; }
+.check input { width: 20px; height: 20px; margin: 0; accent-color: var(--accent); flex: none; }
+
+.success { display: grid; gap: 24px; }
+.success-head { display: grid; justify-items: center; text-align: center; gap: 12px; padding: 24px; border-radius: 16px; background: var(--ok-tint); }
+.success-head .ok-ico { width: 48px; height: 48px; border-radius: 9999px; background: var(--ok); color: #FFFFFF; display: grid; place-items: center; }
+.success-head h3 { font-size: 24px; line-height: 32px; }
+.contract-no { font: 600 16px/24px var(--font); direction: ltr; unicode-bidi: isolate; letter-spacing: .04em; }
+.held-note { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 9999px; background: var(--held-tint); color: var(--held); font: 600 12px/16px var(--font); }
+.next { display: grid; gap: 12px; }
+.next li { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; align-items: start; font-size: 14px; line-height: 20px; }
+.next .n { width: 32px; height: 32px; border-radius: 9999px; background: var(--surface); display: grid; place-items: center; font: 700 14px/20px var(--font); }
+.success-acts { display: flex; gap: 8px; flex-wrap: wrap; }
+.wa-btn { background: #157F3C; color: #FFFFFF; }
+.wa-btn:hover { background: #106631; }
+
+.sk { background: var(--surface-2); border-radius: 8px; animation: pulse 1.4s var(--ease) infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .45; } }
+.sk-cal { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.sk-cal .m { display: grid; gap: 12px; }
+.sk-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
+.sk-grid i { height: 32px; border-radius: 9999px; }
+
+.lightbox { margin: 0; width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh; background: #0E0B09; color: #FFFFFF; }
+.lightbox[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+.lb-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: calc(16px + env(safe-area-inset-top, 0px)); padding-bottom: 16px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); font: 500 14px/20px var(--font); }
+.lb-top .icon-btn, .lb-stage .icon-btn { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.16); color: #FFFFFF; }
+.lb-stage { position: relative; display: grid; place-items: center; min-height: 0; padding-inline: 64px; }
+.lb-stage figure { margin: 0; display: grid; gap: 12px; justify-items: center; max-height: 100%; min-height: 0; }
+.lb-stage img { max-height: calc(100vh - 220px); width: auto; max-width: 100%; object-fit: contain; border-radius: 8px; transition: opacity .3s var(--ease); }
+.lb-stage figcaption { font: 500 14px/20px var(--font); color: rgba(255, 255, 255, 0.72); }
+.lb-prev, .lb-next { position: absolute; top: 50%; transform: translateY(-50%); }
+.lb-prev { right: max(16px, env(safe-area-inset-right, 0px)); }
+.lb-next { left: max(16px, env(safe-area-inset-left, 0px)); }
+.lb-thumbs { display: flex; gap: 8px; justify-content: center; overflow-x: auto; padding-top: 16px; padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px)); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.lb-thumbs button { flex: none; width: 64px; height: 48px; padding: 0; border: 2px solid transparent; border-radius: 8px; overflow: hidden; background: none; cursor: pointer; opacity: .55; transition: opacity .3s var(--ease); }
+.lb-thumbs button[aria-current="true"] { border-color: #FFFFFF; opacity: 1; }
+.lb-thumbs img { width: 100%; height: 100%; object-fit: cover; }
+.lightbox :focus-visible { outline-color: #FFFFFF; }
+
+.doc { width: min(640px, calc(100vw - 32px)); max-height: calc(100vh - 64px); border-radius: 24px; overflow: auto; }
+.doc[open] { display: grid; }
+.doc .doc-in { padding: 32px; display: grid; gap: 16px; }
+.doc .doc-in ol { display: grid; gap: 8px; padding-inline-start: 24px; list-style: decimal; }
+.doc .doc-in li { font-size: 14px; line-height: 20px; color: var(--ink-2); }
+
+/* Reveal (complete at rest: only below-fold elements are hidden, after the first scroll) */
+.pre { opacity: 0; transform: translateY(32px); }
+.reveal-in { transition: opacity .7s var(--ease), transform .7s var(--ease); }
+
+@media (max-width: 1023px) {
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 0; padding-bottom: 32px; }
+  .aside { display: none; }
+  .mbar { display: flex; }
+  .back-pill { bottom: calc(88px + env(safe-area-inset-bottom, 0px)); }
+  footer { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-cta { display: none; }
+}
+@media (max-width: 899px) {
+  .nav-links, .nav-cta { display: none; }
+  .menu-toggle { display: inline-block; }
+  .nav { gap: 24px; }
+}
+@media (max-width: 767px) {
+  .h1 { font-size: 30px; line-height: 36px; }
+  .hl-m { display: block; }
+  .sub { font-size: 16px; line-height: 24px; }
+  .gallery-wrap { margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); margin-top: 24px; }
+  .gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; border-radius: 0; gap: 8px; padding-inline: 16px; scrollbar-width: none; }
+  .gallery::-webkit-scrollbar { display: none; }
+  .g-item { flex: 0 0 86%; aspect-ratio: 4 / 3; max-width: 100%; scroll-snap-align: center; border-radius: 16px; }
+  .g-item:first-child { grid-row: auto; }
+  .show-all { inset-inline-end: 24px; bottom: 12px; }
+  .compare, .benefits, .rules, .proof-grid, .how, .loc { grid-template-columns: minmax(0, 1fr); }
+  .amen { grid-template-columns: 1fr 1fr; }
+  .cal-months { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .cards { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 16px; gap: 16px; margin-inline: -16px; padding-inline: 16px; padding-bottom: 8px; }
+  .card { flex: 0 0 78%; scroll-snap-align: start; }
+  .faq-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .final-box { grid-template-columns: minmax(0, 1fr); padding: 32px 24px; }
+  .final-box h2 { font-size: 24px; line-height: 32px; }
+  .final-cta { justify-items: stretch; }
+  .tagline { padding-block: 64px; }
+  .tagline p { font-size: 30px; line-height: 36px; }
+  .foot { grid-template-columns: minmax(0, 1fr); }
+  .band { padding: 24px; }
+  .sheet { margin: 0; width: 100vw; max-width: 100vw; height: 100%; max-height: 100%; border-radius: 0; }
+  .sheet-head { padding-top: calc(16px + env(safe-area-inset-top, 0px)); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .sheet-body { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .sheet-foot { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .form { grid-template-columns: minmax(0, 1fr); }
+  .lb-stage { padding-inline: 16px; }
+  .lb-prev, .lb-next { top: auto; bottom: 8px; transform: none; }
+  .block { padding-block: 32px; }
+}
+@media (max-width: 380px) {
+  .amen { grid-template-columns: minmax(0, 1fr); }
+  .mbar .btn { padding-inline: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
+  .pre { transform: none; }
+  .tagline .w { opacity: 1; }
+  .mmenu li { transform: none; }
+}
+</style>
+</head>
+<body>
+<!--ICONS--><svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="i-airplane-tilt" viewBox="0 0 256 256" fill="currentColor"><path d="M185.33,114.21l29.14-27.42.17-.17a32,32,0,0,0-45.26-45.26c0,.06-.11.11-.17.17L141.79,70.67l-83-30.2a8,8,0,0,0-8.39,1.86l-24,24a8,8,0,0,0,1.22,12.31l63.89,42.59L76.69,136H56a8,8,0,0,0-5.65,2.34l-24,24A8,8,0,0,0,29,175.42l36.82,14.73,14.7,36.75.06.16a8,8,0,0,0,13.18,2.47l23.87-23.88A8,8,0,0,0,120,200V179.31l14.76-14.76,42.59,63.89a8,8,0,0,0,12.31,1.22l24-24a8,8,0,0,0,1.86-8.39Zm-.07,97.23-42.59-63.88A8,8,0,0,0,136.8,144c-.27,0-.53,0-.79,0a8,8,0,0,0-5.66,2.35l-24,24A8,8,0,0,0,104,176v20.69L90.93,209.76,79.43,181A8,8,0,0,0,75,176.57l-28.74-11.5L59.32,152H80a8,8,0,0,0,5.66-2.34l24-24a8,8,0,0,0-1.22-12.32L44.56,70.74l13.5-13.49,83.22,30.26a8,8,0,0,0,8.56-2L180.78,52.6A16,16,0,0,1,203.4,75.23l-32.87,30.93a8,8,0,0,0-2,8.56l30.26,83.22Z"/></symbol><symbol id="i-arrow-left" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-arrow-up-right" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></symbol><symbol id="i-bathtub" viewBox="0 0 256 256" fill="currentColor"><path d="M240,96H208a8,8,0,0,0-8-8H136a8,8,0,0,0-8,8H64V52A12,12,0,0,1,76,40a12.44,12.44,0,0,1,12.16,9.59,8,8,0,0,0,15.68-3.18A28.32,28.32,0,0,0,76,24,28,28,0,0,0,48,52V96H16a8,8,0,0,0-8,8v40a56.06,56.06,0,0,0,56,56v16a8,8,0,0,0,16,0V200h96v16a8,8,0,0,0,16,0V200a56.06,56.06,0,0,0,56-56V104A8,8,0,0,0,240,96Zm-48,8v32H144V104Zm40,40a40,40,0,0,1-40,40H64a40,40,0,0,1-40-40V112H128v32a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V112h24Z"/></symbol><symbol id="i-bed" viewBox="0 0 256 256" fill="currentColor"><path d="M216,72H32V48a8,8,0,0,0-16,0V208a8,8,0,0,0,16,0V176H240v32a8,8,0,0,0,16,0V112A40,40,0,0,0,216,72ZM32,88h72v72H32Zm88,72V88h96a24,24,0,0,1,24,24v48Z"/></symbol><symbol id="i-buildings" viewBox="0 0 256 256" fill="currentColor"><path d="M240,208H224V96a16,16,0,0,0-16-16H144V32a16,16,0,0,0-24.88-13.32L39.12,72A16,16,0,0,0,32,85.34V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM208,96V208H144V96ZM48,85.34,128,32V208H48ZM112,112v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm-32,0v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm0,56v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Zm32,0v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-calendar-blank" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256" fill="currentColor"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-check-circle" viewBox="0 0 256 256" fill="currentColor"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></symbol><symbol id="i-clock" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="i-coffee" viewBox="0 0 256 256" fill="currentColor"><path d="M80,56V24a8,8,0,0,1,16,0V56a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,120,64Zm32,0a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,152,64Zm96,56v8a40,40,0,0,1-37.51,39.91,96.59,96.59,0,0,1-27,40.09H208a8,8,0,0,1,0,16H32a8,8,0,0,1,0-16H56.54A96.3,96.3,0,0,1,24,136V88a8,8,0,0,1,8-8H208A40,40,0,0,1,248,120ZM200,96H40v40a80.27,80.27,0,0,0,45.12,72h69.76A80.27,80.27,0,0,0,200,136Zm32,24a24,24,0,0,0-16-22.62V136a95.78,95.78,0,0,1-1.2,15A24,24,0,0,0,232,128Z"/></symbol><symbol id="i-compass" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM172.42,72.84l-64,32a8.05,8.05,0,0,0-3.58,3.58l-32,64A8,8,0,0,0,80,184a8.1,8.1,0,0,0,3.58-.84l64-32a8.05,8.05,0,0,0,3.58-3.58l32-64a8,8,0,0,0-10.74-10.74ZM138,138,97.89,158.11,118,118l40.15-20.07Z"/></symbol><symbol id="i-cooking-pot" viewBox="0 0 256 256" fill="currentColor"><path d="M88,48V16a8,8,0,0,1,16,0V48a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V16a8,8,0,0,0-16,0V48A8,8,0,0,0,128,56Zm32,0a8,8,0,0,0,8-8V16a8,8,0,0,0-16,0V48A8,8,0,0,0,160,56Zm92.8,46.4L224,124v60a32,32,0,0,1-32,32H64a32,32,0,0,1-32-32V124L3.2,102.4a8,8,0,0,1,9.6-12.8L32,104V80a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8v24l19.2-14.4a8,8,0,0,1,9.6,12.8ZM208,88H48v96a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16Z"/></symbol><symbol id="i-copy" viewBox="0 0 256 256" fill="currentColor"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></symbol><symbol id="i-door-open" viewBox="0 0 256 256" fill="currentColor"><path d="M232,216H208V40a16,16,0,0,0-16-16H64A16,16,0,0,0,48,40V216H24a8,8,0,0,0,0,16H232a8,8,0,0,0,0-16Zm-40,0H176V40h16ZM64,40h96V216H64Zm80,92a12,12,0,1,1-12-12A12,12,0,0,1,144,132Z"/></symbol><symbol id="i-frame-corners" viewBox="0 0 256 256" fill="currentColor"><path d="M200,80v32a8,8,0,0,1-16,0V88H160a8,8,0,0,1,0-16h32A8,8,0,0,1,200,80ZM96,168H72V144a8,8,0,0,0-16,0v32a8,8,0,0,0,8,8H96a8,8,0,0,0,0-16ZM232,56V200a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56ZM216,200V56H40V200H216Z"/></symbol><symbol id="i-hourglass" viewBox="0 0 256 256" fill="currentColor"><path d="M200,75.64V40a16,16,0,0,0-16-16H72A16,16,0,0,0,56,40V76a16.07,16.07,0,0,0,6.4,12.8L114.67,128,62.4,167.2A16.07,16.07,0,0,0,56,180v36a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V180.36a16.09,16.09,0,0,0-6.35-12.77L141.27,128l52.38-39.6A16.05,16.05,0,0,0,200,75.64ZM184,216H72V180l56-42,56,42.35Zm0-140.36L128,118,72,76V40H184Z"/></symbol><symbol id="i-images" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H72A16,16,0,0,0,56,56V72H40A16,16,0,0,0,24,88V200a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V184h16a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM72,56H216v62.75l-10.07-10.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L72,109.37ZM184,200H40V88H56v80a16,16,0,0,0,16,16H184Zm32-32H72V132l36-36,49.66,49.66a8,8,0,0,0,11.31,0L194.63,120,216,141.38V168ZM160,84a12,12,0,1,1,12,12A12,12,0,0,1,160,84Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-lightning" viewBox="0 0 256 256" fill="currentColor"><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"/></symbol><symbol id="i-lock-key" viewBox="0 0 256 256" fill="currentColor"><path d="M128,112a28,28,0,0,0-8,54.83V184a8,8,0,0,0,16,0V166.83A28,28,0,0,0,128,112Zm0,40a12,12,0,1,1,12-12A12,12,0,0,1,128,152Zm80-72H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Z"/></symbol><symbol id="i-map-pin" viewBox="0 0 256 256" fill="currentColor"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></symbol><symbol id="i-minus" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-receipt" viewBox="0 0 256 256" fill="currentColor"><path d="M72,104a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,104Zm8,40h96a8,8,0,0,0,0-16H80a8,8,0,0,0,0,16ZM232,56V208a8,8,0,0,1-11.58,7.15L192,200.94l-28.42,14.21a8,8,0,0,1-7.16,0L128,200.94,99.58,215.15a8,8,0,0,1-7.16,0L64,200.94,35.58,215.15A8,8,0,0,1,24,208V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-16,0H40V195.06l20.42-10.22a8,8,0,0,1,7.16,0L96,199.06l28.42-14.22a8,8,0,0,1,7.16,0L160,199.06l28.42-14.22a8,8,0,0,1,7.16,0L216,195.06Z"/></symbol><symbol id="i-seal-check" viewBox="0 0 256 256" fill="currentColor"><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"/></symbol><symbol id="i-shield-check" viewBox="0 0 256 256" fill="currentColor"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></symbol><symbol id="i-snowflake" viewBox="0 0 256 256" fill="currentColor"><path d="M223.77,150.09a8,8,0,0,1-5.86,9.68l-24.64,6,6.46,24.11a8,8,0,0,1-5.66,9.8A8.25,8.25,0,0,1,192,200a8,8,0,0,1-7.72-5.93l-7.72-28.8L136,141.86v46.83l21.66,21.65a8,8,0,0,1-11.32,11.32L128,203.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L120,188.69V141.86L79.45,165.27l-7.72,28.8A8,8,0,0,1,64,200a8.25,8.25,0,0,1-2.08-.27,8,8,0,0,1-5.66-9.8l6.46-24.11-24.64-6a8,8,0,0,1,3.82-15.54l29.45,7.23L112,128,71.36,104.54l-29.45,7.23A7.85,7.85,0,0,1,40,112a8,8,0,0,1-1.91-15.77l24.64-6L56.27,66.07a8,8,0,0,1,15.46-4.14l7.72,28.8L120,114.14V67.31L98.34,45.66a8,8,0,0,1,11.32-11.32L128,52.69l18.34-18.35a8,8,0,0,1,11.32,11.32L136,67.31v46.83l40.55-23.41,7.72-28.8a8,8,0,0,1,15.46,4.14l-6.46,24.11,24.64,6A8,8,0,0,1,216,112a7.85,7.85,0,0,1-1.91-.23l-29.45-7.23L144,128l40.64,23.46,29.45-7.23A8,8,0,0,1,223.77,150.09Z"/></symbol><symbol id="i-sparkle" viewBox="0 0 256 256" fill="currentColor"><path d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z"/></symbol><symbol id="i-stairs" viewBox="0 0 256 256" fill="currentColor"><path d="M200,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24ZM152,144h48v24H112V144Zm8-16V104h40v24Zm40-88V88H152a8,8,0,0,0-8,8v32H104a8,8,0,0,0-8,8v32H56V40Zm0,176H56V184H200v32Z"/></symbol><symbol id="i-star-fill" viewBox="0 0 256 256" fill="currentColor"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></symbol><symbol id="i-storefront" viewBox="0 0 256 256" fill="currentColor"><path d="M232,96a7.89,7.89,0,0,0-.3-2.2L217.35,43.6A16.07,16.07,0,0,0,202,32H54A16.07,16.07,0,0,0,38.65,43.6L24.31,93.8A7.89,7.89,0,0,0,24,96h0v16a40,40,0,0,0,16,32v72a8,8,0,0,0,8,8H208a8,8,0,0,0,8-8V144a40,40,0,0,0,16-32V96ZM54,48H202l11.42,40H42.61Zm50,56h48v8a24,24,0,0,1-48,0Zm-16,0v8a24,24,0,0,1-35.12,21.26,7.88,7.88,0,0,0-1.82-1.06A24,24,0,0,1,40,112v-8ZM200,208H56V151.2a40.57,40.57,0,0,0,8,.8,40,40,0,0,0,32-16,40,40,0,0,0,64,0,40,40,0,0,0,32,16,40.57,40.57,0,0,0,8-.8Zm4.93-75.8a8.08,8.08,0,0,0-1.8,1.05A24,24,0,0,1,168,112v-8h48v8A24,24,0,0,1,204.93,132.2Z"/></symbol><symbol id="i-television" viewBox="0 0 256 256" fill="currentColor"><path d="M216,64H147.31l34.35-34.34a8,8,0,1,0-11.32-11.32L128,60.69,85.66,18.34A8,8,0,0,0,74.34,29.66L108.69,64H40A16,16,0,0,0,24,80V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V80A16,16,0,0,0,216,64ZM40,80H144V200H40ZM216,200H160V80h56V200Zm-16-84a12,12,0,1,1-12-12A12,12,0,0,1,200,116Zm0,48a12,12,0,1,1-12-12A12,12,0,0,1,200,164Z"/></symbol><symbol id="i-users" viewBox="0 0 256 256" fill="currentColor"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"/></symbol><symbol id="i-warning-circle" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z"/></symbol><symbol id="i-washing-machine" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM128,64a64,64,0,1,0,64,64A64.07,64.07,0,0,0,128,64Zm0,112a48,48,0,1,1,48-48A48.05,48.05,0,0,1,128,176ZM200,68a12,12,0,1,1-12-12A12,12,0,0,1,200,68Zm-74.34,49.66-16,16a8,8,0,0,1-11.32-11.32l16-16a8,8,0,0,1,11.32,11.32Zm32-3.32a8,8,0,0,1,0,11.32l-32,32a8,8,0,0,1-11.32-11.32l32-32A8,8,0,0,1,157.66,114.34Z"/></symbol><symbol id="i-whatsapp-logo" viewBox="0 0 256 256" fill="currentColor"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol></svg><!--/ICONS-->
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+
+<header class="nav-wrap">
+  <nav class="nav" aria-label="التنقل الرئيسي">
+    <a class="logo" href="#top" aria-label="sh.apartment، أعلى الصفحة">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="9.5" y="12" width="5" height="5" rx="1" fill="currentColor"/></svg>
+      <span dir="ltr"><b>sh.</b>apartment</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#photos" data-sec="photos">الصور</a></li>
+      <li><a href="#details" data-sec="details">التفاصيل</a></li>
+      <li><a href="#availability" data-sec="availability">التوفر</a></li>
+      <li><a href="#location" data-sec="location">الموقع</a></li>
+      <li><a href="#faq" data-sec="faq">الأسئلة</a></li>
+    </ul>
+    <button class="btn btn-primary btn-sm nav-cta" type="button" data-open-book>احجز هذه التواريخ</button>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mmenu" aria-label="فتح القائمة"><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="mmenu" id="mmenu" hidden>
+  <ul>
+    <li><a class="mlink" href="#photos" data-sec="photos">الصور <svg class="i i-dir" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+    <li><a class="mlink" href="#details" data-sec="details">التفاصيل <svg class="i i-dir" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+    <li><a class="mlink" href="#availability" data-sec="availability">التوفر <svg class="i i-dir" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+    <li><a class="mlink" href="#location" data-sec="location">الموقع <svg class="i i-dir" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+    <li><a class="mlink" href="#faq" data-sec="faq">الأسئلة <svg class="i i-dir" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+    <li><button class="btn btn-primary btn-block" type="button" data-open-book>احجز هذه التواريخ</button></li>
+  </ul>
+</div>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="title">
+    <div class="container">
+      <p class="crumbs"><svg class="i i-sm" aria-hidden="true"><use href="#i-map-pin"/></svg> جدة · حي النهضة · طريق الملك</p>
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1 class="h1 grad" id="title"><span class="hl">استديو ميد سنشري</span> <span class="hl">بجاكوزي وسينما <span class="hl-m">على طريق الملك</span></span></h1>
+          <p class="sub">سرير علوي، وكنبة تتحول إلى مقعد سينمائي أمام شاشة 75 بوصة، وجاكوزي دافئ.<br>على بعد دقائق من الكورنيش والردسي مول.</p>
+          <p class="proof">
+            <span class="star" aria-hidden="true"><svg class="i i-sm"><use href="#i-star-fill"/></svg></span>
+            <span><b class="num">4.90</b> من <span class="num">105</span> تقييمات على Airbnb</span>
+            <span class="sep" aria-hidden="true"></span>
+            <span class="badge"><svg class="i i-sm" aria-hidden="true"><use href="#i-seal-check"/></svg> مضيف متميز</span>
+          </p>
+        </div>
+        <div class="hero-cta">
+          <p class="price"><b class="num">349</b> ر.س / ليلة</p>
+          <p class="t-xs muted">الخميس والجمعة 419 ر.س · بلا رسوم خدمة</p>
+          <button class="btn btn-primary btn-block" type="button" data-open-book>احجز هذه التواريخ</button>
+          <p class="sync"><span class="dot" aria-hidden="true"></span> التقويم متزامن مع Airbnb</p>
+        </div>
+      </div>
+
+      <div class="gallery-wrap" id="photos">
+        <div class="gallery" aria-label="صور الاستديو">
+          <button class="g-item" type="button" data-photo="0"><img src="../photos/midcentury-1-living.jpg" alt="الصالة والسرير العلوي في استديو ميد سنشري" width="1400" height="931" fetchpriority="high"></button>
+          <button class="g-item" type="button" data-photo="2"><img src="../photos/midcentury-3-neon-night.jpg" alt="إضاءة النيون البنفسجية ليلاً فوق الصالة" width="787" height="1400"></button>
+          <button class="g-item" type="button" data-photo="4"><img src="../photos/midcentury-5-bath-jacuzzi.jpg" alt="الحمام مع الجاكوزي" width="1400" height="931"></button>
+          <button class="g-item" type="button" data-photo="1"><img src="../photos/midcentury-2-living-art.jpg" alt="ركن الشاشة ولوحات جدة على الجدار" width="1400" height="931"></button>
+          <button class="g-item" type="button" data-photo="3"><img src="../photos/midcentury-4-kitchen.jpg" alt="ركن المطبخ بالغلاية الحمراء" width="1400" height="932"></button>
+        </div>
+        <button class="btn btn-secondary btn-sm show-all" type="button" data-photo="0"><svg class="i i-sm" aria-hidden="true"><use href="#i-images"/></svg> عرض كل الصور (7)</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="container layout" id="details">
+    <div class="content">
+
+      <section class="block" aria-labelledby="facts-h">
+        <h2 class="sr" id="facts-h">معلومات سريعة</h2>
+        <ul class="facts">
+          <li class="fact"><svg class="i" aria-hidden="true"><use href="#i-stairs"/></svg> استديو بسرير علوي</li>
+          <li class="fact"><svg class="i" aria-hidden="true"><use href="#i-bed"/></svg> سرير واحد</li>
+          <li class="fact"><svg class="i" aria-hidden="true"><use href="#i-bathtub"/></svg> حمام بجاكوزي</li>
+          <li class="fact"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg> حتى 3 ضيوف</li>
+          <li class="fact"><svg class="i" aria-hidden="true"><use href="#i-lock-key"/></svg> دخول ذاتي</li>
+        </ul>
+        <div class="host">
+          <span class="avatar" aria-hidden="true">س</span>
+          <div>
+            <p class="t-base"><b>المضيف سلطان</b></p>
+            <p class="t-sm muted">مضيف متميز على Airbnb، يستضيف منذ نحو سنتين</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" aria-labelledby="about-h">
+        <h2 class="h2" id="about-h">عن الاستديو</h2>
+        <p class="lead">استديو دافئ بتصميم فريد مستوحى من الخمسينيات والستينيات: سجادة بمربعات الشطرنج، لمسات برتقالية، وإضاءة نيون للمساء. الكنبة تتحول إلى مقعد سينمائي أمام شاشة 75 بوصة، والسرير في دور علوي فوق الصالة، وفي الحمام جاكوزي دافئ.</p>
+        <p class="t-base muted">في حي النهضة على طريق الملك، شريان جدة الرئيسي. بجانب الكورنيش وأفخم المولات والمطاعم، وقريب من المطار.</p>
+      </section>
+
+      <section class="block" aria-labelledby="ps-h">
+        <p class="eyebrow">الحجز المباشر</p>
+        <h2 class="h2" id="ps-h">بلا رسائل طويلة، وبلا رسوم خدمة</h2>
+        <div class="compare">
+          <div class="before">
+            <span class="tag">الطريقة المعتادة</span>
+            <ul>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-x"/></svg> رسائل كثيرة لتعرف إن كانت التواريخ متاحة</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-x"/></svg> صور هوية ترسلها في المحادثة</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-x"/></svg> رسوم خدمة فوق سعر الليلة</li>
+            </ul>
+          </div>
+          <div class="now">
+            <span class="tag">مع sh.apartment</span>
+            <ul>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg> تقويم متزامن مع Airbnb، ترى المتاح فوراً</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg> عقد إلكتروني توقّعه بإصبعك من جوالك</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg> سعر الليلة نفسه، و0 ر.س رسوم خدمة</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" aria-labelledby="ben-h">
+        <h2 class="h2" id="ben-h">ما الذي ستستمتع به</h2>
+        <ul class="benefits">
+          <li class="benefit"><span class="ico"><svg class="i i-lg" aria-hidden="true"><use href="#i-television"/></svg></span><div><h3>سهرة سينما بلا مغادرة</h3><p>الكنبة تتحول إلى مقعد سينمائي أمام شاشة 75 بوصة.</p></div></li>
+          <li class="benefit"><span class="ico"><svg class="i i-lg" aria-hidden="true"><use href="#i-bathtub"/></svg></span><div><h3>استرخاء بعد يوم طويل</h3><p>جاكوزي دافئ في الحمام، وإضاءة هادئة للمساء.</p></div></li>
+          <li class="benefit"><span class="ico"><svg class="i i-lg" aria-hidden="true"><use href="#i-lock-key"/></svg></span><div><h3>تدخل وقتما تصل</h3><p>قفل ذكي ودخول ذاتي من الساعة 4:00 مساءً، بلا انتظار مفاتيح.</p></div></li>
+          <li class="benefit"><span class="ico"><svg class="i i-lg" aria-hidden="true"><use href="#i-map-pin"/></svg></span><div><h3>البحر والمولات قريبة</h3><p>الردسي مول على نحو 2.4 كم، والكورنيش على نحو 3 كم.</p></div></li>
+        </ul>
+      </section>
+
+      <section class="block" aria-labelledby="amen-h">
+        <h2 class="h2" id="amen-h">المرافق</h2>
+        <ul class="amen">
+          <li><svg class="i" aria-hidden="true"><use href="#i-bathtub"/></svg> جاكوزي</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-television"/></svg> شاشة 75 بوصة</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-frame-corners"/></svg> كنبة سينمائية</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-stairs"/></svg> سرير علوي بدرج</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-coffee"/></svg> مكينة قهوة بالكبسولات</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-cooking-pot"/></svg> ركن مطبخ وغلاية</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-washing-machine"/></svg> غسالة ملابس</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-snowflake"/></svg> تكييف</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-sparkle"/></svg> إضاءة نيون للمساء</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-lightning"/></svg> منافذ شحن USB</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-lock-key"/></svg> قفل ذكي</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg> طفاية حريق</li>
+        </ul>
+      </section>
+
+      <section class="block" id="availability" aria-labelledby="av-h">
+        <div class="cal-head">
+          <div>
+            <h2 class="h2" id="av-h">التوفر</h2>
+            <p class="sync" style="margin-top:8px"><span class="dot" aria-hidden="true"></span> التقويم متزامن مع Airbnb · آخر تحديث قبل 6 دقائق</p>
+          </div>
+        </div>
+        <div class="cal-host" data-months="2"></div>
+      </section>
+
+      <section class="block" aria-labelledby="how-h">
+        <h2 class="h2" id="how-h">كيف يتم الحجز المباشر</h2>
+        <ol class="how">
+          <li><span class="n">1</span><h3>اختر التواريخ</h3><p>الأيام المشطوبة محجوزة على Airbnb أو هنا، فلا تختار ليلة غير متاحة.</p></li>
+          <li><span class="n">2</span><h3>وقّع العقد من جوالك</h3><p>اكتب بياناتك ووقّع بإصبعك. يأخذ ذلك دقيقتين تقريباً.</p></li>
+          <li><span class="n">3</span><h3>أكّد على واتساب</h3><p>أرسل العقد للمالك، فيؤكد التواريخ ويرسل لك طريقة الدفع.</p></li>
+        </ol>
+      </section>
+
+      <section class="block" id="location" aria-labelledby="loc-h">
+        <h2 class="h2" id="loc-h">الموقع</h2>
+        <div class="loc">
+          <figure class="map" style="margin:0">
+            <svg viewBox="0 0 600 440" role="img" aria-labelledby="map-t">
+              <title id="map-t">خريطة توضيحية لشمال جدة: الاستديو في حي النهضة على طريق الملك، والردسي مول غربه، والمطار شماله الشرقي، والبحر الأحمر غرباً.</title>
+              <rect class="m-land" width="600" height="440"/>
+              <path class="m-sea" d="M0 0 H104 C110 60 100 110 112 170 C120 220 114 280 124 330 C130 380 126 410 132 440 H0 Z"/>
+              <path class="m-coast" d="M104 0 C110 60 100 110 112 170 C120 220 114 280 124 330 C130 380 126 410 132 440"/>
+              <path class="m-corn" d="M118 0 C124 60 114 110 126 170 C134 220 128 280 138 330 C144 380 140 410 146 440"/>
+              <path class="m-edge" d="M246 0 C250 150 254 260 258 335 S262 420 263 440"/>
+              <path class="m-road" d="M246 0 C250 150 254 260 258 335 S262 420 263 440"/>
+              <path class="m-edge" d="M388 0 C392 150 396 300 398 440"/>
+              <path class="m-road" d="M388 0 C392 150 396 300 398 440"/>
+              <path class="m-minor" d="M126 236 C200 240 300 244 600 250"/>
+              <text class="m-sea-lbl" x="44" y="210" text-anchor="middle">البحر الأحمر</text>
+              <text class="m-lbl" x="152" y="120" transform="rotate(84 152 120)">الكورنيش</text>
+              <text class="m-lbl" x="236" y="120" transform="rotate(86 236 120)">طريق الملك</text>
+              <text class="m-lbl" x="378" y="300" transform="rotate(87 378 300)">طريق المدينة</text>
+              <circle class="m-poi" cx="181" cy="266" r="7"/>
+              <text class="m-poi-lbl" x="181" y="292" text-anchor="middle">الردسي مول</text>
+              <circle class="m-poi" cx="384" cy="34" r="7"/>
+              <text class="m-poi-lbl" x="470" y="38" text-anchor="middle">مطار الملك عبدالعزيز</text>
+              <circle class="m-dot" cx="390" cy="388" r="5"/>
+              <text class="m-lbl" x="470" y="392" text-anchor="middle">شقة طريق المدينة</text>
+              <circle class="m-halo" cx="258" cy="335" r="22"/>
+              <path class="m-pin" d="M258 335 c-11 -13 -16 -21 -16 -29 a16 16 0 0 1 32 0 c0 8 -5 16 -16 29 z"/>
+              <circle class="m-pin-dot" cx="258" cy="306" r="6"/>
+              <rect class="m-tag" x="276" y="300" width="112" height="28" rx="14"/>
+              <text class="m-tag-lbl" x="332" y="319" text-anchor="middle">الاستديو هنا</text>
+              <text class="m-lbl" x="330" y="412" text-anchor="middle">جنوباً: النافورة والبلد</text>
+              <path class="m-arrow" d="M322 420 l8 8 l8 -8"/>
+            </svg>
+            <figcaption class="map-cap"><span>خريطة توضيحية</span><span>حي النهضة · طريق الملك</span></figcaption>
+          </figure>
+          <div style="display:grid;gap:16px;min-width:0">
+            <ul class="dist" id="distList" aria-label="المسافات التقريبية"></ul>
+            <p class="t-xs muted">مسافات تقريبية بخط مستقيم من الاستديو.</p>
+            <div class="same-bld">
+              <img src="../photos/midcentury-7-building.jpg" alt="واجهة المبنى في حي النهضة" width="1400" height="933">
+              <div>
+                <p class="t-sm"><b>قادم مع مجموعة أكبر؟</b></p>
+                <p class="t-sm muted">في المبنى نفسه شقتان أخريان: كوزي هوم والجناح الفاخر.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" aria-labelledby="rules-h">
+        <h2 class="h2" id="rules-h">قواعد الإقامة</h2>
+        <ul class="rules">
+          <li><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg> <span>الدخول من الساعة 4:00 مساءً</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-door-open"/></svg> <span>المغادرة حتى الساعة 12:00 ظهراً</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-x"/></svg> <span>يُمنع التدخين بجميع أنواعه، بما فيها السجائر الإلكترونية والشيشة، ويُمنع إشعال الفحم</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-info"/></svg> <span>لا حيوانات أليفة إلا بإذن مسبق</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-users"/></svg> <span>الالتزام بالهدوء واحترام خصوصية الجيران</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg> <span>أي تلف أو فقد خلال الإقامة يتحمله النزيل</span></li>
+        </ul>
+      </section>
+
+      <section class="block" aria-labelledby="proof-h">
+        <h2 class="h2" id="proof-h">ماذا يقول الضيوف</h2>
+        <div class="proof-grid">
+          <div class="proof-tile"><b class="num">4.90</b><p>تقييم هذا الاستديو على Airbnb من 105 ضيوف</p></div>
+          <div class="proof-tile"><b class="num">4.83</b><p>متوسط شقق sh.apartment السبع من 517 تقييماً</p></div>
+          <div class="proof-tile"><b><svg class="i i-lg" aria-hidden="true" style="color:var(--accent)"><use href="#i-seal-check"/></svg></b><p>سلطان مضيف متميز على Airbnb</p></div>
+        </div>
+        <a class="link" href="https://ar.airbnb.com/rooms/1548537821036118490" target="_blank" rel="noopener">اقرأ التقييمات الـ105 على Airbnb</a>
+      </section>
+    </div>
+
+    <aside class="aside" aria-label="الحجز">
+      <div class="book-card" id="bookCard">
+        <div class="bc-top">
+          <p class="price"><b class="num">349</b> ر.س / ليلة</p>
+          <span class="bc-rating"><svg class="i" aria-hidden="true"><use href="#i-star-fill"/></svg> <span class="num">4.90</span> · <span class="num">105</span></span>
+        </div>
+        <div class="dates" role="group" aria-label="تواريخ الإقامة">
+          <button class="date-field" type="button" id="ciBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="calPop"><small>الدخول</small><b id="ciTxt">أضف تاريخاً</b></button>
+          <button class="date-field" type="button" id="coBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="calPop"><small>المغادرة</small><b id="coTxt">أضف تاريخاً</b></button>
+        </div>
+        <div class="popover" id="calPop" role="dialog" aria-label="اختر التواريخ" hidden>
+          <div class="cal-host" data-months="2"></div>
+          <div class="pop-foot">
+            <button class="btn btn-secondary btn-sm" type="button" data-clear>مسح التواريخ</button>
+            <button class="btn btn-primary btn-sm" type="button" data-pop-close>تم</button>
+          </div>
+        </div>
+        <div class="guests">
+          <div class="guests-label"><b>الضيوف</b><small>الحد الأقصى 3</small></div>
+          <div class="stepper">
+            <button class="icon-btn" type="button" data-g="-1" aria-label="ضيف أقل"><svg class="i i-sm" aria-hidden="true"><use href="#i-minus"/></svg></button>
+            <output class="g-out" aria-live="polite">2</output>
+            <button class="icon-btn" type="button" data-g="1" aria-label="ضيف أكثر"><svg class="i i-sm" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </div>
+        </div>
+        <p class="err" id="bcErr" role="alert" hidden></p>
+        <button class="btn btn-primary btn-block" type="button" data-open-book>احجز هذه التواريخ</button>
+        <p class="bc-note">لن تدفع الآن. يؤكد المالك التواريخ أولاً.</p>
+        <div class="breakdown" data-breakdown></div>
+        <p class="sync"><span class="dot" aria-hidden="true"></span> متزامن مع Airbnb · آخر تحديث قبل 6 دقائق</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="tagline" aria-label="خلاصة">
+    <div class="container">
+      <p id="taglineText">سهرة سينما، وجاكوزي دافئ،<br>والكورنيش على بعد دقائق.<br>وكل ذلك بحجز مباشر بلا رسوم.</p>
+    </div>
+  </section>
+
+  <section class="others" aria-labelledby="others-h">
+    <div class="container">
+      <div class="others-head">
+        <div>
+          <p class="eyebrow">sh.apartment في جدة</p>
+          <h2 class="h2" id="others-h">شقق أخرى قد تناسبك</h2>
+        </div>
+        <p class="t-sm muted">7 شقق · 4.83 من 517 تقييماً</p>
+      </div>
+      <div class="cards" id="otherCards"></div>
+    </div>
+  </section>
+
+  <section class="airbnb-band" aria-labelledby="ab-h">
+    <div class="container">
+      <div class="band">
+        <div>
+          <h2 class="h3" id="ab-h">تفضّل الحجز عبر Airbnb؟</h2>
+          <p class="t-base muted">الاستديو نفسه متاح هناك بالتقويم نفسه وتقييماته الـ105.</p>
+        </div>
+        <a class="btn btn-secondary" href="https://ar.airbnb.com/rooms/1548537821036118490" target="_blank" rel="noopener">افتح الاستديو على Airbnb <svg class="i i-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-h">
+    <div class="container faq-grid">
+      <div>
+        <h2 class="h2" id="faq-h">أسئلة قبل الحجز</h2>
+        <p class="t-base muted" style="margin-top:12px">لم تجد إجابتك؟ راسلنا على واتساب <span dir="ltr" class="num">+966 50 489 5569</span></p>
+      </div>
+      <div>
+        <details><summary>كيف يتم الدخول؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><p>الدخول ذاتي بقفل ذكي من الساعة 4:00 مساءً. تصلك تعليمات الدخول على واتساب قبل وصولك.</p></details>
+        <details><summary>ما الفرق بين الحجز المباشر وAirbnb؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><p>الاستديو نفسه والتقويم نفسه. في الحجز المباشر لا توجد رسوم خدمة وتتعامل مع المالك مباشرة. في Airbnb تحصل على نظام الدفع والدعم الخاص به. اختر ما يناسبك.</p></details>
+        <details><summary>هل أدفع على الموقع؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><p>لا. بعد التوقيع تُحجز التواريخ لك مبدئياً، ثم يؤكدها المالك على واتساب ويرسل طريقة الدفع. يُؤكَّد الحجز بعد سداد المبلغ المتفق عليه.</p></details>
+        <details><summary>ما البيانات المطلوبة للعقد؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><p>الاسم الكامل كما في الهوية، والجنسية، ورقم الهوية أو الإقامة أو الجواز، ورقم الجوال. أسماء المرافقين اختيارية.</p></details>
+        <details><summary>هل تُحفظ بياناتي في الموقع؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><p>لا تُحفظ بيانات الهوية في الموقع. تُستخدم لإنشاء ملف العقد على جهازك، ويصل الطلب للمالك لتأكيد التواريخ.</p></details>
+        <details><summary>ما سياسة الإلغاء؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><p>تتفق عليها مع المالك قبل الدفع، وتُكتب في العقد. لا يُطلب منك أي مبلغ قبل التأكيد.</p></details>
+        <details><summary>هل يناسب الاستديو الأطفال؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><p>يتسع حتى 3 ضيوف. السرير في دور علوي يُصعد إليه بدرج، فانتبه مع الأطفال الصغار.</p></details>
+        <details><summary>هل يمكن الدخول المبكر أو المغادرة المتأخرة؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><p>حسب التقويم. اسأل على واتساب، وقد تترتب رسوم إضافية على التأخير بعد موافقة المالك.</p></details>
+        <details><summary>هل التدخين مسموح؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><p>لا. يُمنع التدخين بجميع أنواعه داخل الاستديو، بما فيها السجائر الإلكترونية والشيشة، ويُمنع إشعال الفحم.</p></details>
+        <details><summary>هل التقويم دقيق؟ <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary><p>التقويم متزامن مع Airbnb، فأي حجز هناك يُغلق التواريخ هنا. ويؤكد المالك التوفر النهائي بعد طلبك.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="final-h">
+    <div class="container">
+      <div class="final-box">
+        <div>
+          <h2 id="final-h">لا دفع قبل أن يؤكد المالك</h2>
+          <p>اختر تواريخك ووقّع العقد من جوالك. تُحجز الليالي لك مبدئياً، ولا تدفع شيئاً حتى يصلك التأكيد على واتساب.</p>
+          <div class="assure">
+            <span><svg class="i i-sm" aria-hidden="true"><use href="#i-check-circle"/></svg> 0 ر.س رسوم خدمة</span>
+            <span><svg class="i i-sm" aria-hidden="true"><use href="#i-check-circle"/></svg> تقويم متزامن مع Airbnb</span>
+            <span><svg class="i i-sm" aria-hidden="true"><use href="#i-check-circle"/></svg> عقد واضح البنود</span>
+          </div>
+        </div>
+        <div class="final-cta">
+          <p class="price"><b class="num">349</b> ر.س / ليلة</p>
+          <button class="btn btn-primary" type="button" data-open-book>احجز هذه التواريخ</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <svg class="checker" aria-hidden="true">
+      <defs><pattern id="chk" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="currentColor"/><rect x="8" y="8" width="8" height="8" fill="currentColor"/></pattern></defs>
+      <rect width="100%" height="16" fill="url(#chk)"/>
+    </svg>
+    <div class="foot">
+      <div style="display:grid;gap:12px;align-content:start">
+        <a class="logo" href="#top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="9.5" y="12" width="5" height="5" rx="1" fill="currentColor"/></svg><span dir="ltr"><b>sh.</b>apartment</span></a>
+        <p class="t-sm muted">راحتك أولويتنا. سبع شقق مفروشة في جدة.</p>
+        <div class="wa-num"><code>+966 50 489 5569</code> <button class="icon-btn" type="button" id="copyNum" aria-label="نسخ الرقم"><svg class="i i-sm" aria-hidden="true"><use href="#i-copy"/></svg></button></div>
+        <span class="copy-msg" id="copyMsg" role="status"></span>
+      </div>
+      <div>
+        <h3>تواصل</h3>
+        <ul>
+          <li><a href="https://wa.me/966504895569" target="_blank" rel="noopener">راسلنا على واتساب</a></li>
+          <li><a href="https://ar.airbnb.com/rooms/1548537821036118490" target="_blank" rel="noopener">الاستديو على Airbnb</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>معلومات</h3>
+        <ul>
+          <li><button class="as-link" type="button" data-doc="privacy">الخصوصية</button></li>
+          <li><button class="as-link" type="button" data-doc="terms">شروط الإقامة</button></li>
+          <li><a href="https://hello-jed.sh-apartment.workers.dev/" target="_blank" rel="noopener">دخول المالك</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal"><span>© 2026 sh.apartment · جدة، المملكة العربية السعودية</span><span>الأسعار في هذا التصميم تقديرية</span></div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <div class="mb-txt"><b><span class="num">349</span> ر.س <span class="t-sm muted" style="font-weight:500">/ ليلة</span></b><small id="mbDates">اختر التواريخ</small></div>
+  <button class="btn btn-primary" type="button" data-open-book>احجز هذه التواريخ</button>
+</div>
+
+<a class="back-pill" href="../index.html"><svg class="i i-sm i-dir" aria-hidden="true"><use href="#i-arrow-left"/></svg> كل التصاميم</a>
+
+<!-- Booking sheet -->
+<dialog class="sheet" id="book" aria-labelledby="sheetTitle">
+  <div class="sheet-head">
+    <div class="row1">
+      <div>
+        <h2 id="sheetTitle">حجز مباشر · استديو ميد سنشري</h2>
+        <p class="t-xs muted">التقويم متزامن مع Airbnb</p>
+      </div>
+      <button class="icon-btn" type="button" data-close aria-label="إغلاق"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <ol class="steps" aria-label="خطوات الحجز">
+      <li data-s="1">1 · التواريخ</li>
+      <li data-s="2">2 · بياناتك</li>
+      <li data-s="3">3 · العقد والتوقيع</li>
+    </ol>
+  </div>
+  <div class="sheet-body" id="sheetBody">
+    <section class="step" data-step="1" aria-label="التواريخ والضيوف">
+      <div id="calLoading" class="sk-cal" aria-label="جارٍ التحقق من التواريخ المتاحة" hidden>
+        <div class="m"><i class="sk" style="height:24px;width:40%;justify-self:center"></i><div class="sk-grid"><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i></div></div>
+        <div class="m"><i class="sk" style="height:24px;width:40%;justify-self:center"></i><div class="sk-grid"><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i></div></div>
+      </div>
+      <div class="cal-host" data-months="2" id="sheetCal"></div>
+      <div class="guests" style="padding:16px;border:1px solid var(--line);border-radius:16px">
+        <div class="guests-label"><b>الضيوف</b><small>الحد الأقصى 3، والمرافقون يُذكرون في العقد</small></div>
+        <div class="stepper">
+          <button class="icon-btn" type="button" data-g="-1" aria-label="ضيف أقل"><svg class="i i-sm" aria-hidden="true"><use href="#i-minus"/></svg></button>
+          <output class="g-out" aria-live="polite">2</output>
+          <button class="icon-btn" type="button" data-g="1" aria-label="ضيف أكثر"><svg class="i i-sm" aria-hidden="true"><use href="#i-plus"/></svg></button>
+        </div>
+      </div>
+      <div class="breakdown" data-breakdown style="border-top:0;padding-top:0"></div>
+      <p class="err" id="s1Err" role="alert" hidden></p>
+    </section>
+
+    <form class="step" data-step="2" id="guestForm" novalidate aria-label="بيانات النزيل" hidden>
+      <div class="form">
+        <div class="field full">
+          <label for="fName">الاسم الكامل</label>
+          <input id="fName" name="name" autocomplete="name" placeholder="كما في الهوية" aria-describedby="eName">
+          <p class="err" id="eName" hidden></p>
+        </div>
+        <div class="field">
+          <label for="fNat">الجنسية</label>
+          <input id="fNat" name="nat" list="nats" placeholder="مثال: سعودي" aria-describedby="eNat">
+          <datalist id="nats"><option value="سعودي"><option value="مصري"><option value="يمني"><option value="سوداني"><option value="أردني"><option value="سوري"><option value="باكستاني"><option value="هندي"><option value="إماراتي"><option value="كويتي"></datalist>
+          <p class="err" id="eNat" hidden></p>
+        </div>
+        <div class="field">
+          <label for="fId">رقم الهوية أو الإقامة أو الجواز</label>
+          <input id="fId" name="idno" class="ltr" inputmode="text" autocomplete="off" placeholder="1012345678" aria-describedby="eId hId">
+          <p class="hint" id="hId">بالأرقام أو الحروف اللاتينية، بلا مسافات</p>
+          <p class="err" id="eId" hidden></p>
+        </div>
+        <div class="field">
+          <label for="fPhone">رقم الجوال</label>
+          <input id="fPhone" name="phone" class="ltr" inputmode="tel" autocomplete="tel" placeholder="0501234567" aria-describedby="ePhone">
+          <p class="err" id="ePhone" hidden></p>
+        </div>
+        <div class="field">
+          <label>عدد المرافقين</label>
+          <p class="t-base" style="padding:8px 12px;border-radius:12px;background:var(--surface)"><b id="compCount">1</b> <span class="muted t-sm">حسب عدد الضيوف في الخطوة الأولى</span></p>
+        </div>
+        <div class="field full">
+          <label for="fComp">أسماء المرافقين <span class="muted t-sm" style="font-weight:500">(اختياري)</span></label>
+          <textarea id="fComp" name="comp" placeholder="مثال: محمد أحمد، سارة أحمد"></textarea>
+        </div>
+      </div>
+      <p class="info"><svg class="i" aria-hidden="true"><use href="#i-lock-key"/></svg> <span>بيانات الهوية لا تُحفظ في الموقع، وتُستخدم لإنشاء ملف العقد على جهازك فقط.</span></p>
+    </form>
+
+    <section class="step" data-step="3" aria-label="العقد والتوقيع" hidden>
+      <div class="summary" id="summary"></div>
+      <details class="terms">
+        <summary>بنود العقد (8) <svg class="i" aria-hidden="true"><use href="#i-caret-down"/></svg></summary>
+        <ol>
+          <li>يلتزم النزيل بالمحافظة على الوحدة ومحتوياتها وتسليمها بالحالة التي استلمها بها، ويتحمل قيمة أي تلف أو فقد خلال مدة الإقامة.</li>
+          <li>يُمنع التدخين بجميع أنواعه داخل الوحدة، بما فيها السجائر الإلكترونية والشيشة، ويُمنع إشعال الفحم، ولا يُسمح بالحيوانات الأليفة إلا بإذن مسبق.</li>
+          <li>يلتزم النزيل بالهدوء واحترام خصوصية الجيران والأنظمة العامة والآداب المرعية.</li>
+          <li>يبدأ الدخول من الساعة 4:00 مساءً، والمغادرة حتى الساعة 12:00 ظهراً، ويخضع التأخير لموافقة المالك وقد تترتب عليه رسوم إضافية.</li>
+          <li>يُؤكَّد الحجز بعد سداد قيمة الإيجار المتفق عليها مع المالك، وتخضع سياسة الإلغاء والاسترداد لما يتفق عليه الطرفان.</li>
+          <li>المالك غير مسؤول عن فقدان المقتنيات الشخصية أو الأموال داخل الوحدة.</li>
+          <li>يحق للمالك إنهاء الإقامة دون استرداد عند مخالفة أي بند من بنود هذا العقد أو الأنظمة المعمول بها.</li>
+          <li>يُعد توقيع النزيل الإلكتروني على هذا العقد إقراراً منه بقراءة جميع بنوده وفهمها والموافقة عليها.</li>
+        </ol>
+      </details>
+      <div class="sig-box">
+        <div class="sig-head">
+          <label class="t-sm" for="sig" style="font-weight:600">توقيعك</label>
+          <div class="sig-tools">
+            <button class="btn btn-secondary btn-sm" type="button" id="sigType">وقّع بكتابة اسمك</button>
+            <button class="btn btn-secondary btn-sm" type="button" id="sigClear">مسح التوقيع</button>
+          </div>
+        </div>
+        <div class="sig-pad" id="sigPad">
+          <span class="line" aria-hidden="true"></span>
+          <canvas id="sig" role="img" aria-label="مساحة التوقيع" tabindex="0"></canvas>
+          <span class="ph">وقّع بإصبعك أو بالفأرة داخل المربع</span>
+        </div>
+        <p class="err" id="eSig" hidden></p>
+      </div>
+      <label class="check"><input type="checkbox" id="agree"> <span>قرأت بنود العقد وأوافق عليها، وأقرّ بصحة بياناتي.</span></label>
+      <p class="err" id="eAgree" hidden></p>
+    </section>
+
+    <section class="step" data-step="4" aria-label="العقد جاهز" hidden>
+      <div id="successSk" class="success" hidden>
+        <div class="sk" style="height:184px;border-radius:16px"></div>
+        <div class="sk" style="height:20px;width:60%"></div>
+        <div class="sk" style="height:20px;width:80%"></div>
+        <div class="sk" style="height:20px;width:70%"></div>
+      </div>
+      <div id="successBody" class="success" hidden></div>
+    </section>
+  </div>
+  <div class="sheet-foot">
+    <div class="mini"><b id="miniTotal">0 ر.س</b><small id="miniDates">اختر التواريخ</small></div>
+    <div class="acts">
+      <button class="btn btn-secondary" type="button" id="backBtn" hidden>رجوع</button>
+      <button class="btn btn-primary" type="button" id="nextBtn">متابعة</button>
+    </div>
+  </div>
+</dialog>
+
+<!-- Lightbox -->
+<dialog class="lightbox" id="lb" aria-label="صور استديو ميد سنشري">
+  <div class="lb-top">
+    <span id="lbCount" class="num" dir="ltr">1 / 7</span>
+    <button class="icon-btn" type="button" data-lb-close aria-label="إغلاق الصور"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="lb-stage" id="lbStage">
+    <figure><img id="lbImg" src="../photos/midcentury-1-living.jpg" alt=""><figcaption id="lbCap"></figcaption></figure>
+    <button class="icon-btn lb-prev" type="button" id="lbPrev" aria-label="الصورة السابقة"><svg class="i" aria-hidden="true"><use href="#i-caret-right"/></svg></button>
+    <button class="icon-btn lb-next" type="button" id="lbNext" aria-label="الصورة التالية"><svg class="i" aria-hidden="true"><use href="#i-caret-left"/></svg></button>
+  </div>
+  <div class="lb-thumbs" id="lbThumbs"></div>
+</dialog>
+
+<dialog class="doc" id="privacy" aria-labelledby="privacy-h">
+  <div class="doc-in">
+    <h2 class="h3" id="privacy-h">الخصوصية</h2>
+    <p class="t-base">لا نطلب الدفع على الموقع. بيانات الهوية التي تكتبها في نموذج الحجز تُستخدم لإنشاء ملف العقد على جهازك، ويصل طلب الحجز للمالك ليؤكد التواريخ.</p>
+    <p class="t-base">رقم جوالك يُستخدم للتواصل بخصوص الحجز فقط. لأي طلب يخص بياناتك راسلنا على واتساب <span dir="ltr" class="num">+966 50 489 5569</span>.</p>
+    <button class="btn btn-secondary" type="button" data-doc-close>إغلاق</button>
+  </div>
+</dialog>
+<dialog class="doc" id="terms" aria-labelledby="terms-h">
+  <div class="doc-in">
+    <h2 class="h3" id="terms-h">شروط الإقامة</h2>
+    <ol>
+      <li>المحافظة على الوحدة ومحتوياتها، ويتحمل النزيل قيمة أي تلف أو فقد.</li>
+      <li>يُمنع التدخين بجميع أنواعه وإشعال الفحم، ولا حيوانات أليفة إلا بإذن مسبق.</li>
+      <li>الالتزام بالهدوء واحترام خصوصية الجيران.</li>
+      <li>الدخول من 4:00 مساءً، والمغادرة حتى 12:00 ظهراً.</li>
+      <li>يُؤكَّد الحجز بعد سداد المبلغ المتفق عليه مع المالك.</li>
+      <li>المالك غير مسؤول عن المقتنيات الشخصية داخل الوحدة.</li>
+    </ol>
+    <button class="btn btn-secondary" type="button" data-doc-close>إغلاق</button>
+  </div>
+</dialog>
+
+<svg hidden aria-hidden="true"><use href="#i-storefront"/><use href="#i-compass"/><use href="#i-airplane-tilt"/><use href="#i-buildings"/><use href="#i-hourglass"/><use href="#i-whatsapp-logo"/><use href="#i-receipt"/><use href="#i-calendar-blank"/><use href="#i-warning-circle"/><use href="#i-map-pin"/><use href="#i-star-fill"/><use href="#i-arrow-up-right"/><use href="#i-check"/><use href="#i-info"/><use href="#i-caret-right"/><use href="#i-caret-left"/></svg>
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Data ---------- */
+  const APT = { name: 'استديو ميد سنشري', rate: 349, weekend: 419, maxGuests: 3, lat: 21.61392, lng: 39.12803 };
+  const WA = '966504895569';
+  const PHOTOS = [
+    ['midcentury-1-living.jpg', 'الصالة والسرير العلوي'],
+    ['midcentury-2-living-art.jpg', 'ركن الشاشة ولوحات جدة'],
+    ['midcentury-3-neon-night.jpg', 'إضاءة النيون ليلاً'],
+    ['midcentury-4-kitchen.jpg', 'ركن المطبخ'],
+    ['midcentury-5-bath-jacuzzi.jpg', 'الحمام والجاكوزي'],
+    ['midcentury-6-coffee.jpg', 'ضيافة القهوة'],
+    ['midcentury-7-building.jpg', 'واجهة المبنى في حي النهضة']
+  ];
+  const OTHERS = [
+    { name: 'كوزي هوم', area: 'حي النهضة · طريق الملك', type: 'غرفة وصالة', guests: 3, rating: '4.90', reviews: 86, price: 329, img: 'cozy-1-neon-cinema.jpg', url: 'https://ar.airbnb.com/rooms/1545433977273675752', same: true },
+    { name: 'الجناح الفاخر', area: 'حي النهضة · طريق الملك', type: 'غرفة وصالة', guests: 4, rating: '4.93', reviews: 69, price: 379, img: 'suite-1-living.jpg', url: 'https://ar.airbnb.com/rooms/1545416629708956462', same: true },
+    { name: 'شقة طريق المدينة', area: 'طريق المدينة', type: 'غرفتا نوم', guests: 4, rating: '4.69', reviews: 144, price: 429, img: 'madinah-1-living.jpg', url: 'https://ar.airbnb.com/rooms/1308042141503902547' },
+    { name: 'أورنج سويت', area: 'حي الأجاويد', type: 'غرفة وصالة', guests: 3, rating: '4.87', reviews: 68, price: 319, img: 'orange-1-living.jpg', url: 'https://ar.airbnb.com/rooms/1557132730241179243' },
+    { name: 'منزل الأجاويد', area: 'حي الأجاويد', type: '3 غرف نوم', guests: 6, rating: '4.85', reviews: 26, price: 649, img: 'ajawid-1-living.jpg', url: 'https://ar.airbnb.com/rooms/1548398523561225848' },
+    { name: 'منزل الأمير فواز', area: 'حي الأمير فواز', type: 'غرفتا نوم', guests: 6, rating: '4.63', reviews: 19, price: 489, img: 'fawaz-1-living.jpg', url: 'https://ar.airbnb.com/rooms/1664751285940407075' }
+  ];
+  const PLACES = [
+    ['storefront', 'الردسي مول', 21.6283, 39.1107],
+    ['compass', 'الكورنيش الشمالي', 21.6139, 39.0985],
+    ['airplane-tilt', 'مطار الملك عبدالعزيز', 21.6796, 39.1565],
+    ['map-pin', 'نافورة الملك فهد', 21.515, 39.1466],
+    ['buildings', 'جدة التاريخية (البلد)', 21.4858, 39.1869]
+  ];
+
+  /* ---------- Date helpers ---------- */
+  const MONTHS = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
+  const DAYS = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+  const DAY_SHORT = ['ح', 'ن', 'ث', 'ر', 'خ', 'ج', 'س'];
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+  const key = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const fromKey = k => { const [y, m, dd] = k.split('-').map(Number); return new Date(y, m - 1, dd); };
+  const fmtShort = d => `${d.getDate()} ${MONTHS[d.getMonth()]}`;
+  const fmtLong = d => `${DAYS[d.getDay()]} ${d.getDate()} ${MONTHS[d.getMonth()]}`;
+  const nightsTxt = n => n === 1 ? 'ليلة واحدة' : n === 2 ? 'ليلتان' : n <= 10 ? `${n} ليالٍ` : `${n} ليلة`;
+  const guestsTxt = n => n === 1 ? 'ضيف واحد' : n === 2 ? 'ضيفان' : `${n} ضيوف`;
+  const money = n => `${n.toLocaleString('en-US')} ر.س`;
+  const isWeekend = d => d.getDay() === 4 || d.getDay() === 5;
+
+  /* Nights already booked (on Airbnb or direct), relative to today */
+  const BOOKED = new Set();
+  [[0, 2], [4, 1], [9, 3], [16, 2], [22, 4], [31, 2], [37, 3], [45, 5], [54, 2]].forEach(([s, n]) => { for (let i = 0; i < n; i++) BOOKED.add(key(addDays(today, s + i))); });
+  const HELD = new Set();
+  const isBooked = d => BOOKED.has(key(d)) || HELD.has(key(d));
+  const rangeBlocked = (a, b) => { for (let d = new Date(a); d < b; d = addDays(d, 1)) if (isBooked(d)) return true; return false; };
+  const firstBookedAfter = a => { for (let i = 1; i < 120; i++) { const d = addDays(a, i); if (isBooked(d)) return d; } return null; };
+
+  /* ---------- State ---------- */
+  const S = { ci: null, co: null, guests: 2, view: 0, msg: '', step: 1, contract: null };
+  (function preselect() {
+    for (let s = 5; s < 60; s++) { const a = addDays(today, s), b = addDays(a, 3); if (!rangeBlocked(a, b)) { S.ci = a; S.co = b; break; } }
+    if (S.ci && S.ci.getMonth() !== today.getMonth() && S.ci.getDate() > 7) S.view = 0;
+  })();
+
+  function quote() {
+    if (!S.ci || !S.co) return null;
+    let wk = 0, we = 0;
+    for (let d = new Date(S.ci); d < S.co; d = addDays(d, 1)) isWeekend(d) ? we++ : wk++;
+    return { wk, we, n: wk + we, total: wk * APT.rate + we * APT.weekend };
+  }
+
+  /* ---------- Calendar ---------- */
+  function monthHTML(y, m) {
+    const first = new Date(y, m, 1), days = new Date(y, m + 1, 0).getDate();
+    const fba = S.ci && !S.co ? firstBookedAfter(S.ci) : null;
+    let h = `<div class="month"><h4>${MONTHS[m]} <span class="num">${y}</span></h4><div class="wk" aria-hidden="true">${DAY_SHORT.map(d => `<span>${d}</span>`).join('')}</div><div class="days" role="grid">`;
+    for (let i = 0; i < first.getDay(); i++) h += '<span class="day blank" aria-hidden="true"></span>';
+    for (let dd = 1; dd <= days; dd++) {
+      const d = new Date(y, m, dd), k = key(d);
+      const past = d < today, booked = isBooked(d), held = HELD.has(k);
+      const cls = ['day'];
+      let label = `${fmtLong(d)} ${y}`, disabled = past;
+      if (past) cls.push('past');
+      if (booked) { cls.push(held ? 'held' : 'booked'); label += held ? '، بانتظار تأكيد المالك' : '، محجوز'; }
+      if (+d === +today) cls.push('today');
+      const isCi = S.ci && +d === +S.ci, isCo = S.co && +d === +S.co;
+      if (isCi) { cls.push('ci'); if (S.co) cls.push('has-co'); label += '، تاريخ الدخول'; }
+      if (isCo) { cls.push('co'); label += '، تاريخ المغادرة'; }
+      if (S.ci && S.co && d > S.ci && d < S.co) cls.push('inrange');
+      if (booked && fba && +d === +fba) cls.push('co-ok');
+      if (booked && !cls.includes('co-ok')) disabled = true;
+      h += `<button type="button" class="${cls.join(' ')}" data-k="${k}" aria-label="${label}"${isCi || isCo ? ' aria-pressed="true"' : ''}${disabled ? ' aria-disabled="true"' : ''}${booked ? ` title="${held ? 'بانتظار التأكيد' : 'محجوز'}"` : ''}><span>${dd}</span></button>`;
+    }
+    return h + '</div></div>';
+  }
+  function rangeText() {
+    if (S.ci && S.co) return `${fmtShort(S.ci)} إلى ${fmtShort(S.co)} · ${nightsTxt(quote().n)}`;
+    if (S.ci) return `الدخول ${fmtShort(S.ci)} · اختر تاريخ المغادرة`;
+    return 'اختر تاريخ الدخول';
+  }
+  function renderCal(host) {
+    const n = +host.dataset.months || 2;
+    const base = new Date(today.getFullYear(), today.getMonth() + S.view, 1);
+    let months = '';
+    for (let i = 0; i < n; i++) { const d = new Date(base.getFullYear(), base.getMonth() + i, 1); months += monthHTML(d.getFullYear(), d.getMonth()); }
+    host.innerHTML = `<div class="cal">
+      <div class="cal-top"><span class="range-txt">${rangeText()}</span>
+        <div class="cal-navs"><button type="button" class="icon-btn" data-nav="-1" aria-label="الشهر السابق"${S.view <= 0 ? ' disabled' : ''}><svg class="i i-sm" aria-hidden="true"><use href="#i-caret-right"/></svg></button><button type="button" class="icon-btn" data-nav="1" aria-label="الشهر التالي"${S.view >= 5 ? ' disabled' : ''}><svg class="i i-sm" aria-hidden="true"><use href="#i-caret-left"/></svg></button></div></div>
+      <div class="cal-months" style="--months:${n}">${months}</div>
+      <div class="cal-legend"><span><i class="lg-sel"></i> اختيارك</span><span><i class="lg-range"></i> مدة الإقامة</span><span class="lg-booked">12</span><span>محجوز</span></div>
+      <p class="err cal-msg" role="status">${S.msg ? `<svg class="i i-sm" aria-hidden="true"><use href="#i-warning-circle"/></svg> ${S.msg}` : ''}</p>
+    </div>`;
+  }
+  function pick(k) {
+    const d = fromKey(k);
+    S.msg = '';
+    if (d < today) return;
+    if (!S.ci || S.co) {
+      if (isBooked(d)) { S.msg = 'هذا اليوم محجوز، اختر يوماً آخر.'; }
+      else { S.ci = d; S.co = null; }
+    } else {
+      if (d <= S.ci) {
+        if (isBooked(d)) S.msg = 'هذا اليوم محجوز، اختر يوماً آخر.';
+        else { S.ci = d; }
+      } else if (rangeBlocked(S.ci, d)) {
+        S.msg = 'يوجد حجز بين التاريخين، اختر مدة أخرى.';
+      } else { S.co = d; }
+    }
+    update();
+  }
+  document.addEventListener('click', e => {
+    const day = e.target.closest('.cal-host .day[data-k]');
+    if (day) {
+      if (day.getAttribute('aria-disabled') === 'true') {
+        if (day.classList.contains('booked') || day.classList.contains('held')) { S.msg = 'هذا اليوم محجوز، اختر يوماً آخر.'; update(); }
+        return;
+      }
+      pick(day.dataset.k);
+      return;
+    }
+    const nav = e.target.closest('.cal-host [data-nav]');
+    if (nav) { S.view = Math.max(0, Math.min(5, S.view + +nav.dataset.nav)); renderAllCals(); }
+  });
+  const renderAllCals = () => $$('.cal-host').forEach(renderCal);
+
+  /* ---------- Breakdown + summaries ---------- */
+  function breakdownHTML() {
+    const q = quote();
+    if (!q) return `<div class="empty"><svg class="i" aria-hidden="true"><use href="#i-calendar-blank"/></svg><span>اختر تاريخ الدخول والمغادرة لترى الإجمالي.</span></div>`;
+    let h = '';
+    if (q.wk) h += `<div class="row"><span>ليالي الأسبوع · ${q.wk} × ${money(APT.rate)}</span><span class="num">${money(q.wk * APT.rate)}</span></div>`;
+    if (q.we) h += `<div class="row"><span>الخميس والجمعة · ${q.we} × ${money(APT.weekend)}</span><span class="num">${money(q.we * APT.weekend)}</span></div>`;
+    h += `<div class="row"><span>رسوم الخدمة</span><span class="free">0 ر.س · حجز مباشر</span></div>`;
+    h += `<div class="row total"><span>الإجمالي لـ ${nightsTxt(q.n)}</span><span class="num">${money(q.total)}</span></div>`;
+    return h;
+  }
+  function update() {
+    renderAllCals();
+    $$('[data-breakdown]').forEach(el => el.innerHTML = breakdownHTML());
+    $('#ciTxt').textContent = S.ci ? fmtLong(S.ci) : 'أضف تاريخاً';
+    $('#coTxt').textContent = S.co ? fmtLong(S.co) : 'أضف تاريخاً';
+    $$('.g-out').forEach(o => o.textContent = S.guests);
+    $$('[data-g="-1"]').forEach(b => b.disabled = S.guests <= 1);
+    $$('[data-g="1"]').forEach(b => b.disabled = S.guests >= APT.maxGuests);
+    const q = quote();
+    $('#mbDates').textContent = q ? `${fmtShort(S.ci)} إلى ${fmtShort(S.co)} · ${money(q.total)}` : 'اختر التواريخ';
+    $('#miniTotal').textContent = q ? money(q.total) : '0 ر.س';
+    $('#miniDates').textContent = q ? `${nightsTxt(q.n)} · ${guestsTxt(S.guests)}` : 'اختر التواريخ';
+    $('#compCount').textContent = S.guests - 1;
+    if (q) { $('#bcErr').hidden = true; $('#s1Err').hidden = true; }
+  }
+  document.addEventListener('click', e => {
+    const g = e.target.closest('[data-g]');
+    if (!g || g.disabled) return;
+    S.guests = Math.max(1, Math.min(APT.maxGuests, S.guests + +g.dataset.g));
+    update();
+  });
+
+  /* ---------- Popover (desktop card) ---------- */
+  const pop = $('#calPop');
+  function openPop(btn) {
+    pop.hidden = false;
+    $$('.date-field').forEach(b => b.setAttribute('aria-expanded', 'true'));
+    if (btn === $('#ciBtn') && S.co) { /* start a fresh range from check in */ }
+    const first = pop.querySelector('.day:not([aria-disabled="true"]):not(.blank)');
+    (pop.querySelector('.day.ci') || first)?.focus();
+  }
+  function closePop() { pop.hidden = true; $$('.date-field').forEach(b => b.setAttribute('aria-expanded', 'false')); }
+  $('#ciBtn').addEventListener('click', e => { pop.hidden ? openPop(e.currentTarget) : closePop(); });
+  $('#coBtn').addEventListener('click', e => { pop.hidden ? openPop(e.currentTarget) : closePop(); });
+  pop.addEventListener('click', e => {
+    if (e.target.closest('[data-pop-close]')) closePop();
+    if (e.target.closest('[data-clear]')) { S.ci = S.co = null; S.msg = ''; update(); }
+  });
+  document.addEventListener('click', e => { if (!pop.hidden && e.target.isConnected && !e.target.closest('#calPop') && !e.target.closest('.date-field') && !e.target.closest('.day')) closePop(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !pop.hidden) { closePop(); $('#ciBtn').focus(); } });
+
+  /* ---------- Booking sheet ---------- */
+  const sheet = $('#book');
+  let calChecked = false;
+  function setStep(n) {
+    S.step = n;
+    $$('.step', sheet).forEach(s => s.hidden = +s.dataset.step !== n);
+    $$('.steps li', sheet).forEach(li => {
+      const s = +li.dataset.s;
+      li.classList.toggle('done', s < n || n === 4);
+      li.classList.toggle('cur', s === n);
+      if (s === n) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+    });
+    $('#backBtn').hidden = n === 1 || n === 4;
+    const next = $('#nextBtn');
+    next.textContent = n === 1 ? 'متابعة' : n === 2 ? 'متابعة إلى العقد' : n === 3 ? 'تأكيد وإنشاء العقد' : 'إغلاق';
+    $('#sheetBody').scrollTop = 0;
+    if (n === 3) { renderSummary(); requestAnimationFrame(sizeSig); }
+    if (n === 2) setTimeout(() => $('#fName').focus({ preventScroll: true }), 50);
+  }
+  function openBook() {
+    closePop(); closeMenu();
+    if (!sheet.open) sheet.showModal();
+    const start = S.contract ? 1 : (S.ci && S.co ? 2 : 1);
+    if (S.contract) { S.contract = null; S.ci = S.co = null; $('#agree').checked = false; hasInk = false; pad.classList.remove('inked'); update(); }
+    setStep(start);
+    if (start === 1 && !calChecked) {
+      calChecked = true;
+      $('#calLoading').hidden = false; $('#sheetCal').hidden = true;
+      setTimeout(() => { $('#calLoading').hidden = true; $('#sheetCal').hidden = false; }, reduce ? 0 : 650);
+    }
+  }
+  $$('[data-open-book]').forEach(b => b.addEventListener('click', e => {
+    if (e.currentTarget.closest('.book-card') && !(S.ci && S.co)) {
+      const err = $('#bcErr');
+      err.innerHTML = '<svg class="i i-sm" aria-hidden="true"><use href="#i-warning-circle"/></svg> اختر تاريخ الدخول ثم تاريخ المغادرة.';
+      err.hidden = false; openPop($('#ciBtn')); return;
+    }
+    openBook();
+  }));
+  sheet.addEventListener('click', e => { if (e.target.closest('[data-close]') || e.target === sheet) sheet.close(); });
+  $('#backBtn').addEventListener('click', () => setStep(Math.max(1, S.step - 1)));
+  $('#nextBtn').addEventListener('click', () => {
+    if (S.step === 1) {
+      if (!(S.ci && S.co)) { const er = $('#s1Err'); er.innerHTML = '<svg class="i i-sm" aria-hidden="true"><use href="#i-warning-circle"/></svg> اختر تاريخ الدخول ثم تاريخ المغادرة من التقويم.'; er.hidden = false; return; }
+      setStep(2);
+    } else if (S.step === 2) { if (validateGuest()) setStep(3); }
+    else if (S.step === 3) { submitContract(); }
+    else { sheet.close(); }
+  });
+
+  /* Guest details validation */
+  const toLatinDigits = s => s.replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d));
+  function setErr(input, errEl, msg) {
+    input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    errEl.hidden = !msg;
+    errEl.innerHTML = msg ? `<svg class="i i-sm" aria-hidden="true"><use href="#i-warning-circle"/></svg> ${msg}` : '';
+    return !msg;
+  }
+  const G = {};
+  function validateGuest() {
+    const name = $('#fName'), nat = $('#fNat'), id = $('#fId'), ph = $('#fPhone');
+    const nv = name.value.trim().replace(/\s+/g, ' ');
+    const idv = toLatinDigits(id.value.trim()).replace(/\s/g, '');
+    let pv = toLatinDigits(ph.value.trim()).replace(/[\s()]/g, '');
+    if (/^\+?9665\d{8}$/.test(pv)) pv = '0' + pv.replace(/^\+?966/, '');
+    const ok = [
+      setErr(name, $('#eName'), nv.split(' ').length < 2 ? 'اكتب الاسم الكامل كما في الهوية، الاسم الأول واسم العائلة على الأقل.' : ''),
+      setErr(nat, $('#eNat'), nat.value.trim() ? '' : 'اكتب الجنسية.'),
+      setErr(id, $('#eId'), /^[A-Za-z0-9]{6,15}$/.test(idv) ? '' : 'رقم الهوية غير صحيح. اكتبه بالأرقام أو الحروف اللاتينية بدون مسافات.'),
+      setErr(ph, $('#ePhone'), /^05\d{8}$/.test(pv) ? '' : 'رقم الجوال غير صحيح. مثال: 0501234567')
+    ];
+    if (ok.every(Boolean)) { Object.assign(G, { name: nv, nat: nat.value.trim(), id: idv, phone: pv, comp: $('#fComp').value.trim() }); return true; }
+    sheet.querySelector('[aria-invalid="true"]')?.focus();
+    return false;
+  }
+  $('#guestForm').addEventListener('submit', e => { e.preventDefault(); $('#nextBtn').click(); });
+  $$('#guestForm input').forEach(i => i.addEventListener('input', () => { if (i.getAttribute('aria-invalid') === 'true') { i.setAttribute('aria-invalid', 'false'); $('#' + i.getAttribute('aria-describedby').split(' ')[0]).hidden = true; } }));
+
+  function renderSummary() {
+    const q = quote();
+    $('#summary').innerHTML = [
+      ['الشقة', APT.name],
+      ['الدخول', `${fmtLong(S.ci)}، من 4:00 مساءً`],
+      ['المغادرة', `${fmtLong(S.co)}، حتى 12:00 ظهراً`],
+      ['المدة', nightsTxt(q.n)],
+      ['الضيوف', guestsTxt(S.guests)],
+      ['النزيل', G.name],
+      ['الجوال', `<span dir="ltr">${G.phone}</span>`],
+      ['الإجمالي', `<span class="num">${money(q.total)}</span>`]
+    ].map(([a, b]) => `<div class="srow"><span>${a}</span><b>${b}</b></div>`).join('');
+  }
+
+  /* Signature pad */
+  const cv = $('#sig'), pad = $('#sigPad');
+  let ctx, drawing = false, hasInk = false, last = null;
+  function sizeSig() {
+    const r = cv.getBoundingClientRect();
+    if (!r.width) return;
+    const dpr = window.devicePixelRatio || 1;
+    cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr);
+    ctx = cv.getContext('2d'); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.lineWidth = 2.5; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--ink').trim() || '#17120F';
+    hasInk = false; pad.classList.remove('inked');
+  }
+  const pt = e => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
+  cv.addEventListener('pointerdown', e => { if (!ctx) sizeSig(); drawing = true; cv.setPointerCapture(e.pointerId); last = pt(e); ctx.beginPath(); ctx.arc(last.x, last.y, 1.2, 0, Math.PI * 2); ctx.fillStyle = ctx.strokeStyle; ctx.fill(); });
+  cv.addEventListener('pointermove', e => {
+    if (!drawing) return;
+    const p = pt(e);
+    ctx.beginPath(); ctx.moveTo(last.x, last.y); ctx.lineTo(p.x, p.y); ctx.stroke(); last = p;
+    if (!hasInk) { hasInk = true; pad.classList.add('inked'); pad.classList.remove('invalid'); $('#eSig').hidden = true; }
+  });
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(t => cv.addEventListener(t, () => { drawing = false; }));
+  $('#sigClear').addEventListener('click', () => { sizeSig(); });
+  $('#sigType').addEventListener('click', () => {
+    sizeSig();
+    const r = cv.getBoundingClientRect();
+    ctx.fillStyle = ctx.strokeStyle;
+    ctx.font = '700 30px Tajawal, Poppins, sans-serif';
+    ctx.textAlign = 'center'; ctx.direction = 'rtl';
+    ctx.fillText(G.name || 'التوقيع', r.width / 2, r.height - 60);
+    hasInk = true; pad.classList.add('inked'); pad.classList.remove('invalid'); $('#eSig').hidden = true;
+  });
+  addEventListener('resize', () => { if (S.step === 3 && sheet.open && !hasInk) sizeSig(); });
+  $('#agree').addEventListener('change', () => { if ($('#agree').checked) $('#eAgree').hidden = true; });
+
+  function submitContract() {
+    const eSig = $('#eSig'), eAg = $('#eAgree');
+    let ok = true;
+    if (!hasInk) { eSig.innerHTML = '<svg class="i i-sm" aria-hidden="true"><use href="#i-warning-circle"/></svg> وقّع داخل مربع التوقيع.'; eSig.hidden = false; pad.classList.add('invalid'); ok = false; }
+    if (!$('#agree').checked) { eAg.innerHTML = '<svg class="i i-sm" aria-hidden="true"><use href="#i-warning-circle"/></svg> وافق على بنود العقد للمتابعة.'; eAg.hidden = false; ok = false; }
+    if (!ok) return;
+    const btn = $('#nextBtn');
+    btn.setAttribute('aria-busy', 'true'); btn.textContent = 'جارٍ إنشاء العقد…';
+    setStep(4);
+    btn.setAttribute('aria-busy', 'true'); btn.textContent = 'جارٍ إنشاء العقد…';
+    $('#successSk').hidden = false; $('#successBody').hidden = true;
+    setTimeout(() => {
+      const q = quote();
+      const no = `SH ${String(S.ci.getFullYear()).slice(2)}${String(S.ci.getMonth() + 1).padStart(2, '0')} ${String(Math.floor(1000 + Math.random() * 9000))}`;
+      for (let d = new Date(S.ci); d < S.co; d = addDays(d, 1)) HELD.add(key(d));
+      S.contract = no;
+      const msg = `السلام عليكم، هذا طلب حجز مباشر عبر sh.apartment\nرقم العقد: ${no}\nالشقة: ${APT.name}\nالنزيل: ${G.name}\nالجوال: ${G.phone}\nمن ${fmtShort(S.ci)} إلى ${fmtShort(S.co)} (${nightsTxt(q.n)})\nعدد الضيوف: ${S.guests}${G.comp ? `\nالمرافقون: ${G.comp}` : ''}\nالإجمالي: ${money(q.total)}`;
+      $('#successBody').innerHTML = `
+        <div class="success-head">
+          <span class="ok-ico"><svg class="i i-lg" aria-hidden="true"><use href="#i-check"/></svg></span>
+          <h3>العقد جاهز</h3>
+          <p class="contract-no">${no}</p>
+          <span class="held-note"><svg class="i i-sm" aria-hidden="true"><use href="#i-hourglass"/></svg> ${nightsTxt(q.n)} محجوزة لك مبدئياً حتى يؤكد المالك</span>
+        </div>
+        <ol class="next">
+          <li><span class="n">1</span><span><b>أرسل العقد للمالك على واتساب.</b> الرسالة جاهزة بالتفاصيل.</span></li>
+          <li><span class="n">2</span><span><b>يؤكد المالك التواريخ</b> ويرسل لك طريقة الدفع. لا تدفع قبل التأكيد.</span></li>
+          <li><span class="n">3</span><span><b>تصلك تعليمات الدخول الذاتي</b> قبل وصولك، والدخول من 4:00 مساءً.</span></li>
+        </ol>
+        <div class="success-acts">
+          <a class="btn wa-btn" href="https://wa.me/${WA}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp-logo"/></svg> أرسل العقد للمالك</a>
+          <button class="btn btn-secondary" type="button" id="pdfBtn"><svg class="i" aria-hidden="true"><use href="#i-receipt"/></svg> تنزيل العقد PDF</button>
+        </div>
+        <p class="info" id="pdfNote" hidden><svg class="i" aria-hidden="true"><use href="#i-info"/></svg> <span>في الموقع الفعلي يُنشأ ملف العقد PDF بتوقيعك ويُحفظ على جهازك. هذه نسخة تصميم.</span></p>
+        <p class="t-xs muted">إن لم تفتح المحادثة، راسل الرقم <span dir="ltr" class="num">+966 50 489 5569</span> واذكر رقم العقد.</p>`;
+      $('#successSk').hidden = true; $('#successBody').hidden = false;
+      btn.removeAttribute('aria-busy'); btn.textContent = 'إغلاق';
+      $('#pdfBtn').addEventListener('click', () => { $('#pdfNote').hidden = false; });
+      update();
+    }, reduce ? 0 : 900);
+  }
+
+  /* ---------- Lightbox ---------- */
+  const lb = $('#lb');
+  let lbi = 0;
+  $('#lbThumbs').innerHTML = PHOTOS.map((p, i) => `<button type="button" data-i="${i}" aria-label="${p[1]}"><img src="../photos/${p[0]}" alt="" loading="lazy"></button>`).join('');
+  function showLb(i) {
+    lbi = (i + PHOTOS.length) % PHOTOS.length;
+    const [f, cap] = PHOTOS[lbi];
+    const img = $('#lbImg');
+    img.style.opacity = 0;
+    img.onload = () => { img.style.opacity = 1; };
+    img.src = `../photos/${f}`; img.alt = cap;
+    $('#lbCap').textContent = cap;
+    $('#lbCount').textContent = `${lbi + 1} / ${PHOTOS.length}`;
+    $$('#lbThumbs button').forEach((b, j) => b.setAttribute('aria-current', j === lbi ? 'true' : 'false'));
+  }
+  $$('[data-photo]').forEach(b => b.addEventListener('click', () => { lb.showModal(); showLb(+b.dataset.photo); }));
+  $('#lbPrev').addEventListener('click', () => showLb(lbi - 1));
+  $('#lbNext').addEventListener('click', () => showLb(lbi + 1));
+  $('#lbThumbs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) showLb(+b.dataset.i); });
+  lb.addEventListener('click', e => { if (e.target.closest('[data-lb-close]')) lb.close(); });
+  lb.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') showLb(lbi + 1); if (e.key === 'ArrowRight') showLb(lbi - 1); });
+  let sx = null;
+  $('#lbStage').addEventListener('pointerdown', e => { sx = e.clientX; });
+  $('#lbStage').addEventListener('pointerup', e => { if (sx === null) return; const dx = e.clientX - sx; sx = null; if (Math.abs(dx) > 40) showLb(lbi + (dx > 0 ? 1 : -1)); });
+
+  /* ---------- Docs ---------- */
+  $$('[data-doc]').forEach(b => b.addEventListener('click', () => $('#' + b.dataset.doc).showModal()));
+  $$('[data-doc-close]').forEach(b => b.addEventListener('click', () => b.closest('dialog').close()));
+
+  /* ---------- Copy number ---------- */
+  $('#copyNum').addEventListener('click', () => {
+    const t = '+966504895569', m = $('#copyMsg');
+    const done = () => { m.textContent = 'نُسخ الرقم'; setTimeout(() => m.textContent = '', 2400); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents($('.wa-num code')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); m.textContent = 'الرقم محدد، انسخه يدوياً'; };
+    try { navigator.clipboard.writeText(t).then(done, fallback); } catch (e) { fallback(); }
+  });
+
+  /* ---------- Distances + other cards ---------- */
+  const hav = (a, b, c, d) => { const R = 6371, r = x => x * Math.PI / 180; const x = Math.sin(r(c - a) / 2) ** 2 + Math.cos(r(a)) * Math.cos(r(c)) * Math.sin(r(d - b) / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(x)); };
+  $('#distList').innerHTML = PLACES.map(([ic, n, la, ln]) => `<li><span><svg class="i" aria-hidden="true"><use href="#i-${ic}"/></svg> ${n}</span><b class="num">≈ ${hav(APT.lat, APT.lng, la, ln).toFixed(1)} كم</b></li>`).join('');
+  $('#otherCards').innerHTML = OTHERS.map(o => `
+    <a class="card" href="${o.url}" target="_blank" rel="noopener">
+      <div class="ph"><img src="../photos/${o.img}" alt="${o.name}">${o.same ? '<span class="badge">في المبنى نفسه</span>' : ''}</div>
+      <div class="card-meta">
+        <div class="r1">${o.name}<span><svg class="i" aria-hidden="true"><use href="#i-star-fill"/></svg> <span class="num">${o.rating}</span> <span class="muted">(${o.reviews})</span></span></div>
+        <p>${o.area} · ${o.type} · حتى ${o.guests} ضيوف</p>
+        <p><span class="pr num">${money(o.price)}</span> / ليلة</p>
+        <span class="ext">عرضها على Airbnb <svg class="i i-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
+      </div>
+    </a>`).join('');
+
+  /* ---------- Nav: current section + mobile menu ---------- */
+  const secIds = ['photos', 'details', 'availability', 'location', 'faq'];
+  const setCurrent = id => $$('[data-sec]').forEach(a => a.setAttribute('aria-current', a.dataset.sec === id ? 'true' : 'false'));
+  const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) setCurrent(en.target.id); }), { rootMargin: '-40% 0px -55% 0px' });
+  secIds.forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+  const mm = $('#mmenu'), tg = $('.menu-toggle');
+  function openMenu() {
+    mm.hidden = false; tg.setAttribute('aria-expanded', 'true'); tg.setAttribute('aria-label', 'إغلاق القائمة');
+    const lis = $$('li', mm);
+    lis.forEach((li, i) => li.style.transitionDelay = `${Math.min(i * 60, 400)}ms`);
+    requestAnimationFrame(() => requestAnimationFrame(() => mm.classList.add('open')));
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    if (mm.hidden) return;
+    mm.classList.remove('open'); tg.setAttribute('aria-expanded', 'false'); tg.setAttribute('aria-label', 'فتح القائمة');
+    $$('li', mm).forEach(li => li.style.transitionDelay = '0ms');
+    document.body.style.overflow = '';
+    setTimeout(() => { if (!mm.classList.contains('open')) mm.hidden = true; }, reduce ? 0 : 300);
+  }
+  tg.addEventListener('click', () => mm.hidden ? openMenu() : closeMenu());
+  mm.addEventListener('click', e => { if (e.target.closest('a')) closeMenu(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+  /* ---------- Reveals (complete at rest) ---------- */
+  if (!reduce && 'IntersectionObserver' in window) {
+    addEventListener('scroll', () => {
+      const vh = innerHeight;
+      const els = $$('.block, .others-head, .card, .band, .faq-grid > div, .final-box').filter(el => el.getBoundingClientRect().top > vh);
+      els.forEach(el => el.classList.add('pre'));
+      const ro = new IntersectionObserver(es => es.forEach(en => {
+        if (!en.isIntersecting) return;
+        const el = en.target; el.classList.add('reveal-in'); requestAnimationFrame(() => el.classList.remove('pre'));
+        ro.unobserve(el);
+      }), { rootMargin: '0px 0px -8% 0px' });
+      els.forEach(el => ro.observe(el));
+    }, { passive: true, once: true });
+  }
+
+  /* ---------- Tagline: words light up one at a time ---------- */
+  const tl = $('#taglineText');
+  tl.innerHTML = tl.innerHTML.split('<br>').map(line => line.trim().split(/\s+/).map(w => `<span class="w">${w}</span>`).join(' ')).join('<br>');
+  const words = $$('.w', tl);
+  let ticking = false;
+  function lightWords() {
+    ticking = false;
+    const trigger = innerHeight * 0.72;
+    words.forEach(w => w.classList.toggle('on', w.getBoundingClientRect().top < trigger));
+  }
+  if (reduce) words.forEach(w => w.classList.add('on'));
+  else { addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(lightWords); } }, { passive: true }); lightWords(); }
+
+  update();
+})();
+</script>
+</body>
+</html>
