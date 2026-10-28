@@ -1,11 +1,11 @@
-<title>sh.apartment Redesign</title>
+<title>إعادة تصميم sh.apartment</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Five redesign concepts for sh.apartment, seven furnished apartments in Jeddah, plus how the site connects to Airbnb and Gathern.">
+<meta name="description" content="خمسة تصاميم مقترحة لموقع sh.apartment، سبع شقق مفروشة في جدة، مع شرح ربط الموقع بـ Airbnb وجاذر إن.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
 <style>
-/* Layout: a review sheet. Prose column for the argument, wide rows for the five concept previews, then the integration answer as option cards with one diagram. */
+/* Layout: a review sheet, right to left. Prose column for the argument, wide rows for the five concept previews, then the integration answer as option cards with one diagram. */
 :root {
   --bg: #F5F3EF;
   --surface: #FFFFFF;
@@ -18,8 +18,8 @@
   --good: #2F6B4F;
   --warn: #8F3B1B;
   --warn-bg: #F8E3D8;
-  --display: "Bricolage Grotesque", "Hanken Grotesk", system-ui, sans-serif;
-  --body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --display: "Alexandria", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --body: "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
   --shadow: 0 1px 2px rgb(40 25 10 / .06), 0 8px 24px rgb(40 25 10 / .06);
 }
 @media (prefers-color-scheme: dark) {
@@ -37,22 +37,24 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
-body { background: var(--bg); color: var(--fg); font: 400 1rem/1.6 var(--body); }
+body { background: var(--bg); color: var(--fg); font: 400 1rem/1.75 var(--body); }
+.page { direction: rtl; }
 .wrap { max-width: 72rem; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 .prose { max-width: 44rem; }
-h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
-h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.05; font-weight: 700; }
-h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.15; font-weight: 700; }
-h3 { font-size: 1.25rem; line-height: 1.25; font-weight: 700; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.25; font-weight: 700; }
+h2 { font-size: clamp(1.55rem, 3vw, 2rem); line-height: 1.35; font-weight: 700; }
+h3 { font-size: 1.2rem; line-height: 1.45; font-weight: 700; }
 p { margin: 0; text-wrap: pretty; }
-a { color: var(--accent); text-underline-offset: 3px; }
+a { color: var(--accent); text-underline-offset: 4px; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
-.eyebrow { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-.wordmark { font-family: var(--display); font-weight: 700; }
+.eyebrow { font-size: .85rem; font-weight: 600; color: var(--muted); }
+.latin { direction: ltr; unicode-bidi: isolate; }
+.wordmark { font-family: "Alexandria", system-ui, sans-serif; font-weight: 700; direction: ltr; unicode-bidi: isolate; }
 .wordmark b { color: var(--accent); font-weight: 700; }
 
 header.top { padding-block: 56px 32px; display: grid; gap: 20px; }
-header.top .lede { font-size: 1.15rem; color: var(--muted); max-width: 42rem; }
+header.top .lede { font-size: 1.12rem; color: var(--muted); max-width: 42rem; }
 .note { background: var(--tint); border-radius: 12px; padding: 14px 16px; max-width: 46rem; font-size: .95rem; }
 
 section.block { padding-block: 44px; border-top: 1px solid var(--line); }
@@ -64,7 +66,7 @@ section.block > .wrap { display: grid; gap: 28px; }
 .before figure figcaption { grid-column: 1 / -1; font-size: .85rem; color: var(--muted); }
 .lists { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .lists h3 { font-size: 1.05rem; margin-bottom: 8px; }
-.lists ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 6px; font-size: .95rem; }
+.lists ul { margin: 0; padding-inline-start: 1.2rem; display: grid; gap: 6px; font-size: .95rem; }
 .keep h3 { color: var(--good); }
 .fix h3 { color: var(--warn); }
 
@@ -74,13 +76,13 @@ section.block > .wrap { display: grid; gap: 28px; }
 .shots img.desk { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform .5s cubic-bezier(.22, 1, .36, 1); }
 .shots:hover img.desk { transform: scale(1.01); }
 .shots img.phone { position: absolute; left: 14px; bottom: 14px; width: 21%; aspect-ratio: 390 / 844; height: auto; object-fit: cover; object-position: top; border-radius: 12px; border: 3px solid var(--fg); box-shadow: var(--shadow); background: var(--surface); }
-.meta { display: grid; gap: 14px; padding: 4px 4px 4px 0; min-width: 0; }
+.meta { display: grid; gap: 14px; padding: 4px; min-width: 0; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tag { font-size: .78rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.tag { font-size: .8rem; font-weight: 600; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
 .tag.skill { border-color: var(--accent); color: var(--accent); }
 .tag.own { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 .meta .num { font-family: var(--display); font-size: .95rem; color: var(--muted); }
-.meta ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 6px; }
+.meta ul { margin: 0; padding-inline-start: 1.2rem; display: grid; gap: 6px; }
 .meta .best { font-size: .95rem; color: var(--muted); }
 .btn { justify-self: start; display: inline-flex; align-items: center; gap: 8px; background: var(--fg); color: var(--bg); text-decoration: none; font-weight: 600; padding: 10px 16px; border-radius: 10px; transition: transform .3s cubic-bezier(.22, 1, .36, 1); }
 .btn:hover { transform: translateY(-1px); }
@@ -88,32 +90,32 @@ section.block > .wrap { display: grid; gap: 28px; }
 
 .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
 table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: .95rem; }
-th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
-thead th { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+th, td { text-align: start; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { font-size: .82rem; color: var(--muted); font-weight: 600; }
 tbody tr:last-child td, tbody tr:last-child th { border-bottom: 0; }
 tbody th { font-family: var(--display); font-weight: 700; white-space: nowrap; }
 
 .answer { display: grid; gap: 14px; }
-.answer .yes { font-family: var(--display); font-size: 1.5rem; font-weight: 700; }
+.answer .yes { font-family: var(--display); font-size: 1.45rem; line-height: 1.5; font-weight: 700; }
 .options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .option { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; display: grid; gap: 12px; align-content: start; }
 .option.now { border: 2px solid var(--accent); }
-.option .level { font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.option .level { font-size: .82rem; font-weight: 600; color: var(--muted); }
 .option.now .level { color: var(--accent); }
 .option p { font-size: .95rem; }
-.option ol { margin: 0; padding-left: 1.2rem; display: grid; gap: 6px; font-size: .95rem; }
+.option ol { margin: 0; padding-inline-start: 1.3rem; display: grid; gap: 6px; font-size: .95rem; }
 
 .flow { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; overflow-x: auto; margin: 0; }
-.flow svg { display: block; min-width: 660px; width: 100%; height: auto; }
+.flow svg { display: block; min-width: 660px; width: 100%; height: auto; direction: rtl; }
 .flow .box { fill: var(--tint); stroke: var(--line); }
 .flow .hub { fill: var(--accent); }
 .flow .t { fill: var(--fg); font: 600 15px var(--body); }
 .flow .t-hub { fill: var(--accent-ink); font: 700 15px var(--body); }
-.flow .s { fill: var(--muted); font: 400 12.5px var(--body); }
+.flow .s { fill: var(--muted); font: 400 13px var(--body); }
 .flow .ln { stroke: var(--muted); stroke-width: 2; fill: none; }
 .flow .ln.live { stroke: var(--good); stroke-width: 2.5; }
 .flow .ln.todo { stroke-dasharray: 7 6; }
-.flow .lbl { fill: var(--muted); font: 600 12px var(--body); }
+.flow .lbl { fill: var(--muted); font: 600 12.5px var(--body); }
 .flow .lbl.live { fill: var(--good); }
 .flow figcaption { font-size: .85rem; color: var(--muted); margin-top: 10px; }
 
@@ -121,11 +123,11 @@ tbody th { font-family: var(--display); font-weight: 700; white-space: nowrap; }
 .alert h3 { color: var(--warn); font-size: 1.1rem; }
 .checklist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 28px; margin: 0; padding: 0; list-style: none; }
 .checklist li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; }
-.checklist li::before { content: ""; width: 14px; height: 14px; margin-top: 5px; border-radius: 4px; border: 2px solid var(--accent); }
+.checklist li::before { content: ""; width: 14px; height: 14px; margin-top: 7px; border-radius: 4px; border: 2px solid var(--accent); }
 
 footer { padding-block: 40px 64px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
 footer .wrap { display: grid; gap: 12px; }
-footer ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 4px; }
+footer ul { margin: 0; padding-inline-start: 1.2rem; display: grid; gap: 4px; }
 
 @media (max-width: 860px) {
   .concept, .before, .options, .checklist, .lists { grid-template-columns: minmax(0, 1fr); }
@@ -134,37 +136,39 @@ footer ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 4px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 
+<div class="page" dir="rtl" lang="ar">
+
 <header class="top wrap">
-  <p class="eyebrow">Redesign concepts · <span class="wordmark"><b>sh.</b>apartment</span> · Jeddah</p>
-  <h1>Five directions for the sh.apartment website</h1>
-  <p class="lede">Every concept uses the real seven apartments, their own photos from the Airbnb listings, and the real ratings: 4.83 from 517 reviews. Three concepts follow the <a href="https://github.com/elayadesign/ai-design-skills" target="_blank" rel="noopener">landing-page-design skill</a> to the letter. Two are original ideas. All are Arabic first and fully clickable.</p>
-  <p class="note"><b>Placeholders:</b> nightly prices are examples until the owners set them. No guest review quotes were invented. Where a design shows a quote card, it is labelled as a sample to replace with a real Airbnb review.</p>
+  <p class="eyebrow">تصاميم مقترحة · <span class="wordmark"><b>sh.</b>apartment</span> · جدة</p>
+  <h1>خمسة اتجاهات لموقع <span class="wordmark"><b>sh.</b>apartment</span></h1>
+  <p class="lede">كل تصميم مبني على الشقق السبع الحقيقية، بصورها من إعلانات Airbnb، وبتقييماتها الفعلية: 4.83 من 517 تقييماً. ثلاثة تصاميم تتبع <a href="https://github.com/elayadesign/ai-design-skills" target="_blank" rel="noopener">مهارة landing-page-design</a> بحذافيرها، واثنان فكرتان أصليتان. كلها بالعربية أولاً، وكلها تعمل بالنقر.</p>
+  <p class="note"><b>للتنبيه:</b> أسعار الليالي أمثلة إلى أن يحددها المُلّاك. لم نخترع أي تقييمات للضيوف، وحيث يظهر في تصميم ما مكان لاقتباس، فهو معلَّم بأنه نموذج يُستبدل بتقييم حقيقي من Airbnb.</p>
 </header>
 
 <section class="block" aria-labelledby="now-h">
   <div class="wrap before">
     <figure>
-      <img src="previews/00-current.jpg" alt="The current sh.apartment site on desktop: an illustrated Jeddah scene, the logo, and a list of seven apartment names" width="1200" height="750">
-      <img src="previews/00-current-m.jpg" alt="The current site on a phone" width="390" height="844">
-      <figcaption>The current site, <a href="https://hello-jed.sh-apartment.workers.dev/" target="_blank" rel="noopener">hello-jed.sh-apartment.workers.dev</a></figcaption>
+      <img src="previews/00-current.jpg" alt="الموقع الحالي لـ sh.apartment على الكمبيوتر: رسمة لجدة، والشعار، وقائمة بأسماء الشقق السبع" width="1200" height="750">
+      <img src="previews/00-current-m.jpg" alt="الموقع الحالي على الجوال" width="390" height="844">
+      <figcaption>الموقع الحالي: <a class="latin" href="https://hello-jed.sh-apartment.workers.dev/" target="_blank" rel="noopener">hello-jed.sh-apartment.workers.dev</a></figcaption>
     </figure>
     <div style="display:grid;gap:18px;min-width:0">
-      <h2 id="now-h">Where it starts</h2>
-      <p>The current site has more under the hood than it shows. It already syncs each apartment’s calendar with Airbnb, takes direct bookings with a signed contract, and hands off to WhatsApp. The design hides most of that.</p>
+      <h2 id="now-h">نقطة البداية</h2>
+      <p>في الموقع الحالي أكثر مما يظهر. فهو يزامن تقويم كل شقة مع Airbnb، ويستقبل حجوزات مباشرة بعقد موقّع إلكترونياً، ثم ينقل الضيف إلى واتساب. لكن التصميم يخفي معظم ذلك.</p>
       <div class="lists">
-        <div class="keep"><h3>Keep</h3><ul>
-          <li>The illustrated Jeddah with a live sky: memorable and local</li>
-          <li>Direct booking with an e‑signed contract</li>
-          <li>Two‑way calendar sync with Airbnb</li>
-          <li>WhatsApp as the last step</li>
+        <div class="keep"><h3>نُبقي عليه</h3><ul>
+          <li>رسمة جدة بسمائها الحية: مميزة ومحلية</li>
+          <li>الحجز المباشر بعقد موقّع إلكترونياً</li>
+          <li>مزامنة التقويم مع Airbnb في الاتجاهين</li>
+          <li>واتساب كخطوة أخيرة</li>
         </ul></div>
-        <div class="fix"><h3>Fix</h3><ul>
-          <li>No photos, though the interiors are the selling point</li>
-          <li>No prices or totals before committing</li>
-          <li>Ratings show 0.00 while they load</li>
-          <li>Booking is hidden inside accordions</li>
-          <li>Mixed Arabic and English names, no beds or guest counts</li>
-          <li>The owner dashboard is the biggest button on a guest page</li>
+        <div class="fix"><h3>نُصلحه</h3><ul>
+          <li>لا توجد صور، مع أن التصميم الداخلي أقوى ما يميّز الشقق</li>
+          <li>لا أسعار ولا إجمالي قبل الالتزام بالحجز</li>
+          <li>التقييمات تظهر 0.00 أثناء التحميل</li>
+          <li>الحجز مخفي داخل القوائم المنسدلة</li>
+          <li>أسماء تخلط العربية بالإنجليزية، بلا عدد غرف أو ضيوف</li>
+          <li>زر لوحة تحكم المالك هو أكبر زر في صفحة موجّهة للضيوف</li>
         </ul></div>
       </div>
     </div>
@@ -174,108 +178,108 @@ footer ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 4px; }
 <section class="block" aria-labelledby="concepts-h">
   <div class="wrap">
     <div class="prose" style="display:grid;gap:10px">
-      <h2 id="concepts-h">The concepts</h2>
-      <p>Open each one on a phone too. Most guests will book from one.</p>
+      <h2 id="concepts-h">التصاميم</h2>
+      <p>جرّب كل تصميم على الجوال أيضاً، فمعظم الضيوف سيحجزون منه.</p>
     </div>
     <div class="concepts">
 
       <article class="concept">
-        <a class="shots" href="designs/01-corniche.html" aria-label="Open concept 1, Corniche">
-          <img class="desk" src="previews/01-corniche.jpg" alt="Corniche concept, desktop" width="1200" height="750">
+        <a class="shots" href="designs/01-corniche.html" aria-label="افتح التصميم 1، الكورنيش">
+          <img class="desk" src="previews/01-corniche.jpg" alt="تصميم الكورنيش على الكمبيوتر" width="1200" height="750">
           <img class="phone" src="previews/01-corniche-m.jpg" alt="" width="390" height="844">
         </a>
         <div class="meta">
-          <span class="num">Concept 1</span>
-          <h3>Corniche</h3>
-          <div class="tags"><span class="tag skill">Skill · layout A</span><span class="tag">Light</span><span class="tag">Arabic</span></div>
-          <p>The homepage the current list wants to be. Enter dates once, then see which of the seven apartments are free and what the stay costs.</p>
+          <span class="num">التصميم 1</span>
+          <h3>الكورنيش</h3>
+          <div class="tags"><span class="tag skill">المهارة · تخطيط A</span><span class="tag">فاتح</span><span class="tag">عربي</span></div>
+          <p>الصفحة الرئيسية التي تطمح إليها القائمة الحالية: يُدخل الضيف تواريخه مرة واحدة، فيرى أيّ الشقق السبع متاحة وكم تكلّف الإقامة.</p>
           <ul>
-            <li>One availability search across all seven units</li>
-            <li>Filter by area (King Road, Madinah Road, Al Ajawid, Prince Fawaz) and size</li>
-            <li>Book direct or open on Airbnb from every card</li>
+            <li>بحث واحد عن التوفر في الشقق السبع كلها</li>
+            <li>تصفية حسب المنطقة (طريق الملك، طريق المدينة، الأجاويد، الأمير فواز) وحسب الحجم</li>
+            <li>حجز مباشر أو فتح الشقة على Airbnb من كل بطاقة</li>
           </ul>
-          <p class="best">Best as the main homepage.</p>
-          <a class="btn" href="designs/01-corniche.html">Open Corniche <span aria-hidden="true">→</span></a>
+          <p class="best">الأنسب: صفحةً رئيسية للموقع.</p>
+          <a class="btn" href="designs/01-corniche.html">افتح الكورنيش <span aria-hidden="true">←</span></a>
         </div>
       </article>
 
       <article class="concept">
-        <a class="shots" href="designs/02-neon.html" aria-label="Open concept 2, Neon">
-          <img class="desk" src="previews/02-neon.jpg" alt="Neon concept, desktop" width="1200" height="750">
+        <a class="shots" href="designs/02-neon.html" aria-label="افتح التصميم 2، نيون">
+          <img class="desk" src="previews/02-neon.jpg" alt="تصميم نيون على الكمبيوتر" width="1200" height="750">
           <img class="phone" src="previews/02-neon-m.jpg" alt="" width="390" height="844">
         </a>
         <div class="meta">
-          <span class="num">Concept 2</span>
-          <h3>Neon</h3>
-          <div class="tags"><span class="tag skill">Skill · layout B</span><span class="tag">Dark</span><span class="tag">Arabic</span></div>
-          <p>One night in Jeddah, told as a timeline and lit by the apartments’ own neon: the loft beds, the cinema sofas, the jacuzzi.</p>
+          <span class="num">التصميم 2</span>
+          <h3>نيون</h3>
+          <div class="tags"><span class="tag skill">المهارة · تخطيط B</span><span class="tag">داكن</span><span class="tag">عربي</span></div>
+          <p>ليلة واحدة في جدة تُروى كخط زمني، تضيئها أنوار النيون في الشقق نفسها: الأسرّة العلوية، والكنب السينمائية، والجاكوزي.</p>
           <ul>
-            <li>Built from the real photos, not stock</li>
-            <li>Explains why booking direct is worth it</li>
-            <li>All seven apartments after the story</li>
+            <li>مبني من الصور الحقيقية، لا من صور جاهزة</li>
+            <li>يشرح لماذا يستحق الحجز المباشر</li>
+            <li>الشقق السبع كلها بعد القصة</li>
           </ul>
-          <p class="best">Best for visitors arriving from Instagram, TikTok or Snapchat.</p>
-          <a class="btn" href="designs/02-neon.html">Open Neon <span aria-hidden="true">→</span></a>
+          <p class="best">الأنسب: للزوار القادمين من إنستغرام وتيك توك وسناب شات.</p>
+          <a class="btn" href="designs/02-neon.html">افتح نيون <span aria-hidden="true">←</span></a>
         </div>
       </article>
 
       <article class="concept">
-        <a class="shots" href="designs/03-studio.html" aria-label="Open concept 3, Studio">
-          <img class="desk" src="previews/03-studio.jpg" alt="Studio concept, desktop" width="1200" height="750">
+        <a class="shots" href="designs/03-studio.html" aria-label="افتح التصميم 3، الاستديو">
+          <img class="desk" src="previews/03-studio.jpg" alt="تصميم الاستديو على الكمبيوتر" width="1200" height="750">
           <img class="phone" src="previews/03-studio-m.jpg" alt="" width="390" height="844">
         </a>
         <div class="meta">
-          <span class="num">Concept 3</span>
-          <h3>Studio</h3>
-          <div class="tags"><span class="tag skill">Skill · layout C</span><span class="tag">Light</span><span class="tag">Arabic</span></div>
-          <p>The page for one apartment, the Mid century Studio, with the direct booking contract rebuilt as three clean steps.</p>
+          <span class="num">التصميم 3</span>
+          <h3>الاستديو</h3>
+          <div class="tags"><span class="tag skill">المهارة · تخطيط C</span><span class="tag">فاتح</span><span class="tag">عربي</span></div>
+          <p>صفحة شقة واحدة، استديو ميد سنشري، مع إعادة بناء الحجز المباشر بالعقد في ثلاث خطوات واضحة.</p>
           <ul>
-            <li>Synced calendar that blocks nights booked on Airbnb</li>
-            <li>Dates, guest details, then signature and a contract number</li>
-            <li>Sticky booking card on desktop, a bottom sheet on phones</li>
+            <li>تقويم متزامن يحجب الليالي المحجوزة على Airbnb</li>
+            <li>التواريخ، ثم بيانات الضيف، ثم التوقيع ورقم العقد</li>
+            <li>بطاقة حجز ثابتة على الكمبيوتر، ونافذة سفلية على الجوال</li>
           </ul>
-          <p class="best">Use it as the template for all seven apartment pages.</p>
-          <a class="btn" href="designs/03-studio.html">Open Studio <span aria-hidden="true">→</span></a>
+          <p class="best">استخدموه قالباً لصفحات الشقق السبع.</p>
+          <a class="btn" href="designs/03-studio.html">افتح الاستديو <span aria-hidden="true">←</span></a>
         </div>
       </article>
 
       <article class="concept">
-        <a class="shots" href="designs/04-roshan.html" aria-label="Open concept 4, Roshan">
-          <img class="desk" src="previews/04-roshan.jpg" alt="Roshan concept, desktop" width="1200" height="750">
+        <a class="shots" href="designs/04-roshan.html" aria-label="افتح التصميم 4، روشن">
+          <img class="desk" src="previews/04-roshan.jpg" alt="تصميم روشن على الكمبيوتر" width="1200" height="750">
           <img class="phone" src="previews/04-roshan-m.jpg" alt="" width="390" height="844">
         </a>
         <div class="meta">
-          <span class="num">Concept 4</span>
-          <h3>Roshan</h3>
-          <div class="tags"><span class="tag own">Claude’s idea</span><span class="tag">Arabic and English</span></div>
-          <p>Keeps the owners’ own idea, the illustrated Jeddah under a live sky, and builds a complete site around it.</p>
+          <span class="num">التصميم 4</span>
+          <h3>روشن</h3>
+          <div class="tags"><span class="tag own">فكرة Claude</span><span class="tag">عربي وإنجليزي</span></div>
+          <p>يحافظ على فكرة المُلّاك أنفسهم، رسمة جدة تحت سماء حية، ويبني حولها موقعاً متكاملاً.</p>
           <ul>
-            <li>A crafted panorama of Al Balad and the Corniche that follows the time of day</li>
-            <li>Writes the WhatsApp booking message for you, with Hijri and Gregorian dates</li>
-            <li>Explains the two areas: north near the Corniche, south east near Park Square</li>
+            <li>مشهد مرسوم بعناية للبلد والكورنيش يتبع وقت اليوم</li>
+            <li>يكتب لك رسالة الحجز على واتساب، بالتاريخين الهجري والميلادي</li>
+            <li>يوضح المنطقتين: الشمال قرب الكورنيش، والجنوب الشرقي قرب بارك سكوير</li>
           </ul>
-          <p class="best">Best if they want to keep the identity they already have.</p>
-          <a class="btn" href="designs/04-roshan.html">Open Roshan <span aria-hidden="true">→</span></a>
+          <p class="best">الأنسب: إن أرادوا الإبقاء على هويتهم الحالية.</p>
+          <a class="btn" href="designs/04-roshan.html">افتح روشن <span aria-hidden="true">←</span></a>
         </div>
       </article>
 
       <article class="concept">
-        <a class="shots" href="designs/05-finder.html" aria-label="Open concept 5, Finder">
-          <img class="desk" src="previews/05-finder.jpg" alt="Finder concept, desktop" width="1200" height="750">
+        <a class="shots" href="designs/05-finder.html" aria-label="افتح التصميم 5، الباحث">
+          <img class="desk" src="previews/05-finder.jpg" alt="تصميم الباحث على الكمبيوتر" width="1200" height="750">
           <img class="phone" src="previews/05-finder-m.jpg" alt="" width="390" height="844">
         </a>
         <div class="meta">
-          <span class="num">Concept 5</span>
-          <h3>Finder</h3>
-          <div class="tags"><span class="tag own">Claude’s idea</span><span class="tag">App style</span><span class="tag">Light and dark</span></div>
-          <p>A small Airbnb for their own apartments: search, map, compare and book all seven on one screen.</p>
+          <span class="num">التصميم 5</span>
+          <h3>الباحث</h3>
+          <div class="tags"><span class="tag own">فكرة Claude</span><span class="tag">بأسلوب التطبيقات</span><span class="tag">فاتح وداكن</span></div>
+          <p>نسخة مصغّرة من Airbnb لشققهم: بحث وخريطة ومقارنة وحجز للشقق السبع في شاشة واحدة.</p>
           <ul>
-            <li>Map of Jeddah with each apartment’s real location</li>
-            <li>Compare up to three apartments side by side</li>
-            <li>The contract booking runs inside the detail panel</li>
+            <li>خريطة لجدة بالموقع الحقيقي لكل شقة</li>
+            <li>مقارنة حتى ثلاث شقق جنباً إلى جنب</li>
+            <li>الحجز بالعقد يتم داخل لوحة التفاصيل</li>
           </ul>
-          <p class="best">Best as the number of apartments grows.</p>
-          <a class="btn" href="designs/05-finder.html">Open Finder <span aria-hidden="true">→</span></a>
+          <p class="best">الأنسب: كلما زاد عدد الشقق.</p>
+          <a class="btn" href="designs/05-finder.html">افتح الباحث <span aria-hidden="true">←</span></a>
         </div>
       </article>
 
@@ -285,97 +289,97 @@ footer ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 4px; }
 
 <section class="block" aria-labelledby="compare-h">
   <div class="wrap">
-    <h2 id="compare-h">Side by side</h2>
+    <h2 id="compare-h">مقارنة سريعة</h2>
     <div class="table-wrap">
       <table>
-        <thead><tr><th scope="col">Concept</th><th scope="col">Source</th><th scope="col">Main action</th><th scope="col">Language</th><th scope="col">Stand‑out idea</th><th scope="col">Effort on their current setup</th></tr></thead>
+        <thead><tr><th scope="col">التصميم</th><th scope="col">المصدر</th><th scope="col">الإجراء الرئيسي</th><th scope="col">اللغة</th><th scope="col">الفكرة الأبرز</th><th scope="col">الجهد على نظامهم الحالي</th></tr></thead>
         <tbody>
-          <tr><th scope="row">1 Corniche</th><td>Skill</td><td>Check availability</td><td>Arabic</td><td>One search across all seven units</td><td>Medium: needs prices per unit</td></tr>
-          <tr><th scope="row">2 Neon</th><td>Skill</td><td>Choose your dates</td><td>Arabic</td><td>Story told with the neon interiors</td><td>Low</td></tr>
-          <tr><th scope="row">3 Studio</th><td>Skill</td><td>Book these dates</td><td>Arabic</td><td>Three step contract booking</td><td>Low: their backend already does it</td></tr>
-          <tr><th scope="row">4 Roshan</th><td>Claude</td><td>Book on WhatsApp</td><td>Arabic and English</td><td>Their illustration, done properly</td><td>Low to medium</td></tr>
-          <tr><th scope="row">5 Finder</th><td>Claude</td><td>Book direct</td><td>Arabic</td><td>Map, filters and compare</td><td>Medium</td></tr>
+          <tr><th scope="row">1 الكورنيش</th><td>المهارة</td><td>«تحقق من التوفر»</td><td>عربي</td><td>بحث واحد في الشقق السبع</td><td>متوسط: يحتاج أسعاراً لكل شقة</td></tr>
+          <tr><th scope="row">2 نيون</th><td>المهارة</td><td>«اختر تواريخك»</td><td>عربي</td><td>قصة بصور النيون الداخلية</td><td>منخفض</td></tr>
+          <tr><th scope="row">3 الاستديو</th><td>المهارة</td><td>«احجز هذه التواريخ»</td><td>عربي</td><td>حجز بالعقد في ثلاث خطوات</td><td>منخفض: نظامهم يدعم ذلك أصلاً</td></tr>
+          <tr><th scope="row">4 روشن</th><td>Claude</td><td>«احجز عبر واتساب»</td><td>عربي وإنجليزي</td><td>رسمتهم، منفّذة بإتقان</td><td>منخفض إلى متوسط</td></tr>
+          <tr><th scope="row">5 الباحث</th><td>Claude</td><td>«احجز مباشرة»</td><td>عربي</td><td>خريطة وفلاتر ومقارنة</td><td>متوسط</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="prose" style="color:var(--muted)">They combine well. A strong final site: Roshan’s identity and panorama on top, Corniche’s search and cards below it, and Studio as the page for each apartment.</p>
+    <p class="prose" style="color:var(--muted)">يمكن الجمع بينها. موقع نهائي قوي: هوية روشن ومشهده في الأعلى، ثم بحث الكورنيش وبطاقاته، وصفحة الاستديو لكل شقة.</p>
   </div>
 </section>
 
 <section class="block" id="airbnb-gathern" aria-labelledby="link-h">
   <div class="wrap">
     <div class="answer prose">
-      <p class="eyebrow">The second question</p>
-      <h2 id="link-h">Can the site connect to Airbnb and Gathern?</h2>
-      <p class="yes">Airbnb: it already does. Gathern: yes, the same way.</p>
-      <p>Their site already reads each apartment’s Airbnb calendar through an iCal (.ics) link, and gives Airbnb a link back. A night booked anywhere is blocked everywhere. Gathern can join that loop if it accepts the same kind of link.</p>
+      <p class="eyebrow">السؤال الثاني</p>
+      <h2 id="link-h">هل يمكن ربط الموقع بـ Airbnb وجاذر إن؟</h2>
+      <p class="yes">Airbnb: مربوط فعلاً. جاذر إن: نعم، بالطريقة نفسها.</p>
+      <p>يقرأ موقعهم الحالي تقويم كل شقة على Airbnb عبر رابط iCal ‏(<span class="latin">.ics</span>)، ويعطي Airbnb رابطاً في الاتجاه المعاكس. فالليلة المحجوزة في أي مكان تُحجب في كل مكان. ويمكن ضمّ جاذر إن إلى الحلقة نفسها إن كان يقبل هذا النوع من الروابط.</p>
     </div>
 
     <figure class="flow">
       <svg viewBox="0 0 900 260" role="img" aria-labelledby="flow-t">
-        <title id="flow-t">The sh.apartment site holds one calendar per apartment. It syncs with Airbnb over iCal today, in both directions. Gathern can be added with the same iCal links. Guests book direct on the site with a signed contract.</title>
-        <rect class="box" x="20" y="95" width="200" height="70" rx="12"/>
-        <text class="t" x="120" y="126" text-anchor="middle">Guests</text>
-        <text class="s" x="120" y="146" text-anchor="middle">book direct, sign the contract</text>
+        <title id="flow-t">يحتفظ موقع sh.apartment بتقويم واحد لكل شقة، ويزامنه اليوم مع Airbnb عبر iCal في الاتجاهين. ويمكن إضافة جاذر إن بروابط iCal نفسها. ويحجز الضيوف مباشرة من الموقع بعقد موقّع.</title>
+        <rect class="box" x="680" y="95" width="200" height="70" rx="12"/>
+        <text class="t" x="780" y="126" text-anchor="middle">الضيوف</text>
+        <text class="s" x="780" y="148" text-anchor="middle">حجز مباشر بعقد موقّع</text>
         <rect class="hub" x="330" y="80" width="240" height="100" rx="14"/>
-        <text class="t-hub" x="450" y="122" text-anchor="middle">sh.apartment site</text>
-        <text class="t-hub" x="450" y="146" text-anchor="middle" style="font-weight:500;font-size:12.5px">one calendar per apartment</text>
-        <rect class="box" x="680" y="25" width="200" height="70" rx="12"/>
-        <text class="t" x="780" y="56" text-anchor="middle">Airbnb</text>
-        <text class="s" x="780" y="76" text-anchor="middle">7 listings</text>
-        <rect class="box" x="680" y="165" width="200" height="70" rx="12"/>
-        <text class="t" x="780" y="196" text-anchor="middle">Gathern</text>
-        <text class="s" x="780" y="216" text-anchor="middle">to add</text>
-        <path class="ln" d="M220 130 H330"/>
-        <path class="ln live" d="M570 112 C625 112 625 60 680 60"/>
-        <path class="ln todo" d="M570 148 C625 148 625 200 680 200"/>
-        <text class="lbl live" x="596" y="50" text-anchor="middle">iCal · live today</text>
-        <text class="lbl" x="596" y="222" text-anchor="middle">iCal · same setup</text>
+        <text class="t-hub" x="450" y="122" text-anchor="middle">موقع sh.apartment</text>
+        <text class="t-hub" x="450" y="148" text-anchor="middle" style="font-weight:500;font-size:13px">تقويم واحد لكل شقة</text>
+        <rect class="box" x="20" y="25" width="200" height="70" rx="12"/>
+        <text class="t" x="120" y="56" text-anchor="middle">Airbnb</text>
+        <text class="s" x="120" y="78" text-anchor="middle">7 إعلانات</text>
+        <rect class="box" x="20" y="165" width="200" height="70" rx="12"/>
+        <text class="t" x="120" y="196" text-anchor="middle">جاذر إن</text>
+        <text class="s" x="120" y="218" text-anchor="middle">للإضافة</text>
+        <path class="ln" d="M680 130 H570"/>
+        <path class="ln live" d="M330 112 C275 112 275 60 220 60"/>
+        <path class="ln todo" d="M330 148 C275 148 275 200 220 200"/>
+        <text class="lbl live" x="304" y="50" text-anchor="middle">iCal · يعمل الآن</text>
+        <text class="lbl" x="304" y="224" text-anchor="middle">iCal · الإعداد نفسه</text>
       </svg>
-      <figcaption>Booked dates move both ways. Prices and messages stay on each platform.</figcaption>
+      <figcaption>تنتقل التواريخ المحجوزة في الاتجاهين، أما الأسعار والرسائل فتبقى في كل منصة.</figcaption>
     </figure>
 
     <div class="options">
       <article class="option now">
-        <span class="level">Today · working</span>
-        <h3>Airbnb over iCal</h3>
-        <p>The owner dashboard stores each apartment’s Airbnb export link and shows an import link to paste into Airbnb. One limit: Airbnb refreshes imported calendars about every 3 hours. A direct booking can therefore take up to 3 hours to block the night on Airbnb.</p>
+        <span class="level">الآن · يعمل</span>
+        <h3>Airbnb عبر iCal</h3>
+        <p>تحفظ لوحة تحكم المالك رابط التصدير من Airbnb لكل شقة، وتعرض رابط استيراد يُلصق في Airbnb. قيد واحد: يحدّث Airbnb التقاويم المستوردة كل 3 ساعات تقريباً، لذا قد يستغرق الحجز المباشر حتى 3 ساعات ليُحجب على Airbnb.</p>
       </article>
       <article class="option">
-        <span class="level">Next · Gathern</span>
-        <h3>Add Gathern the same way</h3>
+        <span class="level">التالي · جاذر إن</span>
+        <h3>أضيفوا جاذر إن بالطريقة نفسها</h3>
         <ol>
-          <li>Ask their Gathern account manager: “Can I import and export my calendar as an iCal (.ics) link?”</li>
-          <li>If yes, add a Gathern import link next to the Airbnb one in the dashboard, and paste the site’s export link into Gathern.</li>
-          <li>Add an “Open on Gathern” button to each apartment.</li>
+          <li>اسألوا مدير الحساب في جاذر إن: «هل يمكنني استيراد تقويمي وتصديره كرابط iCal ‏(<span class="latin">.ics</span>)؟»</li>
+          <li>إن كان الجواب نعم، أضيفوا رابط استيراد جاذر إن بجانب رابط Airbnb في لوحة التحكم، والصقوا رابط التصدير من الموقع في جاذر إن.</li>
+          <li>أضيفوا زر «افتحها على جاذر إن» لكل شقة.</li>
         </ol>
-        <p>Gathern’s public pages don’t describe calendar sync. Saudi tools such as Naseeq list Gathern next to Airbnb in their iCal sync, so it looks likely.</p>
+        <p>صفحات جاذر إن العامة لا تذكر مزامنة التقويم، لكن أدوات سعودية مثل «نسيق» تُدرج جاذر إن بجانب Airbnb في مزامنتها عبر iCal، فالأرجح أنه ممكن.</p>
       </article>
       <article class="option">
-        <span class="level">Later · if it grows</span>
-        <h3>A channel manager</h3>
-        <p>Tools such as Hostaway, Guesty or Hospitable connect to Airbnb through its official API. They sync prices and messages too, within minutes rather than hours. They cost a monthly fee per unit, and none of the big ones we checked list Gathern. With seven units, the current setup plus Gathern over iCal is enough.</p>
+        <span class="level">لاحقاً · إن كبر النشاط</span>
+        <h3>مدير قنوات</h3>
+        <p>أدوات مثل Hostaway أو Guesty أو Hospitable تتصل بـ Airbnb عبر واجهته الرسمية (API)، وتزامن الأسعار والرسائل أيضاً خلال دقائق لا ساعات. لها اشتراك شهري لكل وحدة، ولم نجد بين أشهرها ما يدعم جاذر إن. ومع سبع شقق، يكفي النظام الحالي مع إضافة جاذر إن عبر iCal.</p>
       </article>
     </div>
 
     <div class="prose" style="display:grid;gap:12px">
-      <h3>Why direct bookings matter</h3>
-      <p>Airbnb now charges most hosts a single fee of about 15.5% of each booking. A direct booking keeps that amount. Some of it can go back to the guest as a lower direct price, which is the case concepts 1 and 2 make.</p>
+      <h3>لماذا يهم الحجز المباشر</h3>
+      <p>يقتطع Airbnb الآن من معظم المضيفين رسماً واحداً يقارب 15.5% من كل حجز. الحجز المباشر يوفّر هذا المبلغ، ويمكن ردّ جزء منه للضيف بسعر مباشر أقل، وهذا ما يبرزه التصميمان 1 و2.</p>
     </div>
 
     <div class="alert" role="note">
-      <h3>Fix first: the owner dashboard PIN</h3>
-      <p>The page checks the owner’s PIN in the browser. The public page source holds a hash of it, and a short number can be cracked from that hash in seconds. If the server uses the same PIN, anyone could then open the dashboard, see guests’ names and phone numbers, and cancel bookings.</p>
-      <p>The fix: remove the hash from the page, check the password only on the server (the Worker already checks it there), use a long passphrase instead of a short number, and limit login attempts. I didn’t try to break it. I only read the public page source.</p>
+      <h3>أصلحوا هذا أولاً: الرقم السري للوحة المالك</h3>
+      <p>تتحقق الصفحة من الرقم السري للمالك داخل المتصفح، ويحتوي كود الصفحة العام على نسخة مُرمَّزة (hash) منه، والرقم القصير يمكن كشفه من هذه النسخة في ثوانٍ. وإن كان الخادم يستخدم الرقم نفسه، فبإمكان أي شخص فتح لوحة التحكم، والاطلاع على أسماء الضيوف وأرقام جوالاتهم، وإلغاء الحجوزات.</p>
+      <p>الحل: احذفوا النسخة المُرمَّزة من الصفحة، وتحققوا من كلمة المرور على الخادم فقط (الـ Worker يتحقق منها هناك أصلاً)، واستخدموا عبارة مرور طويلة بدل رقم قصير، وحدّوا عدد محاولات الدخول. لم أحاول اختراقها، بل اطّلعت فقط على كود الصفحة العام.</p>
     </div>
 
     <div style="display:grid;gap:14px">
-      <h3>Also worth doing</h3>
+      <h3>تحسينات تستحق العمل عليها</h3>
       <ul class="checklist">
-        <li><span>Store the apartment list on the server, next to the bookings it already stores, so the owner’s edits go live without downloading and uploading the page again.</span></li>
-        <li><span>Show each unit’s Ministry of Tourism license number on its page. Airbnb already requires one in Saudi Arabia.</span></li>
-        <li><span>Add online payment for direct bookings through a Saudi gateway such as Moyasar, Tap or HyperPay (mada, Apple Pay, STC Pay).</span></li>
-        <li><span>Put the owner login on its own address, away from the guest page.</span></li>
+        <li><span>خزّنوا قائمة الشقق على الخادم بجانب الحجوزات المخزّنة فيه أصلاً، لتظهر تعديلات المالك فوراً دون تنزيل الصفحة ورفعها من جديد.</span></li>
+        <li><span>اعرضوا رقم ترخيص وزارة السياحة لكل شقة في صفحتها، فـ Airbnb يشترطه أصلاً في السعودية.</span></li>
+        <li><span>أضيفوا الدفع الإلكتروني للحجز المباشر عبر بوابة سعودية مثل Moyasar أو Tap أو HyperPay (مدى، Apple Pay، STC Pay).</span></li>
+        <li><span>انقلوا دخول المالك إلى رابط مستقل بعيداً عن صفحة الضيوف.</span></li>
       </ul>
     </div>
   </div>
@@ -383,14 +387,16 @@ footer ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 4px; }
 
 <footer>
   <div class="wrap">
-    <p>Sources:</p>
+    <p>المصادر:</p>
     <ul>
-      <li><a href="https://www.airbnb.com/help/article/99" target="_blank" rel="noopener">Airbnb Help: sync your calendar with other websites</a></li>
-      <li><a href="https://blog.gathern.co/en/learn-more-about-the-gatherin-business-platform/" target="_blank" rel="noopener">Gathern: the GatherIn Business platform</a></li>
-      <li><a href="https://naseeq.website/" target="_blank" rel="noopener">Naseeq: calendar sync across Airbnb, Gathern and others</a></li>
-      <li><a href="https://www.hostfully.com/blog/airbnb-host-fees/" target="_blank" rel="noopener">Hostfully: Airbnb’s 15.5% host‑only fee</a></li>
-      <li><a href="https://www.airbnb.com/help/article/3833" target="_blank" rel="noopener">Airbnb Help: hosting permits in Saudi Arabia</a></li>
+      <li><a href="https://www.airbnb.com/help/article/99" target="_blank" rel="noopener">مساعدة Airbnb: مزامنة التقويم مع مواقع أخرى</a></li>
+      <li><a href="https://blog.gathern.co/en/learn-more-about-the-gatherin-business-platform/" target="_blank" rel="noopener">جاذر إن: منصة جاذر إن للأعمال</a></li>
+      <li><a href="https://naseeq.website/" target="_blank" rel="noopener">نسيق: مزامنة التقويم بين Airbnb وجاذر إن وغيرها</a></li>
+      <li><a href="https://www.hostfully.com/blog/airbnb-host-fees/" target="_blank" rel="noopener">Hostfully: رسوم Airbnb على المضيف بنسبة 15.5%</a></li>
+      <li><a href="https://www.airbnb.com/help/article/3833" target="_blank" rel="noopener">مساعدة Airbnb: تصاريح الاستضافة في السعودية</a></li>
     </ul>
-    <p>Photos are the owners’ own, from their Airbnb listings. Icons from Phosphor. Concepts 1 to 3 follow <a href="https://github.com/elayadesign/ai-design-skills" target="_blank" rel="noopener">elayadesign/ai-design-skills</a>.</p>
+    <p>الصور للمُلّاك أنفسهم من إعلاناتهم على Airbnb. الأيقونات من Phosphor. التصاميم 1 إلى 3 تتبع <a class="latin" href="https://github.com/elayadesign/ai-design-skills" target="_blank" rel="noopener">elayadesign/ai-design-skills</a>.</p>
   </div>
 </footer>
+
+</div>
