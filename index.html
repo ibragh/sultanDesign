@@ -1,0 +1,348 @@
+<title>Liwan Redesign Concepts</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Five redesign directions for a Riyadh furnished apartment rental website, plus how it can connect to Airbnb and Gathern.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* Layout: a review sheet. Narrow reading column for prose, wide rows for the five concept previews, then the integration answer as three option cards. */
+:root {
+  --bg: #F3F4F1;
+  --surface: #FFFFFF;
+  --fg: #151915;
+  --muted: #5A615B;
+  --line: #DADED8;
+  --accent: #2C5C4E;
+  --accent-ink: #FFFFFF;
+  --tint: #E4ECE7;
+  --warn: #8A5A12;
+  --warn-bg: #F6EBD7;
+  --display: "Bricolage Grotesque", "Hanken Grotesk", system-ui, sans-serif;
+  --body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --shadow: 0 1px 2px rgb(20 30 25 / .06), 0 8px 24px rgb(20 30 25 / .06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111412; --surface: #191D1A; --fg: #EBEEEA; --muted: #9BA49D; --line: #2B312D;
+    --accent: #84C4AF; --accent-ink: #0E1A15; --tint: #1E2A25; --warn: #E7B868; --warn-bg: #2C2416;
+    --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 24px rgb(0 0 0 / .3);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111412; --surface: #191D1A; --fg: #EBEEEA; --muted: #9BA49D; --line: #2B312D;
+  --accent: #84C4AF; --accent-ink: #0E1A15; --tint: #1E2A25; --warn: #E7B868; --warn-bg: #2C2416;
+  --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 24px rgb(0 0 0 / .3);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 400 1rem/1.6 var(--body); }
+.wrap { max-width: 72rem; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.prose { max-width: 42rem; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.05; font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.15; font-weight: 700; }
+h3 { font-size: 1.3rem; line-height: 1.25; font-weight: 700; }
+p { margin: 0; text-wrap: pretty; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.eyebrow { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+
+header.top { padding-block: 56px 32px; display: grid; gap: 20px; }
+header.top .lede { font-size: 1.15rem; color: var(--muted); max-width: 40rem; }
+.note { display: flex; gap: 12px; align-items: flex-start; background: var(--warn-bg); color: var(--fg); border-radius: 12px; padding: 14px 16px; max-width: 46rem; font-size: .95rem; }
+.note b { color: var(--warn); }
+
+section.block { padding-block: 40px; border-top: 1px solid var(--line); }
+section.block > .wrap { display: grid; gap: 28px; }
+
+.concepts { display: grid; gap: 28px; }
+.concept { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 28px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px; box-shadow: var(--shadow); }
+.shots { position: relative; display: block; border-radius: 10px; overflow: hidden; background: var(--tint); aspect-ratio: 16 / 10; max-width: 100%; }
+.shots img.desk { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.shots img.phone { position: absolute; right: 14px; bottom: -36px; width: 22%; aspect-ratio: 390 / 844; object-fit: cover; object-position: top; border-radius: 12px; border: 3px solid var(--fg); box-shadow: var(--shadow); background: var(--surface); }
+.shots:hover img.desk { transform: scale(1.01); }
+.shots img.desk { transition: transform .5s cubic-bezier(.22, 1, .36, 1); }
+.meta { display: grid; gap: 14px; padding: 4px 4px 4px 0; min-width: 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { font-size: .78rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.tag.skill { border-color: var(--accent); color: var(--accent); }
+.tag.own { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.meta .num { font-family: var(--display); font-size: .95rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.meta ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 6px; color: var(--fg); }
+.meta .best { font-size: .95rem; color: var(--muted); }
+.btn { justify-self: start; display: inline-flex; align-items: center; gap: 8px; background: var(--fg); color: var(--bg); text-decoration: none; font-weight: 600; padding: 10px 16px; border-radius: 10px; transition: transform .3s cubic-bezier(.22, 1, .36, 1), opacity .3s; }
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(1px); }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: .95rem; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody th { font-family: var(--display); font-weight: 700; white-space: nowrap; }
+
+.answer { display: grid; gap: 14px; }
+.answer .yes { font-family: var(--display); font-size: 1.5rem; font-weight: 700; }
+.options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.option { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; display: grid; gap: 12px; align-content: start; }
+.option.rec { border: 2px solid var(--accent); }
+.option .level { font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.option.rec .level { color: var(--accent); }
+.option dl { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 12px; font-size: .92rem; }
+.option dt { color: var(--muted); }
+.option dd { margin: 0; }
+.option p { font-size: .95rem; }
+
+.flow { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; overflow-x: auto; }
+.flow svg { display: block; min-width: 640px; width: 100%; height: auto; }
+.flow .box { fill: var(--tint); stroke: var(--line); }
+.flow .hub { fill: var(--accent); }
+.flow .t { fill: var(--fg); font: 600 15px var(--body); }
+.flow .t-hub { fill: var(--accent-ink); font: 700 15px var(--body); }
+.flow .s { fill: var(--muted); font: 400 12.5px var(--body); }
+.flow .ln { stroke: var(--muted); stroke-width: 1.5; fill: none; }
+.flow .ln.api { stroke: var(--accent); stroke-width: 2.5; }
+.flow .ln.ical { stroke-dasharray: 6 5; }
+.flow .lbl { fill: var(--muted); font: 600 12px var(--body); }
+
+.checklist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 28px; margin: 0; padding: 0; list-style: none; }
+.checklist li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; }
+.checklist li::before { content: ""; width: 14px; height: 14px; margin-top: 5px; border-radius: 4px; border: 2px solid var(--accent); }
+
+footer { padding-block: 40px 64px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+footer .wrap { display: grid; gap: 12px; }
+footer ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 4px; }
+
+@media (max-width: 860px) {
+  .concept { grid-template-columns: minmax(0, 1fr); }
+  .options { grid-template-columns: minmax(0, 1fr); }
+  .checklist { grid-template-columns: minmax(0, 1fr); }
+  .shots img.phone { width: 26%; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<header class="top wrap">
+  <p class="eyebrow">Redesign concepts · furnished apartments, Riyadh</p>
+  <h1>Five directions for the apartment website</h1>
+  <p class="lede">Three concepts follow the <a href="https://github.com/elayadesign/ai-design-skills" target="_blank" rel="noopener">landing-page-design skill</a> to the letter. Two are original ideas built around how guests in Saudi Arabia actually book: Arabic first with WhatsApp, and an app style finder for every unit. Each one is a working page, so click around.</p>
+  <p class="note"><b>Placeholders.</b>&nbsp;The brand name “Liwan”, the eight apartments, prices and reviews are stand‑ins, and the photos are stock images until the owner’s own photos arrive. Every photo sits in one folder, so swapping them in changes all five concepts at once.</p>
+</header>
+
+<section class="block" aria-labelledby="concepts-h">
+  <div class="wrap">
+    <div class="prose" style="display:grid;gap:10px">
+      <h2 id="concepts-h">The concepts</h2>
+      <p>Open each on a phone too. Most guests will.</p>
+    </div>
+    <div class="concepts">
+
+      <article class="concept">
+        <a class="shots" href="designs/01-courtyard.html" aria-label="Open concept 1, Courtyard">
+          <img class="desk" src="previews/01-courtyard.jpg" alt="Courtyard concept, desktop view" width="1200" height="750">
+          <img class="phone" src="previews/01-courtyard-m.jpg" alt="" width="300" height="650">
+        </a>
+        <div class="meta">
+          <span class="num">Concept 1</span>
+          <h3>Courtyard</h3>
+          <div class="tags"><span class="tag skill">Skill · layout A</span><span class="tag">Light</span><span class="tag">English</span></div>
+          <p>The classic, well run rental homepage. Search for dates first, then browse all eight apartments.</p>
+          <ul>
+            <li>Availability bar in the hero, with loading and error states</li>
+            <li>Filter the apartments by size, with a designed empty state</li>
+            <li>Shows booking direct next to Airbnb and Gathern</li>
+          </ul>
+          <p class="best">Best if the site is mostly a front door that sends people to book.</p>
+          <a class="btn" href="designs/01-courtyard.html">Open Courtyard <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="concept">
+        <a class="shots" href="designs/02-night.html" aria-label="Open concept 2, Night">
+          <img class="desk" src="previews/02-night.jpg" alt="Night concept, desktop view" width="1200" height="750">
+          <img class="phone" src="previews/02-night-m.jpg" alt="" width="300" height="650">
+        </a>
+        <div class="meta">
+          <span class="num">Concept 2</span>
+          <h3>Night</h3>
+          <div class="tags"><span class="tag skill">Skill · layout B</span><span class="tag">Dark</span><span class="tag">English</span></div>
+          <p>A long form story told as the timeline of one stay, from landing at the airport to checkout.</p>
+          <ul>
+            <li>Built for business travellers and Riyadh Season visitors</li>
+            <li>Interactive calculator: book direct vs Airbnb vs Gathern</li>
+            <li>Premium, hotel‑like mood without hotel prices</li>
+          </ul>
+          <p class="best">Best for persuading platform guests to book direct next time.</p>
+          <a class="btn" href="designs/02-night.html">Open Night <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="concept">
+        <a class="shots" href="designs/03-residence.html" aria-label="Open concept 3, Residence">
+          <img class="desk" src="previews/03-residence.jpg" alt="Residence concept, desktop view" width="1200" height="750">
+          <img class="phone" src="previews/03-residence-m.jpg" alt="" width="300" height="650">
+        </a>
+        <div class="meta">
+          <span class="num">Concept 3</span>
+          <h3>Residence</h3>
+          <div class="tags"><span class="tag skill">Skill · layout C</span><span class="tag">Light</span><span class="tag">English</span></div>
+          <p>The page for a single apartment. This is where bookings are won or lost.</p>
+          <ul>
+            <li>Real date calendar with nights already booked on other platforms</li>
+            <li>Live price breakdown: weekend rates, cleaning, long stay discount</li>
+            <li>Sticky booking card on desktop, bottom sheet on phones</li>
+          </ul>
+          <p class="best">Use it as the template for every apartment, whichever homepage wins.</p>
+          <a class="btn" href="designs/03-residence.html">Open Residence <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="concept">
+        <a class="shots" href="designs/04-najdi.html" aria-label="Open concept 4, Najdi">
+          <img class="desk" src="previews/04-najdi.jpg" alt="Najdi concept, desktop view" width="1200" height="750">
+          <img class="phone" src="previews/04-najdi-m.jpg" alt="" width="300" height="650">
+        </a>
+        <div class="meta">
+          <span class="num">Concept 4</span>
+          <h3>Najdi</h3>
+          <div class="tags"><span class="tag own">Claude’s idea</span><span class="tag">Arabic first</span><span class="tag">English toggle</span></div>
+          <p>Arabic by default, right to left, with an identity drawn from Najdi doors and rooflines.</p>
+          <ul>
+            <li>Builds a ready to send WhatsApp booking message</li>
+            <li>Dates shown in both Hijri and Gregorian</li>
+            <li>Family signals up front: private entrance, majlis, Qibla</li>
+          </ul>
+          <p class="best">Best if most guests are Saudi families who book on Gathern today.</p>
+          <a class="btn" href="designs/04-najdi.html">Open Najdi <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="concept">
+        <a class="shots" href="designs/05-finder.html" aria-label="Open concept 5, Finder">
+          <img class="desk" src="previews/05-finder.jpg" alt="Finder concept, desktop view" width="1200" height="750">
+          <img class="phone" src="previews/05-finder-m.jpg" alt="" width="300" height="650">
+        </a>
+        <div class="meta">
+          <span class="num">Concept 5</span>
+          <h3>Finder</h3>
+          <div class="tags"><span class="tag own">Claude’s idea</span><span class="tag">App style</span><span class="tag">Light and dark</span></div>
+          <p>A small Airbnb for his own apartments: search, filter, map, compare and book in one screen.</p>
+          <ul>
+            <li>List and map stay in sync, with price pins on a map of north Riyadh</li>
+            <li>Compare up to three apartments side by side</li>
+            <li>Three ways to book with totals: direct, Airbnb, Gathern</li>
+          </ul>
+          <p class="best">Best once there are many units and guests need to choose between them.</p>
+          <a class="btn" href="designs/05-finder.html">Open Finder <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="compare-h">
+  <div class="wrap">
+    <h2 id="compare-h">Side by side</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Concept</th><th scope="col">Source</th><th scope="col">Main action</th><th scope="col">Language</th><th scope="col">Stand‑out idea</th><th scope="col">Build effort</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">1 Courtyard</th><td>Skill</td><td>Check availability</td><td>English</td><td>Search first homepage with filters</td><td>Low</td></tr>
+          <tr><th scope="row">2 Night</th><td>Skill</td><td>Check your dates</td><td>English</td><td>Stay timeline and direct booking savings calculator</td><td>Low to medium</td></tr>
+          <tr><th scope="row">3 Residence</th><td>Skill</td><td>Reserve these dates</td><td>English</td><td>Apartment page with synced calendar and live price</td><td>Medium, needs a booking engine</td></tr>
+          <tr><th scope="row">4 Najdi</th><td>Claude</td><td>Book on WhatsApp</td><td>Arabic and English</td><td>Local identity, Hijri dates, WhatsApp first</td><td>Low to medium</td></tr>
+          <tr><th scope="row">5 Finder</th><td>Claude</td><td>Book direct</td><td>English</td><td>Map, filters and compare across all units</td><td>Medium to high, needs a booking engine</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="prose" style="color:var(--muted)">These mix well. A strong final site could use Najdi’s bilingual identity on the homepage, Finder’s search for the apartment list, and Residence for each apartment page.</p>
+  </div>
+</section>
+
+<section class="block" id="airbnb-gathern" aria-labelledby="link-h">
+  <div class="wrap">
+    <div class="answer prose">
+      <p class="eyebrow">The second question</p>
+      <h2 id="link-h">Can the site connect to Airbnb and Gathern?</h2>
+      <p class="yes">Yes. There are three levels.</p>
+      <p>Neither platform lets an outside website take bookings for it. What the site can do is link to the listings and share one availability calendar with both platforms. That prevents double bookings while the site sells the same apartments direct, without the platform fee.</p>
+    </div>
+
+    <div class="options">
+      <article class="option">
+        <span class="level">Level 1 · link out</span>
+        <h3>Buttons to each listing</h3>
+        <p>Every apartment page gets “View on Airbnb” and “View on Gathern” buttons. Gathern gives each host a shareable link to their property page.</p>
+        <dl><dt>Effort</dt><dd>An afternoon</dd><dt>Cost</dt><dd>Free</dd><dt>Syncs</dt><dd>Nothing</dd><dt>Risk</dt><dd>None, but no direct bookings either</dd></dl>
+      </article>
+      <article class="option">
+        <span class="level">Level 2 · calendar sync</span>
+        <h3>Shared calendar over iCal</h3>
+        <p>Airbnb can export each listing’s calendar as a link and import other calendars. The site’s booking engine imports the Airbnb and Gathern calendars and sends its own bookings back.</p>
+        <dl><dt>Effort</dt><dd>A booking plugin or small backend</dd><dt>Cost</dt><dd>Free to low</dd><dt>Syncs</dt><dd>Booked and blocked dates only, not prices or messages</dd><dt>Risk</dt><dd>Airbnb refreshes imported calendars every 3 hours, so a busy night can be sold twice</dd></dl>
+      </article>
+      <article class="option rec">
+        <span class="level">Level 3 · recommended for many units</span>
+        <h3>Channel manager</h3>
+        <p>Software such as Hostaway, Guesty or Hospitable is an official Airbnb partner. It syncs availability, prices and messages in near real time, and most include a direct booking website that can use one of these designs.</p>
+        <dl><dt>Effort</dt><dd>Setup once, then less daily work</dd><dt>Cost</dt><dd>Monthly fee per unit</dd><dt>Syncs</dt><dd>Airbnb fully. Gathern through iCal</dd><dt>Risk</dt><dd>Lowest</dd></dl>
+      </article>
+    </div>
+
+    <figure class="flow" style="margin:0">
+      <svg viewBox="0 0 900 250" role="img" aria-labelledby="flow-t">
+        <title id="flow-t">Level 3 setup: the channel manager sits in the middle. It connects to Airbnb through the official API, to Gathern through an iCal calendar link, and powers the direct booking website.</title>
+        <rect class="box" x="20" y="95" width="220" height="70" rx="12"/>
+        <text class="t" x="130" y="126" text-anchor="middle">Website (a concept here)</text>
+        <text class="s" x="130" y="146" text-anchor="middle">direct bookings, no platform fee</text>
+        <rect class="hub" x="340" y="85" width="220" height="90" rx="14"/>
+        <text class="t-hub" x="450" y="125" text-anchor="middle">Channel manager</text>
+        <text class="t-hub" x="450" y="147" text-anchor="middle" style="font-weight:500;font-size:12.5px">one calendar, one price list</text>
+        <rect class="box" x="660" y="25" width="220" height="70" rx="12"/>
+        <text class="t" x="770" y="56" text-anchor="middle">Airbnb</text>
+        <text class="s" x="770" y="76" text-anchor="middle">dates, prices, messages</text>
+        <rect class="box" x="660" y="165" width="220" height="70" rx="12"/>
+        <text class="t" x="770" y="196" text-anchor="middle">Gathern</text>
+        <text class="s" x="770" y="216" text-anchor="middle">booked dates</text>
+        <path class="ln api" d="M240 130 H340"/>
+        <path class="ln api" d="M560 115 C610 115 610 60 660 60"/>
+        <path class="ln ical" d="M560 145 C610 145 610 200 660 200"/>
+        <text class="lbl" x="290" y="120" text-anchor="middle">built in</text>
+        <text class="lbl" x="612" y="72" text-anchor="middle">official API</text>
+        <text class="lbl" x="612" y="196" text-anchor="middle">iCal link</text>
+      </svg>
+    </figure>
+
+    <div class="prose" style="display:grid;gap:14px">
+      <h3>What to check before choosing</h3>
+      <p><b>Gathern.</b> Gathern’s own pages don’t mention calendar sync. Saudi tools such as Naseeq list Gathern next to Airbnb in their iCal sync, so it looks possible. Every Gathern host has a dedicated account manager, so ask them directly: “Can I import and export my calendar as an iCal (.ics) link?” None of the big international channel managers we checked list Gathern as a connected channel.</p>
+      <p><b>Airbnb fees.</b> Airbnb now charges most hosts a single fee of about 15.5% of each booking, and moved hosts who use connected software onto it first. Every direct booking keeps that margin. Some of it can go to guests as a lower direct price, which is the case concepts 2 and 5 make. Their comparison totals are examples.</p>
+    </div>
+
+    <div style="display:grid;gap:14px">
+      <h3>Also needed for direct bookings in Saudi Arabia</h3>
+      <ul class="checklist">
+        <li><span>A Ministry of Tourism license for each unit, with the number shown on its page. Airbnb already asks for it.</span></li>
+        <li><span>A local payment gateway, such as Moyasar, Tap or HyperPay, to accept mada, Apple Pay and STC Pay. Tabby or Tamara can add split payments.</span></li>
+        <li><span>WhatsApp Business for confirmations and door codes. Guests here expect it.</span></li>
+        <li><span>Guest ID collection at booking, as the ministry requires.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Sources for the integration answer:</p>
+    <ul>
+      <li><a href="https://www.airbnb.com/help/article/99" target="_blank" rel="noopener">Airbnb Help: sync your calendar with other websites</a></li>
+      <li><a href="https://blog.gathern.co/en/learn-more-about-the-gatherin-business-platform/" target="_blank" rel="noopener">Gathern: the GatherIn Business platform</a></li>
+      <li><a href="https://naseeq.website/" target="_blank" rel="noopener">Naseeq: calendar sync across Airbnb, Gathern and others</a></li>
+      <li><a href="https://www.hostfully.com/blog/airbnb-host-fees/" target="_blank" rel="noopener">Hostfully: Airbnb’s 15.5% host‑only fee</a></li>
+      <li><a href="https://www.airbnb.com/help/article/3833" target="_blank" rel="noopener">Airbnb Help: Saudi Arabia hosting permits</a></li>
+    </ul>
+    <p>Stand‑in photos from Unsplash. Icons from Phosphor. Concepts 1 to 3 follow <a href="https://github.com/elayadesign/ai-design-skills" target="_blank" rel="noopener">elayadesign/ai-design-skills</a>.</p>
+  </div>
+</footer>
